@@ -2,7 +2,7 @@
 *
 
 # Whitelist:
-!/.local/bin/
+!/.local/
 !/.config/
 !.vim
 !.bash_logout
@@ -21,7 +21,7 @@
 !.Xresources
 !.xsession
 !.zprofile
-!README.md
 !LICENSE
+!README.md
 !.gitignore
 !.gitmodules
