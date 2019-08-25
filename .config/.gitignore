@@ -1,0 +1,30 @@
+# Ignore All:
+*
+
+# Traverse Directories
+!*/
+
+# Whitelist:
+!/compton/**
+!/dunst/**
+!/fontconfig/**
+!/htop/**
+!/i3/**
+!/ncmpcpp/**
+!/neofetch/**
+!/nnn/**
+!/nvim/**
+!/polybar/**
+!/qutebrowser/**
+!/ranger/**
+!/sxhkd/**
+!/tmux/**
+!/xonsh/**
+!/zathura/**
+!aliasrc
+!aliasrc_a
+!bmdirs
+!bmfiles
+!custom_aliasrc
+!README.md
+!.gitignore

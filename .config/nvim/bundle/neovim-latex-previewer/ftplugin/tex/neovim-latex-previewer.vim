@@ -1,0 +1,1 @@
+/usr/share/nvim/runtime/ftplugin/tex/neovim-latex-previewer.vim

@@ -1,0 +1,3 @@
+[submodule ".local/bin"]
+	path = .local/bin
+	url = git@github.com:kpatel28/scripts.git

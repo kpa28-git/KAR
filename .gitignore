@@ -1,0 +1,27 @@
+# Ignore All:
+*
+
+# Whitelist:
+!/.local/bin/
+!/.config/
+!.vim
+!.bash_logout
+!.bash_profile
+!.bashrc
+!.dmrc
+!.gitconfig
+!.inputrc
+!.profile
+!.tmux.conf
+!.vimrc
+!.Xdefaults
+!.xinitrc
+!.xonshrc
+!.xprofile
+!.Xresources
+!.xsession
+!.zprofile
+!README.md
+!LICENSE
+!.gitignore
+!.gitmodules

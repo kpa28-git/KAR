@@ -1,0 +1,112 @@
+# STANDARD
+## GENERAL
+backend: 'webengine'
+auto_save.session: True
+confirm_quit: ['downloads']
+
+## CONTENT
+content.autoplay: False
+content.dns_prefetch: False
+content.headers.do_not_track: True
+content.webgl: True
+
+## DOWNLOADS
+downloads.position: 'bottom'
+downloads.remove_finished: 5000
+
+## HINTING
+hints.chars: 'asdfghjklqwertyuiopzcvbnm'
+hints.find_implementation: 'python'
+
+## TABS
+tabs.last_close: 'close'
+tabs.position: 'bottom'
+tabs.show: 'multiple'
+tabs.title.format: '[{index}] {current_title}'
+tabs.title.format_pinned: '[{index}]'
+
+## URL
+url.searchengines: {
+    # General
+    'DEFAULT': 'https://duckduckgo.com/?q={}',
+    'ddg': 'https://duckduckgo.com/?q={}',
+    'wiki': 'https://en.wikipedia.org/?search={}',
+
+    # Social
+    'yt': 'https://www.youtube.com/results?search_query={}',
+    'sex': 'https://stackexchange.com/search?q={}',
+    'ghub': 'https://github.com/search?q={}',
+    'glab': 'https://gitlab.com/search?search={}',
+
+    # Commerce
+    'ebay': 'https://www.ebay.com/sch/?_nkw={}',
+    'amzn': 'https://www.amazon.com/s?k={}',
+
+    # Linux
+    'man': 'https://www.die.net/search/?q={}&sa=Search',
+
+    # Arch Linux
+    'arch': 'https://wiki.archlinux.org/?search={}',
+    'pacman': 'https://www.archlinux.org/packages/?q={}',
+    'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
+
+    # Alpine Linux
+    'apk': 'https://pkgs.alpinelinux.org/packages?name={}&branch=edge&arch=armhf',
+
+    # Void Linux
+    'void': 'https://wiki.voidlinux.org/?search={}',
+
+    # Python Docs
+    'py3': 'https://docs.python.org/3/search.html?q={}',
+    'conda': 'https://anaconda.org/search?q={}',
+    'pip': 'https://pypi.org/search/?q={}',
+    'pd': 'https://pandas.pydata.org/pandas-docs/stable/search.html?q={}',
+    'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}',
+    'pyt': 'https://pytorch.org/docs/stable/search.html?q={}',
+
+    # Rust Docs
+    'rust': 'https://doc.rust-lang.org/reference/index.html?search={}',
+    'rstd': 'https://doc.rust-lang.org/std/?search={}',
+    'cargo': 'https://crates.io/search?q={}'
+}
+
+## WINDOW
+window.hide_decoration: True
+
+## ZOOM
+zoom.default: '150%'
+
+# CUSTOM
+## KEYBINDS
+custom.keybinds: {
+    'D': 'tab-close -o',
+    'H': 'tab-prev',
+    'J': 'back',
+    'K': 'forward',
+    'L': 'tab-next',
+    'd': 'tab-close'
+}
+
+## BASE16
+custom.base16.chosen: 'gruvbox.dark_soft'
+
+### GRUVBOX - by Dawid Kurek: (https://github.com/morhetz/gruvbox)
+#### DARK SOFT
+custom.base16.schemes.gruvbox.dark_soft: {
+    'base00': "#32302f",
+    'base01': "#3c3836",
+    'base02': "#504945",
+    'base03': "#665c54",
+    'base04': "#bdae93",
+    'base05': "#d5c4a1",
+    'base06': "#ebdbb2",
+    'base07': "#fbf1c7",
+    'base08': "#fb4934",
+    'base09': "#fe8019",
+    'base0A': "#fabd2f",
+    'base0B': "#b8bb26",
+    'base0C': "#8ec07c",
+    'base0D': "#83a598",
+    'base0E': "#d3869b",
+    'base0F': "#d65d0e"
+}

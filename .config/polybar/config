@@ -1,0 +1,335 @@
+;                   __      __
+;      ____  ____  / /_  __/ /_  ____ ______
+;     / __ \/ __ \/ / / / / __ \/ __ `/ ___/
+;    / /_/ / /_/ / / /_/ / /_/ / /_/ / /
+;   / .___/\____/_/\__, /_.___/\__,_/_/
+;  /_/            /____/
+; Polybar config file.
+; Modified from WillemMe: https://github.com/WillemMe/dotFiles
+
+
+;----------------;
+; Polybar Global ;
+;----------------;
+[colors]
+background = #00000000
+background-alt = #444
+foreground = #eee
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+linecolor = #FFFFFF
+linecolorDark = #cccccc
+
+;Top bar
+[bar/main]
+
+;Location
+;---------
+monitor = ${env:MONITOR:}
+;Monitor is set in the launch.sh script because it detect second monitor;
+;Normaly you would use something like monitor=eDP-1
+
+;Size
+;---------
+width = 100%
+height = 30
+
+;Suroundings
+;--------------
+border-size = 0
+border-color = #00000000
+padding-left = 3
+padding-right = 3
+module-margin-left = 1
+module-margin-right = 1
+
+;Fonts
+;------------------
+font-0 = Hack Nerd Font:pixelsize=15;2
+font-1 = fixed:pixelsize=15;2
+font-2 = Siji:size=30;2
+font-3 = unifont:fontformat=truetype:size=12:antialias=false;2
+font-4 = Hack Nerd Font:pixelsize=20;4
+font-5 = Hack Nerd Font:pixelsize=33;6
+; Fonts are 1-indexed: use '%{T<idx>+1} to set the font
+; Use '%{T-}' for the default font
+
+;Misc
+;------------
+fixed-center = true
+line-size = 3
+modules-left =  airinfo weather ethprice
+modules-center = i3
+modules-right = nordvpn network wlan date powermenu
+tray-position = right
+tray-padding = 1
+
+;Color
+;------------
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = ${colors.linecolor}
+
+[bar/bottom]
+inherit = bar/main
+bottom=true
+modules-left = battery backlight volume
+modules-center = mpd
+modules-right = temperature tempgpu tempcpu memory cpu
+
+[bar/secondary]
+inherit = bar/main
+monitor = ${env:MONITOR:}
+; Second bar to use on second monitor
+
+
+;Misc
+;------------
+fixed-center = true
+line-size = 3
+modules-left =
+modules-center = i3
+modules-right =  date powermenu
+tray-position = right
+tray-padding = 1
+
+
+;-----------------;
+; Builtin Modules ;
+;-----------------;
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = false
+enable-scroll = false
+ws-icon-0 = 1;%{T5}1%{T-}
+ws-icon-1 = 2;%{T5}2%{T-}
+ws-icon-2 = 3;%{T5}3%{T-}
+ws-icon-3 = 4;%{T5}4%{T-}
+ws-icon-4 = 5;%{T5}5%{T-}
+ws-icon-5 = 6;%{T5}6%{T-}
+ws-icon-6 = 7;%{T5}7%{T-}
+ws-icon-7 = 8;%{T5}8%{T-}
+ws-icon-8 = 9;%{T5}9%{T-}
+label-focused = %icon%
+label-focused-foreground = ${colors.linecolor}
+label-focused-padding = 1
+label-unfocused = %icon%
+label-unfocused-foreground = ${colors.linecolorDark}
+label-unfocused-padding = 1
+label-visible = %icon%
+label-visible-foreground = ${colors.linecolorDark}
+label-visible-padding = 1
+label-separator = |
+label-separator-padding = 0.6
+
+
+[module/date]
+type = internal/date
+date = %a, %b %d %Y
+date-alt = %m-%d-%Y%
+time = %l:%M %p
+time-alt = %l:%M %p
+format = <label>
+label = %time% %date%
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+poll-interval = 10
+full-at = 99
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+format-discharging = %{T5}<ramp-capacity>%{T-} <label-discharging>
+format-full = %{T5}<ramp-capacity>%{T-} <label-full>
+format-charging =  <label-charging>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
+
+
+[module/volume]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+format-muted = %{T5} 婢 %{T-}
+ramp-volume-0 = %{T5}奄%{T-}
+ramp-volume-1 = %{T5}奔%{T-}
+ramp-volume-2 = %{T5}墳%{T-}
+;
+
+
+[module/mpd]
+type = internal/mpd
+label-offline = ﱙ mpd is offline
+format-online = <label-song> <bar-progress>
+format-offline = <label-offline>
+host = 127.0.0.1
+port = 6600
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+label-song = %title% - %artist%
+label-song-maxlen = 70
+label-song-ellipsis = true
+label-time = %elapsed% / %total%
+bar-progress-width = 20
+bar-progress-indicator =┤
+bar-progress-fill = ─
+bar-progress-empty = ╌
+interval = 1
+
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = %{T5}<ramp>%{T-} <label>
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+; Use `ls -1 /sys/class/backlight/` to list available cards
+
+
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 10
+label-connected =%{A1:$TERMINAL -e nmtui:}%{T5}直%{T-}%{A}
+label-disconnected = %{A1:$TERMINAL -e nmtui:}%{T5}睊%{T-}%{A}
+
+
+;[module/eth]
+;type = internal/network
+;interface = eth0
+;interval = 5
+;format-connected-prefix= " "
+;label-connected = %local_ip%
+
+
+[module/cpu]
+type = internal/cpu
+label =  %percentage%%
+
+
+[module/memory]
+type = internal/memory
+label =  %gb_used%
+click-left = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
+
+
+[module/network]
+type = internal/network
+interface = wlo1
+label-connected =  %downspeed% |  %upspeed%
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+label =%{T5}﨎%{T-} %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+click-left = $TERMINAL -e watch sensors
+
+
+[module/powermenu]
+type = custom/menu
+expand-right = true
+format-spacing = 1
+label-open = %{T5}襤%{T-}
+label-open-foreground = ${colors.linecolor}
+label-close = %{T5}窱%{T-} cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+menu-0-0 = logout
+menu-0-0-exec = $HOME/.local/bin/gfxtools/logoutldm
+menu-0-1 = reboot
+menu-0-1-exec = sudo -A reboot
+menu-0-2 = shutdown
+menu-0-2-exec = sudo -A shutdown -h now
+
+
+;----------------;
+; Custom Modules ;
+;----------------;
+[module/nordvpn]
+type = custom/script
+click-left = $HOME/.local/bin/polybar/nordvpn-toggle.sh
+exec = $HOME/.local/bin/polybar/nordvpn.sh
+interval = 10
+label = %{T5}%output%%{T-}
+
+
+[module/tempcpu]
+type = custom/script
+click-left = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
+exec = $HOME/.local/bin/polybar/temp-cpu.sh
+interval = 10
+label = %output%
+
+
+[module/tempgpu]
+type = custom/script
+click-left = $TERMINAL -e watch nvidia-smi
+exec = $HOME/.local/bin/polybar/temp-gpu.sh
+interval = 30
+label = %output%
+
+
+;[module/bluetooth]
+;type = custom/script
+;click-left = $HOME/.local/bin/polybar/bluetooth-toggle.sh
+;exec = $HOME/.local/bin/polybar/bluetooth.sh
+;interval = 30
+;label = %{T5}%output%%{T5}
+
+
+;[module/torrent]
+;type = custom/script
+;click-left = $TERMINAL -e transmission-remote-cli
+;exec = $HOME/.local/bin/polybar/torrent.sh
+;interval = 30
+;label = %{T5}%output%%{T5}
+
+
+[module/ethprice]
+type = custom/script
+click-left=$HOME/.local/bin/polybar/ethprice.sh
+exec=$HOME/.local/bin/polybar/ethprice.sh
+interval = 300
+label = %{T-}%{T-} %output%
+
+
+[module/airinfo]
+type = custom/script
+#click-left = $TERMINAL -e less -S
+exec = $HOME/.local/bin/polybar/airinfo.sh
+interval = 600
+label = %{T-}%{T-} %output%
+
+
+[module/weather]
+type = custom/script
+click-left = $TERMINAL -e less -S "$HOME/.local/share/weatherreport"
+exec = $HOME/.local/bin/polybar/weather.sh
+interval = 18000
+#label = %{T5}%output%%{T5}
+label = %output%
+
+
+; vim:ft=dosini

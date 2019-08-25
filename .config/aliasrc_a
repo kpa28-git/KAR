@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Useful aliases from Oh-My-Zsh
+alias gsb="git status -sb" \
+	gss="git status -s" \
+	gst="git status" \
+	gl="git pull" \
+	ga="git add" \
+	grm="git rm" \
+	gcmsg="git commit -m";
+
+# Homemade aliases
+alias c="clear" \
+	l="ls -lahN --color=auto --group-directories-first" \
+	i="htop -t" \
+	yps="yay -Ps" \
+	yys="yay -Syu"	\
+	yyf="yay -Syyu"	\
+	yls="yay -Ql" \
+	ycl="yay -Yc && paccache -r" \
+	car="conda activate" \
+	cdr="conda deactivate" \
+	cup="conda update conda pip" \
+	cua="conda update --all" \
+	ccl="conda clean --yes --all" \
+	gpp="git pull && git push origin master" \
+	lamp="ps -u $(whoami)" \
+	kamp="killall -u $(whoami)" \
+	nv="nvidia-smi" \
+	nvw="watch -n 2 nvidia-smi" \
+	lptl="sudo lsof -i -P -n | grep LISTEN" \
+	appsync="rsync -avxP" \
+	mirsync="rsync -avxP --delete" \
+	jup="jupyter notebook --ip=127.0.0.1 --port=8888";  # Need to explicitly set ip and port to use jupyter with nordvpn
+
+alias cl="ycl && ccl"; # Clear all caches
