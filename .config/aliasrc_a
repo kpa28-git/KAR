@@ -13,6 +13,7 @@ alias gsb="git status -sb" \
 alias c="clear" \
 	l="ls -lahN --color=auto --group-directories-first" \
 	i="htop -t" \
+	hg="history | grep" \
 	yps="yay -Ps" \
 	yys="yay -Syu"	\
 	yyf="yay -Syyu"	\
