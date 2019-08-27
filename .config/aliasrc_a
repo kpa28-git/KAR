@@ -14,6 +14,7 @@ alias c="clear" \
 	l="ls -lahN --color=auto --group-directories-first" \
 	i="htop -t" \
 	hg="history | grep" \
+	yg="yay -Qs | grep" \
 	yps="yay -Ps" \
 	yys="yay -Syu"	\
 	yyf="yay -Syyu"	\
