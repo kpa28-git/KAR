@@ -40,7 +40,7 @@ url.searchengines: {
 
     # Commerce
     'ebay': 'https://www.ebay.com/sch/?_nkw={}',
-    'amzn': 'https://www.amazon.com/s?k={}',
+    'az': 'https://www.amazon.com/s?k={}',
 
     # Linux
     'man': 'https://www.die.net/search/?q={}&sa=Search',
