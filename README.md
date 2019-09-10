@@ -2,7 +2,18 @@
 My hard-hitting arch linux / i3-gaps / polybar rice.
 Clone it and watch this bad boy go.
 
-## Dependies:
+* window manager: i3-gaps
+* compositor: compton
+* terminal: st
+* terminal font: mono
+* bar: polybar
+* bar icon: hack nerd font
+* text editor: neovim
+* file manager: ranger
+* browser: qutebrowser
+* base16 theme: gruvbox
+
+## Dependencies:
 
 * The latest version of [my scripts](https://github.com/kpatel28/scripts) as a git submodule dependency (built-in).
 * API Keys from [Coinmarketcap](https://coinmarketcap.com/api) and [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([Instructions](https://github.com/kpatel28/scripts/blob/master/polybar/README.md)).
