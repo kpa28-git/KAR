@@ -2,6 +2,8 @@
 My hard-hitting arch linux / i3-gaps / polybar rice.
 Clone it and watch this bad boy go.
 
+## Details:
+
 * window manager: i3-gaps
 * compositor: compton
 * terminal: st
@@ -10,6 +12,8 @@ Clone it and watch this bad boy go.
 * bar icon: hack nerd font
 * text editor: neovim
 * file manager: ranger
+* notifications: dunst
+* hotkeys: sxhkd + i3
 * browser: qutebrowser
 * base16 theme: gruvbox
 
