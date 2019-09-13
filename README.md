@@ -2,6 +2,16 @@
 My hard-hitting arch linux / i3-gaps / polybar rice.
 Clone it and watch this bad boy go.
 
+## TODO:
+* replace dmenu with rofi
+	* rofi buku+qutebrowser integration
+* test out leftwm as wm
+* cleanup and remove unused luke scripts
+* look into a faster file manager
+	* cfiles
+	* forked nnn
+	* lf
+
 ## Details:
 
 * window manager: i3-gaps
@@ -13,6 +23,9 @@ Clone it and watch this bad boy go.
 * text editor: neovim
 * file manager: ranger
 * notifications: dunst
+* menu/launcher: dmenu
+* music: ncmpcpp+mpd
+* video: mpv
 * hotkeys: sxhkd + i3
 * browser: qutebrowser
 * base16 theme: gruvbox
