@@ -17,6 +17,7 @@
 !/polybar/**
 !/qutebrowser/**
 !/ranger/**
+!/redshift/**
 !/sxhkd/**
 !/tmux/**
 !/xonsh/**
