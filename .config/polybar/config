@@ -327,7 +327,7 @@ label = %{T-}%{T-} %output%
 type = custom/script
 click-left = $TERMINAL -e less -S "$HOME/.local/share/weatherreport"
 exec = $HOME/.local/bin/polybar/weather.sh
-interval = 18000
+interval = 14400
 #label = %{T5}%output%%{T5}
 label = %output%
 
