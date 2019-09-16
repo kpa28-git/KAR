@@ -53,7 +53,7 @@ super + shift + g
 
 # Et cetera...
 super + grave
-	dmenuunicode
+	runicode
 super + Scroll_Lock
 	killall screenkey || screenkey
 super + Insert
