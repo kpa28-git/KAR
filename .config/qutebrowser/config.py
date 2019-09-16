@@ -7,7 +7,7 @@ def qb_config():
 	Top level config function.
 	Set options from config.yml, find defaults in defaults.py (:config-write-py -d defaults.py to refresh).
 
-	Uses the Base16 color scheme format, schemes can be loaded from .Xresources or config.yml files via 'custom.base16.chosen' option,
+	Base16 schemes are loaded from .Xresources or a base16 yaml file via the 'custom.base16.file' option,
 	uses the default qutebrowser color scheme if this option is null or empty.
 	"""
 	with (config.configdir / 'config.yml').open() as f:
@@ -23,19 +23,15 @@ def qb_config():
 			config.bind(key, action)
 
 		## BASE16
-		chosen = yaml_data['custom.base16.chosen']
+		chosen = yaml_data['custom.base16.file']
 		if (chosen):
-			if (chosen == '.Xresources'):
+			if ('.Xresources' in chosen):
 				xpfx = '*.'
-				xcolors = dict(filter(lambda i: 'color' in i[0], read_xresources(xpfx).items()))
-				colors = {'base0{}'.format(hex(int(k.strip(xpfx+'color')))[2:].upper()): v for k, v in xcolors.items()}
+				base16 = dict(filter(lambda i: 'color' in i[0], read_xresources(xpfx).items()))
 			else:
-				scheme = 'custom.base16.schemes.{}'.format(chosen)
-				if (scheme not in yaml_data):
-					raise ValueError("'{}' base16 scheme not defined in config.yml".format(chosen))
-				else:
-					colors = yaml_data[scheme]
-			qb_config_base16_load(colors)
+				with open(chosen) as base16_file:
+					base16 = yaml.safe_load(base16_file)
+			qb_config_base16_load({k:'#'+v for k,v in base16.items()})
 
 def read_xresources(prefix):
 	"""

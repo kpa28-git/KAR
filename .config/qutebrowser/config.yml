@@ -87,26 +87,5 @@ custom.keybinds: {
     'd': 'tab-close'
 }
 
-## BASE16
-custom.base16.chosen: 'gruvbox.dark_soft'
-
-### GRUVBOX - by Dawid Kurek: (https://github.com/morhetz/gruvbox)
-#### DARK SOFT
-custom.base16.schemes.gruvbox.dark_soft: {
-    'base00': "#32302f",
-    'base01': "#3c3836",
-    'base02': "#504945",
-    'base03': "#665c54",
-    'base04': "#bdae93",
-    'base05': "#d5c4a1",
-    'base06': "#ebdbb2",
-    'base07': "#fbf1c7",
-    'base08': "#fb4934",
-    'base09': "#fe8019",
-    'base0A': "#fabd2f",
-    'base0B': "#b8bb26",
-    'base0C': "#8ec07c",
-    'base0D': "#83a598",
-    'base0E': "#d3869b",
-    'base0F': "#d65d0e"
-}
+## Base16 Scheme - can be .Xresources or a base16 yaml file
+custom.base16.file: '/home/kev/.local/share/themes/base16/base16-gruvbox-scheme/gruvbox-dark-soft.yaml'
