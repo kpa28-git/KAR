@@ -1,3 +1,6 @@
 [submodule ".local/bin"]
 	path = .local/bin
 	url = git@github.com:kpatel28/scripts.git
+[submodule ".local/share/themes"]
+	path = .local/share/themes
+	url = git@github.com:kpatel28/themes.git
