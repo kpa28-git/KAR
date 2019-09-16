@@ -18,6 +18,7 @@
 !/qutebrowser/**
 !/ranger/**
 !/redshift/**
+!/rofi/**
 !/sxhkd/**
 !/tmux/**
 !/xonsh/**

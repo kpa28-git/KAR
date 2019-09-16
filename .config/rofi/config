@@ -1,0 +1,13 @@
+!                              _/_/  _/
+!     _/  _/_/    _/_/      _/
+!    _/_/      _/    _/  _/_/_/_/  _/
+!   _/        _/    _/    _/      _/
+!  _/          _/_/      _/      _/
+! rofi config file.
+
+rofi.modi: window,run,ssh,drun
+rofi.lines: 3
+rofi.location: 2
+rofi.xoffset: 0
+rofi.yoffset: 270
+rofi.opacity: 0.80

@@ -3,6 +3,7 @@ My hard-hitting arch linux / i3-gaps / polybar rice.
 Clone it and watch this bad boy go.
 
 ## TODO:
+* Get global theming settings from my directory of base16 files
 * replace dmenu with rofi
 	* rofi buku+qutebrowser integration
 * test out leftwm as wm
@@ -17,13 +18,13 @@ Clone it and watch this bad boy go.
 * window manager: i3-gaps
 * compositor: compton
 * terminal: st
-* terminal font: mono
+* terminal font: monospace
 * bar: polybar
 * bar icon: hack nerd font
 * text editor: neovim
 * file manager: ranger
 * notifications: dunst
-* menu/launcher: dmenu
+* launcher: rofi
 * music: ncmpcpp+mpd
 * video: mpv
 * hotkeys: sxhkd + i3

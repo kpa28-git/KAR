@@ -8,9 +8,15 @@
 # Basic binds
 super + Return
 	$TERMINAL
-super + d
-	dmenu_run
 super + r
+	rofi -show run
+super + w
+	rofi -show window
+super + s
+	rofi -show ssh
+super + d
+	rofi -show drun
+super + f
 	$TERMINAL -e $FILE
 #super + e
 #	$TERMINAL -e neomutt
@@ -143,10 +149,10 @@ super + F8
 	mailsync
 # Mount a USB drive or Android device
 super + F9
-	dmenumount
+	rmount
 # Unmount a USB drive or Android device
 super + F10
-	dmenuumount
+	rumount
 # Search with Duckduckgo
 super + F11
 	ducksearch
