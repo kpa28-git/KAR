@@ -4,8 +4,14 @@ Clone it and watch this bad boy go.
 
 ## TODO
 * Set global theming from my directory of base16 files
+	* Choose a theme from a rofi prompt and set base16 for:
+		* Xresources (needs fixing)
+		* qutebrowser
 * replace dmenu with rofi
-	* rofi buku+qutebrowser integration
+	* ~~rofi+buku+qutebrowser integration~~
+		* rbuku -r (remove) disabled for now - qutebrowser adds an item which screws up indexing
+		* can still delete with rofi by launching from the terminal via `rbuku -r`
+	* ~~drive mounting/unmounting~~
 * test out leftwm as wm
 * cleanup and remove unused luke scripts
 * look into a faster file manager
