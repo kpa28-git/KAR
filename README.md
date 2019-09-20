@@ -44,18 +44,23 @@ Clone it and watch this bad boy go.
 ### Hotkeys that make sense
 * Terminal
 	* Spawn `$TERMINAL` at `$HOME`: mod+enter
-	* Spawn `$TERMINAL` in same directory as focused window: mod+shift+enter
+	* Spawn `$TERMINAL` in directory of focused window: mod+shift+enter
+	* rofi ssh: mod+shift+s(sh)
 * Exiting/closing
 	* Close a window (`kill`): mod+q(uit)
 	* Close a window (`kill -9`): mod+shift+q(uit)
-	* Exit i3: mod+shift+escape
+	* lock: mod+x
+	* logout i3: mod+shift+y
+	* shutdown: mod+shift+x
+	* reboot: mod+shift+backspace
 * Focus movement hotkeys
+	* rofi window switch: mod+w(indow)
 	* window focus movement: mod+{h|j|k|l}
 	* floating/non-floating focus movement: mod+space
 	* workplace focus movment: mod+{0-9}
 	* workspace focus toggling: mod+{tab|backslash}
 	* rofi workspace switching: mod+w(indow)
-* Most hotkeys having to do with i3/wm alteration include a shift:
+* Hotkeys having to do with i3/wm alteration include a shift:
 	* window shifting: mod+shift+{h|j|k|l}
 	* window hjkl resizing: mod+shift+{y|u|i|o}
 	* window script resizing: mod+shift+r
@@ -63,17 +68,17 @@ Clone it and watch this bad boy go.
 	* send window to workspace: mod+shift+{0-9}
 	* window spawn vertical/horizontal: mod+shift+{apostrophe|slash}
 	* toggle vertical/horizontal window spawn: mod+shift+t(oggle)
-	* toggle sticky: mod+shift+s(ticky)
+	* toggle sticky: mod+shift+g(lue)
 	* toggle full screen: mod+shift+f(ull screen)
-* Most lowercase non-focus-movement commands launch programs:
+* Lowercase non-focus-movement commands launch programs:
+	* floating xonsh: mod+c(alculator)
 	* spawn `$FILE` manager: mod+f(ile manager)
-	* spawn `$BROWSER`: mod+b(rowswer)
+	* spawn `$BROWSER`: mod+b(rowser)
+	* qutebrowser search: mod+s(earch)
+	* qutebrowser buku bookmarks: mod+g(o to bookmark)
 	* ncmpcpp (music): mod+m(usic)
 	* pulsemixer (audio): mod+a(udio)
 	* htop: mod+i(nfo)
-	* floating xonsh: mod+c(alculator)
-	* rofi window switch: mod+w(indow)
-	* rofi ssh: mod+s(sh)
 	* rofi dekstop run: mod+d(esktop)
 	* rofi run: mod+r(un)
 * For i3 hotkeys see `~/.config/i3/config`

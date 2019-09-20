@@ -43,10 +43,8 @@ for_window [instance="dropdown_*"] move position center
 
 
 # PROGRAMS:
-# Terminal at $HOME
+# Terminal at $HOME or directory of focused window
 bindsym $mod+Return		exec --no-startup-id $term
-
-# Terminal at directory of focused window
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 # Floating
@@ -57,7 +55,6 @@ bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
 # Exiting/Closing
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
-bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
 
 
 # MOVEMENT:
@@ -153,7 +150,7 @@ bindsym $mod+Shift+slash		split vertical ;; exec $term
 bindsym $mod+Shift+t		split toggle
 
 # Toggle sticky
-bindsym $mod+Shift+s		sticky toggle
+bindsym $mod+Shift+g		sticky toggle
 
 # Toggle full screen
 bindsym $mod+Shift+f		fullscreen toggle

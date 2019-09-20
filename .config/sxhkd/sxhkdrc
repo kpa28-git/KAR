@@ -4,6 +4,11 @@
 #   (__  )>  </ / / / ,< / /_/ /
 #  /____/_/|_/_/ /_/_/|_|\__,_/
 # sexy hotkey daemon runtime config.
+#
+# Unbound hotkeys:
+#     e n z
+# A C E   Z
+# Insert Scroll_Lock XF86Launch1
 
 # PROGRAMS:
 # rofi
@@ -11,7 +16,7 @@ super + r
 	rofi -show run
 super +  w
 	rofi -show window
-super + s
+super + shift + s
 	rofi -show ssh
 super + d
 	rofi -show drun
@@ -21,6 +26,10 @@ super + f
 # web browser
 super + b
 	$BROWSER
+super + s
+	"$HOME"/.local/bin/uitools/qb-open -s
+super + g
+	"$HOME"/.local/bin/uitools/qb-open -b
 # music
 super + m
 	$TERMINAL -e ncmpcpp
@@ -34,25 +43,14 @@ super + i
 super + t
 	$TERMINAL -e tremc
 
-#super + e
-#super + y
-#super + z
-#super + n
-#super + Insert
-#super + Scroll_Lock
-
-#super + shift + a
-#super + shift + c
-#super + shift + e
-#super + shift + r
-#super + shift + g
-#XF86Launch1
-#	xset dpms force off
 
 # SCRIPTS:
 # lock
 super + x
 	mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
+# logout
+super + y
+	prompt "Exit i3?" "i3-msg exit"
 # shutdown
 super + shift + x
 	prompt "Shutdown computer?" "sudo -A shutdown -h now"
