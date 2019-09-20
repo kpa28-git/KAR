@@ -33,19 +33,23 @@ super + i
 # torrent frontend
 super + t
 	$TERMINAL -e tremc
+
 #super + e
 #super + y
 #super + z
 #super + n
+#super + Insert
+#super + Scroll_Lock
 
 #super + shift + a
 #super + shift + c
 #super + shift + e
 #super + shift + r
 #super + shift + g
+#XF86Launch1
+#	xset dpms force off
 
-
-# EXITING:
+# SCRIPTS:
 # lock
 super + x
 	mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
@@ -55,69 +59,72 @@ super + shift + x
 # reboot
 super + shift + BackSpace
 	prompt "Reboot computer?" "sudo -A reboot"
-
-
-# SCRIPTS:
+# show clipboard
+super + shift + v
+	show-clipboard
+# choose emoji
 super + grave
 	runicode
-super + Scroll_Lock
-	killall screenkey || screenkey
-#super + Insert
-XF86Launch1
-	xset dpms force off
-
-# Recording
-# Take screenshot
+# take screenshot
 Print
-	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
-# Pick screenshot type
+	maim pic-full-$("$HOME/Pictures/"date '+%y%m%d-%H%M-%S').png
+# pick screenshot type
 shift + Print
 	maimpick
-# Record audio or video
+# record audio or video
 #super + Print
 #	dmenurecord
 # kill active recording
 #super + Delete
 #	dmenurecord kill
 
-# Mute audio
+
+# AUDIO CONTROL:
+# mute audio
 super + shift + m
 	lmc mute
-# Pause audio
+XF86AudioMute
+	lmc mute
+# pause audio
 super + {_,shift +} p
 	lmc {toggle,pause}
-# Changes to next/previous tracks
-super + {comma,period}
-	lmc {prev,next}
-# Restart track
-super + shift + less
-	lmc replay
-# Increase volume
-super + {equal,plus}
-	lmc up {5,15}
-# Decrease volume
-super {_,shift +} + minus
-	lmc down {5,15}
-# Seek foward in song
-super + {_,shift +} bracketright
-	lmc forward {10,120}
-# Seek backward in song
-super + {_,shift +} bracketleft
-	lmc back {10,120}
-XF86AudioNext
-	lmc next
 XF86AudioPlay
 	lmc toggle
-XF86AudioPrev
-	lmc prev
 XF86AudioStop
 	lmc toggle
-XF86AudioRewind
-	lmc back 10
+# changes to next/previous tracks
+super + {comma,period}
+	lmc {prev,next}
+XF86AudioPrev
+	lmc prev
+XF86AudioNext
+	lmc next
+# restart track
+super + shift + less
+	lmc replay
+# increase volume
+super + {equal,plus}
+	lmc up {5,15}
+XF86AudioRaiseVolume
+	lmc up 10
+# decrease volume
+super {_,shift +} + minus
+	lmc down {5,15}
+XF86AudioLowerVolume
+	lmc down 10
+# seek foward in song
+super + {_,shift +} bracketright
+	lmc forward {10,120}
 XF86AudioForward
 	lmc forward 10
+# seek backward in song
+super + {_,shift +} bracketleft
+	lmc back {10,120}
+XF86AudioRewind
+	lmc back 10
 
-# Brightness
+
+# BRIGHTNESS CONTROL:
 XF86MonBrightnessDown
 	light -U 15
 XF86MonBrightnessUp
