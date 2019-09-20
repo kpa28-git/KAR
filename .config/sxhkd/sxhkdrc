@@ -33,9 +33,12 @@ super + i
 # torrent frontend
 super + t
 	$TERMINAL -e tremc
+#super + e
 #super + y
+#super + z
+#super + n
+
 #super + shift + a
-#super + shift + c
 #super + shift + c
 #super + shift + e
 #super + shift + r

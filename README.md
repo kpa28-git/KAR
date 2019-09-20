@@ -30,7 +30,7 @@ Clone it and watch this bad boy go.
 	* see config.yml `## URL`
 * More sensible tab movement
 	* H and L move left and right through tabs
-	* J and K move up and through selected tab's history
+	* J and K move up and down through selected tab's history
 	* h/j/k/l still scroll up/down/left/right through the selected tab
 	* see config.yml `## KEYBINDS`
 * Set base16 theming easily
