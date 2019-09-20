@@ -6,8 +6,9 @@
 # sexy hotkey daemon runtime config.
 #
 # Unbound hotkeys:
-#     e z
-# A C E Z
+# 1st row: W  E  o  P
+# 2nd row: A  D
+# 3rd row: zZ C  n
 # Insert Scroll_Lock XF86Launch1
 
 # PROGRAMS:
@@ -45,8 +46,8 @@ super + t
 
 
 # SCRIPTS:
-# search a(n)d edit
-super + n
+# search and edit
+super + e
 	$TERMINAL -e se
 # lock
 super + x
