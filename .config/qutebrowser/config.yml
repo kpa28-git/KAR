@@ -10,8 +10,8 @@ aliases: {
     "w": "session-save", "q": "close", "qa": "quit", "wq": "quit --save", "wqa": "quit --save",
 
     # rbuku aliases:
+    "b": "spawn --userscript qb-rbuku -s",
     "ba": "spawn --userscript qb-rbuku -a",
-    "bs": "spawn --userscript qb-rbuku -s",
     "br": "spawn --userscript qb-rbuku -r"
 }
 

@@ -9,7 +9,7 @@ RBUKU="$HOME/.local/bin/uitools/rbuku";
 while getopts "asr" arg; do
 	case $arg in
 		a) $RBUKU -a "$QUTE_URL";;
-		s) echo "open -t $($RBUKU)" >> "$QUTE_FIFO";;
+		s) echo "open -t $($RBUKU -s)" >> "$QUTE_FIFO";;
 		r) notify-send "qb-rbuku" "rbuku -r disabled until we're sure it's safe";;# $RBUKU -r;;
 		*) notify-send "qb-rbuku" "invalid flag";;
 	esac;
