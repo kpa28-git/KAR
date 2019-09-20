@@ -6,8 +6,8 @@
 # sexy hotkey daemon runtime config.
 #
 # Unbound hotkeys:
-#     e n z
-# A C E   Z
+#     e z
+# A C E Z
 # Insert Scroll_Lock XF86Launch1
 
 # PROGRAMS:
@@ -45,6 +45,9 @@ super + t
 
 
 # SCRIPTS:
+# search a(n)d edit
+super + n
+	$TERMINAL -e se
 # lock
 super + x
 	mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
