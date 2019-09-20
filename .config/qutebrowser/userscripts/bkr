@@ -1,4 +1,0 @@
-#!/bin/sh
-# Launch the rbuku removal prompt.
-
-#"$HOME"/.local/bin/uitools/rbuku -r;

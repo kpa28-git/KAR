@@ -1,4 +1,0 @@
-#!/bin/sh
-# Launch the rbuku add prompt for the current or hinted url.
-
-"$HOME"/.local/bin/uitools/rbuku -a "$QUTE_URL";

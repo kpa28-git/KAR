@@ -4,6 +4,17 @@ backend: 'webengine'
 auto_save.session: True
 confirm_quit: ['downloads']
 
+## ALIASES
+aliases: {
+    # default aliases:
+    "w": "session-save", "q": "close", "qa": "quit", "wq": "quit --save", "wqa": "quit --save",
+
+    # rbuku aliases:
+    "ba": "spawn --userscript qb-rbuku -a",
+    "bs": "spawn --userscript qb-rbuku -s",
+    "br": "spawn --userscript qb-rbuku -r"
+}
+
 ## CONTENT
 content.autoplay: False
 content.dns_prefetch: False

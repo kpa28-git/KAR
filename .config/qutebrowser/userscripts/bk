@@ -1,5 +1,0 @@
-#!/bin/sh
-# Launch the rbuku select prompt and opens a new tab to the selected bookmark.
-
-SEL=$("$HOME"/.local/bin/uitools/rbuku -s);
-echo "open -t $SEL" >> "$QUTE_FIFO";
