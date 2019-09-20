@@ -17,6 +17,6 @@ unclutter &		# Remove mouse when idle
 compton --config "$HOME/.config/compton/compton.conf" &	# compton for transparency and to reduce tearing
 dunst &			# dunst for notifications
 mpdupdate &
-redshift -l "$(geoloc | tr ',' ':')" &
+redshift -l "$("$HOME/.local/bin/tools/geoloc" | tr ',' ':')" &
 
 exec i3

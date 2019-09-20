@@ -5,65 +5,61 @@
 #  /____/_/|_/_/ /_/_/|_|\__,_/
 # sexy hotkey daemon runtime config.
 
-# Basic binds
-super + Return
-	$TERMINAL
+# PROGRAMS:
+# rofi
 super + r
 	rofi -show run
-super + w
+super +  w
 	rofi -show window
 super + s
 	rofi -show ssh
 super + d
 	rofi -show drun
+# file manager
 super + f
 	$TERMINAL -e $FILE
-#super + e
-#	$TERMINAL -e neomutt
+# web browser
+super + b
+	$BROWSER
+# music
 super + m
 	$TERMINAL -e ncmpcpp
-#super + n
-#	$TERMINAL -e newsboat
-super + i
-	$TERMINAL -e htop
+# audio
 super + a
 	$TERMINAL -e pulsemixer
-super + y
-	$TERMINAL -e calcurse
-#super + shift + a
-#	$TERMINAL -e pulsemixer
-#super + shift + c
-#	camtoggle
-super + shift + c
-	$TERMINAL cht.sh --shell
-#super + shift + e
-#	tutorialvids
-super + shift + e
-	$TERMINAL -e neomutt
-#super + w
-#	webby | xargs -r $BROWSER
-super + shift + w
-	$BROWSER
-super + shift + r
-	$TERMINAL -e newsboat
-super + shift + t
+# htop
+super + i
+	$TERMINAL -e htop
+# torrent frontend
+super + t
 	$TERMINAL -e tremc
-super + shift + g
-	gimp
+#super + y
+#super + shift + a
+#super + shift + c
+#super + shift + c
+#super + shift + e
+#super + shift + r
+#super + shift + g
 
-# Et cetera...
+
+# EXITING:
+# lock
+super + x
+	mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
+# shutdown
+super + shift + x
+	prompt "Shutdown computer?" "sudo -A shutdown -h now"
+# reboot
+super + shift + BackSpace
+	prompt "Reboot computer?" "sudo -A reboot"
+
+
+# SCRIPTS:
 super + grave
 	runicode
 super + Scroll_Lock
 	killall screenkey || screenkey
-super + Insert
-	showclip
-super + shift + x
-	prompt "Shutdown computer?" "sudo -A shutdown -h now"
-super + shift + BackSpace
-	prompt "Reboot computer?" "sudo -A reboot"
-super + x
-	mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
+#super + Insert
 XF86Launch1
 	xset dpms force off
 
@@ -124,11 +120,10 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	light -A 15
 
-# Function keys
-# Show readme
-super + F1
-	groff -mom $HOME/.local/share/larbs/readme.mom -Tpdf | zathura -
-# F2 is restart in i3 right now.
+
+# FUNCTION KEYS:
+# super + F1
+# super + F2
 # Change display
 super + F3
 	displayselect
@@ -138,26 +133,19 @@ super + F4
 # Restart/rescan wifi/eth networks
 super + F5
 	sudo -A systemctl restart NetworkManager
-# Start torrent daemon/open interface
-super + F6
-	torwrap
+# super + F6
 # toggle torrent daemon
 super + F7
 	td-togggle
-# sync email
-super + F8
-	mailsync
+# super + F8
 # Mount a USB drive or Android device
 super + F9
 	rmount
 # Unmount a USB drive or Android device
 super + F10
 	rumount
-# Search with Duckduckgo
-super + F11
-	ducksearch
+# super + F11
 # Network Manager interface
 super + F12
 	$TERMINAL -e sudo -A nmtui
-
 
