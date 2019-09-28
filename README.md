@@ -94,7 +94,14 @@ Clone it and watch this bad boy go.
 		* rbuku -r (remove) disabled for now - qutebrowser adds an item which screws up indexing
 		* can still delete with rofi by launching from the terminal via `rbuku -r`
 	* ~~drive mounting/unmounting~~
-* test out leftwm as wm
+* clean up home directory (move dotfiles elsewhere?)
+* try out other login shells
+	* zsh
+	* tcsh
+	* ksh
+* test out other window managers
+	* leftwm
+	* xmonad
 * cleanup and remove unused luke scripts
 * look into a faster file manager
 	* cfiles
