@@ -19,7 +19,7 @@ Clone it and watch this bad boy go.
 	* Easier to version control and no need to modify a giant config.py
 * qutebrowser+rofi+buku integration to manage bookmarks
 	* standard qutebrowser bookmark management sucks
-	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitoools/rbuku`)
+	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitools/rbuku`)
 	* :b  -> search and go to bookmark
 	* :ba -> add current or hinted url as bookmark
 	* :br -> remove one or more bookmarks (currently disabled)
