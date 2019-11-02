@@ -2,12 +2,13 @@
 My hard-hitting arch linux / i3-gaps / polybar rice.
 Clone it and watch this bad boy go.
 
-![alt text](.config/rice-screen.png?raw=true)
+![alt text](.local/share/rice-screen.png?raw=true)
 
 ## Features
 * I tried to make all my scripts POSIX compliant where possible. I'm a beginner when it comes to POSIX scripting - let me know if you have problems on your platform or you see something that is definately not POSIX compliant.
 
 ### Polybar
+![alt text](.local/share/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
 * A minimalist but high information HUD like statusbar
 * World Air Quality info in top left
 	* my geoloc script (`~/.local/bin/tools/geoloc`) lets it work through a vpn (manual location setting)
@@ -17,14 +18,17 @@ Clone it and watch this bad boy go.
 * See my `~/.config/polybar/config`
 
 ### Qutebrowser
+![alt text](.local/share/rice-qb.qif?raw=true "rofi+buku+qutebrowser integration")
 * Text file configuration at: ~/.config/qutebrowser/config.yml
 	* Easier to version control and no need to modify a giant config.py
-* qutebrowser+rofi+buku integration to manage bookmarks
+* rofi+buku+qutebrowser integration to manage bookmarks
 	* standard qutebrowser bookmark management sucks
-	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitools/rbuku`)
-	* :b / mod+g(o) -> go to a bookmark
-	* :ba -> add current or hinted url as a bookmark
-	* :br -> remove one or more bookmarks (disabled by default)
+	* my rbuku script uses the powerful and browser agnostic [buku](https://github.com/jarun/Buku) to manage bookmarks with a [rofi](https://github.com/davatorium/rofi) interface
+		- rbuku will work with any browser as long as it has a commandline interface to launch it; I use qutebrowser
+	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitools/rbuku`) to enable in-browser launching
+		- :b / mod+g(o) -> go to a bookmark
+		- :ba -> add current or hinted url as a bookmark
+		- :br -> remove one or more bookmarks (disabled by default)
 	* see config.yml `## ALIASES`
 * A lot of search engine additions
 	* youtube, ebay, arch wiki, various package manager and documentation search engines
@@ -34,7 +38,7 @@ Clone it and watch this bad boy go.
 * More sensible tab movement
 	* H and L move left and right through tabs
 	* J and K move up and down through selected tab's history
-	* h/j/k/l still scroll up/down/left/right through the selected tab
+	* h/j/k/l still scroll up/down/left/right in the selected tab
 	* see config.yml `## KEYBINDS`
 * Set base16 theming easily
 	* Set `custom.base16.file` in config.yml to any base16 yaml file
@@ -74,6 +78,7 @@ Clone it and watch this bad boy go.
 	* toggle sticky: mod+shift+g(lue)
 	* toggle full screen: mod+shift+f(ull screen)
 * Lowercase non-focus-movement commands launch programs:
+![alt text](.local/share/rice-xonsh-calc.qif?raw=true "xonsh scratchpad calculator")
 	* floating xonsh: mod+c(alculator)
 	* spawn `$FILE` manager: mod+f(ile manager)
 	* spawn `$BROWSER`: mod+b(rowser)
