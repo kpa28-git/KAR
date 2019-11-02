@@ -2,13 +2,13 @@
 My hard-hitting arch linux / i3-gaps / polybar rice.
 Clone it and watch this bad boy go.
 
-![alt text](\.local/share/rice-screen.png?raw=true)
+![alt text](.local/share/rice/rice-screen.png?raw=true)
 
 ## Features
 * I tried to make all my scripts POSIX compliant where possible. I'm a beginner when it comes to POSIX scripting - let me know if you have problems on your platform or you see something that is definately not POSIX compliant.
 
 ### Polybar
-![alt text](./.local/share/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
+![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
 * A minimalist but high information HUD like statusbar
 * World Air Quality info in top left
 	* my geoloc script (`~/.local/bin/tools/geoloc`) lets it work through a vpn (manual location setting)
@@ -18,7 +18,7 @@ Clone it and watch this bad boy go.
 * See my `~/.config/polybar/config`
 
 ### Qutebrowser
-![alt text](./.local/share/rice-qb.qif?raw=true "rofi+buku+qutebrowser integration")
+![alt text](.local/share/rice/rice-qb.qif?raw=true "rofi+buku+qutebrowser integration")
 * Text file configuration at: ~/.config/qutebrowser/config.yml
 	* Easier to version control and no need to modify a giant config.py
 * rofi+buku+qutebrowser integration to manage bookmarks
@@ -78,7 +78,7 @@ Clone it and watch this bad boy go.
 	* toggle sticky: mod+shift+g(lue)
 	* toggle full screen: mod+shift+f(ull screen)
 * Lowercase non-focus-movement commands launch programs:
-![alt text](./.local/share/rice-xonsh-calc.qif?raw=true "xonsh scratchpad calculator")
+![alt text](.local/share/rice/rice-xonsh-calc.qif?raw=true "xonsh scratchpad calculator")
 	* floating xonsh: mod+c(alculator)
 	* spawn `$FILE` manager: mod+f(ile manager)
 	* spawn `$BROWSER`: mod+b(rowser)
