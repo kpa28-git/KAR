@@ -2,7 +2,7 @@
 My hard-hitting arch linux / i3-gaps / polybar rice.
 Clone it and watch this bad boy go.
 
-![alt text](./.local/share/rice-screen.png?raw=true)
+![alt text](\.local/share/rice-screen.png?raw=true)
 
 ## Features
 * I tried to make all my scripts POSIX compliant where possible. I'm a beginner when it comes to POSIX scripting - let me know if you have problems on your platform or you see something that is definately not POSIX compliant.
