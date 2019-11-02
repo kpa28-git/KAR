@@ -28,6 +28,7 @@ alias c="clear" \
 	gpp="git pull && git push origin master" \
 	lamp="ps -u $(whoami)" \
 	kamp="killall -u $(whoami)" \
+	lsff="fc-list : family" \
 	nv="nvidia-smi" \
 	nvw="watch -n 2 nvidia-smi" \
 	lptl="sudo lsof -i -P -n | grep LISTEN" \
