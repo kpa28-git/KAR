@@ -2,6 +2,8 @@
 My hard-hitting arch linux / i3-gaps / polybar rice.
 Clone it and watch this bad boy go.
 
+![alt text](.config/rice-screen.png?raw=true)
+
 ## Features
 * I tried to make all my scripts POSIX compliant where possible. I'm a beginner when it comes to POSIX scripting - let me know if you have problems on your platform or you see something that is definately not POSIX compliant.
 
@@ -20,13 +22,14 @@ Clone it and watch this bad boy go.
 * qutebrowser+rofi+buku integration to manage bookmarks
 	* standard qutebrowser bookmark management sucks
 	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitools/rbuku`)
-	* :b  -> search and go to bookmark
-	* :ba -> add current or hinted url as bookmark
-	* :br -> remove one or more bookmarks (currently disabled)
+	* :b / mod+g(o) -> go to a bookmark
+	* :ba -> add current or hinted url as a bookmark
+	* :br -> remove one or more bookmarks (disabled by default)
 	* see config.yml `## ALIASES`
 * A lot of search engine additions
-	* youtube, ebay, arch wiki, various package manager lists
+	* youtube, ebay, arch wiki, various package manager and documentation search engines
 	* :yt <search> -> search youtube for a video
+	* mod+s(earch) -> open up rofi search engine prompt - go directly from the desktop to a search engine search (one step vs three steps)
 	* see config.yml `## URL`
 * More sensible tab movement
 	* H and L move left and right through tabs
