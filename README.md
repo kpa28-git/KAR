@@ -17,37 +17,6 @@ Clone it and watch this bad boy go.
 * Ethereum price (can be easily changed to any crypto tracked by coinmarketcap)
 * See my `~/.config/polybar/config`
 
-### Qutebrowser
-![rofi+buku+qutebrowser integration](.local/share/rice/rice-qb.gif)
-* Text file configuration at: ~/.config/qutebrowser/config.yml
-	* Easier to version control and no need to modify a giant config.py
-* rofi+buku+qutebrowser integration to manage bookmarks
-	* standard qutebrowser bookmark management sucks
-	* my rbuku script uses the powerful and browser agnostic [buku](https://github.com/jarun/Buku) to manage bookmarks with a [rofi](https://github.com/davatorium/rofi) interface
-		- rbuku will work with any browser as long as it has a commandline interface to launch it; I use qutebrowser
-	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitools/rbuku`) to enable in-browser launching
-		- :b / mod+g(o) -> go to a bookmark
-		- :ba -> add current or hinted url as a bookmark
-		- :br -> remove one or more bookmarks (disabled by default)
-	* see config.yml `## ALIASES`
-* A lot of search engine additions
-	* youtube, ebay, arch wiki, various package manager and documentation search engines
-	* :yt <search> -> search youtube for a video
-	* mod+s(earch) -> open up rofi search engine prompt - go directly from the desktop to a search engine search (one step vs three steps)
-	* see config.yml `## URL`
-* More sensible tab movement
-	* H and L move left and right through tabs
-	* J and K move up and down through selected tab's history
-	* h/j/k/l still scroll up/down/left/right in the selected tab
-	* see config.yml `## KEYBINDS`
-* Set base16 theming easily
-	* Set `custom.base16.file` in config.yml to any base16 yaml file
-
-### Redshift
-* redshift starts at boot
-* my geoloc script (`~/.local/bin/tools/geoloc`) lets it work through a vpn (manual location setting)
-* redshift config at `~/.config/redshift/redshift.conf`
-
 ### Hotkeys that make sense
 * Terminal
 	* Spawn `$TERMINAL` at `$HOME`: mod+enter
@@ -91,6 +60,37 @@ Clone it and watch this bad boy go.
 	* rofi run: mod+r(un)
 * For i3 hotkeys see `~/.config/i3/config`
 * For other hotkeys see `~/.config/sxhkd/sxhkdrc`
+
+### Qutebrowser
+![rofi+buku+qutebrowser integration](.local/share/rice/rice-qb.gif)
+* Text file configuration at: ~/.config/qutebrowser/config.yml
+	* Easier to version control and no need to modify a giant config.py
+* rofi+buku+qutebrowser integration to manage bookmarks
+	* standard qutebrowser bookmark management sucks
+	* my rbuku script uses the powerful and browser agnostic [buku](https://github.com/jarun/Buku) to manage bookmarks with a [rofi](https://github.com/davatorium/rofi) interface
+		- rbuku will work with any browser as long as it has a commandline interface to launch it; I use qutebrowser
+	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitools/rbuku`) to enable in-browser launching
+		- :b / mod+g(o) -> go to a bookmark
+		- :ba -> add current or hinted url as a bookmark
+		- :br -> remove one or more bookmarks (disabled by default)
+	* see config.yml `## ALIASES`
+* A lot of search engine additions
+	* youtube, ebay, arch wiki, various package manager and documentation search engines
+	* :yt <search> -> search youtube for a video
+	* mod+s(earch) -> open up rofi search engine prompt - go directly from the desktop to a search engine search (one step vs three steps)
+	* see config.yml `## URL`
+* More sensible tab movement
+	* H and L move left and right through tabs
+	* J and K move up and down through selected tab's history
+	* h/j/k/l still scroll up/down/left/right in the selected tab
+	* see config.yml `## KEYBINDS`
+* Set base16 theming easily
+	* Set `custom.base16.file` in config.yml to any base16 yaml file
+
+### Redshift
+* redshift starts at boot
+* my geoloc script (`~/.local/bin/tools/geoloc`) lets it work through a vpn (manual location setting)
+* redshift config at `~/.config/redshift/redshift.conf`
 
 ## TODO
 * Set global theming from my directory of base16 files
