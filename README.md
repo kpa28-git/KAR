@@ -18,7 +18,7 @@ Clone it and watch this bad boy go.
 * See my `~/.config/polybar/config`
 
 ### Qutebrowser
-![alt text](.local/share/rice/rice-qb.qif?raw=true "rofi+buku+qutebrowser integration")
+![](.local/share/rice/rice-qb.qif)
 * Text file configuration at: ~/.config/qutebrowser/config.yml
 	* Easier to version control and no need to modify a giant config.py
 * rofi+buku+qutebrowser integration to manage bookmarks
@@ -78,7 +78,7 @@ Clone it and watch this bad boy go.
 	* toggle sticky: mod+shift+g(lue)
 	* toggle full screen: mod+shift+f(ull screen)
 * Lowercase non-focus-movement commands launch programs:
-![alt text](.local/share/rice/rice-xonsh-calc.qif?raw=true "xonsh scratchpad calculator")
+![](.local/share/rice/rice-xonsh-calc.qif)
 	* floating xonsh: mod+c(alculator)
 	* spawn `$FILE` manager: mod+f(ile manager)
 	* spawn `$BROWSER`: mod+b(rowser)
