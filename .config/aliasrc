@@ -1,35 +1,76 @@
 #!/bin/sh
 
-alias ka="killall" \
-	mkd="mkdir -pv" \
-	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
-	calcurse="calcurse -D ~/.config/calcurse" \
-	magit="nvim -c Magit" \
-	p="sudo pacman" \
-	SS="sudo systemctl" \
+# basic
+alias c="clear" \
 	f="$FILE" \
-	g="git" \
-	trem="tremc" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	x="sxiv -ft *" \
-	sdn="sudo shutdown -h now" \
-	gua="git remote | xargs -L1 git push --all" \
+	l="ls -lahN --color=auto --group-directories-first" \
 	ls="ls -hN --color=auto --group-directories-first" \
+	i="htop -t" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
+	hg="history | grep" \
+	mkd="mkdir -pv" \
+	appsync="rsync -avxP" \
+	mirsync="rsync -avxP --delete" \
+	sdn="sudo shutdown -h now" \
+	lap="ps -u" \
+	kap="killall" \
+	lamp="ps -u $(whoami)" \
+	kamp="killall -u $(whoami)";
+
+# networking
+alias lptl="sudo lsof -i -P -n | grep LISTEN";
+
+# git
+alias g="git" \
+	gsb="git status -sb" \
+	gss="git status -s" \
+	gst="git status" \
+	gl="git pull" \
+	ga="git add" \
+	grm="git rm" \
+	gcmsg="git commit -m" \
+	gua="git remote | xargs -L1 git push --all" \
+	gpp="git pull && git push origin master";
+
+# yay / pacman / misc. arch
+alias yg="yay -Qs | grep" \
+	yps="yay -Ps" \
+	yys="yay -Syu" \
+	yyf="yay -Syyu" \
+	yls="yay -Ql" \
+	ycl="yay -Yc && paccache -r" \
+	lsp="pacman -Qett --color=always | less" \
+	lsff="fc-list : family";
+
+# other package managers
+alias car="conda activate" \
+	cdr="conda deactivate" \
+	cup="conda update conda pip" \
+	cua="conda update --all" \
+	ccl="conda clean --yes --all";
+
+# other
+alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
+	x="sxiv -ft *" \
 	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
 	yta="yt -x -f bestaudio/best" \
-	YT="youtube-viewer" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
-	upc="sudo pacman -Syu; pkill -RTMIN+8 i3blocks" \
-	lsp="pacman -Qett --color=always | less" \
-	ffmpeg="ffmpeg -hide_banner"
+	ffmpeg="ffmpeg -hide_banner" \
+	nv="nvidia-smi" \
+	nvw="watch -n 2 nvidia-smi" \
+	jup="jupyter notebook --ip=127.0.0.1 --port=8888";  # Need to explicitly set ip and port to use jupyter with nordvpn
 
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
+# combo aliases
+alias cl="ycl && ccl"; # Clear all caches
 
-shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}
+
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Alias neovim as vim if present.
 se() { du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDITOR ;}
-sv() { vcopy "$(du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf)" ;}
 vf() { fzf | xargs -r -I % $EDITOR % ;}
+
+#shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}
+#sv() { vcopy "$(du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf)" ;}
