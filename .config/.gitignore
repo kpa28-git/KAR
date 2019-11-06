@@ -24,7 +24,6 @@
 !/xonsh/**
 !/zathura/**
 !aliasrc
-!aliasrc_a
 !bmdirs
 !bmfiles
 !README.md
