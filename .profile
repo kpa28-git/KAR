@@ -7,7 +7,7 @@
 #  /_/
 # Login shell profile config file.
 
-# Adds `~/.local/bin/` and all subdirectories to $PATH
+# Add `~/.local/bin/` and all subdirectories to $PATH
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="nvim"
@@ -19,7 +19,7 @@ export PAGER="less"
 #export FILE="nnn -d"
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 #export REFER="$HOME/.referbib"
-export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
+#export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 #export PIX="$HOME/.pix/"
 
 # nnn file manager
@@ -36,13 +36,13 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"; a="${a%_}"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
-[ ! -f ~/.config/shortcutrc ] && shortcuts >/dev/null 2>&1
+[ ! -f "$HOME/.config/shortcutrc" ] && shortcuts >/dev/null 2>&1
 
-echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
+echo "$0" | grep "bash$" >/dev/null && [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
 
 # Start graphical server if i3 not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
 
 # Switch escape and caps if tty:
-sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
+sudo -n loadkeys "$HOME/.local/bin/ttymaps.kmap" 2>/dev/null
 
