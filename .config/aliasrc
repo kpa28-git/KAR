@@ -62,7 +62,8 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
 	ffmpeg="ffmpeg -hide_banner" \
 	nv="nvidia-smi" \
 	nvw="watch -n 2 nvidia-smi" \
-	jup="jupyter notebook --ip=127.0.0.1 --port=8888";  # Need to explicitly set ip and port to use jupyter with nordvpn
+	jup="jupyter notebook --ip=127.0.0.1 --port=8888" \
+	tos="sudo /opt/thinkorswim/thinkorswim";
 
 # combo aliases
 alias cl="ycl && ccl"; # Clear all caches
