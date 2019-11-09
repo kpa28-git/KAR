@@ -1,0 +1,12 @@
+# Ignore All:
+*
+
+# Traverse Directories
+!*/
+
+# Whitelist:
+!/applications/**
+!/rice/**
+!/rofi/**
+!/themes/**
+!.gitignore

@@ -18,6 +18,7 @@ alias c="clear" \
 	sdn="sudo shutdown -h now" \
 	lap="ps -u" \
 	kap="killall" \
+	mimetype="file --mime-type" \
 	lamp="ps -u $(whoami)" \
 	kamp="killall -u $(whoami)";
 
@@ -30,9 +31,11 @@ alias g="git" \
 	gss="git status -s" \
 	gst="git status" \
 	gl="git pull" \
+	gulp="git submodule foreach git pull origin master" \
 	ga="git add" \
 	grm="git rm" \
 	gcmsg="git commit -m" \
+	gcsmg="git commit -m" \
 	gua="git remote | xargs -L1 git push --all" \
 	gpp="git pull && git push origin master";
 

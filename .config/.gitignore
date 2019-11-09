@@ -10,10 +10,12 @@
 !/fontconfig/**
 !/htop/**
 !/i3/**
+!/lf/**
 !/ncmpcpp/**
 !/neofetch/**
 !/nnn/**
 !/nvim/**
+!/pistol/**
 !/polybar/**
 !/qutebrowser/**
 !/ranger/**
