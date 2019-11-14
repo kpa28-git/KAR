@@ -2,10 +2,11 @@
 
 # basic
 alias c="clear" \
-	f="$FILE" \
-	e="$EDITOR" \
-	v="$EDITOR" \
+	f="\$FILE" \
+	e="\$EDITOR" \
+	v="\$EDITOR" \
 	l="ls -lahN --color=auto --group-directories-first" \
+	lg="ls -lahN --color=auto --group-directories-first | grep" \
 	ls="ls -hN --color=auto --group-directories-first" \
 	i="htop -t" \
 	grep="grep --color=auto" \
@@ -19,8 +20,8 @@ alias c="clear" \
 	lap="ps -u" \
 	kap="killall" \
 	mimetype="file --mime-type" \
-	lamp="ps -u $(whoami)" \
-	kamp="killall -u $(whoami)";
+	lamp="ps -u \$(whoami)" \
+	kamp="killall -u \$(whoami)";
 
 # networking
 alias lptl="sudo lsof -i -P -n | grep LISTEN";
@@ -47,6 +48,10 @@ alias yg="yay -Qs | grep" \
 	yls="yay -Ql" \
 	ycl="yay -Yc && paccache -r" \
 	lsp="pacman -Qett --color=always | less" \
+	pacwhen="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort" \
+	ifck="informant check" \
+	ifls="informant list" \
+	ifrd="informant read" \
 	lsff="fc-list : family";
 
 # other package managers
@@ -57,7 +62,7 @@ alias car="conda activate" \
 	ccl="conda clean --yes --all";
 
 # other
-alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
+alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	x="sxiv -ft *" \
 	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
 	yta="yt -x -f bestaudio/best" \
@@ -73,8 +78,15 @@ alias cl="ycl && ccl"; # Clear all caches
 
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Alias neovim as vim if present.
-se() { du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDITOR ;}
-vf() { fzf | xargs -r -I % $EDITOR % ;}
-
+se() {
+	du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDITOR ;
+}
+vf() {
+	fzf | xargs -r -I % $EDITOR % ;
+}
+ifi() {
+	CHOSEN=$(ifls | fzf | sed 's/:.*//');
+	ifrd "$CHOSEN";
+}
 #shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}
 #sv() { vcopy "$(du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf)" ;}
