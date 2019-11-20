@@ -7,8 +7,8 @@
 #
 # Unbound hotkeys:
 # 1st row: W  eE o  P
-# 2nd row: A  D
-# 3rd row: zZ C  n
+# 2nd row: A  dD
+# 3rd row: zZ C
 # Insert Scroll_Lock XF86Launch1
 
 # PROGRAMS:
@@ -19,8 +19,6 @@ super +  w
 	rofi -show window
 super + shift + s
 	rofi -show ssh
-super + d
-	rofi -show drun
 # file manager
 super + f
 	$TERMINAL -e $FILE
@@ -31,6 +29,9 @@ super + s
 	"$HOME"/.local/bin/uitools/qb-open -s
 super + g
 	"$HOME"/.local/bin/uitools/qb-open -b
+# graphics switching (nvidia<->hybrid)
+super + n
+	prompt 'switch graphics?' "$HOME"/.local/bin/gfxtools/gfxswitch
 # music
 super + m
 	$TERMINAL -e ncmpcpp

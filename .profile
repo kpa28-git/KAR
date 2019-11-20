@@ -10,21 +10,17 @@
 # Add `~/.local/bin/` and all subdirectories to $PATH
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
-export EDITOR="nvim"
 export TERMINAL="st"
+export OPENER="xdg-open"
+export EDITOR="nvim"
+export PAGER="less"
 export BROWSER="qutebrowser"
 export READER="zathura"
-export FILE="ranger"
-export PAGER="less"
-#export FILE="nnn -d"
+export FILE="lf"
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 #export REFER="$HOME/.referbib"
 #export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 #export PIX="$HOME/.pix/"
-
-# nnn file manager
-export NNN_CONTEXT_COLORS='6464'
-export NNN_USE_EDITOR=1
 
 # less/man colors
 export LESS=-R
