@@ -51,12 +51,11 @@ Clone it and watch this bad boy go.
 	* floating xonsh: mod+c(alculator)
 	* spawn `$FILE` manager: mod+f(ile manager)
 	* spawn `$BROWSER`: mod+b(rowser)
-	* qutebrowser search: mod+s(earch)
+	* qutebrowser web search: mod+s(earch)
 	* qutebrowser buku bookmarks: mod+g(o to bookmark)
 	* ncmpcpp (music): mod+m(usic)
 	* pulsemixer (audio): mod+a(udio)
 	* htop: mod+i(nfo)
-	* rofi dekstop run: mod+d(esktop)
 	* rofi run: mod+r(un)
 * For i3 hotkeys see `~/.config/i3/config`
 * For other hotkeys see `~/.config/sxhkd/sxhkdrc`
@@ -111,10 +110,12 @@ Clone it and watch this bad boy go.
 	* leftwm
 	* xmonad
 * cleanup and remove unused luke scripts
-* look into a faster file manager
-	* cfiles
-	* forked nnn
-	* lf
+* lf config
+	* Change opener to open in a separate shell or the same window (as in ranger)
+	* add a delete command
+* improve my rss reader
+	* install a new one?
+	* organize feeds
 
 ## Installation
 1. Make sure you have all required programs installed
@@ -123,18 +124,18 @@ Clone it and watch this bad boy go.
 
 ## Details
 * window manager: i3-gaps
-* compositor: compton
+* compositor: picom (compton)
 * terminal: st
 * terminal font: monospace
 * bar: polybar
 * bar icon: hack nerd font
 * text editor: neovim
-* file manager: ranger
+* file manager: ~~ranger~~ lf+[pistol](https://github.com/doronbehar/pistol)
 * notifications: dunst
 * launcher: rofi
 * music: ncmpcpp+mpd
 * video: mpv
-* hotkeys: sxhkd + i3
+* hotkeys: sxhkd+i3
 * browser: qutebrowser
 * base16 theme: gruvbox
 
