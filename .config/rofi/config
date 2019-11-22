@@ -12,4 +12,5 @@ rofi.location: 2
 rofi.xoffset: 0
 rofi.yoffset: 270
 rofi.opacity: 0.80
+rofi.show-icons: true
 rofi.theme: /usr/share/rofi/themes/paper-float.rasi

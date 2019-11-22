@@ -7,7 +7,7 @@
 #
 # Unbound hotkeys:
 # 1st row: W  eE o  P
-# 2nd row: A  dD
+# 2nd row: A  D
 # 3rd row: zZ C
 # Insert Scroll_Lock XF86Launch1
 
@@ -15,6 +15,8 @@
 # rofi
 super + r
 	rofi -show run
+super + d
+	rofi -show drun
 super +  w
 	rofi -show window
 super + shift + s
