@@ -10,9 +10,19 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" Update plugins with :PlugInstall
 call plug#begin('~/.config/nvim/plugged')
 " Nerdtree sidebar
 Plug 'scrooloose/nerdtree'
+" Deoplete Autocompletion
+if has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+	Plug 'Shougo/deoplete.nvim'
+	Plug 'roxma/nvim-yarp'
+	Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 " Goyo distraction free writing plugin
 Plug 'junegunn/goyo.vim'
 " i3 config syntax
@@ -47,7 +57,7 @@ set number relativenumber
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults:
 set splitbelow splitright
 
-" Enable autocomplete
+" Enable standard autocomplete
 set wildmode=longest,list,full
 
 " Disable autocomment on newline
@@ -103,6 +113,10 @@ map <C-l> <C-w>l
 " <Ctrl>+n(erdtree): Nerd tree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Deoplete map <Ctrl>+{j,k} to up down menu scrolling
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
 " <leader>+p(review): Neovim-Latex-Preivewer
 nmap <buffer> <Leader>p :LatexPreviewToggle<CR>
