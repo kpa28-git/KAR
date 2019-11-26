@@ -4,15 +4,14 @@
 """   / / / /  __/ /_/ / |/ / / / / / / /
 """  /_/ /_/\___/\____/|___/_/_/ /_/ /_/
 """ neovim runtime config file.
-let mapleader =","
 
-""" Pathogen (vim plugin manager):
+""" PATHOGEN (vim plugin manager):
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
 call plug#begin('~/.config/nvim/plugged')
-" Use <Ctrl>+n to toggle nerdtree
+" Nerdtree sidebar
 Plug 'scrooloose/nerdtree'
 " Goyo distraction free writing plugin
 Plug 'junegunn/goyo.vim'
@@ -22,6 +21,8 @@ Plug 'mboughaba/i3config.vim'
 Plug 'jreybert/vimagit'
 " Vimwiki notetaking plugin
 Plug 'vimwiki/vimwiki'
+" LaTeX previewer
+Plug 'emakman/nvim-latex-previewer'
 " Lightweight mode statusbar and bufferbar
 Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
@@ -30,107 +31,123 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
+
+""" GENERAL CONFIG
+let mapleader=","
 set bg=light
 set mouse=a
 set nohlsearch
 set clipboard=unnamedplus
-" Some basics:
-	set nocompatible
-	filetype plugin on
-	syntax on
-	set encoding=utf-8
-	set number relativenumber
-" Enable autocompletion:
-	set wildmode=longest,list,full
-" Disables automatic commenting on newline:
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set nocompatible
+filetype plugin on
+syntax on
+set encoding=utf-8
+set number relativenumber
 
-" Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+" Splits open at the bottom and right, which is non-retarded, unlike vim defaults:
+set splitbelow splitright
 
-" Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_us<CR>
+" Enable autocomplete
+set wildmode=longest,list,full
 
-" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
-	set splitbelow splitright
+" Disable autocomment on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Nerd tree
-	map <C-n> :NERDTreeToggle<CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Show all whitespace
+autocmd FileType * set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+autocmd FileType * set list
 
-" vimling:
-	nm <leader>d :call ToggleDeadKeys()<CR>
-	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
-	nm <leader>i :call ToggleIPA()<CR>
-	imap <leader>i <esc>:call ToggleIPA()<CR>a
-	nm <leader>q :call ToggleProse()<CR>
+" Force tabs
+autocmd FileType * set noexpandtab
 
-" Shortcutting split navigation, saving a keypress:
-	map <C-h> <C-w>h
-	map <C-j> <C-w>j
-	map <C-k> <C-w>k
-	map <C-l> <C-w>l
 
-" Check file in shellcheck:
-	map <leader>s :!clear && shellcheck %<CR>
+""" GENERAL MAPPINGS
+" Copy/Paste
+vnoremap <C-c> "+y
+map <C-p> "+P
+
+" Global find/replace alised to 'S'
+nnoremap S :%s//g<Left><Left>
 
 " Open my bibliography file in split
-	map <leader>b :vsp<space>$BIB<CR>
-	map <leader>r :vsp<space>$REFER<CR>
+map <leader>b :vsp<space>$BIB<CR>
+map <leader>r :vsp<space>$REFER<CR>
 
-" Replace all is aliased to S.
-	nnoremap S :%s//g<Left><Left>
 
-" Compile document, be it groff/LaTeX/markdown/etc.
-	map <leader>c :w! \| !compiler <c-r>%<CR>
-
-" Open corresponding .pdf/.html or preview
-	map <leader>p :!opout <c-r>%<CR><CR>
-
-" Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	autocmd VimLeave *.tex !texclear %
-
-" Ensure files are read as what I want:
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
-	autocmd BufRead,BufNewFile *.tex set filetype=tex
-
-" Copy selected text to system clipboard (requires gvim/nvim/vim-x11 installed):
-	vnoremap <C-c> "+y
-	map <C-p> "+P
-
-" Enable Goyo by default for mutt writting
-	" Goyo's width will be the line limit in mutt.
-	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo \| set bg=light
-
+""" GENERAL BUFFER AUTOCMDs
 " Automatically deletes all trailing whitespace on save.
-	autocmd BufWritePre * %s/\s\+$//e
-
-" When shortcut files are updated, renew bash and ranger configs with new material:
-	autocmd BufWritePost ~/.config/bmdirs,~/.config/bmfiles !shortcuts
-
-" Automatically recompile suckless program configs:
-	autocmd BufWritePost config.h,config.def.h !sudo make install
+autocmd BufWritePre * %s/\s\+$//e
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
+" When shortcut files are updated, renew bash and ranger configs with new material:
+autocmd BufWritePost ~/.config/bmdirs,~/.config/bmfiles !shortcuts
+
+" Automatically recompile suckless program configs:
+autocmd BufWritePost config.h,config.def.h !sudo make install
+
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+autocmd VimLeave *.tex !texclear %
+
+
+""" NAVIGATION SHORTCUTS
+" Shortcutting split navigation, saving a keypress:
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+
+""" PLUGIN MAPPINGS
+" <Ctrl>+n(erdtree): Nerd tree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" <leader>+p(review): Neovim-Latex-Preivewer
+nmap <buffer> <Leader>p :LatexPreviewToggle<CR>
+nmap <buffer> <Leader>[ :PrevLatexPreviewMode<CR>
+nmap <buffer> <Leader>] :NextLatexPreviewMode<CR>
+
+" Compile text document, be it groff/LaTeX/markdown/etc.
+map <leader>c :w! \| !txtcompiler <c-r>%<CR>
+
+" <leader>+f(ree): Goyo distraction free plugin
+map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+
+" <leader>+o(rthography): Spellcheck
+map <leader>o :setlocal spell! spelllang=en_us<CR>
+
+" <leader>+s(hellcheck): run file in shellcheck
+map <leader>s :!clear && shellcheck %<CR>
+
+
+" Open corresponding .pdf/.html or preview
+"	map <leader>p :!opout <c-r>%<CR><CR>
+" Enable Goyo by default for mutt writting
+	" Goyo's width will be the line limit in mutt.
+"	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+"	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo \| set bg=light
 " Navigating with guides
-	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-	vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-	map <leader><leader> <Esc>/<++><Enter>"_c4l
+"	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+"	vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+"	map <leader><leader> <Esc>/<++><Enter>"_c4l
 
-"""GLOBAL
-"""Show whitespace characters:
-	autocmd FileType * set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-	autocmd FileType * set list
-"""Hard enable tabs everywhere:
-	autocmd FileType * set noexpandtab
 
-"""LATEX
+""" FILETYPE CONFIG
+let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+"autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+autocmd BufRead,BufNewFile *.tex set filetype=tex
+
+" i3config detection
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+
+" LaTeX
 	" Word count:
 	autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
 	" Code snippets
@@ -170,7 +187,7 @@ set clipboard=unnamedplus
 	autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
 	autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 
-"""HTML
+" HTML
 	autocmd FileType html inoremap ,b <b></b><Space><++><Esc>FbT>i
 	autocmd FileType html inoremap ,it <em></em><Space><++><Esc>FeT>i
 	autocmd FileType html inoremap ,1 <h1></h1><Enter><Enter><++><Esc>2kf<i
@@ -216,12 +233,12 @@ set clipboard=unnamedplus
 	autocmd FileType html inoremap ù &ugrave;
 
 
-""".bib
+" Tex Bib
 	autocmd FileType bib inoremap ,a @article{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>journal<Space>=<Space>{<++>},<Enter>volume<Space>=<Space>{<++>},<Enter>pages<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
 	autocmd FileType bib inoremap ,b @book{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>6kA,<Esc>i
 	autocmd FileType bib inoremap ,c @incollection{<Enter>author<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>booktitle<Space>=<Space>{<++>},<Enter>editor<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
 
-"MARKDOWN
+" MARKDOWN
 	autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
 	autocmd Filetype markdown,rmd inoremap ,n ---<Enter><Enter>
 	autocmd Filetype markdown,rmd inoremap ,b ****<++><Esc>F*hi
@@ -238,21 +255,21 @@ set clipboard=unnamedplus
 	autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
 
-""".xml
+" XML
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
 	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
 
-"""python
-"""Indentation options:
+" Python
+" Indentation options:
 	autocmd FileType python set autoindent
 	autocmd FileType python set smartindent
 
-"""bash/POSIX shell
+" Bash/POSIX shell
 
 
-"""rust
+" Rust
 
 
-"""C++
+" C++
 
 
