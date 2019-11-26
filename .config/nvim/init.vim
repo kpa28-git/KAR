@@ -12,14 +12,21 @@ syntax on
 filetype plugin indent on
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-surround'
+" Use <Ctrl>+n to toggle nerdtree
 Plug 'scrooloose/nerdtree'
+" Goyo distraction free writing plugin
 Plug 'junegunn/goyo.vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
+" i3 config syntax
+Plug 'mboughaba/i3config.vim'
+" Git integration plugin
 Plug 'jreybert/vimagit'
-Plug 'LukeSmithxyz/vimling'
+" Vimwiki notetaking plugin
 Plug 'vimwiki/vimwiki'
+" Lightweight mode statusbar and bufferbar
 Plug 'bling/vim-airline'
+Plug 'bling/vim-bufferline'
+" Plugins to toggle surrounding parens/brackets/others and comment/uncomment ('gc')
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 call plug#end()
 

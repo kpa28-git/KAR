@@ -14,7 +14,7 @@ setxkbmap -option caps:super -variant altgr-intl && killall xcape 2>/dev/null ; 
 xmodmap -e 'keycode 135 = Super_R' &
 xset r rate 300 50 &	# Speed xrate up
 unclutter &		# Remove mouse when idle
-compton --config "$HOME/.config/compton/compton.conf" &	# compton for transparency and to reduce tearing
+picom --config "$HOME/.config/picom/picom.conf" &	# picom for transparency and to reduce tearing
 dunst &			# dunst for notifications
 mpdupdate &
 redshift -l "$("$HOME/.local/bin/tools/geoloc" | tr ',' ':')" &
