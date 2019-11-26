@@ -14,7 +14,6 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-export PATH="$HOME/.vim/bundle/vim-live-latex-preview/bin:$PATH" 	# kev, add vim-live-latex-preview bin
 export PATH="$JAVA_HOME:$PATH"	# kev, add JAVA_HOME to the PATH (make sure JAVA_HOME is set to a path first in /etc/profile/)
 
 # >>> conda initialize >>>
