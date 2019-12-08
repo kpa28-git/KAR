@@ -116,6 +116,9 @@ Clone it and watch this bad boy go.
 * improve my rss reader
 	* install a new one?
 	* organize feeds
+* browsers
+	* vimb
+	* next
 
 ## Installation
 1. Make sure you have all required programs installed
