@@ -79,6 +79,7 @@ url.searchengines: {
     'pyt': 'https://pytorch.org/docs/stable/search.html?q={}',
 
     # Rust Docs
+    'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
     'rust': 'https://doc.rust-lang.org/reference/index.html?search={}',
     'rstd': 'https://doc.rust-lang.org/std/?search={}',
     'cargo': 'https://crates.io/search?q={}'
