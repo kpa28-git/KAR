@@ -10,10 +10,12 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" Update plugins with :PlugInstall
-call plug#begin('~/.config/nvim/plugged')
+" Install/Update plugins with :PlugInstall/:PlugUpdate
+call plug#begin("$HOME/.config/nvim/plugged")
+
 " Nerdtree sidebar
 Plug 'scrooloose/nerdtree'
+
 " Deoplete Autocompletion
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -23,22 +25,43 @@ else
 	Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
+
+" Deoplete-Jedi (Python) Autocompletion
+Plug 'deoplete-plugins/deoplete-jedi'
+let g:deoplete#sources#jedi#popup_select_first = 1
+let g:deoplete#sources#jedi#use_splits_not_buffers = "left"
+let g:deoplete#sources#jedi#completions_enabled = 0
+let g:deoplete#sources#jedi#show_docstring = 1
+"let g:deoplete#sources#jedi#python_path
+
+" Deoplete-Rust Autocompletion
+Plug 'sebastianmarkow/deoplete-rust'
+let g:deoplete#sources#rust#racer_binary='/home/kev/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/home/kev/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+
 " Goyo distraction free writing plugin
 Plug 'junegunn/goyo.vim'
+
 " i3 config syntax
 Plug 'mboughaba/i3config.vim'
+
 " Git integration plugin
 Plug 'jreybert/vimagit'
+
 " Vimwiki notetaking plugin
 Plug 'vimwiki/vimwiki'
+
 " LaTeX previewer
 Plug 'emakman/nvim-latex-previewer'
+
 " Lightweight mode statusbar and bufferbar
 Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
+
 " Plugins to toggle surrounding parens/brackets/others and comment/uncomment ('gc')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+
 call plug#end()
 
 
@@ -82,6 +105,9 @@ nnoremap S :%s//g<Left><Left>
 " Open my bibliography file in split
 map <leader>b :vsp<space>$BIB<CR>
 map <leader>r :vsp<space>$REFER<CR>
+
+" Render markdown file with grip (github markdown previewer)
+map <leader>m :!grip<space>%
 
 
 """ GENERAL BUFFER AUTOCMDs
