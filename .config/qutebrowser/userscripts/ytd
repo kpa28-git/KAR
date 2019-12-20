@@ -1,0 +1,7 @@
+#!/bin/sh
+# Qutebrowser userscript wrapper for youtube-dl.
+
+DEST_DIR="$HOME/Downloads";
+
+youtube-dl --get-filename -o "$DEST_DIR/%(title)s.%(ext)s" "$QUTE_URL" --restrict-filenames && notify-send "youtube-dl" "video downloaded to $DEST_DIR";
+

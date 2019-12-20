@@ -12,7 +12,10 @@ aliases: {
     # rbuku aliases:
     "b": "spawn --userscript qb-rbuku -s",
     "ba": "spawn --userscript qb-rbuku -a",
-    "br": "spawn --userscript qb-rbuku -r"
+    "br": "spawn --userscript qb-rbuku -r",
+
+    # youtube-dl aliases:
+    "ytd": "spawn --userscript ytd"
 }
 
 ## CONTENT
