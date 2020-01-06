@@ -13,3 +13,15 @@ set color256 on
 # pistol file previews
 set previewer ~/.local/src/go/bin/pistol
 
+# File Opening
+case $(file --mime-type "$f" -b) in
+	#text/*) setsid vim $f ;;
+	video/*) setsid mpv "$f" >/dev/null 2>&1 & ;;
+esac
+
+cmd open &{{
+	case $(file --mime-type "$f" -b) in
+		text/*) setsid $OPENER "$f" ;;
+		video/*) setsid mpv "$f" > /dev/null 2 2>&1 & ;;
+		*) for file in $f; do setsid $OPENER "$file" > /dev/null 2> /dev/null & done ;;
+esac }}

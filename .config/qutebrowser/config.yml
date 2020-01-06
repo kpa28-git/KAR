@@ -14,8 +14,8 @@ aliases: {
     "ba": "spawn --userscript qb-rbuku -a",
     "br": "spawn --userscript qb-rbuku -r",
 
-    # youtube-dl aliases:
-    "ytd": "spawn --userscript ytd"
+    # rofi+youtube-dl aliases:
+    "rytd": "spawn --userscript qb-rytd"
 }
 
 ## CONTENT
@@ -80,6 +80,7 @@ url.searchengines: {
     'pd': 'https://pandas.pydata.org/pandas-docs/stable/search.html?q={}',
     'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}',
     'pyt': 'https://pytorch.org/docs/stable/search.html?q={}',
+    'pyt2': 'https://pytorch.org/docs/1.2.0/search.html?q={}',
 
     # Rust Docs
     'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
