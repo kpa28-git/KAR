@@ -1,0 +1,8 @@
+#!/bin/sh
+# Qutebrowser userscript wrapper for downloading audio tracks with youtube-dl.
+
+DEST_OPTIONS="$HOME/Downloads|$HOME/Music|$HOME/audiobooks";
+DEST_DIR=$(echo "$DEST_OPTIONS" | rofi -dmenu -sep '|' -lines 5 -i -p 'destination');
+
+youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o "$DEST_DIR/%(upload_date)s-%(title)s.%(ext)s" "$QUTE_URL" && notify-send "youtube-dl" "video downloaded to $DEST_DIR";
+

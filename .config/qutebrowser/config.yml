@@ -15,7 +15,8 @@ aliases: {
     "br": "spawn --userscript qb-rbuku -r",
 
     # rofi+youtube-dl aliases:
-    "rytd": "spawn --userscript qb-rytd"
+    "rytd": "spawn --userscript qb-rytd",
+    "rytda": "spawn --userscript qb-rytda"
 }
 
 ## CONTENT
