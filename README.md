@@ -111,7 +111,7 @@ Clone it and watch this bad boy go.
 	* xmonad
 * cleanup and remove unused luke scripts
 * lf config
-	* Change opener to open in a separate shell or the same window (as in ranger)
+	* ~~Change opener to open in a separate shell or the same window (as in ranger)~~
 	* add a delete command
 * improve my rss reader
 	* install a new one?
