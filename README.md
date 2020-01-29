@@ -133,7 +133,7 @@ Clone it and watch this bad boy go.
 * bar: polybar
 * bar icon: hack nerd font
 * text editor: neovim
-* file manager: ~~ranger~~ lf+[pistol](https://github.com/doronbehar/pistol)
+* file manager: lf+[pistol](https://github.com/doronbehar/pistol)
 * notifications: dunst
 * launcher: rofi
 * music: ncmpcpp+mpd
