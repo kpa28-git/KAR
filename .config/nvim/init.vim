@@ -144,7 +144,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
-" <leader>+p(review): Neovim-Latex-Preivewer
+" <leader>+p(review): (latex) Neovim-Latex-Preivewer
 nmap <buffer> <Leader>p :LatexPreviewToggle<CR>
 nmap <buffer> <Leader>[ :PrevLatexPreviewMode<CR>
 nmap <buffer> <Leader>] :NextLatexPreviewMode<CR>
