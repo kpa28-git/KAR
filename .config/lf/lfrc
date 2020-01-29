@@ -11,7 +11,7 @@ set hidden on
 set color256 on
 
 # pistol file previews
-set previewer ~/.local/src/go/bin/pistol
+set previewer pistol
 
 # File Opening
 cmd open &{{
