@@ -20,6 +20,7 @@ alias c="clear" \
 	lap="ps -u" \
 	kap="killall" \
 	mimetype="file --mime-type" \
+	xdgdefault="xdg-mime query default" \
 	lamp="ps -u \$(whoami)" \
 	kamp="killall -u \$(whoami)";
 
