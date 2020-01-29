@@ -71,6 +71,7 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	ffmpeg="ffmpeg -hide_banner" \
+	grex="grex -r" \
 	nv="nvidia-smi" \
 	nvw="watch -n 2 nvidia-smi" \
 	jup="jupyter notebook --ip=127.0.0.1 --port=8888";
