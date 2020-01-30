@@ -81,6 +81,11 @@ alias cl="ycl && ccl"; # Clear all caches
 
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Alias neovim as vim if present.
+s() {
+	DEPTH=$([ -n "$1" ] && echo "$1" || echo 5);
+	RES="$(find . -maxdepth "$DEPTH" | fzf --reverse --header='Jump to location')";
+	[ -d "$RES" ] && cd $RES || $OPENER $RES;
+}
 se() {
 	du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDITOR ;
 }

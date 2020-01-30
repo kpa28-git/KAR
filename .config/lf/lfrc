@@ -64,7 +64,7 @@ cmd img_preview ${{
 	case $(file --mime-type "$f" -b) in
 		image/*) $draw "$f" ;;
 		video/*) CACHE=$(mktemp /tmp/thumb_cache.XXXXX)
-			ffmpegthumbnailer -i "$f" -o $CACHE -s 0
+			ffmpegthumbnailer -i "$f" -o $CACHE -s 0 -f
 			$draw $CACHE && rm $CACHE ;;
 		*) lf -remote "send $id echoerr 'Not an image/video file'" ;;
 	esac
