@@ -40,7 +40,7 @@ set color256 on
 
 # Fuzzy Navigation
 cmd fzf_jump ${{
-	res="$(find . -maxdepth $1 | fzf --reverse --header='Jump to location')"
+	res="$(~/.local/bin/uitools/listpaths | fzf --reverse --header='Jump to location')"
 	if [ -f "$res" ]; then
 		cmd="select"
 	elif [ -d "$res" ]; then
