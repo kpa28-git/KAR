@@ -86,7 +86,7 @@ s() {
 	[ -d "$RES" ] && cd $RES || $OPENER $RES;
 }
 se() {
-	du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf --reverse --header='Edit config file' | xargs  -r $EDITOR ;
+	du -a ~/.local/bin/* ~/.config/* ~/.bash_profile ~/.bashrc ~/.profile ~/.vimrc ~/.xinitrc ~/.xprofile ~/.gitconfig | awk '{print $2}' | fzf --reverse --header='Edit config file' | xargs  -r $EDITOR ;
 }
 vf() {
 	fzf | xargs -r -I % $EDITOR % ;
