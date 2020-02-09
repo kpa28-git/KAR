@@ -13,7 +13,7 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-export PATH="$JAVA_HOME:$PATH"	# kev, add JAVA_HOME to the PATH (make sure JAVA_HOME is set to a path first in /etc/profile/)
+export PATH="$JAVA_HOME:$PATH"	# Add JAVA_HOME to the PATH (make sure JAVA_HOME is set to a path first in /etc/profile/)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
