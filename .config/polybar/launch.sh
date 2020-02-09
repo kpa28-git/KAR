@@ -26,10 +26,11 @@ else
 	monitors=$(xrandr --query | grep "^eDP" | grep " connected" | cut -d" " -f1);
 fi;
 
-# Single monitor only because no solution to multi-monitor screen-tear prevention on my machine
-MONITOR="${monitors[0]}" polybar main &
-MONITOR="${monitors[0]}" polybar bottom &
-
+# Multi monitor bar mirroring: https://github.com/polybar/polybar/issues/763
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+	MONITOR=$m polybar --reload main &
+	MONITOR=$m polybar --reload bottom &
+done
 
 # Multi-monitor handling
 #if type "xrandr"; then
