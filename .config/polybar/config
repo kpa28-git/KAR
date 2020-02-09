@@ -63,7 +63,7 @@ font-8 = Noto Sans Mono CJK JP:size=18;2
 ;------------
 fixed-center = true
 line-size = 3
-modules-left =  airinfo weather ethprice
+modules-left = airinfo weather sp500price ethprice
 modules-center = i3
 modules-right = nordvpn network wlan date powermenu
 tray-position = right
@@ -308,15 +308,23 @@ label = %output%
 ;click-left = $TERMINAL -e transmission-remote-cli
 ;exec = $HOME/.local/bin/polybar/torrent.sh
 ;interval = 30
-;label = %{T5}%output%%{T5}
+;label = %
 
 
 [module/ethprice]
 type = custom/script
-click-left=$HOME/.local/bin/polybar/ethprice.sh
-exec=$HOME/.local/bin/polybar/ethprice.sh
+click-left = $HOME/.local/bin/polybar/ethprice.sh
+exec = $HOME/.local/bin/polybar/ethprice.sh
 interval = 300
 label = %{T-}%{T-} %output%
+
+
+[module/sp500price]
+type = custom/script
+click-left = $HOME/.local/bin/polybar/sp500price.sh
+exec = $HOME/.local/bin/polybar/sp500price.sh
+interval = 300
+label = %{T-}%{T-} %output%
 
 
 [module/airinfo]

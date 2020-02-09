@@ -16,7 +16,6 @@ xset r rate 300 50 &	# Speed xrate up
 unclutter &		# Remove mouse when idle
 picom --config "$HOME/.config/picom/picom.conf" &	# picom for transparency and to reduce tearing
 dunst &			# dunst for notifications
-mpdupdate &
 redshift -l "$("$HOME/.local/bin/tools/geoloc" | tr ',' ':')" &
 
 exec i3

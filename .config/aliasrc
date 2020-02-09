@@ -5,9 +5,9 @@ alias c="clear" \
 	f="\$FILE" \
 	e="\$EDITOR" \
 	v="\$EDITOR" \
-	l="ls -lahN --color=auto --group-directories-first" \
-	lg="ls -lahN --color=auto --group-directories-first | grep" \
-	ls="ls -hN --color=auto --group-directories-first" \
+	l="exa -lah --color=auto --group-directories-first" \
+	lg="exa -lah --color=auto --group-directories-first | grep" \
+	ls="exa -h --color=auto --group-directories-first" \
 	i="htop -t" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
