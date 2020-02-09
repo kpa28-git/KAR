@@ -27,7 +27,7 @@ map <enter> shell
 map o open $f
 map u clear
 map w unselect
-map s :fzf_jump 5
+map s :search
 map r $printf "%s\n" $fx | vidir -
 map t push $touch<space>
 map c push $chmod<space>755<space>
@@ -39,7 +39,7 @@ set hidden on
 set color256 on
 
 # Fuzzy Navigation
-cmd fzf_jump ${{
+cmd search ${{
 	res="$(~/.local/bin/uitools/listpaths | fzf --reverse --header='Jump to')"
 	if [ -f "$res" ]; then
 		cmd="select"

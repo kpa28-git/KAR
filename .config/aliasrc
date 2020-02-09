@@ -73,9 +73,9 @@ alias cg="conda list | grep" \
 # other
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	x="sxiv -ft *" \
-	lspaths="$HOME/.local/bin/uitools/listpaths" \
-	ytd="youtube-dl --add-metadata -i -o '$HOME/Downloads/%(upload_date)s-%(title)s.%(ext)s'" \
-	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
+	lspaths="\$HOME/.local/bin/uitools/listpaths" \
+	ytd="youtube-dl --add-metadata -i -o '\$HOME/Downloads/%(upload_date)s-%(title)s.%(ext)s'" \
+	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '\$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	ffmpeg="ffmpeg -hide_banner" \
 	grex="grex -r" \
@@ -89,10 +89,12 @@ alias cl="ycl && ccl"; # Clear all caches
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Alias neovim as vim if present.
 s() {
-	#RES="$(~/.local/bin/uitools/listpaths | fzf --reverse --header='Jump to location')";
-	#[ -d "$RES" ] && cd $RES || setsid $OPENER $RES;
-	#setsid $OPENER $RES;
-	lspaths | fzf --reverse --header='Open File' | xargs -r setsid "$OPENER"; # TODO - get this to open files with vim in the same terminal window
+	RES="$(lspaths | fzf --reverse --header='Jump to')";
+	FILEPATH=$([ -d "$RES" ] && echo "$RES" || dirname "$RES");
+	cd "$FILEPATH" || return;
+}
+so() {
+	lspaths | fzf --reverse --header='Open File' | xargs -r "$OPENER"; # TODO - get this to open files with vim in the same terminal window
 }
 se() {
 	lspaths | fzf --reverse --header='Edit File' | xargs -r "$EDITOR";
