@@ -321,8 +321,8 @@ label = %{T-}%{T-} %output%
 
 [module/sprice]
 type = custom/script
-click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s 'SPX'
-exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s 'SPX'
+click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s '^SPX'
+exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s '^SPX'
 interval = 300
 label = %{T-}%{T-} %output%
 
