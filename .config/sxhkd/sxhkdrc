@@ -106,12 +106,12 @@ super + shift + less
 	lmc replay
 # increase volume
 super + {equal,plus}
-	lmc up {5,15}
+	lmc up {10,25}
 XF86AudioRaiseVolume
 	lmc up 10
 # decrease volume
 super {_,shift +} + minus
-	lmc down {5,15}
+	lmc down {10,25}
 XF86AudioLowerVolume
 	lmc down 10
 # seek foward in song
