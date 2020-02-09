@@ -10,5 +10,5 @@ Programs with significant configuration:
 * rofi (menu/launcher)
 * sxhkd (hotkey daemon)
 
-Some are modifications of existing config files written by [Luke Smith](https://github.com/LukeSmithxyz) and others.
+Some are modifications of config files written by [Luke Smith](https://github.com/LukeSmithxyz) and others.
 
