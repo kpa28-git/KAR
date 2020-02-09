@@ -1,9 +1,14 @@
 Config Files for programs.
 
-Other than my rice for:
+Programs with significant configuration:
+* dunst (notifications)
+* i3 (wm)
+* lf (fm)
+* nvim (editor)
+* polybar (status bar)
+* qutebrowser (web browser)
+* rofi (menu/launcher)
+* sxhkd (hotkey daemon)
 
-* qutebrowser
-* polybar
-
-There is nothing particularly unique here, mostly these config files are copies or slight modifications of existing config files written by [Luke Smith](https://github.com/LukeSmithxyz) and others.
+Some are modifications of existing config files written by [Luke Smith](https://github.com/LukeSmithxyz) and others.
 

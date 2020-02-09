@@ -18,7 +18,6 @@
 !/pistol/**
 !/polybar/**
 !/qutebrowser/**
-!/ranger/**
 !/redshift/**
 !/rofi/**
 !/sxhkd/**
@@ -26,8 +25,6 @@
 !/xonsh/**
 !/zathura/**
 !aliasrc
-!bmdirs
-!bmfiles
 !mimeapps.list
 !README.md
 !.gitignore
