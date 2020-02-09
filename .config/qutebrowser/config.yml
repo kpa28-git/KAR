@@ -45,7 +45,7 @@ url.searchengines: {
     # General
     'DEFAULT': 'https://duckduckgo.com/?q={}',
     'ddg': 'https://duckduckgo.com/?q={}',
-    'wiki': 'https://en.wikipedia.org/?search={}',
+    'wik': 'https://en.wikipedia.org/?search={}',
 
     # Social
     'yt': 'https://www.youtube.com/results?search_query={}',
@@ -55,6 +55,7 @@ url.searchengines: {
 
     # Commerce
     'ex': 'https://examine.com/search/?q={}',
+    'nc': 'https://www.namecheap.com/domains/registration/results.aspx?domain={}',
 
     # Commerce
     'ebay': 'https://www.ebay.com/sch/?_nkw={}',
@@ -65,7 +66,7 @@ url.searchengines: {
 
     # Arch Linux
     'arch': 'https://wiki.archlinux.org/?search={}',
-    'pacman': 'https://www.archlinux.org/packages/?q={}',
+    'pac': 'https://www.archlinux.org/packages/?q={}',
     'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
 
     # Alpine Linux
@@ -80,8 +81,8 @@ url.searchengines: {
     'pip': 'https://pypi.org/search/?q={}',
     'pd': 'https://pandas.pydata.org/pandas-docs/stable/search.html?q={}',
     'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}',
-    'pyt': 'https://pytorch.org/docs/stable/search.html?q={}',
-    'pyt2': 'https://pytorch.org/docs/1.2.0/search.html?q={}',
+    'skl': 'https://scikit-learn.org/stable/search.html?q={}',
+    'tch': 'https://pytorch.org/docs/stable/search.html?q={}',
 
     # Rust Docs
     'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
