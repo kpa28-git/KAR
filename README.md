@@ -11,9 +11,9 @@ Clone it and watch this bad boy go.
 ![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
 * A minimalist but high information HUD like statusbar
 * World Air Quality info in top left
-	* my geoloc script (`~/.local/bin/tools/geoloc`) lets it work through a vpn (manual location setting)
+	* my geoloc script (`~/.local/bin/apitools/geoloc`) lets it work through a vpn (manual location setting)
 * Weather
-	* my geoloc script (`~/.local/bin/tools/geoloc`) lets it work through a vpn (manual location setting)
+	* my geoloc script (`~/.local/bin/apitools/geoloc`) lets it work through a vpn (manual location setting)
 * Ethereum price (can be easily changed to any crypto tracked by coinmarketcap)
 * See my `~/.config/polybar/config`
 
@@ -88,7 +88,7 @@ Clone it and watch this bad boy go.
 
 ### Redshift
 * redshift starts at boot
-* my geoloc script (`~/.local/bin/tools/geoloc`) lets it work through a vpn (manual location setting)
+* my geoloc script (`~/.local/bin/apitools/geoloc`) lets it work through a vpn (manual location setting)
 * redshift config at `~/.config/redshift/redshift.conf`
 
 ## TODO
