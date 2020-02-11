@@ -63,7 +63,7 @@ font-8 = Noto Sans Mono CJK JP:size=18;2
 ;------------
 fixed-center = true
 line-size = 3
-modules-left = airinfo weather sprice cprice
+modules-left = airinfo weather spxprice rutprice ethprice
 modules-center = i3
 modules-right = nordvpn network wlan date powermenu
 tray-position = right
@@ -311,20 +311,28 @@ label = %output%
 ;label = %
 
 
-[module/cprice]
+[module/ethprice]
 type = custom/script
 click-left = $HOME/.local/bin/polybar/cprice.sh -s 'ETH'
 exec = $HOME/.local/bin/polybar/cprice.sh -s 'ETH'
 interval = 300
-label = %{T-}%{T-} %output%
+label = %{T-}%{T-} %output%
 
 
-[module/sprice]
+[module/spxprice]
 type = custom/script
 click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s '^SPX'
 exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s '^SPX'
 interval = 300
-label = %{T-}%{T-} %output%
+label = %{T-}%{T-} %output%
+
+
+[module/rutprice]
+type = custom/script
+click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s '^RUT'
+exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s '^RUT'
+interval = 300
+label = %{T5}%{T-} %output%
 
 
 [module/airinfo]

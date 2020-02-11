@@ -1,15 +1,17 @@
 #!/bin/sh
 
+# utility replacement
+alias l="exa -lah --color=auto --group-directories-first" \
+	ls="exa -h --color=auto --group-directories-first" \
+	grep="rg";
+
 # basic
 alias c="clear" \
 	f="\$FILE" \
 	e="\$EDITOR" \
 	v="\$EDITOR" \
-	l="exa -lah --color=auto --group-directories-first" \
-	lg="exa -lah --color=auto --group-directories-first | grep" \
-	ls="exa -h --color=auto --group-directories-first" \
 	i="htop -t" \
-	grep="grep --color=auto" \
+	lg="l | grep" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
 	hg="history | grep" \
@@ -18,9 +20,6 @@ alias c="clear" \
 	duse="du -chH | sort -h" \
 	rduse="du -chH | sort -rh" \
 	lb="lsblk -o MODE,TYPE,HOTPLUG,FSTYPE,FSVER,NAME,MOUNTPOINT,LABEL,STATE,FSUSE%,FSUSED,FSSIZE,SIZE,MODEL,PARTUUID" \
-	appsync="rsync -avxP" \
-	mirsync="rsync -avxP --delete" \
-	vd="vidir" \
 	sdn="sudo shutdown -h now" \
 	lap="ps -u" \
 	kap="killall" \
@@ -70,7 +69,7 @@ alias cg="conda list | grep" \
 	cua="conda update --all" \
 	ccl="conda clean --yes --all";
 
-# other
+# program aliases
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	x="sxiv -ft *" \
 	lspaths="\$HOME/.local/bin/uitools/listpaths" \
@@ -78,9 +77,16 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '\$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	ffmpeg="ffmpeg -hide_banner" \
+	dt="dust" \
+	dt="dust -d 3" \
 	grex="grex -r" \
+	appsync="rsync -avxP" \
+	mirsync="rsync -avxP --delete" \
+	shck="shellcheck" \
+	vd="vidir" \
 	nv="nvidia-smi" \
 	nvw="watch -n 2 nvidia-smi" \
+	nvi="nvtop" \
 	jup="jupyter notebook --ip=127.0.0.1 --port=8888";
 
 # combo aliases
