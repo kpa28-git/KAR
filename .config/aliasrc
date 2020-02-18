@@ -34,6 +34,9 @@ alias lptl="sudo lsof -i -P -n | grep LISTEN";
 
 # git
 alias g="git" \
+	gd="git diff" \
+	gds="git diff --staged" \
+	gdh="git diff HEAD" \
 	gsb="git status -sb" \
 	gss="git status -s" \
 	gst="git status" \
@@ -51,6 +54,8 @@ alias yg="yay -Qs | grep" \
 	yq="yay -Qi" \
 	yps="yay -Ps" \
 	yys="yay -Syu" \
+	yysp="yay -Syu && poweroff" \
+	yysr="yay -Syu && reboot" \
 	yyf="yay -Syyu" \
 	yls="yay -Ql" \
 	ycl="yay -Yc && paccache -r" \
@@ -72,6 +77,7 @@ alias cg="conda list | grep" \
 # program aliases
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	x="sxiv -ft *" \
+	s="lspaths | fzf --reverse" \
 	lspaths="\$HOME/.local/bin/uitools/listpaths" \
 	ytd="youtube-dl --add-metadata -i -o '\$HOME/Downloads/%(upload_date)s-%(title)s.%(ext)s'" \
 	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '\$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
@@ -84,6 +90,7 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	mirsync="rsync -avxP --delete" \
 	shck="shellcheck" \
 	vd="vidir" \
+	pwi="sudo powertop" \
 	nv="nvidia-smi" \
 	nvw="watch -n 2 nvidia-smi" \
 	nvi="nvtop" \
@@ -94,16 +101,20 @@ alias cl="ycl && ccl"; # Clear all caches
 
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Alias neovim as vim if present.
-s() {
-	RES="$(lspaths | fzf --reverse --header='Jump to')";
+sd() {
+	RES="$(s --header='Search File')";
 	FILEPATH=$([ -d "$RES" ] && echo "$RES" || dirname "$RES");
 	cd "$FILEPATH" || return;
 }
 so() {
-	lspaths | fzf --reverse --header='Open File' | xargs -r "$OPENER"; # TODO - get this to open files with vim in the same terminal window
+	s --header='Open File' | xargs -r "$OPENER"; # TODO - get this to open files with vim in the same terminal window
+}
+sg() {
+	RES="$(s --header='Grep File')";
+	grep "$1" "$RES";
 }
 se() {
-	lspaths | fzf --reverse --header='Edit File' | xargs -r "$EDITOR";
+	s --header='Edit File' | xargs -r "$EDITOR";
 }
 #vf() {
 #	fzf | xargs -r -I % $EDITOR % ;
