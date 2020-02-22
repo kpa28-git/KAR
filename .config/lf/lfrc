@@ -27,7 +27,7 @@ map <enter> shell
 map o open $f
 map u clear
 map w unselect
-map sd :search_file
+map sd :search_dir
 map r $printf "%s\n" $fx | vidir -
 map t push $touch<space>
 map c push $chmod<space>755<space>
@@ -39,8 +39,8 @@ set hidden on
 set color256 on
 
 # Fuzzy Navigation
-cmd search_file ${{
-	res="$(~/.local/bin/uitools/listpaths | fzf --reverse --header='Search File')"
+cmd search_dir ${{
+	res="$(~/.local/bin/uitools/lspaths | fzf --reverse --info=inline --preview='pistol {}' --header='Search File')"
 	if [ -f "$res" ]; then
 		cmd="select"
 	elif [ -d "$res" ]; then
@@ -57,6 +57,7 @@ cmd open &{{
 		*) for file in $f; do setsid $OPENER "$file" > /dev/null 2> /dev/null & done ;;
 esac }}
 
+# Image/Video Preview
 cmd img_preview ${{
 	mime_type=$(file -bi "$f")
 	draw="$HOME"/.config/lf/draw_img.sh
