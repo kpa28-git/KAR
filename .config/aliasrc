@@ -77,7 +77,7 @@ alias cg="conda list | grep" \
 # program aliases
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	x="sxiv -ft *" \
-	s="lspaths | fzf --reverse" \
+	s="lspaths | fzf --reverse --info=inline --preview='pistol {}'" \
 	lspaths="\$HOME/.local/bin/uitools/listpaths" \
 	ytd="youtube-dl --add-metadata -i -o '\$HOME/Downloads/%(upload_date)s-%(title)s.%(ext)s'" \
 	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '\$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
