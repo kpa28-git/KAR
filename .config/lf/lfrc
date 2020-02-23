@@ -27,19 +27,83 @@ map <enter> shell
 map o open $f
 map u clear
 map w unselect
-map sd :search_dir
+map dd :trash-put
+map tp :trash-put
+map tl :trash-list
+map tre :trash-restore
+map trm :trash-rm
+map te :trash-empty
+map sd :search-dir
 map r $printf "%s\n" $fx | vidir -
-map t push $touch<space>
-map c push $chmod<space>755<space>
 map x push $ext<space>
-map - :img_preview
+map - :img-preview
 
-# lf switches
+# Switches
 set hidden on
 set color256 on
 
+# Open File
+cmd open &{{
+	case $(file --mime-type "$f" -b) in
+		text/*) setsid $OPENER "$f" ;;
+		video/*) setsid mpv "$f" > /dev/null 2 2>&1 & ;;
+		*) for file in $f; do setsid $OPENER "$file" > /dev/null 2> /dev/null & done ;;
+esac }}
+
+# Create Directory
+cmd mkdir ${{
+	printf "Directory Name: "
+	read ans
+	mkdir $ans
+}}
+
+# Create File
+cmd mkfile ${{
+	printf "File Name: "
+	read ans
+	$EDITOR $ans
+}}
+
+# Change Permissions
+cmd chmod ${{
+	printf "Mode Bits: "
+	read ans
+
+	for file in "$fx"
+	do
+		chmod $ans $file
+	done
+}}
+
+# Put File in Trash (trash-cli)
+cmd trash-put ${{
+	for file in "$fx"
+	do
+		trash-put "$file"
+	done
+}}
+
+# Show Trashed Files (trash-cli)
+cmd trash-list ${{
+	trash-list | $PAGER
+}}
+
+# Restore Trashed Files (trash-cli)
+cmd trash-restore ${{
+	trash-restore
+}}
+
+# Delete Chosen Trashed File Permanently (trash-cli)
+cmd trash-rm ${{
+	TO_REMOVE=$(trash-list | fzf --reverse --info=inline --header='Delete File' | awk '{print $NF}')
+	trash-rm "$TO_REMOVE"
+}}
+
+# Delete all Trashed Files Permanently (trash-cli)
+cmd trash-empty %trash-empty
+
 # Fuzzy Navigation
-cmd search_dir ${{
+cmd search-dir ${{
 	res="$(~/.local/bin/uitools/lspaths | fzf --reverse --info=inline --preview='pistol {}' --header='Search File')"
 	if [ -f "$res" ]; then
 		cmd="select"
@@ -49,16 +113,8 @@ cmd search_dir ${{
 	lf -remote "send $id $cmd \"$res\""
 }}
 
-# File Opening
-cmd open &{{
-	case $(file --mime-type "$f" -b) in
-		text/*) setsid $OPENER "$f" ;;
-		video/*) setsid mpv "$f" > /dev/null 2 2>&1 & ;;
-		*) for file in $f; do setsid $OPENER "$file" > /dev/null 2> /dev/null & done ;;
-esac }}
-
-# Image/Video Preview
-cmd img_preview ${{
+# Preview Image/Video
+cmd img-preview ${{
 	mime_type=$(file -bi "$f")
 	draw="$HOME"/.config/lf/draw_img.sh
 
