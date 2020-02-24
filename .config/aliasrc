@@ -74,6 +74,12 @@ alias cg="conda list | grep" \
 	cua="conda update --all" \
 	ccl="conda clean --yes --all";
 
+# trash-cli
+alias tdd="trash-put" \
+	tls="trash-list | $PAGER" \
+	tre="trash-restore" \
+	tem="trash-empty";
+
 # program aliases
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	x="sxiv -ft *" \
@@ -114,6 +120,10 @@ sg() {
 }
 se() {
 	s --header='Edit File' | xargs -r "$EDITOR";
+}
+trm() {
+	TO_REMOVE=$(trash-list | fzf --reverse --info=inline --header='Delete File' | awk '{print $NF}');
+	trash-rm "$TO_REMOVE";
 }
 #vf() {
 #	fzf | xargs -r -I % $EDITOR % ;

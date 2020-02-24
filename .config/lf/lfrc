@@ -27,12 +27,11 @@ map <enter> shell
 map o open $f
 map u clear
 map w unselect
-map dd :trash-put
-map tp :trash-put
-map tl :trash-list
+map tdd :trash-put
+map tls :trash-list
 map tre :trash-restore
 map trm :trash-rm
-map te :trash-empty
+map tem :trash-empty
 map sd :search-dir
 map r $printf "%s\n" $fx | vidir -
 map x push $ext<space>
