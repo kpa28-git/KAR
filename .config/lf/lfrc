@@ -104,7 +104,7 @@ cmd trash-empty %trash-empty
 
 # Fuzzy Navigation
 cmd search-dir ${{
-	res="$(~/.local/bin/uitools/lspaths | fzf --reverse --info=inline --preview='pistol {}' --header='Search File')"
+	res="$(~/.local/bin/uitools/lspaths | fzf --reverse --info=inline --preview='pistol {}' --header='Search Directory')"
 	if [ -f "$res" ]; then
 		cmd="select"
 	elif [ -d "$res" ]; then
