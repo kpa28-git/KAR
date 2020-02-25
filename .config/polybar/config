@@ -289,7 +289,7 @@ label = %output%
 
 [module/tempgpu]
 type = custom/script
-click-left = $TERMINAL -e watch nvidia-smi
+click-left = $TERMINAL -e nvtop
 exec = $HOME/.local/bin/polybar/temp-gpu.sh
 interval = 30
 label = %output%

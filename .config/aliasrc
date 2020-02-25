@@ -26,6 +26,7 @@ alias c="clear" \
 	mimetype="file --mime-type" \
 	xdgtype="xdg-mime query filetype" \
 	xdgdefault="xdg-mime query default" \
+	myip="curl ifconfig.co" \
 	lamp="ps -u \$(whoami)" \
 	kamp="killall -u \$(whoami)";
 

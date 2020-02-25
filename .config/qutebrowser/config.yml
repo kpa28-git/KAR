@@ -46,6 +46,7 @@ url.searchengines: {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
     'ddg': 'https://duckduckgo.com/?q={}',
     'wik': 'https://en.wikipedia.org/?search={}',
+    'dict': 'https://www.merriam-webster.com/dictionary/{}',
 
     # Social
     'yt': 'https://www.youtube.com/results?search_query={}',
