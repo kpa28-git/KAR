@@ -5,6 +5,7 @@
 !*/
 
 # Whitelist:
+!/alacritty/**
 !/dunst/**
 !/fontconfig/**
 !/htop/**
