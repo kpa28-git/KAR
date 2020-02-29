@@ -17,7 +17,7 @@ alias f="\$FILE" \
 	ccat="highlight --out-format=ansi" \
 	h="history" \
 	hg="h | grep" \
-	hs="h | fzf --tac --info=inline --header='Search Command' | sed 's/[0-9]*\s*//g'" \
+	hs="h | fzf --tac --info=inline --header='Search Command' | sed 's/^[0-9]*\s*//g'" \
 	hr="xdotool type --delay 0 \"\$(hs)\" && clear" \
 	lg="l | grep" \
 	mkd="mkdir -pv" \
