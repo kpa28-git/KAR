@@ -54,7 +54,7 @@ alias g="git" \
 	grm="g rm" \
 	gcmsg="g commit -m" \
 	gua="gr | xargs -L1 git push --all" \
-	glp="gl && gp origin master";
+	glp="gl && gp";
 
 # yay / pacman / misc. arch
 alias y="yay" \
