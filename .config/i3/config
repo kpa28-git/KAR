@@ -31,14 +31,14 @@ set $ws9 "9"
 set $ws10 "10"
 
 # General dropdown window traits. The order can matter.
-for_window [title="dropdown_*"] floating enable, move scratchpad, sticky enable, resize set 50 ppt 50 ppt, border pixel 3, move position center, scratchpad show
-#for_window [title="dropdown_*"] floating enable
-#for_window [title="dropdown_*"] move scratchpad
-#for_window [title="dropdown_*"] sticky enable
-#for_window [title="dropdown_*"] resize set 50 ppt 50 ppt
-#for_window [title="dropdown_*"] border pixel 3
-#for_window [title="dropdown_*"] scratchpad show
-#for_window [title="dropdown_*"] move position center
+#for_window [title="dropdown_*"] floating enable, move scratchpad, sticky enable, resize set 50 ppt 50 ppt, border pixel 3, move position center, scratchpad show
+for_window [title="dropdown_*"] floating enable
+for_window [title="dropdown_*"] move scratchpad
+for_window [title="dropdown_*"] sticky enable
+for_window [title="dropdown_*"] resize set 50 ppt 50 ppt
+for_window [title="dropdown_*"] border pixel 3
+for_window [title="dropdown_*"] scratchpad show
+for_window [title="dropdown_*"] move position center
 #for_window [title="dropdown_tmuxdd"] resize set 50 ppt 50 ppt
 #for_window [title="dropdown_xonsh"] resize set 50 ppt 50 ppt
 #for_window [title="dropdown_tmuxdd"] border pixel 3
