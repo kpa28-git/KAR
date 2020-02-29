@@ -27,6 +27,7 @@ map <enter> shell
 map o open $f
 map u clear
 map w unselect
+map dr dragon
 map tdd :trash-put
 map tls :trash-list
 map tre :trash-restore
@@ -40,6 +41,9 @@ map - :img-preview
 # Switches
 set hidden on
 set color256 on
+
+# Dragon File Uploader
+cmd dragon %dragon-drag-and-drop -a $fx
 
 # Open File
 cmd open &{{
