@@ -10,7 +10,7 @@
 # Add `~/.local/bin/` and all subdirectories to $PATH
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
-export TERMINAL="st"
+export TERMINAL="/usr/bin/terminal"
 export OPENER="xdg-open"
 export EDITOR="nvim"
 export PAGER="less"

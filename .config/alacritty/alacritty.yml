@@ -337,7 +337,7 @@ shell:
 #alt_send_esc: true
 
 # Window opacity; 0.0 - transparent, 1.0 - opaque
-background_opacity: .70
+background_opacity: .60
 
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
@@ -385,7 +385,9 @@ key_bindings:
 
   # Scrollback:
   - { key: K,         mods: Alt,      action: ScrollLineUp      }
+  - { key: Up,        mods: Alt,      action: ScrollLineUp      }
   - { key: J,         mods: Alt,      action: ScrollLineDown    }
+  - { key: Down,      mods: Alt,      action: ScrollLineDown    }
   - { key: PageUp,                    action: ScrollPageUp      }
   - { key: PageDown,                  action: ScrollPageDown    }
   - { key: Home,                      action: ScrollToTop       }

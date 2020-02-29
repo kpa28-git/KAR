@@ -1,4 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=RSS feed addition
+Name=rssadd
+GenericName=RSS Feed Adder
 Exec=/usr/bin/env rssadd %U

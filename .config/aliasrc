@@ -6,19 +6,23 @@ alias l="exa -lah --color=auto --group-directories-first" \
 	grep="rg";
 
 # basic
-alias c="clear" \
-	f="\$FILE" \
+# TODO - finish  hs/hr history fuzzy match command searching
+# It should work by allowing a selection and sending the chosen command to the input prompt as if I typed it
+alias f="\$FILE" \
 	e="\$EDITOR" \
 	v="\$EDITOR" \
+	c="clear" \
 	i="htop -t" \
-	lg="l | grep" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
-	hg="history | grep" \
+	h="history" \
+	hg="h | grep" \
+	hs="h | fzf --tac --info=inline --header='Search Command' | sed 's/[0-9]*\s*//g'" \
+	hr="xdotool type --delay 0 \"\$(hs)\" && clear" \
+	lg="l | grep" \
 	mkd="mkdir -pv" \
 	manp="man 1p" \
 	duse="du -chH | sort -h" \
-	rduse="du -chH | sort -rh" \
 	lb="lsblk -o MODE,TYPE,HOTPLUG,FSTYPE,FSVER,NAME,MOUNTPOINT,LABEL,STATE,FSUSE%,FSUSED,FSSIZE,SIZE,MODEL,PARTUUID" \
 	sdn="sudo shutdown -h now" \
 	lap="ps -u" \
@@ -26,40 +30,43 @@ alias c="clear" \
 	mimetype="file --mime-type" \
 	xdgtype="xdg-mime query filetype" \
 	xdgdefault="xdg-mime query default" \
+	xorgfocusinfo="xprop -id \`xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print \$NF}'\`" \
 	myip="curl ifconfig.co" \
-	lamp="ps -u \$(whoami)" \
-	kamp="killall -u \$(whoami)";
+	watch2="watch -n 2 " \
+	lamp="ps -u \`whoami\`" \
+	kamp="kap -u \`whoami\`";
 
 # networking
 alias lptl="sudo lsof -i -P -n | grep LISTEN";
 
 # git
 alias g="git" \
-	gd="git diff" \
-	gds="git diff --staged" \
-	gdh="git diff HEAD" \
-	gsb="git status -sb" \
-	gss="git status -s" \
-	gst="git status" \
-	gl="git pull" \
-	gulp="git submodule foreach git pull origin master" \
-	ga="git add" \
-	grm="git rm" \
-	gcmsg="git commit -m" \
-	gcsmg="git commit -m" \
-	gua="git remote | xargs -L1 git push --all" \
-	gpp="git pull && git push origin master";
+	gd="g diff" \
+	gds="gd --staged" \
+	gdh="gd HEAD" \
+	gst="g status" \
+	gss="gst -sb" \
+	gl="g pull" \
+	gp="g push" \
+	gulp="g submodule foreach git pull origin master" \
+	ga="g add" \
+	gr="g remote" \
+	grm="g rm" \
+	gcmsg="g commit -m" \
+	gua="gr | xargs -L1 git push --all" \
+	glp="gl && gp origin master";
 
 # yay / pacman / misc. arch
-alias yg="yay -Qs | grep" \
-	yq="yay -Qi" \
-	yps="yay -Ps" \
-	yys="yay -Syu" \
-	yysp="yay -Syu && poweroff" \
-	yysr="yay -Syu && reboot" \
-	yyf="yay -Syyu" \
-	yls="yay -Ql" \
-	ycl="yay -Yc && paccache -r" \
+alias y="yay" \
+	yg="y -Qs | grep" \
+	yq="y -Qi" \
+	yps="y -Ps" \
+	yys="y -Syu" \
+	yysp="y -Syu && poweroff" \
+	yysr="y -Syu && reboot" \
+	yyf="y -Syyu" \
+	yls="y -Ql" \
+	ycl="y -Yc && paccache -r" \
 	lsp="pacman -Qett --color=always | less" \
 	pacwhen="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort" \
 	ifck="informant check" \
@@ -77,7 +84,7 @@ alias cg="conda list | grep" \
 
 # trash-cli
 alias tdd="trash-put" \
-	tls="trash-list | $PAGER" \
+	tls="trash-list | \$PAGER" \
 	tre="trash-restore" \
 	tem="trash-empty";
 
@@ -85,12 +92,13 @@ alias tdd="trash-put" \
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	x="sxiv -ft *" \
 	s="\$HOME/.local/bin/uitools/lspaths | fzf --reverse --info=inline --preview='pistol {}'" \
+	se="s --header='Edit File' | xargs -r \"\$EDITOR\"" \
 	ytd="youtube-dl --add-metadata -i -o '\$HOME/Downloads/%(upload_date)s-%(title)s.%(ext)s'" \
 	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '\$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	ffmpeg="ffmpeg -hide_banner" \
 	dt="dust" \
-	dt="dust -d 3" \
+	dt3="dt -d 3" \
 	grex="grex -r" \
 	appsync="rsync -avxP" \
 	mirsync="rsync -avxP --delete" \
@@ -98,7 +106,7 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	vd="vidir" \
 	pwi="sudo powertop" \
 	nv="nvidia-smi" \
-	nvw="watch -n 2 nvidia-smi" \
+	nvw="watch2 nv" \
 	nvi="nvtop" \
 	jup="jupyter notebook --ip=127.0.0.1 --port=8888";
 
@@ -118,9 +126,6 @@ so() {
 sg() {
 	RES="$(s --header='Grep File')";
 	grep "$1" "$RES";
-}
-se() {
-	s --header='Edit File' | xargs -r "$EDITOR";
 }
 trm() {
 	TO_REMOVE=$(trash-list | fzf --reverse --info=inline --header='Delete File' | awk '{print $NF}');

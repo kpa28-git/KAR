@@ -1,4 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=Audio Player
+Name=mpv
+GenericName=Audio Player
 Exec=/usr/bin/mpv %U

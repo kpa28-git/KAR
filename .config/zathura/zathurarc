@@ -1,12 +1,64 @@
+#
 set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 1
-map u scroll half-up
-map d scroll half-down
-map D toggle_page_mode
-map r reload
+
+# KEYBINDS
+## Document Navigation
+map j navigate next
+map <Down> navigate next
+
+map k navigate previous
+map <Up> navigate previous
+
+map h navigate page-top
+map <Left> navigate page-top
+
+map l navigate page-bottom
+map <Right> navigate page-bottom
+
+
+## Page Scrolling
+map u scroll full-up
+map d scroll full-down
+
+map U scroll half-up
+map D scroll half-down
+
+map J scroll down
+map <S-Down> scroll down
+
+map K scroll up
+map <S-Up> scroll up
+
+map H scroll left
+map <S-Left> scroll left
+
+map L scroll right
+map <S-Right> scroll right
+
+
+## View Modifications
 map R rotate
-map K zoom in
-map J zoom out
 map i recolor
+map 0 zoom default
+map 2 toggle_page_mode
+
+
+## Modes
+map 1 toggle_presentation
+map [presentation] 1 toggle_presentation
+map [presentation] 2 toggle_page_mode
+
+map 3 toggle_fullscreen
+map [fullscreen] 3 toggle_fullscreen
+map [fullscreen] 2 toggle_page_mode
+
+map 9 toggle_index
+map [index] 9 toggle_index
+map [index] 2 toggle_page_mode
+
+
+## Misc
+map r reload
 map p print

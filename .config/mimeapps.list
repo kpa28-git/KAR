@@ -19,6 +19,8 @@ application/csv=spreadsheet.desktop;
 image/*=img.desktop;
 image/jpeg=img.desktop;
 image/png=img.desktop;
+image/svg=web-browser.desktop;
+image/svg+xml=web-browser.desktop;
 image/gif=gif.desktop;
 
 audio/*=audio.desktop;
