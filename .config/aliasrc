@@ -74,7 +74,7 @@ alias y="yay" \
 	ifls="informant list" \
 	ifrd="informant read" \
 	lsfont="fc-list" \
-	lsfontfam="lsfonts : family";
+	lsfontfam="lsfont : family";
 
 # other package managers
 alias cg="conda list | grep" \
