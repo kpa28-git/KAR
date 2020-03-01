@@ -46,7 +46,9 @@ super + i
 # torrent frontend
 super + t
 	$TERMINAL -e tremc
-
+# vimwiki
+super + v
+	$TERMINAL -e $EDITOR -c "VimwikiIndex"
 
 # SCRIPTS:
 # lock

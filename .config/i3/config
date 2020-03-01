@@ -30,19 +30,14 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# General dropdown window traits. The order can matter.
-#for_window [title="dropdown_*"] floating enable, move scratchpad, sticky enable, resize set 50 ppt 50 ppt, border pixel 3, move position center, scratchpad show
-for_window [title="dropdown_*"] floating enable
-for_window [title="dropdown_*"] move scratchpad
-for_window [title="dropdown_*"] sticky enable
-for_window [title="dropdown_*"] resize set 50 ppt 50 ppt
-for_window [title="dropdown_*"] border pixel 3
-for_window [title="dropdown_*"] scratchpad show
-for_window [title="dropdown_*"] move position center
-#for_window [title="dropdown_tmuxdd"] resize set 50 ppt 50 ppt
-#for_window [title="dropdown_xonsh"] resize set 50 ppt 50 ppt
-#for_window [title="dropdown_tmuxdd"] border pixel 3
-#for_window [title="dropdown_xonsh"] border pixel 2
+# General floating dropdown window traits. The order can matter.
+for_window [instance="i3dd-*"] floating enable
+for_window [instance="i3dd-*"] move scratchpad
+for_window [instance="i3dd-*"] sticky enable
+for_window [instance="i3dd-*"] resize set 50 ppt 50 ppt
+for_window [instance="i3dd-*"] border pixel 3
+for_window [instance="i3dd-*"] scratchpad show
+for_window [instance="i3dd-*"] move position center
 
 
 # PROGRAMS:
@@ -50,14 +45,13 @@ for_window [title="dropdown_*"] move position center
 bindsym $mod+Return		exec --no-startup-id $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
-# Floating
+# Floating dropdown
 bindsym $mod+c			exec --no-startup-id ddspawn xonsh
-bindsym $mod+u			exec --no-startup-id ddspawn tmuxdd
-bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
+bindsym $mod+u			exec --no-startup-id ddspawn tmux-connect
 
 # Exiting/Closing
-bindsym $mod+q			[con_id="__focused__" title="^(?!dropdown_).*$"] kill
-bindsym $mod+Shift+q		[con_id="__focused__" title="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
+bindsym $mod+q			[con_id="__focused__" instance="^(?!i3dd-).*$"] kill
+bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!i3dd-).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
 
 # MOVEMENT:
