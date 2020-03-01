@@ -65,6 +65,7 @@ alias y="yay" \
 	yysp="y -Syu && poweroff" \
 	yysr="y -Syu && reboot" \
 	yyf="y -Syyu" \
+	yrm="y -Rsn" \
 	yls="y -Ql" \
 	ycl="y -Yc && paccache -r" \
 	lsp="pacman -Qett --color=always | less" \

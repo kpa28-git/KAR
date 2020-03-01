@@ -23,7 +23,7 @@ map x
 map -
 
 # Mappings
-map <enter> shell
+map <enter> $$SHELL
 map o open $f
 map u clear
 map w unselect
