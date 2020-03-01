@@ -73,7 +73,8 @@ alias y="yay" \
 	ifck="informant check" \
 	ifls="informant list" \
 	ifrd="informant read" \
-	lsff="fc-list : family";
+	lsfont="fc-list" \
+	lsfontfam="lsfonts : family";
 
 # other package managers
 alias cg="conda list | grep" \

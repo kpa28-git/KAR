@@ -6,7 +6,7 @@
 # sexy hotkey daemon runtime config.
 #
 # Unbound hotkeys:
-# 1st row: W  eE o  P
+# 1st row: W  E  P
 # 2nd row: A  D
 # 3rd row: zZ C
 # Insert Scroll_Lock XF86Launch1
@@ -14,9 +14,7 @@
 # PROGRAMS:
 # rofi
 super + r
-	rofi -show run
-super + d
-	rofi -show drun
+	rofi -modi combi -combi-modi drun,run -show combi
 super +  w
 	rofi -show window
 super + shift + s
@@ -51,6 +49,15 @@ super + v
 	$TERMINAL -e $EDITOR -c "VimwikiIndex"
 
 # SCRIPTS:
+# search edit
+super + e
+	$TERMINAL -e se
+# search directory
+super + d
+	$TERMINAL -e sd
+# search open
+super + o
+	$TERMINAL -e so
 # lock
 super + x
 	mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
