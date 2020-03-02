@@ -43,6 +43,7 @@ alias lptl="sudo lsof -i -P -n | grep LISTEN";
 alias g="git" \
 	gd="g diff" \
 	gds="gd --staged" \
+	gls="g log" \
 	gdh="gd HEAD" \
 	gst="g status" \
 	gss="gst -sb" \
