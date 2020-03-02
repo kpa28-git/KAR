@@ -6,7 +6,7 @@
 ! Xresources file.
 
 !! Global and Terminal Font Settings
-*.font: Monospace:pixelsize=24:dpi:360:antialias:true:autohint:false:hinting:true; 24
+*.font: Monospace:pixelsize=30:dpi:360:antialias:true:autohint:false:hinting:true; 30
 Xft.antialias: true
 Xft.autohint:  false
 Xft.hinting:   true
