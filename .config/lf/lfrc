@@ -67,6 +67,16 @@ cmd mkfile ${{
 	$EDITOR $ans
 }}
 
+cmd symlink ${{
+	printf "Symlink Name: "
+	read ans
+
+	for file in "$fx"
+	do
+		ln -s $file $ans
+	done
+}}
+
 # Change Permissions
 cmd chmod ${{
 	printf "Mode Bits: "
