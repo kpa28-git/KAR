@@ -92,6 +92,14 @@ Clone it and watch this bad boy go.
 * redshift config at `~/.config/redshift/redshift.conf`
 
 ## TODO
+* Next browser config
+	* Play around with and learn next
+	* Start building a config file `~/.config/next/init.lisp`
+* Custom st build
+	* scrollback, alpha patch, working dpi setting, dedicated config file
+* clean up home directory (move dotfiles elsewhere?)
+* aliasrc
+	* Fix 'history run' alias
 * Set global theming from my directory of base16 files
 	* Choose a theme from a rofi prompt and set base16 for:
 		* Xresources (needs fixing)
@@ -101,7 +109,6 @@ Clone it and watch this bad boy go.
 		* rbuku -r (remove) disabled for now - qutebrowser adds an item which screws up indexing
 		* can still delete with rofi by launching from the terminal via `rbuku -r`
 	* ~~drive mounting/unmounting~~
-* clean up home directory (move dotfiles elsewhere?)
 * try out other login shells
 	* zsh
 	* tcsh
@@ -112,13 +119,10 @@ Clone it and watch this bad boy go.
 * cleanup and remove unused luke scripts
 * lf config
 	* ~~Change opener to open in a separate shell or the same window (as in ranger)~~
-	* add a delete command
+	* ~~add a delete command~~
 * improve my rss reader
 	* install a new one?
 	* organize feeds
-* browsers
-	* vimb
-	* next
 
 ## Installation
 1. Make sure you have all required programs installed
@@ -136,10 +140,10 @@ Clone it and watch this bad boy go.
 * file manager: lf+[pistol](https://github.com/doronbehar/pistol)
 * notifications: dunst
 * launcher: rofi
-* music: ncmpcpp+mpd
+* music: mpd+ncmpcpp
 * video: mpv
 * hotkeys: sxhkd+i3
-* browser: qutebrowser
+* browser: qutebrowser|next
 * base16 theme: gruvbox
 
 ## Dependencies
