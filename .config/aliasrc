@@ -31,6 +31,7 @@ alias f="\$FILE" \
 	xdgtype="xdg-mime query filetype" \
 	xdgdefault="xdg-mime query default" \
 	xorgfocusinfo="xprop -id \`xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print \$NF}'\`" \
+	today="date '+%Y-%m-%d'" \
 	myip="curl ifconfig.co" \
 	watch2="watch -n 2 " \
 	lamp="ps -u \`whoami\`" \
@@ -69,8 +70,9 @@ alias y="yay" \
 	yrm="y -Rsn" \
 	yls="y -Ql" \
 	ycl="y -Yc && paccache -r" \
-	lsp="pacman -Qett --color=always | less" \
+	pacls="pacman -Qett --color=always" \
 	pacwhen="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort" \
+	pacmirrup="sudo reflector --country 'United States' --latest 200 --age 24 --sort rate --save /etc/pacman.d/mirrorlist && rm -f /etc/pacman.d/mirrorlist.pacnew" \
 	ifck="informant check" \
 	ifls="informant list" \
 	ifrd="informant read" \
@@ -79,10 +81,12 @@ alias y="yay" \
 
 # other package managers
 alias cg="conda list | grep" \
+	cls="conda list" \
 	car="conda activate" \
 	cdr="conda deactivate" \
 	cup="conda update conda pip" \
 	cua="conda update --all" \
+	crm="conda remove" \
 	ccl="conda clean --yes --all";
 
 # trash-cli
