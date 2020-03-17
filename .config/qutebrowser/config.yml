@@ -45,7 +45,10 @@ url.searchengines: {
     # General
     'DEFAULT': 'https://duckduckgo.com/?q={}',
     'ddg': 'https://duckduckgo.com/?q={}',
-    'wik': 'https://en.wikipedia.org/?search={}',
+    'sw': 'https://swisscows.com/web?query={}',
+    'sa': 'https://seekingalpha.com/search/?q={}',
+    'wolf': 'https://www.wolframalpha.com/input/?i={}',
+    'wiki': 'https://en.wikipedia.org/?search={}',
     'dict': 'https://www.merriam-webster.com/dictionary/{}',
 
     # Social
