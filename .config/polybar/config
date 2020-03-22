@@ -63,9 +63,9 @@ font-8 = Noto Sans Mono CJK JP:size=18;2
 ;------------
 fixed-center = true
 line-size = 3
-modules-left = airinfo weather spxprice rutprice ethprice
+modules-left = airinfo corona weather spxprice rutprice
 modules-center = i3
-modules-right = nordvpn network wlan date powermenu
+modules-right = ethprice nordvpn network wlan date powermenu
 tray-position = right
 tray-padding = 1
 
@@ -311,6 +311,7 @@ label = %output%
 ;label = %
 
 
+
 [module/ethprice]
 type = custom/script
 click-left = $HOME/.local/bin/polybar/cprice.sh -s 'ETH'
@@ -341,6 +342,14 @@ type = custom/script
 exec = $HOME/.local/bin/polybar/airinfo.sh
 interval = 600
 label = %{T-}%{T-} %output%
+
+
+[module/corona]
+type = custom/script
+click-left = $TERMINAL -e less -S "$HOME/.local/share/coronareport"
+exec = $HOME/.local/bin/polybar/corona.sh 'California'
+interval = 14400
+label = %{T-}ﯭ%{T-} %output%
 
 
 [module/weather]

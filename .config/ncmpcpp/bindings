@@ -592,6 +592,15 @@ def_key "n"
 def_key "N"
     previous_found_item
 
+def_key "A"
+  add_selected_items
+
+def_key "space"
+   pause
+
+def_key "a"
+  add_item_to_playlist
+
 # not used but bound
 def_key "J"
     move_sort_order_down
@@ -630,5 +639,7 @@ def_key "f"
   change_browse_mode
 def_key "x"
   delete_playlist_items
+def_key "p"
+  show_playlist
 def_key "P"
   show_playlist
