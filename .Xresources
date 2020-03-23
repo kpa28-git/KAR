@@ -6,7 +6,8 @@
 ! Xresources file.
 
 !! Global and Terminal Font Settings
-*.font: Monospace:pixelsize=30:dpi:360:antialias:true:autohint:false:hinting:true; 30
+!! (Set Monospace font alias in $XDG_CONFIG_HOME/fontconfig/fonts.conf)
+*.font: Monospace:pixelsize=30:dpi:192:antialias:true:autohint:false:hinting:true; 30
 Xft.antialias: true
 Xft.autohint:  false
 Xft.hinting:   true

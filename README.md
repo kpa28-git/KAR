@@ -131,9 +131,9 @@ Clone it and watch this bad boy go.
 
 ## Details
 * window manager: i3-gaps
-* compositor: picom (compton)
-* terminal: st
-* terminal font: monospace
+* compositor: picom
+* terminal: st || alacritty (backup)
+* terminal (monospace) font: Hack Nerd Font Mono
 * bar: polybar
 * bar icon: hack nerd font
 * text editor: neovim
@@ -143,7 +143,7 @@ Clone it and watch this bad boy go.
 * music: mpd+ncmpcpp
 * video: mpv
 * hotkeys: sxhkd+i3
-* browser: qutebrowser|next
+* browser: qutebrowser || next
 * base16 theme: gruvbox
 
 ## Dependencies
