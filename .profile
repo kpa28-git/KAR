@@ -23,6 +23,15 @@ export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
 #export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 #export PIX="$HOME/.pix/"
 
+# ~ Clean-up
+export LESSHISTFILE="-"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+export GRIPHOME="$XDG_CONFIG_HOME/grip"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
 # less/man colors
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"; a="${a%_}"
