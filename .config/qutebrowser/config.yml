@@ -43,9 +43,9 @@ tabs.title.format_pinned: '[{index}]'
 ## URL
 url.searchengines: {
     # General
-    'DEFAULT': 'https://duckduckgo.com/?q={}',
-    'ddg': 'https://duckduckgo.com/?q={}',
+    'DEFAULT': 'https://swisscows.com/web?query={}',
     'sw': 'https://swisscows.com/web?query={}',
+    'ddg': 'https://duckduckgo.com/?q={}',
     'sa': 'https://seekingalpha.com/search/?q={}',
     'wolf': 'https://www.wolframalpha.com/input/?i={}',
     'wiki': 'https://en.wikipedia.org/?search={}',
