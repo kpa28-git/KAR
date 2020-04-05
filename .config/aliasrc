@@ -141,6 +141,9 @@ trm() {
 #vf() {
 #	fzf | xargs -r -I % $EDITOR % ;
 #}
+tunder() {
+	for i in *' '*; do   mv "$i" `echo $i | sed -e 's/ /_/g'`; done
+}
 ifi() {
 	CHOSEN=$(ifls | fzf | sed 's/:.*//');
 	ifrd "$CHOSEN";

@@ -19,8 +19,8 @@ export READER="zathura"
 export FILE="lf"
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
+export SUDO_ASKPASS="$HOME/.local/bin/uitools/raskpass"
 #export REFER="$HOME/.referbib"
-#export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 #export PIX="$HOME/.pix/"
 
 # ~ Clean-up

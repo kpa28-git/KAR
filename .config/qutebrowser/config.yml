@@ -87,6 +87,7 @@ url.searchengines: {
     'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}',
     'skl': 'https://scikit-learn.org/stable/search.html?q={}',
     'tch': 'https://pytorch.org/docs/stable/search.html?q={}',
+    'pyt': 'https://discuss.pytorch.org/search?q={}',
 
     # Rust Docs
     'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
