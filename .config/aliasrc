@@ -1,9 +1,11 @@
 #!/bin/sh
 
-# utility replacement
+# replace utils with rust alternatives
 alias l="exa -lah --color=auto --group-directories-first" \
 	ls="exa -h --color=auto --group-directories-first" \
-	grep="rg";
+	grep="rg" \
+	cat="bat --theme=zenburn" \
+	find="fd -HI --ignore-file \"\$HOME\"/.config/fd/ignore_file";
 
 # basic
 # TODO - finish  hs/hr history fuzzy match command searching
@@ -32,7 +34,7 @@ alias f="\$FILE" \
 	xdgdefault="xdg-mime query default" \
 	xorgfocusinfo="xprop -id \`xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print \$NF}'\`" \
 	today="date '+%Y-%m-%d'" \
-	myip="curl ifconfig.co" \
+	myip="curl -q ifconfig.co" \
 	watch2="watch -n 2 " \
 	lamp="ps -u \`whoami\`" \
 	kamp="kap -u \`whoami\`";
@@ -98,7 +100,8 @@ alias tdd="trash-put" \
 # program aliases
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	x="sxiv -ft *" \
-	s="\$HOME/.local/bin/uitools/lspaths | fzf --reverse --info=inline --preview='pistol {}'" \
+	lspaths="fd -HI --ignore-file \"\$HOME\"/.config/fd/ignore_file" \
+	s="lspaths | fzf --reverse --info=inline --preview='pistol {}'" \
 	se="s --header='Edit File' | xargs -r \"\$EDITOR\"" \
 	ytd="youtube-dl --add-metadata -i -o '\$HOME/Downloads/%(upload_date)s-%(title)s.%(ext)s'" \
 	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '\$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
