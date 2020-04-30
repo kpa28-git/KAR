@@ -25,21 +25,17 @@ Plug 'bling/vim-airline'		" Lightweight statusbar
 Plug 'bling/vim-bufferline'		" Lightweight bufferbar
 Plug 'junegunn/goyo.vim'		" Distraction free writing
 
-
 " ********** Languages/Syntax **********
 Plug 'tpope/vim-commentary'		" Toggle comment/uncomment ('gc')
-Plug 'tpope/vim-surround'		" Toggle surrounding parens/brackets/others
+Plug 'tpope/vim-surround'		" Toggle surrounding parens/brackets/others ('cs<1><2>', 'ds<1>', 'yss<1>', and others)
 Plug 'rust-lang/rust.vim'		" Rust lang plugin required by syntastic
 Plug 'mboughaba/i3config.vim'		" i3 config syntax
-
 
 " ********** Autocomplete **********
 Plug 'Valloric/YouCompleteMe'		" Autocomplete plugin (requires python-jedi for python)
 
-
 " ********** Linting **********
 Plug 'scrooloose/syntastic'		" Syntax checking plugin for Vim (requires python-jedi for python)
-
 
 " ********** External Integration **********
 Plug 'emakman/nvim-latex-previewer'	" LaTeX Previewer ('<Leader>p' or ':LatexPreviewToggle')
@@ -91,9 +87,6 @@ nnoremap S :%s//g<Left><Left>
 map <leader>b :vsp<space>$BIB<CR>
 map <leader>r :vsp<space>$REFER<CR>
 
-" Render and preview github-style markdown with python-grip
-map <leader>m :!grip<space>%
-
 
 """ GENERAL BUFFER AUTOCMDs
 " Automatically deletes all trailing whitespace on save.
@@ -136,8 +129,8 @@ map <C-Right> <C-w>l
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Goyo distraction free plugin
 map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
-
 
 " ********** Autocomplete **********
 nmap <leader>g :YcmCompleter GoTo<CR>
@@ -150,7 +143,6 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_complete_in_comments = 0
 let g:ycm_min_num_of_chars_for_completion = 2
 
-
 " ********** Linting **********
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -161,8 +153,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
-
+let g:syntastic_python_checkers=['python']
+let g:syntastic_json_checkers = ['jsonval']
+let g:syntastic_yaml_checkers = ['pyyaml']
 
 " ********** External Integration **********
 nmap <buffer> <leader>p :LatexPreviewToggle<CR>
@@ -171,6 +164,9 @@ nmap <buffer> <leader>] :NextLatexPreviewMode<CR>
 
 " Compile text document, be it groff/LaTeX/markdown/etc.
 map <leader>c :w! \| !txtcompiler <c-r>%<CR>
+
+" Render and preview github-style markdown with python-grip
+map <leader>m :!grip<space>%
 
 " <leader>+o(rthography): Spellcheck
 map <leader>o :setlocal spell! spelllang=en_us<CR>

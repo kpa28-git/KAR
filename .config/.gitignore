@@ -18,6 +18,7 @@
 !/picom/**
 !/pistol/**
 !/polybar/**
+!/pylint/**
 !/qutebrowser/**
 !/readline/**
 !/redshift/**
