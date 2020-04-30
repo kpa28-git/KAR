@@ -4,6 +4,3 @@
 [submodule ".local/share/themes"]
 	path = .local/share/themes
 	url = git@github.com:kpatel28/themes.git
-[submodule ".config/nvim/bundle/syntax"]
-	path = .config/nvim/bundle/syntax
-	url = https://github.com/mboughaba/i3config.vim.git
