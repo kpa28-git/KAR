@@ -88,6 +88,7 @@ url.searchengines: {
     'skl': 'https://scikit-learn.org/stable/search.html?q={}',
     'tch': 'https://pytorch.org/docs/stable/search.html?q={}',
     'pyt': 'https://discuss.pytorch.org/search?q={}',
+    'pyro': 'http://docs.pyro.ai/en/stable/search.html?q={}',
 
     # Rust Docs
     'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',

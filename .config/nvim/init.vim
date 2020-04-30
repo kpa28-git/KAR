@@ -1,66 +1,51 @@
-"""                            _
+""                            _
 """     ____  ___  ____ _   __(_)___ ___
 """    / __ \/ _ \/ __ \ | / / / __ `__ \
 """   / / / /  __/ /_/ / |/ / / / / / / /
 """  /_/ /_/\___/\____/|___/_/_/ /_/ /_/
 """ neovim runtime config file.
 
-""" PATHOGEN (vim plugin manager):
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" Install/Update plugins with :PlugInstall/:PlugUpdate
+""" PLUGIN MANAGER INSTALL (junegunn/vim-plug)
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+""" PLUGINS INSTALL (:PlugClean/:PlugUpgrade/:PlugInstall/:PlugUpdate)
 call plug#begin("$HOME/.config/nvim/plugged")
 
-" Nerdtree sidebar
-Plug 'scrooloose/nerdtree'
+" ********** UI Plugins **********
+Plug 'scrooloose/nerdtree'		" Nerdtree sidebar
+Plug 'bling/vim-airline'		" Lightweight statusbar
+Plug 'bling/vim-bufferline'		" Lightweight bufferbar
+Plug 'junegunn/goyo.vim'		" Distraction free writing
 
-" Deoplete Autocompletion
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
 
-" Deoplete-Jedi (Python) Autocompletion
-Plug 'deoplete-plugins/deoplete-jedi'
-let g:deoplete#sources#jedi#popup_select_first = 1
-let g:deoplete#sources#jedi#use_splits_not_buffers = "left"
-let g:deoplete#sources#jedi#completions_enabled = 0
-let g:deoplete#sources#jedi#show_docstring = 1
-"let g:deoplete#sources#jedi#python_path
+" ********** Languages/Syntax **********
+Plug 'tpope/vim-commentary'		" Toggle comment/uncomment ('gc')
+Plug 'tpope/vim-surround'		" Toggle surrounding parens/brackets/others
+Plug 'rust-lang/rust.vim'		" Rust lang plugin required by syntastic
+Plug 'mboughaba/i3config.vim'		" i3 config syntax
 
-" Deoplete-Rust Autocompletion
-Plug 'sebastianmarkow/deoplete-rust'
-let g:deoplete#sources#rust#racer_binary='/home/kev/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/home/kev/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
-" Goyo distraction free writing plugin
-Plug 'junegunn/goyo.vim'
+" ********** Autocomplete **********
+Plug 'Valloric/YouCompleteMe'		" Autocomplete plugin (requires python-jedi for python)
 
-" i3 config syntax
-Plug 'mboughaba/i3config.vim'
 
-" Git integration plugin
-Plug 'jreybert/vimagit'
+" ********** Linting **********
+Plug 'scrooloose/syntastic'		" Syntax checking plugin for Vim (requires python-jedi for python)
 
-" Vimwiki notetaking plugin
-Plug 'vimwiki/vimwiki'
 
-" LaTeX previewer
-Plug 'emakman/nvim-latex-previewer'
-
-" Lightweight mode statusbar and bufferbar
-Plug 'bling/vim-airline'
-Plug 'bling/vim-bufferline'
-
-" Plugins to toggle surrounding parens/brackets/others and comment/uncomment ('gc')
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
+" ********** External Integration **********
+Plug 'emakman/nvim-latex-previewer'	" LaTeX Previewer ('<Leader>p' or ':LatexPreviewToggle')
+Plug 'jreybert/vimagit'			" Git integration plugin
+Plug 'vimwiki/vimwiki'			" Vimwiki notetaking plugin
+"Plug 'klen/python-mode'		" Python mode (docs, refactor, lints...)
 
 call plug#end()
 
@@ -95,7 +80,7 @@ autocmd FileType * set noexpandtab
 
 
 """ GENERAL MAPPINGS
-" Copy/Paste
+" Copy/Paste with ctrl+c/ctrl+p
 vnoremap <C-c> "+y
 map <C-p> "+P
 
@@ -106,7 +91,7 @@ nnoremap S :%s//g<Left><Left>
 map <leader>b :vsp<space>$BIB<CR>
 map <leader>r :vsp<space>$REFER<CR>
 
-" Render markdown file with grip (github markdown previewer)
+" Render and preview github-style markdown with python-grip
 map <leader>m :!grip<space>%
 
 
@@ -128,32 +113,64 @@ autocmd VimLeave *.tex !texclear %
 
 
 """ NAVIGATION SHORTCUTS
-" Shortcutting split navigation, saving a keypress:
+" Buffer navigation with Alt+{h,l}
+map <M-l> :bn<cr>
+map <M-h> :bp<cr>
+map <M-Left> :bn<cr>
+map <M-Right> :bp<cr>
+
+" Split window navigation with <Ctrl>+{h,j,k,l}
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+map <C-Left> <C-w>h
+map <C-Down> <C-w>j
+map <C-Up> <C-w>k
+map <C-Right> <C-w>l
 
-""" PLUGIN MAPPINGS
-" <Ctrl>+n(erdtree): Nerd tree
+
+""" PLUGIN CONFIG + KEY MAPS
+" ********** UI Plugins **********
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Deoplete map <Ctrl>+{j,k} to up down menu scrolling
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 
-" <leader>+p(review): (latex) Neovim-Latex-Preivewer
-nmap <buffer> <Leader>p :LatexPreviewToggle<CR>
-nmap <buffer> <Leader>[ :PrevLatexPreviewMode<CR>
-nmap <buffer> <Leader>] :NextLatexPreviewMode<CR>
+
+" ********** Autocomplete **********
+nmap <leader>g :YcmCompleter GoTo<CR>
+nmap <leader>d :YcmCompleter GetDoc<CR>
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_complete_in_strings = 1
+let g:ycm_complete_in_comments = 0
+let g:ycm_min_num_of_chars_for_completion = 2
+
+
+" ********** Linting **********
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_error_symbol='X'
+let g:syntastic_style_error_symbol='X'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
+
+
+" ********** External Integration **********
+nmap <buffer> <leader>p :LatexPreviewToggle<CR>
+nmap <buffer> <leader>[ :PrevLatexPreviewMode<CR>
+nmap <buffer> <leader>] :NextLatexPreviewMode<CR>
 
 " Compile text document, be it groff/LaTeX/markdown/etc.
 map <leader>c :w! \| !txtcompiler <c-r>%<CR>
-
-" <leader>+f(ree): Goyo distraction free plugin
-map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 
 " <leader>+o(rthography): Spellcheck
 map <leader>o :setlocal spell! spelllang=en_us<CR>
@@ -162,29 +179,16 @@ map <leader>o :setlocal spell! spelllang=en_us<CR>
 map <leader>s :!clear && shellcheck %<CR>
 
 
-" Open corresponding .pdf/.html or preview
-"	map <leader>p :!opout <c-r>%<CR><CR>
-" Enable Goyo by default for mutt writting
-	" Goyo's width will be the line limit in mutt.
-"	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-"	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo \| set bg=light
-" Navigating with guides
-"	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-"	vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-"	map <leader><leader> <Esc>/<++><Enter>"_c4l
-
-
 """ FILETYPE CONFIG
 let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-"autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 " i3config detection
 aug i3config_ft_detection
-  au!
-  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+	au!
+	au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
 
 " LaTeX
@@ -227,52 +231,6 @@ aug end
 	autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
 	autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 
-" HTML
-	autocmd FileType html inoremap ,b <b></b><Space><++><Esc>FbT>i
-	autocmd FileType html inoremap ,it <em></em><Space><++><Esc>FeT>i
-	autocmd FileType html inoremap ,1 <h1></h1><Enter><Enter><++><Esc>2kf<i
-	autocmd FileType html inoremap ,2 <h2></h2><Enter><Enter><++><Esc>2kf<i
-	autocmd FileType html inoremap ,3 <h3></h3><Enter><Enter><++><Esc>2kf<i
-	autocmd FileType html inoremap ,p <p></p><Enter><Enter><++><Esc>02kf>a
-	autocmd FileType html inoremap ,a <a<Space>href=""><++></a><Space><++><Esc>14hi
-	autocmd FileType html inoremap ,e <a<Space>target="_blank"<Space>href=""><++></a><Space><++><Esc>14hi
-	autocmd FileType html inoremap ,ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
-	autocmd FileType html inoremap ,li <Esc>o<li></li><Esc>F>a
-	autocmd FileType html inoremap ,ol <ol><Enter><li></li><Enter></ol><Enter><Enter><++><Esc>03kf<i
-	autocmd FileType html inoremap ,im <img src="" alt="<++>"><++><esc>Fcf"a
-	autocmd FileType html inoremap ,td <td></td><++><Esc>Fdcit
-	autocmd FileType html inoremap ,tr <tr></tr><Enter><++><Esc>kf<i
-	autocmd FileType html inoremap ,th <th></th><++><Esc>Fhcit
-	autocmd FileType html inoremap ,tab <table><Enter></table><Esc>O
-	autocmd FileType html inoremap ,gr <font color="green"></font><Esc>F>a
-	autocmd FileType html inoremap ,rd <font color="red"></font><Esc>F>a
-	autocmd FileType html inoremap ,yl <font color="yellow"></font><Esc>F>a
-	autocmd FileType html inoremap ,dt <dt></dt><Enter><dd><++></dd><Enter><++><esc>2kcit
-	autocmd FileType html inoremap ,dl <dl><Enter><Enter></dl><enter><enter><++><esc>3kcc
-	autocmd FileType html inoremap &<space> &amp;<space>
-	autocmd FileType html inoremap á &aacute;
-	autocmd FileType html inoremap é &eacute;
-	autocmd FileType html inoremap í &iacute;
-	autocmd FileType html inoremap ó &oacute;
-	autocmd FileType html inoremap ú &uacute;
-	autocmd FileType html inoremap ä &auml;
-	autocmd FileType html inoremap ë &euml;
-	autocmd FileType html inoremap ï &iuml;
-	autocmd FileType html inoremap ö &ouml;
-	autocmd FileType html inoremap ü &uuml;
-	autocmd FileType html inoremap ã &atilde;
-	autocmd FileType html inoremap ẽ &etilde;
-	autocmd FileType html inoremap ĩ &itilde;
-	autocmd FileType html inoremap õ &otilde;
-	autocmd FileType html inoremap ũ &utilde;
-	autocmd FileType html inoremap ñ &ntilde;
-	autocmd FileType html inoremap à &agrave;
-	autocmd FileType html inoremap è &egrave;
-	autocmd FileType html inoremap ì &igrave;
-	autocmd FileType html inoremap ò &ograve;
-	autocmd FileType html inoremap ù &ugrave;
-
-
 " Tex Bib
 	autocmd FileType bib inoremap ,a @article{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>journal<Space>=<Space>{<++>},<Enter>volume<Space>=<Space>{<++>},<Enter>pages<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
 	autocmd FileType bib inoremap ,b @book{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>6kA,<Esc>i
@@ -294,10 +252,6 @@ aug end
 	autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
-
-" XML
-	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
-	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
 
 " Python
 " Indentation options:
