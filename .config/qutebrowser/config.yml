@@ -108,9 +108,13 @@ zoom.default: '150%'
 custom.keybinds: {
     'D': 'tab-close -o',
     'H': 'tab-prev',
+    'L': 'tab-next',
     'J': 'back',
     'K': 'forward',
-    'L': 'tab-next',
+    '<Alt-h>': 'tab-prev',
+    '<Alt-l>': 'tab-next',
+    '<Alt-j>': 'back',
+    '<Alt-k>': 'forward',
     'd': 'tab-close'
 }
 

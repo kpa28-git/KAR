@@ -20,28 +20,28 @@ endif
 call plug#begin("$HOME/.config/nvim/plugged")
 
 " ********** UI Plugins **********
-Plug 'scrooloose/nerdtree'		" Nerdtree sidebar
-Plug 'bling/vim-airline'		" Lightweight statusbar
-Plug 'bling/vim-bufferline'		" Lightweight bufferbar
-Plug 'junegunn/goyo.vim'		" Distraction free writing
+Plug 'scrooloose/nerdtree'			" Nerdtree sidebar
+Plug 'bling/vim-airline'			" Lightweight statusbar
+Plug 'bling/vim-bufferline'			" Lightweight bufferbar
+Plug 'junegunn/goyo.vim'			" Distraction free writing
 
 " ********** Languages/Syntax **********
-Plug 'tpope/vim-commentary'		" Toggle comment/uncomment ('gc')
-Plug 'tpope/vim-surround'		" Toggle surrounding parens/brackets/others ('cs<1><2>', 'ds<1>', 'yss<1>', and others)
-Plug 'rust-lang/rust.vim'		" Rust lang plugin required by syntastic
-Plug 'mboughaba/i3config.vim'		" i3 config syntax
+Plug 'tpope/vim-commentary'			" Toggle comment/uncomment ('gc')
+Plug 'tpope/vim-surround'			" Toggle surrounding parens/brackets/others ('cs<1><2>', 'ds<1>', 'yss<1>', and others)
+Plug 'rust-lang/rust.vim'			" Rust lang plugin required by syntastic
+Plug 'mboughaba/i3config.vim'			" i3 config syntax
 
 " ********** Autocomplete **********
-Plug 'Valloric/YouCompleteMe'		" Autocomplete plugin (requires python-jedi for python)
+Plug 'Valloric/YouCompleteMe'			" Autocomplete plugin (requires python-jedi for python)
 
 " ********** Linting **********
-Plug 'scrooloose/syntastic'		" Syntax checking plugin for Vim (requires python-jedi for python)
+Plug 'scrooloose/syntastic'			" Syntax checking plugin for Vim (requires python-jedi for python)
 
 " ********** External Integration **********
-Plug 'emakman/nvim-latex-previewer'	" LaTeX Previewer ('<Leader>p' or ':LatexPreviewToggle')
-Plug 'jreybert/vimagit'			" Git integration plugin
-Plug 'vimwiki/vimwiki'			" Vimwiki notetaking plugin
-"Plug 'klen/python-mode'		" Python mode (docs, refactor, lints...)
+Plug 'xuhdev/vim-latex-live-preview'		" LaTeX live pdf viewing
+Plug 'jreybert/vimagit'				" Git integration plugin
+Plug 'vimwiki/vimwiki'				" Vimwiki notetaking plugin
+"Plug 'klen/python-mode'			" Python mode (docs, refactor, lints...)
 
 call plug#end()
 
@@ -158,9 +158,8 @@ let g:syntastic_json_checkers = ['jsonval']
 let g:syntastic_yaml_checkers = ['pyyaml']
 
 " ********** External Integration **********
-nmap <buffer> <leader>p :LatexPreviewToggle<CR>
-nmap <buffer> <leader>[ :PrevLatexPreviewMode<CR>
-nmap <buffer> <leader>] :NextLatexPreviewMode<CR>
+nmap <buffer> <leader>t :LLPStartPreview<CR>
+let g:livepreview_previewer = 'zathura'
 
 " Compile text document, be it groff/LaTeX/markdown/etc.
 map <leader>c :w! \| !txtcompiler <c-r>%<CR>
