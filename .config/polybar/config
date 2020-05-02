@@ -322,16 +322,16 @@ label = %{T-}%{T-} %output%
 
 [module/spxprice]
 type = custom/script
-click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s '^SPX'
-exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s '^SPX'
+click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s 'SPY'
+exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s 'SPY'
 interval = 300
 label = %{T-}%{T-} %output%
 
 
 [module/rutprice]
 type = custom/script
-click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s '^RUT'
-exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s '^RUT'
+click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s 'IWM'
+exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s 'IWM'
 interval = 300
 label = %{T5}%{T-} %output%
 
