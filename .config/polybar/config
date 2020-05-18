@@ -64,7 +64,7 @@ font-8 = Noto Sans Mono CJK JP:size=18;2
 fixed-center = true
 line-size = 3
 modules-left = airinfo corona weather spxprice rutprice
-modules-center = i3
+modules-center = bspwm
 modules-right = ethprice nordvpn network wlan date powermenu
 tray-position = right
 tray-padding = 1
@@ -93,7 +93,7 @@ monitor = ${env:MONITOR:}
 fixed-center = true
 line-size = 3
 modules-left =
-modules-center = i3
+modules-center = bspwm
 modules-right =  date powermenu
 tray-position = right
 tray-padding = 1
@@ -102,11 +102,45 @@ tray-padding = 1
 ;-----------------;
 ; Builtin Modules ;
 ;-----------------;
-[module/i3]
-type = internal/i3
+; [module/i3]
+; type = internal/i3
+; pin-workspaces = true
+; strip-wsnumbers = false
+; enable-scroll = false
+; ws-icon-0 = 1;%{T5}1%{T-}
+; ws-icon-1 = 2;%{T5}2%{T-}
+; ws-icon-2 = 3;%{T5}3%{T-}
+; ws-icon-3 = 4;%{T5}4%{T-}
+; ws-icon-4 = 5;%{T5}5%{T-}
+; ws-icon-5 = 6;%{T5}6%{T-}
+; ws-icon-6 = 7;%{T5}7%{T-}
+; ws-icon-7 = 8;%{T5}8%{T-}
+; ws-icon-8 = 9;%{T5}9%{T-}
+; ws-icon-9 = 0;%{T5}0%{T-}
+; label-focused = %icon%
+; label-focused-foreground = ${colors.linecolor}
+; label-focused-padding = 1
+; label-unfocused = %icon%
+; label-unfocused-foreground = ${colors.linecolorDark}
+; label-unfocused-padding = 1
+; label-visible = %icon%
+; label-visible-foreground = ${colors.linecolorDark}
+; label-visible-padding = 1
+; label-separator = |
+; label-separator-padding = 0.6
+
+
+[module/bspwm]
+type = internal/bspwm
 pin-workspaces = true
-strip-wsnumbers = false
-enable-scroll = false
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+fuzzy-match = false
+
+format = <label-monitor> <label-state>
+label-monitor = %name%
 ws-icon-0 = 1;%{T5}1%{T-}
 ws-icon-1 = 2;%{T5}2%{T-}
 ws-icon-2 = 3;%{T5}3%{T-}
@@ -116,15 +150,23 @@ ws-icon-5 = 6;%{T5}6%{T-}
 ws-icon-6 = 7;%{T5}7%{T-}
 ws-icon-7 = 8;%{T5}8%{T-}
 ws-icon-8 = 9;%{T5}9%{T-}
-label-focused = %icon%
+ws-icon-9 = 0;%{T5}0%{T-}
+ws-icon-default = %{T5}?%{T-}
+
+label-focused = [%icon%]
 label-focused-foreground = ${colors.linecolor}
-label-focused-padding = 1
-label-unfocused = %icon%
-label-unfocused-foreground = ${colors.linecolorDark}
-label-unfocused-padding = 1
-label-visible = %icon%
-label-visible-foreground = ${colors.linecolorDark}
-label-visible-padding = 1
+label-focused-padding = 0
+
+label-occupied = %icon%
+label-occupied-foreground = ${colors.linecolorDark}
+label-occupied-padding = 0
+
+label-urgent = <%icon%>
+label-urgent-foreground = ${colors.linecolorDark}
+label-urgent-padding = 0
+
+label-empty =
+
 label-separator = |
 label-separator-padding = 0.6
 

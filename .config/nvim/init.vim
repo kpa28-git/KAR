@@ -29,7 +29,7 @@ Plug 'junegunn/goyo.vim'			" Distraction free writing
 Plug 'tpope/vim-commentary'			" Toggle comment/uncomment ('gc')
 Plug 'tpope/vim-surround'			" Toggle surrounding parens/brackets/others ('cs<1><2>', 'ds<1>', 'yss<1>', and others)
 Plug 'rust-lang/rust.vim'			" Rust lang plugin required by syntastic
-Plug 'mboughaba/i3config.vim'			" i3 config syntax
+Plug 'kovetskiy/sxhkd-vim'			" sxhkd config syntax
 
 " ********** Autocomplete **********
 Plug 'Valloric/YouCompleteMe'			" Autocomplete plugin (requires python-jedi for python)
@@ -41,6 +41,7 @@ Plug 'scrooloose/syntastic'			" Syntax checking plugin for Vim (requires python-
 Plug 'xuhdev/vim-latex-live-preview'		" LaTeX live pdf viewing
 Plug 'jreybert/vimagit'				" Git integration plugin
 Plug 'vimwiki/vimwiki'				" Vimwiki notetaking plugin
+"Plug 'bentglasstube/vim-bspwm'			" Allows vim to forward messages to bspwm
 "Plug 'klen/python-mode'			" Python mode (docs, refactor, lints...)
 
 call plug#end()
@@ -179,12 +180,6 @@ let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markd
 let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 autocmd BufRead,BufNewFile *.tex set filetype=tex
-
-" i3config detection
-aug i3config_ft_detection
-	au!
-	au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-aug end
 
 " LaTeX
 	" Word count:

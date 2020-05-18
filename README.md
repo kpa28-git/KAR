@@ -9,7 +9,7 @@ Clone it and watch this bad boy go.
 
 ### Polybar
 ![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
-* A minimalist but high information HUD like statusbar
+* A minimalist high information HUD-like statusbar
 * World Air Quality info in top left
 	* my geoloc script (`~/.local/bin/apitools/geoloc`) lets it work through a vpn (manual location setting)
 * Weather
@@ -18,6 +18,7 @@ Clone it and watch this bad boy go.
 * See my `~/.config/polybar/config`
 
 ### Hotkeys that make sense
+* All hotkeys can be modified from ~/.config/sxhkd/sxhkdrc
 * Terminal
 	* Spawn `$TERMINAL` at `$HOME`: mod+enter
 	* Spawn `$TERMINAL` in directory of focused window: mod+shift+enter
@@ -25,8 +26,8 @@ Clone it and watch this bad boy go.
 * Exiting/closing
 	* Close a window (`kill`): mod+q(uit)
 	* Close a window (`kill -9`): mod+shift+q(uit)
-	* lock: mod+x
-	* logout i3: mod+shift+y
+	* lock: mod+y
+	* logout: mod+shift+y
 	* shutdown: mod+shift+x
 	* reboot: mod+shift+backspace
 * Focus movement hotkeys
@@ -130,7 +131,7 @@ Clone it and watch this bad boy go.
 3. Populate submodules: `git submodule update --init --recursive`
 
 ## Details
-* window manager: i3-gaps
+* window manager: bspwm
 * compositor: picom
 * terminal: st || alacritty (backup)
 * terminal (monospace) font: Hack Nerd Font Mono
@@ -142,7 +143,7 @@ Clone it and watch this bad boy go.
 * launcher: rofi
 * music: mpd+ncmpcpp
 * video: mpv
-* hotkeys: sxhkd+i3
+* hotkeys: sxhkd
 * browser: qutebrowser || next
 * base16 theme: gruvbox
 

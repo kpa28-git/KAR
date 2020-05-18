@@ -51,17 +51,23 @@ url.searchengines: {
     'wiki': 'https://en.wikipedia.org/?search={}',
     'dict': 'https://www.merriam-webster.com/dictionary/{}',
 
-    # Social
+    # Media
     'yt': 'https://www.youtube.com/results?search_query={}',
+
+    # Academia
+    'ar': 'https://arxiv.org/search/?query={}&searchtype=all&source=header',
+    'or': 'https://openreview.net/search?term={}&content=all&group=all&source=all',
+
+    # Forums
     'sex': 'https://stackexchange.com/search?q={}',
+
+    # Repos
     'ghub': 'https://github.com/search?q={}',
     'glab': 'https://gitlab.com/search?search={}',
 
     # Commerce
     'ex': 'https://examine.com/search/?q={}',
     'nc': 'https://www.namecheap.com/domains/registration/results.aspx?domain={}',
-
-    # Commerce
     'ebay': 'https://www.ebay.com/sch/?_nkw={}',
     'az': 'https://www.amazon.com/s?k={}',
 

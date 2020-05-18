@@ -39,6 +39,12 @@ alias f="\$FILE" \
 	lamp="ps -u \`whoami\`" \
 	kamp="kap -u \`whoami\`";
 
+# systemd
+alias sstart="sudo systemctl start" \
+	senable="sudo systemctl enable" \
+	sstop="sudo systemctl stop" \
+	sstatus="systemctl status";
+
 # networking
 alias lptl="sudo lsof -i -P -n | grep LISTEN";
 
@@ -84,6 +90,7 @@ alias y="yay" \
 
 # other package managers
 alias cg="conda list | grep" \
+	cq="conda info" \
 	cls="conda list" \
 	car="conda activate" \
 	cdr="conda deactivate" \

@@ -11,7 +11,12 @@
 # 3rd row: zZ C
 # Insert Scroll_Lock XF86Launch1
 
+
 # PROGRAMS:
+super + Return
+	$TERMINAL
+super + shift + Return
+	"$HOME/.local/bin/termtools/samedir"
 # rofi
 super + r
 	rofi -modi combi -combi-modi drun,run -show combi
@@ -46,31 +51,77 @@ super + t
 	$TERMINAL -e tremc
 # vimwiki
 super + v
-	$TERMINAL -e $EDITOR -c "VimwikiIndex"
+	$TERMINAL -e $EDITOR -c 'VimwikiIndex'
+# # dropdown xonsh shell (aka calculator)
+# super + c
+# 	tdrop --wm='bspwm' -s xonsh
+# # dropdown terminal
+# super + t
+# 	tdrop -s $TERMINAL
 
-# SCRIPTS:
-# search edit
-super + e
-	$TERMINAL -e se
-# search directory
-super + d
-	$TERMINAL -e sd
-# search open
-super + o
-	$TERMINAL -e so
-# lock
-super + x
-	mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
-# logout
+
+# BSPWM:
+# Close window
+super + q
+	bspc node -c
+
+# Focus on window in direction (requires vim plugin: bentglasstube/vim-bspwm)
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+super + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# Focus on desktop
+super + {0-9}
+	bspc desktop -f {0-9}
+
+# Cycle through desktops
+super + {u,d}
+	bspc desktop -f {prev, next}
+
+# Swap window with direction
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+super + shift + {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east}
+
+#	Send window to desktop
+super + shift + {0-9}
+	bspc node -d {0-9}
+
+# Rotate the tree from the current nodes parent
+super + shift + {u,d}
+	bspc node @parent -C {forward, backward}
+
+# Toggle floating on and off
+super + shift + o
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# Flip the tree from the current nodes parent
+#super + {h,j,k,l}
+#  bspc node @parent -F {vertical,horizontal,horizontal,vertical}
+
+# Toggle fullscreen on and off
+super + shift + f
+	"$HOME/.local/bin/uitools/bspwmfullscreen"
+
+# Expand a window by moving one of its side outward
+#ctrl + alt + {h,j,k,l}
+#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+
+# LOCK/LOGOUT/REBOOT/SHUTDOWN:
 super + y
-	prompt "Exit i3?" "i3-msg exit"
-# shutdown
-super + shift + x
-	prompt "Shutdown computer?" "sudo -A shutdown -h now"
-# reboot
+	prompt 'Lock session?' 'mpc pause; pauseallmpv; xsecurelock;'
+super + shift + y
+	prompt 'Logout computer?' 'bspc quit'
 super + shift + BackSpace
-	prompt "Reboot computer?" "sudo -A reboot"
-# show clipboard
+	prompt 'Reboot computer?' 'sudo -A reboot'
+super + shift + x
+	prompt 'Shutdown computer?' 'sudo -A shutdown -h now'
+
+
+# MISC:
 super + shift + v
 	show-clipboard
 # choose emoji
@@ -157,7 +208,7 @@ super + F5
 # super + F6
 # toggle torrent daemon
 super + F7
-	td-togggle
+	td-toggle
 # super + F8
 # Mount a USB drive or Android device
 super + F9

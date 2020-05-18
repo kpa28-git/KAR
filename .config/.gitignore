@@ -6,6 +6,7 @@
 
 # Whitelist:
 !/alacritty/**
+!/bspwm/**
 !/dunst/**
 !/fontconfig/**
 !/htop/**
