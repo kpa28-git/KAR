@@ -26,6 +26,7 @@ alias f="\$FILE" \
 	manp="man 1p" \
 	duse="du -chH | sort -h" \
 	lb="lsblk -o MODE,TYPE,HOTPLUG,FSTYPE,FSVER,NAME,MOUNTPOINT,LABEL,STATE,FSUSE%,FSUSED,FSSIZE,SIZE,MODEL,PARTUUID" \
+	kafter="timeout -sTERM" \
 	sdn="sudo shutdown -h now" \
 	lap="ps -u" \
 	kap="killall" \
@@ -51,6 +52,7 @@ alias lptl="sudo lsof -i -P -n | grep LISTEN";
 # git
 alias g="git" \
 	gd="g diff" \
+	gc="g clone" \
 	gds="gd --staged" \
 	gdh="gd HEAD" \
 	gdl="g clone" \
@@ -111,6 +113,7 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	lspaths="fd -HI --ignore-file \"\$HOME\"/.config/fd/ignore_file" \
 	s="lspaths | fzf --reverse --info=inline --preview='pistol {}'" \
 	se="s --header='Edit File' | xargs -r \"\$EDITOR\"" \
+	sr="\$READER \"\$(find -t 'f' '.' \"\$READING\" | sed \"s|\$READING\/||\" | fzf --reverse --info=inline --preview=\"pistol \$READING/{}\" --header='Select Reading' | sed \"s|^|\$READING\/|\")\"" \
 	ytd="youtube-dl --add-metadata -i -o '\$HOME/Downloads/%(upload_date)s-%(title)s.%(ext)s'" \
 	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '\$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \

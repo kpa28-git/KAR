@@ -6,52 +6,82 @@
 # sexy hotkey daemon runtime config.
 #
 # Unbound hotkeys:
+# 0th row: F1 F2 F6 F7
 # 1st row: W  E  P
 # 2nd row: A  D
 # 3rd row: zZ C
 # Insert Scroll_Lock XF86Launch1
 
 
-# PROGRAMS:
+# ********** Programs **********
+# Terminal at $HOME ($TERMINAL env variable is the symlink /usr/bin/terminal)
 super + Return
 	$TERMINAL
+
+# Terminal at the same directory as focused window
 super + shift + Return
 	"$HOME/.local/bin/termtools/samedir"
-# rofi
+
+# Rofi run mode
 super + r
 	rofi -modi combi -combi-modi drun,run -show combi
-super +  w
+
+# Rofi window mode
+super + w
 	rofi -show window
+
+# Rofi ssh
 super + shift + s
 	rofi -show ssh
-# file manager
+
+# File manager ($FILE env variable)
 super + f
 	$TERMINAL -e $FILE
-# web browser
+
+# Web browser ($BROWSER env variable)
 super + b
 	$BROWSER
+
+# Web search
 super + s
 	"$HOME"/.local/bin/uitools/qb-open -s
+
+# Go to web bookmark
 super + g
 	"$HOME"/.local/bin/uitools/qb-open -b
-# graphics switching (nvidia<->hybrid)
+
+# Graphics switching (nvidia<->hybrid)
 super + n
 	prompt 'switch graphics?' "$HOME"/.local/bin/gfxtools/gfxswitch
-# music
+
+# Music (ncmpcpp)
 super + m
 	$TERMINAL -e ncmpcpp
-# audio
+
+# Audio (pulsemixer)
 super + a
 	$TERMINAL -e pulsemixer
-# htop
+
+# Htop
 super + i
 	$TERMINAL -e htop
-# torrent frontend
+
+# Toggle transmission torrent daemon
+super + F8
+	td-toggle
+
+# Torrent (transmission frontend tui)
 super + t
 	$TERMINAL -e tremc
-# vimwiki
+
+# Vimwiki
 super + v
 	$TERMINAL -e $EDITOR -c 'VimwikiIndex'
+
+# Network Manager interface
+super + F12
+	$TERMINAL -e sudo -A nmtui
+
 # # dropdown xonsh shell (aka calculator)
 # super + c
 # 	tdrop --wm='bspwm' -s xonsh
@@ -60,14 +90,16 @@ super + v
 # 	tdrop -s $TERMINAL
 
 
-# BSPWM:
+# ********** Window Manager (BSPWM) **********
 # Close window
 super + q
 	bspc node -c
 
-# Focus on window in direction (requires vim plugin: bentglasstube/vim-bspwm)
+# Focus on window in direction
 super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
+
+# Focus on window in direction
 super + {Left,Down,Up,Right}
 	bspc node -f {west,south,north,east}
 
@@ -82,10 +114,12 @@ super + {u,d}
 # Swap window with direction
 super + shift + {h,j,k,l}
 	bspc node -s {west,south,north,east}
+
+# Swap window with direction
 super + shift + {Left,Down,Up,Right}
 	bspc node -s {west,south,north,east}
 
-#	Send window to desktop
+# Send window to desktop/workspace
 super + shift + {0-9}
 	bspc node -d {0-9}
 
@@ -110,114 +144,147 @@ super + shift + f
 #	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 
-# LOCK/LOGOUT/REBOOT/SHUTDOWN:
+# ********** Device Controll **********
+# Lock session
 super + y
 	prompt 'Lock session?' 'mpc pause; pauseallmpv; xsecurelock;'
+
+# Logout session
 super + shift + y
 	prompt 'Logout computer?' 'bspc quit'
+
+# Reboot computer
 super + shift + BackSpace
 	prompt 'Reboot computer?' 'sudo -A reboot'
+
+# Shutdown computer
 super + shift + x
 	prompt 'Shutdown computer?' 'sudo -A shutdown -h now'
+# Change display
+super + F3
+	displayselect
 
+# Unlock a LUKS device
+super + F9
+	$TERMINAL -e rluksopen
 
-# MISC:
-super + shift + v
-	show-clipboard
-# choose emoji
-super + grave
-	runicode
-# take screenshot
-Print
-	maim pic-full-$("$HOME/Pictures/"date '+%y%m%d-%H%M-%S').png
-# pick screenshot type
-shift + Print
-	maimpick
-# record audio or video
-#super + Print
-#	dmenurecord
-# kill active recording
-#super + Delete
-#	dmenurecord kill
+# Mount a USB drive or Android device
+super + F10
+	rmount
 
+# Unmount (and lock) a USB drive or Android device
+super + F11
+	rumount
 
-# AUDIO CONTROL:
-# mute audio
+# Mute audio
 super + shift + m
 	lmc mute
+
+# Mute audio
 XF86AudioMute
 	lmc mute
-# pause audio
+
+# Toggle pause/play audio
 super + {_,shift +} p
 	lmc {toggle,pause}
+
+# Toggle pause/play audio
 XF86AudioPlay
 	lmc toggle
+
+# Toggle pause/play audio
 XF86AudioStop
 	lmc toggle
-# changes to next/previous tracks
+
+# Change to next/previous tracks
 super + {comma,period}
 	lmc {prev,next}
+
+# Change to next/previous tracks
 XF86AudioPrev
 	lmc prev
+
+# Change to next/previous tracks
 XF86AudioNext
 	lmc next
-# restart track
+
+# Restart track
 super + shift + less
 	lmc replay
-# increase volume
+
+# Increase volume
 super + {equal,plus}
 	lmc up {10,25}
+
+# Increase volume
 XF86AudioRaiseVolume
 	lmc up 10
-# decrease volume
+
+# Decrease volume
 super {_,shift +} + minus
 	lmc down {10,25}
+
+# Decrease volume
 XF86AudioLowerVolume
 	lmc down 10
-# seek foward in song
+
+# Seek foward in song
 super + {_,shift +} bracketright
 	lmc forward {10,120}
+
+# Seek foward in song
 XF86AudioForward
 	lmc forward 10
-# seek backward in song
+
+# Seek backward in song
 super + {_,shift +} bracketleft
 	lmc back {10,120}
+
+# Seek backward in song
 XF86AudioRewind
 	lmc back 10
 
-
-# BRIGHTNESS CONTROL:
+# Brightness Up
 XF86MonBrightnessDown
 	light -U 15
+
+# Brightness Down
 XF86MonBrightnessUp
 	light -A 15
 
 
-# FUNCTION KEYS:
-# super + F1
-# super + F2
-# Change display
-super + F3
-	displayselect
+# ********** Miscellaneous **********
+# Show clipboard
+super + shift + v
+	show-clipboard
+
+# Choose emoji
+super + grave
+	runicode
+
+# Take screenshot
+Print
+	maim pic-full-$("$HOME/Pictures/"date '+%y%m%d-%H%M-%S').png
+
+# Pick screenshot type
+shift + Print
+	maimpick
+
+# Record audio or video
+#super + Print
+#	dmenurecord
+
+# Kill active recording
+#super + Delete
+#	dmenurecord kill
+
 # Hibernate
 super + F4
 	prompt 'Hibernate computer?' 'sudo systemctl suspend'
+
 # Restart/rescan wifi/eth networks
 super + F5
 	sudo -A systemctl restart NetworkManager
-# super + F6
-# toggle torrent daemon
-super + F7
-	td-toggle
-# super + F8
-# Mount a USB drive or Android device
-super + F9
-	rmount
-# Unmount a USB drive or Android device
-super + F10
-	rumount
-# super + F11
-# Network Manager interface
-super + F12
-	$TERMINAL -e sudo -A nmtui
+
+
 

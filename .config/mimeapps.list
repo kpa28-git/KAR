@@ -13,6 +13,8 @@ inode/x-empty=text.desktop;
 
 application/json=text.desktop;
 application/pdf=pdf.desktop;
+application/epub=epub.desktop;
+application/epub+zip=epub.desktop;
 application/rss+xml=rss.desktop;
 application/csv=spreadsheet.desktop;
 

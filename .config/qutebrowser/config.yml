@@ -46,10 +46,14 @@ url.searchengines: {
     'DEFAULT': 'https://swisscows.com/web?query={}',
     'sw': 'https://swisscows.com/web?query={}',
     'ddg': 'https://duckduckgo.com/?q={}',
-    'sa': 'https://seekingalpha.com/search/?q={}',
     'wolf': 'https://www.wolframalpha.com/input/?i={}',
     'wiki': 'https://en.wikipedia.org/?search={}',
     'dict': 'https://www.merriam-webster.com/dictionary/{}',
+
+    # Finance
+    'sa': 'https://seekingalpha.com/search/?q={}',
+    'yf': 'https://search.yahoo.com/search?p={}',
+    'yfp': 'https://finance.yahoo.com/quote/{}',
 
     # Media
     'yt': 'https://www.youtube.com/results?search_query={}',

@@ -63,7 +63,7 @@ font-8 = Noto Sans Mono CJK JP:size=18;2
 ;------------
 fixed-center = true
 line-size = 3
-modules-left = airinfo corona weather spxprice rutprice
+modules-left = airinfo corona weather moonphase spxprice rutprice
 modules-center = bspwm
 modules-right = ethprice nordvpn network wlan date powermenu
 tray-position = right
@@ -356,7 +356,8 @@ label = %output%
 
 [module/ethprice]
 type = custom/script
-click-left = $HOME/.local/bin/polybar/cprice.sh -s 'ETH'
+click-left = $TERMINAL -e curl -s "rate.sx/eth@1w" | $PAGER
+;$HOME/.local/bin/polybar/cprice.sh -s 'ETH'
 exec = $HOME/.local/bin/polybar/cprice.sh -s 'ETH'
 interval = 300
 label = %{T-}%{T-} %output%
@@ -401,6 +402,15 @@ exec = $HOME/.local/bin/polybar/weather.sh
 interval = 14400
 #label = %{T5}%output%%{T5}
 label = %output%
+
+
+[module/moonphase]
+type = custom/script
+click-left = $TERMINAL -e less -S "$HOME/.local/share/moonphase"
+exec = $HOME/.local/bin/polybar/moonphase.sh
+interval = 14400
+label = %{T5}%output%%{T-}
+
 
 
 ; vim:ft=dosini
