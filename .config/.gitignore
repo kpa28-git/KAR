@@ -8,6 +8,7 @@
 !/alacritty/**
 !/bspwm/**
 !/dunst/**
+!/cargo/**
 !/fontconfig/**
 !/htop/**
 !/i3/**

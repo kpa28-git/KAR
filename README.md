@@ -19,6 +19,7 @@ Clone it and watch this bad boy go.
 
 ### Hotkeys that make sense
 * All hotkeys can be modified from ~/.config/sxhkd/sxhkdrc
+* List the sxhkd keybinds in the terminal with `keybinds`
 * Terminal
 	* Spawn `$TERMINAL` at `$HOME`: mod+enter
 	* Spawn `$TERMINAL` in directory of focused window: mod+shift+enter
@@ -110,17 +111,14 @@ Clone it and watch this bad boy go.
 		* rbuku -r (remove) disabled for now - qutebrowser adds an item which screws up indexing
 		* can still delete with rofi by launching from the terminal via `rbuku -r`
 	* ~~drive mounting/unmounting~~
+* lf
+	* fix vidir problem with spaces in filenames, escape spaces
 * try out other login shells
 	* zsh
 	* tcsh
 	* ksh
-* test out other window managers
-	* leftwm
-	* xmonad
 * cleanup and remove unused luke scripts
 * lf config
-	* ~~Change opener to open in a separate shell or the same window (as in ranger)~~
-	* ~~add a delete command~~
 * improve my rss reader
 	* install a new one?
 	* organize feeds
@@ -137,7 +135,7 @@ Clone it and watch this bad boy go.
 * terminal (monospace) font: Hack Nerd Font Mono
 * bar: polybar
 * bar icon: hack nerd font
-* text editor: neovim
+* text editor: neovim || kakuone
 * file manager: lf+[pistol](https://github.com/doronbehar/pistol)
 * notifications: dunst
 * launcher: rofi

@@ -6,7 +6,7 @@
 # sexy hotkey daemon runtime config.
 #
 # Unbound hotkeys:
-# 0th row: F1 F2 F6 F7
+# 0th row: F1 F2 F6 F7 F9
 # 1st row: W  E  P
 # 2nd row: A  D
 # 3rd row: zZ C
@@ -164,17 +164,13 @@ super + shift + x
 super + F3
 	displayselect
 
-# Unlock a LUKS device
-super + F9
-	$TERMINAL -e rluksopen
-
-# Mount a USB drive or Android device
+# LUKS unlock and mount a USB drive or Android device
 super + F10
-	rmount
+	$TERMINAL -e rluksopen && rmount
 
-# Unmount (and lock) a USB drive or Android device
+# Unmount and LUKS lock a USB drive or Android device
 super + F11
-	rumount
+	rumount && rluksclose
 
 # Mute audio
 super + shift + m

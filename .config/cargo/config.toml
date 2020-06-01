@@ -1,0 +1,26 @@
+#     _________    ____  __________
+#    / ____/   |  / __ \/ ____/ __ \
+#   / /   / /| | / /_/ / / __/ / / /
+#  / /___/ ___ |/ _, _/ /_/ / /_/ /
+#  \____/_/  |_/_/ |_|\____/\____/
+# Rust package manager global config.
+
+[alias]
+b = "build"
+c = "check"
+cl = "clean"
+t = "test"
+r = "run"
+rr = "run --release"
+
+[cargo-new]
+name = "kevindirect"
+email = "15056154+kevindirect@users.noreply.github.com"
+vcs = "git"
+
+[build]
+rustc-wrapper = "sccache"
+
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-Ctarget-cpu=native"]
+
