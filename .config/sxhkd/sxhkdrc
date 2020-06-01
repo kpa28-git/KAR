@@ -6,7 +6,7 @@
 # sexy hotkey daemon runtime config.
 #
 # Unbound hotkeys:
-# 0th row: F1 F2 F6 F7 F9
+# 0th row: F1 F2 F6
 # 1st row: W  E  P
 # 2nd row: A  D
 # 3rd row: zZ C
@@ -66,17 +66,25 @@ super + a
 super + i
 	$TERMINAL -e htop
 
-# Toggle transmission torrent daemon
-super + F8
-	td-toggle
+# Toggle nord
+super + F7
+	"$HOME/.local/bin/nettools/nord-toggle"
 
-# Torrent (transmission frontend tui)
+# Toggle transmission daemon
+super + F8
+	"$HOME/.local/bin/uitools/td-toggle"
+
+# Transmission frontend tui
 super + t
 	$TERMINAL -e tremc
 
 # Vimwiki
 super + v
 	$TERMINAL -e $EDITOR -c 'VimwikiIndex'
+
+# Intercheck (polls every second until the internet is back and then says the IP address)
+super + F11
+	"$HOME/.local/bin/nettools/intercheck"
 
 # Network Manager interface
 super + F12
@@ -165,11 +173,11 @@ super + F3
 	displayselect
 
 # LUKS unlock and mount a USB drive or Android device
-super + F10
+super + F9
 	$TERMINAL -e rluksopen && rmount
 
 # Unmount and LUKS lock a USB drive or Android device
-super + F11
+super + F10
 	rumount && rluksclose
 
 # Mute audio

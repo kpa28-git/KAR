@@ -315,7 +315,7 @@ menu-0-2-exec = sudo -A shutdown -h now
 ;----------------;
 [module/nordvpn]
 type = custom/script
-click-left = $HOME/.local/bin/polybar/nordvpn-toggle.sh
+click-left = $HOME/.local/bin/nettools/nord-toggle
 exec = $HOME/.local/bin/polybar/nordvpn.sh
 interval = 10
 label = %{T5}%output%%{T-}
