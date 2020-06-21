@@ -48,10 +48,11 @@ cmd dragon %dragon-drag-and-drop -a $fx
 # Open File
 cmd open &{{
 	case $(file --mime-type "$f" -b) in
-		text/*) setsid $OPENER "$f" ;;
+		text/*) setsid $EDITOR "$f" ;;
 		video/*) setsid mpv "$f" > /dev/null 2 2>&1 & ;;
 		*) for file in $f; do setsid $OPENER "$file" > /dev/null 2> /dev/null & done ;;
-esac }}
+	esac
+}}
 
 # Create Directory
 cmd mkdir ${{

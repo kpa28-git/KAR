@@ -7,6 +7,25 @@ Clone it and watch this bad boy go.
 ## Features
 * I tried to make all my scripts POSIX compliant where possible. I'm a beginner when it comes to POSIX scripting - let me know if you have problems on your platform or you see something that is definately not POSIX compliant.
 
+## Fuzzyfinding with fzf
+* I prefer a search based navigation system as this is more simple, organic, dynamic, and aesthetically pleasing to me even if there are a few extra key presses and cpu cycles compared to aliases.
+
+### General Navigation
+* All navigation is based on the alias `s` defined in `aliasrc`. I like things to be as simple as possible.
+* `lspaths` (list paths): list at the current directory (uses `fd`). Respects the `ignore_file` at `$XDG_CONFIG_HOME/fd/ignore_file`.
+* `s` (search): fzf filter paths returned by the `lspaths`.
+* The following aliases or functions run on the result of `s`
+	* `se` (search edit): open in $EDITOR
+	* `se` (search directory): cd to containing directory (or to it if it's a directory)
+	* `so` (search open): open with $OPENER
+	* `sg <str>` (search grep): grep string within the file (uses `rg`)
+* `sr` (search reading): fuzzy search the `$READING` directory and open the file with `$READER` program (uses `fd`). I added this over so to limit the search space and stay organized with my current reading.
+
+### History
+* `hs` (history search): search the history with fzf (you can immediately run the searched command with `$(hs)`)
+* `hi` (history input): search the history with fzf and input the chosen command into the shell input
+
+
 ### Polybar
 ![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
 * A minimalist high information HUD-like statusbar
@@ -100,17 +119,10 @@ Clone it and watch this bad boy go.
 * Custom st build
 	* scrollback, alpha patch, working dpi setting, dedicated config file
 * clean up home directory (move dotfiles elsewhere?)
-* aliasrc
-	* Fix 'history run' alias
 * Set global theming from my directory of base16 files
 	* Choose a theme from a rofi prompt and set base16 for:
 		* Xresources (needs fixing)
 		* qutebrowser
-* replace dmenu with rofi
-	* ~~rofi+buku+qutebrowser integration~~
-		* rbuku -r (remove) disabled for now - qutebrowser adds an item which screws up indexing
-		* can still delete with rofi by launching from the terminal via `rbuku -r`
-	* ~~drive mounting/unmounting~~
 * lf
 	* fix vidir problem with spaces in filenames, escape spaces
 * try out other login shells
@@ -118,7 +130,9 @@ Clone it and watch this bad boy go.
 	* tcsh
 	* ksh
 * cleanup and remove unused luke scripts
-* lf config
+* xdg-open within the current terminal window
+* multiplex between fzf and rofi
+* search should work with ~/.scripts/termtools/samedir (cd back and forth? can't use pushd/popd because those aren't POSIX). move to directory and 'cd -' at the end
 * improve my rss reader
 	* install a new one?
 	* organize feeds

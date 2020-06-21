@@ -11,9 +11,25 @@
 # TODO - check the monitors that are connected and enabled,
 # disperse desktops accordingly what I have here now won't work
 # as originally intended.
-bspc monitor DP-0    -d 1 2 3 4 5 6 7 8 9 0
-bspc monitor HDMI-0  -d 1 2 3 4 5 6 7 8 9 0
-bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 8 9 0
+# bspc monitor DP-0    -d 1 2 3 4 5 6 7 8 9 0
+# bspc monitor HDMI-0  -d 1 2 3 4 5 6 7 8 9 0
+# bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 8 9 0
+
+HDMI_ACTIVE=$(xrandr | grep ' connected' | grep 'HDMI-0' | awk '{print $1}' | xargs);
+DP_ACTIVE=$(xrandr | grep ' connected' | grep 'DP-0' | awk '{print $1}' | xargs);
+GPU_MODE=$(optimus-manager --print-mode | awk '{print $NF}' | xargs);
+
+if [ "$GPU_MODE" = 'nvidia' ] ; then
+	if [ -n "$DP_ACTIVE" ] ; then
+		bspc monitor DP-0    -d 1 2 3 4 5 6 7 8 9 0;
+	elif [ -n "$HDMI_ACTIVE" ] ; then
+		bspc monitor HDMI-0  -d 1 2 3 4 5 6 7 8 9 0;
+	else
+		bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0;
+	fi;
+else
+	bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0;
+fi;
 
 
 # Global Settings
@@ -44,6 +60,8 @@ bspc config window_gap 8
 
 # Rules
 bspc rule -r  "*"	# Clear all rules
+bspc rule -a Next state=tiled
+bspc rule -a Nyxt state=tiled
 bspc rule -a Zathura state=tiled
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'

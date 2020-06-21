@@ -8,8 +8,6 @@ alias l="exa -lah --color=auto --group-directories-first" \
 	find="fd -HI --ignore-file \"\$HOME\"/.config/fd/ignore_file";
 
 # basic
-# TODO - finish  hs/hr history fuzzy match command searching
-# It should work by allowing a selection and sending the chosen command to the input prompt as if I typed it
 alias f="\$FILE" \
 	e="\$EDITOR" \
 	v="\$EDITOR" \
@@ -20,7 +18,7 @@ alias f="\$FILE" \
 	h="history" \
 	hg="h | grep" \
 	hs="h | fzf --tac --info=inline --header='Search Command' | sed 's/^[0-9]*\s*//g'" \
-	hr="xdotool type --delay 0 \"\$(hs)\" && clear" \
+	hi="xdotool type --delay 0 \"\$(hs)\" && clear" \
 	lg="l | grep" \
 	mkd="mkdir -pv" \
 	manp="man 1p" \
@@ -113,7 +111,8 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	lspaths="fd -HI --ignore-file \"\$HOME\"/.config/fd/ignore_file" \
 	s="lspaths | fzf --reverse --info=inline --preview='pistol {}'" \
 	se="s --header='Edit File' | xargs -r \"\$EDITOR\"" \
-	sr="\$READER \"\$(find -t 'f' '.' \"\$READING\" | sed \"s|\$READING\/||\" | fzf --reverse --info=inline --preview=\"pistol \$READING/{}\" --header='Select Reading' | sed \"s|^|\$READING\/|\")\"" \
+	sd="moveto \$(s --header='Search Directory')" \
+	sr="\$READER \"\$(fd -I -t 'f' '.' \"\$READING\" | sed \"s|\$READING\/||\" | fzf --reverse --info=inline --preview=\"pistol \$READING/{}\" --header='Select Reading' | sed \"s|^|\$READING\/|\")\"" \
 	ytd="youtube-dl --add-metadata -i -o '\$HOME/Downloads/%(upload_date)s-%(title)s.%(ext)s'" \
 	ytda="youtube-dl --add-metadata -i -x -f 'bestaudio/best' -o '\$HOME/Music/%(upload_date)s-%(title)s.%(ext)s'" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
@@ -136,9 +135,8 @@ alias cl="ycl && ccl"; # Clear all caches
 
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Alias neovim as vim if present.
-sd() {
-	RES="$(s --header='Search Directory')";
-	FILEPATH=$([ -d "$RES" ] && echo "$RES" || dirname "$RES");
+moveto() {
+	FILEPATH=$([ -d "$1" ] && echo "$1" || dirname "$1");
 	cd "$FILEPATH" || return;
 }
 so() {
