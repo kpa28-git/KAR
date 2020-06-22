@@ -9,8 +9,14 @@
 # 0th row: F1 F2 F6
 # 1st row: W  E  P
 # 2nd row: A  D
-# 3rd row: zZ C
+# 3rd row: Z  x C
 # Insert Scroll_Lock XF86Launch1
+
+
+# ********** help **********
+# Show sxhkd keybindings
+super + F1
+	$TERMINAL -e sh -c "$HOME/.local/bin/uitools/keybinds | less"
 
 
 # ********** Programs **********
@@ -31,7 +37,7 @@ super + w
 	rofi -show window
 
 # Rofi ssh
-super + shift + s
+super + z
 	rofi -show ssh
 
 # File manager ($FILE env variable)
@@ -50,9 +56,9 @@ super + s
 super + g
 	"$HOME"/.local/bin/uitools/qb-open -b
 
-# Graphics switching (nvidia<->hybrid)
+# newsboat rss reader
 super + n
-	prompt 'switch graphics?' "$HOME"/.local/bin/gfxtools/gfxswitch
+	$TERMINAL -e newsboat
 
 # Music (ncmpcpp)
 super + m
@@ -94,7 +100,7 @@ super + F12
 # super + c
 # 	tdrop --wm='bspwm' -s xonsh
 # # dropdown terminal
-# super + t
+# super + e
 # 	tdrop -s $TERMINAL
 
 
@@ -152,10 +158,10 @@ super + shift + f
 #	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 
-# ********** Device Controll **********
+# ********** Device Control **********
 # Lock session
 super + y
-	prompt 'Lock session?' 'mpc pause; pauseallmpv; xsecurelock;'
+	prompt 'Lock session?' 'xsecurelock'
 
 # Logout session
 super + shift + y
@@ -168,6 +174,11 @@ super + shift + BackSpace
 # Shutdown computer
 super + shift + x
 	prompt 'Shutdown computer?' 'sudo -A shutdown -h now'
+
+# Switch graphics (nvidia<->hybrid)
+super + shift + n
+	prompt 'switch graphics?' "$HOME"/.local/bin/gfxtools/gfxswitch
+
 # Change display
 super + F3
 	displayselect
@@ -289,6 +300,4 @@ super + F4
 # Restart/rescan wifi/eth networks
 super + F5
 	sudo -A systemctl restart NetworkManager
-
-
 

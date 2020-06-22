@@ -37,8 +37,8 @@ Clone it and watch this bad boy go.
 * See my `~/.config/polybar/config`
 
 ### Hotkeys that make sense
-* All hotkeys can be modified from ~/.config/sxhkd/sxhkdrc
-* List the sxhkd keybinds in the terminal with `keybinds`
+* All hotkeys can be modified from `~/.config/sxhkd/sxhkdrc`
+* List the sxhkd keybinds with mod+F1 or in the terminal with `keybinds`
 * Terminal
 	* Spawn `$TERMINAL` at `$HOME`: mod+enter
 	* Spawn `$TERMINAL` in directory of focused window: mod+shift+enter
