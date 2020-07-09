@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=neovim
+Name=kakoune
 GenericName=Text Editor
-Exec=/usr/bin/terminal -e nvim %u
+Exec=/usr/bin/terminal -e kak %u

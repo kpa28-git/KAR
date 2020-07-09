@@ -89,7 +89,7 @@ url.searchengines: {
     # Void Linux
     'void': 'https://wiki.voidlinux.org/?search={}',
 
-    # Python Docs
+    # Python
     'py3': 'https://docs.python.org/3/search.html?q={}',
     'conda': 'https://anaconda.org/search?q={}',
     'pip': 'https://pypi.org/search/?q={}',
@@ -100,9 +100,15 @@ url.searchengines: {
     'pyt': 'https://discuss.pytorch.org/search?q={}',
     'pyro': 'http://docs.pyro.ai/en/stable/search.html?q={}',
 
-    # Rust Docs
-    'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
+    # Julia
+    'jstd': 'https://docs.julialang.org/en/v1/search/?q={}',
+    'jobs': 'https://juliaobserver.com/packages/{}',
+    'jpkg': 'https://juliapackages.com/packages?search={}',
+    'jhub': 'https://juliahub.com/ui/Packages?q={}',
+
+    # Rust
     'rust': 'https://doc.rust-lang.org/reference/index.html?search={}',
+    'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
     'rstd': 'https://doc.rust-lang.org/std/?search={}',
     'cargo': 'https://crates.io/search?q={}'
 }
