@@ -34,7 +34,7 @@ map tre :trash-restore
 map trm :trash-rm
 map tem :trash-empty
 map sd :search-dir
-map r $printf "%s\n" $fx | vidir -
+map r $printf "%s\n" "$fx" | vidir -
 map x push $ext<space>
 map - :img-preview
 
@@ -88,6 +88,8 @@ cmd chmod ${{
 		chmod $ans $file
 	done
 }}
+
+cmd bulkrename ${{ vidir; }}
 
 # Put File in Trash (trash-cli)
 cmd trash-put ${{
