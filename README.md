@@ -35,6 +35,8 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * Free API Keys from [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), and [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([Instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md)).
 * The programs these dotfiles rice.
 
+## Features
+
 ### Search Based Navigation
 * All navigation is based on the alias `s` defined in `aliasrc`.
 * `s` (search): fzf filter paths returned by `lspaths` (the latter lists paths from the current directory and it respects the `ignore_file` at `$XDG_CONFIG_HOME/fd/ignore_file`.).
