@@ -1,30 +1,28 @@
 # Kevin's Arch Rice (KAR)
-My hard-hitting arch linux / i3-gaps / polybar rice.
+My arch linux / bspwm / kakoune/ polybar rice.
 Clone it and watch this bad boy go.
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
 
 ## Features
-* I tried to make all my scripts POSIX compliant where possible. I'm a beginner when it comes to POSIX scripting - let me know if you have problems on your platform or you see something that is definately not POSIX compliant.
+* Most of the scripts are POSIX compliant for speed and portability
 
 ## Fuzzyfinding with fzf
-* I prefer a search based navigation system as this is more simple, organic, dynamic, and aesthetically pleasing to me even if there are a few extra key presses and cpu cycles compared to aliases.
+* I generally prefer search based navigation to static aliases
 
-### General Navigation
-* All navigation is based on the alias `s` defined in `aliasrc`. I like things to be as simple as possible.
-* `lspaths` (list paths): list at the current directory (uses `fd`). Respects the `ignore_file` at `$XDG_CONFIG_HOME/fd/ignore_file`.
-* `s` (search): fzf filter paths returned by the `lspaths`.
+### Search Based Navigation
+* All navigation is based on the alias `s` defined in `aliasrc`.
+* `s` (search): fzf filter paths returned by `lspaths` (the latter lists paths from the current directory and it respects the `ignore_file` at `$XDG_CONFIG_HOME/fd/ignore_file`.).
 * The following aliases or functions run on the result of `s`
 	* `se` (search edit): open in $EDITOR
-	* `se` (search directory): cd to containing directory (or to it if it's a directory)
+	* `sd` (search directory): cd to the containing directory (or to it if it's a directory)
 	* `so` (search open): open with $OPENER
 	* `sg <str>` (search grep): grep string within the file (uses `rg`)
-* `sr` (search reading): fuzzy search the `$READING` directory and open the file with `$READER` program (uses `fd`). I added this over so to limit the search space and stay organized with my current reading.
+* `sr` (search reading): fuzzy search the `$READING` directory and open the file with `$READER` program. I added this over so to limit the search space and stay organized with my current reading.
 
 ### History
 * `hs` (history search): search the history with fzf (you can immediately run the searched command with `$(hs)`)
 * `hi` (history input): search the history with fzf and input the chosen command into the shell input
-
 
 ### Polybar
 ![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
@@ -34,69 +32,28 @@ Clone it and watch this bad boy go.
 * Weather
 	* my geoloc script (`~/.local/bin/apitools/geoloc`) lets it work through a vpn (manual location setting)
 * Ethereum price (can be easily changed to any crypto tracked by coinmarketcap)
+* S&P500 and Russell 2000 asset prices (via alphavantage)
+* Moonphase
 * See my `~/.config/polybar/config`
 
 ### Hotkeys that make sense
 * All hotkeys can be modified from `~/.config/sxhkd/sxhkdrc`
-* List the sxhkd keybinds with mod+F1 or in the terminal with `keybinds`
-* Terminal
-	* Spawn `$TERMINAL` at `$HOME`: mod+enter
-	* Spawn `$TERMINAL` in directory of focused window: mod+shift+enter
-	* rofi ssh: mod+shift+s(sh)
-* Exiting/closing
-	* Close a window (`kill`): mod+q(uit)
-	* Close a window (`kill -9`): mod+shift+q(uit)
-	* lock: mod+y
-	* logout: mod+shift+y
-	* shutdown: mod+shift+x
-	* reboot: mod+shift+backspace
-* Focus movement hotkeys
-	* rofi window switch: mod+w(indow)
-	* window focus movement: mod+{h|j|k|l}
-	* floating/non-floating focus movement: mod+space
-	* workplace focus movment: mod+{0-9}
-	* workspace focus toggling: mod+{tab|backslash}
-	* rofi workspace switching: mod+w(indow)
-* Hotkeys having to do with i3/wm alteration include a shift:
-	* window shifting: mod+shift+{h|j|k|l}
-	* window hjkl resizing: mod+shift+{y|u|i|o}
-	* window script resizing: mod+shift+r
-	* floating/non-floating toggle (center, left, right): mod+shift+{space,b,n}
-	* send window to workspace: mod+shift+{0-9}
-	* window spawn vertical/horizontal: mod+shift+{apostrophe|slash}
-	* toggle vertical/horizontal window spawn: mod+shift+t(oggle)
-	* toggle sticky: mod+shift+g(lue)
-	* toggle full screen: mod+shift+f(ull screen)
-* Lowercase non-focus-movement commands launch programs:
-![xonsh calculator scratchpad](.local/share/rice/rice-xonsh-calc.gif)
-	* floating xonsh: mod+c(alculator)
-	* spawn `$FILE` manager: mod+f(ile manager)
-	* spawn `$BROWSER`: mod+b(rowser)
-	* qutebrowser web search: mod+s(earch)
-	* qutebrowser buku bookmarks: mod+g(o to bookmark)
-	* ncmpcpp (music): mod+m(usic)
-	* pulsemixer (audio): mod+a(udio)
-	* htop: mod+i(nfo)
-	* rofi run: mod+r(un)
-* For i3 hotkeys see `~/.config/i3/config`
-* For other hotkeys see `~/.config/sxhkd/sxhkdrc`
+* Show the sxhkd keybinds with mod+F1 or in the terminal with `keybinds`
 
 ### Qutebrowser
-![rofi+buku+qutebrowser integration](.local/share/rice/rice-qb.gif)
-* Text file configuration at: ~/.config/qutebrowser/config.yml
-	* Easier to version control and no need to modify a giant config.py
+![qutebrowser+buku+rofi integration](.local/share/rice/rice-qb.gif)
+* Text file configuration at: `~/.config/qutebrowser/config.yml`
+	* Cleaner to version control and no need to modify a giant config.py
 * rofi+buku+qutebrowser integration to manage bookmarks
 	* standard qutebrowser bookmark management sucks
 	* my rbuku script uses the powerful and browser agnostic [buku](https://github.com/jarun/Buku) to manage bookmarks with a [rofi](https://github.com/davatorium/rofi) interface
-		- rbuku will work with any browser as long as it has a commandline interface to launch it; I use qutebrowser
+		- rbuku will work with any browser as long as it has a commandline interface to launch it
 	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitools/rbuku`) to enable in-browser launching
 		- :b / mod+g(o) -> go to a bookmark
-		- :ba -> add current or hinted url as a bookmark
+		- :ba -> add current or hinted url as a bookmark (opens a prompt for tags, title, etc)
 		- :br -> remove one or more bookmarks (disabled by default)
 	* see config.yml `## ALIASES`
 * A lot of search engine additions
-	* youtube, ebay, arch wiki, various package manager and documentation search engines
-	* :yt <search> -> search youtube for a video
 	* mod+s(earch) -> open up rofi search engine prompt - go directly from the desktop to a search engine search (one step vs three steps)
 	* see config.yml `## URL`
 * More sensible tab movement
@@ -106,6 +63,7 @@ Clone it and watch this bad boy go.
 	* see config.yml `## KEYBINDS`
 * Set base16 theming easily
 	* Set `custom.base16.file` in config.yml to any base16 yaml file
+* youtube-dl+rofi integration with `:rytd`
 
 ### Redshift
 * redshift starts at boot
@@ -113,11 +71,12 @@ Clone it and watch this bad boy go.
 * redshift config at `~/.config/redshift/redshift.conf`
 
 ## TODO
+* continue adding to kakrc
 * Next browser config
 	* Play around with and learn next
 	* Start building a config file `~/.config/next/init.lisp`
 * Custom st build
-	* scrollback, alpha patch, working dpi setting, dedicated config file
+	* scrollback, alpha patch, working dpi setting, dedicated config file, remove <a-l> binding
 * clean up home directory (move dotfiles elsewhere?)
 * Set global theming from my directory of base16 files
 	* Choose a theme from a rofi prompt and set base16 for:
@@ -125,17 +84,10 @@ Clone it and watch this bad boy go.
 		* qutebrowser
 * lf
 	* fix vidir problem with spaces in filenames, escape spaces
-* try out other login shells
-	* zsh
-	* tcsh
-	* ksh
 * cleanup and remove unused luke scripts
 * xdg-open within the current terminal window
 * multiplex between fzf and rofi
-* search should work with ~/.scripts/termtools/samedir (cd back and forth? can't use pushd/popd because those aren't POSIX). move to directory and 'cd -' at the end
-* improve my rss reader
-	* install a new one?
-	* organize feeds
+* search aliases should work with `~/.scripts/termtools/samedir` (cd back and forth? can't use pushd/popd because those aren't POSIX). move to directory and 'cd -' at the end
 
 ## Installation
 1. Make sure you have all required programs installed
@@ -143,14 +95,16 @@ Clone it and watch this bad boy go.
 3. Populate submodules: `git submodule update --init --recursive`
 
 ## Details
+* login shell: bash
+* `/bin/sh`: dash
 * window manager: bspwm
 * compositor: picom
 * terminal: st || alacritty (backup)
 * terminal (monospace) font: Hack Nerd Font Mono
 * bar: polybar
 * bar icon: hack nerd font
-* text editor: neovim || kakuone
-* file manager: lf+[pistol](https://github.com/doronbehar/pistol)
+* text editor: kakoune
+* file manager: lf+pistol
 * notifications: dunst
 * launcher: rofi
 * music: mpd+ncmpcpp
@@ -166,6 +120,6 @@ Clone it and watch this bad boy go.
 * The programs these dotfiles rice.
 
 ## Big Thanks To
-* [Luke Smith](https://github.com/LukeSmithxyz)
-* [WillMe](https://github.com/WillemMe)
+* [Luke Smith](https://github.com/LukeSmithxyz) for some of the scripts
+* [WillMe](https://github.com/WillemMe) for the basis of the polybar layout
 
