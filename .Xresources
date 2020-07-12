@@ -18,8 +18,10 @@ Xft.rgba:      rgb
 *dpi:          192
 Xft.dpi:       192
 
-!! Simple Terminal Settings
-st.alpha: 0.80
+!! xst settings
+st.termname: xst-256color
+st.opacity: 0.70
+st.disable_alpha_correction: 0
 
 !! Base16
 *.scheme: "Gruvbox dark, hard"
@@ -58,3 +60,4 @@ st.alpha: 0.80
 *.color13: #d3869b
 *.color14: #8ec07c
 *.color15: #ebdbb2
+
