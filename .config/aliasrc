@@ -60,8 +60,9 @@ alias g="git" \
 	gas="ga \$(gst -s | awk '{print \$NF}' | fzf --multi --reverse --info=inline --preview='git diff --color {}' --header 'git add files, use shift+Tab to multiselect')" \
 	gr="g remote" \
 	grm="g rm" \
-	gcmsg="g commit -m" \
 	gcsmg="g commit -m" \
+	gcmsg="g commit -m" \
+	gcmsga="g commit --amend" \
 	gua="gr | xargs -L1 git push --all" \
 	glp="gl && gp";
 
