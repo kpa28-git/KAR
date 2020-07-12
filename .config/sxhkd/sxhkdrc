@@ -97,12 +97,12 @@ super + F12
 	$TERMINAL -e sudo -A nmtui
 
 # dropdown julia REPL (aka calculator)
-# super + c
-# 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a St -o state=floating' julia
+super + c
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a St -o state=floating' -n 'julia' -f '-n julia -e julia' st
 
 # Dropdown terminal
 super + e
-	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a St -o state=floating' st
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a St -o state=floating' -n 'st' st
 
 
 # ********** Window Manager (BSPWM) **********

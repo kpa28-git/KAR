@@ -45,7 +45,7 @@ alias lptl="sudo lsof -i -P -n | grep LISTEN";
 
 # git
 alias g="git" \
-	gd="g diff" \
+	gd="g diff --color" \
 	gc="g clone" \
 	gds="gd --staged" \
 	gdh="gd HEAD" \
@@ -57,6 +57,7 @@ alias g="git" \
 	gp="g push" \
 	gulp="g submodule foreach git pull origin master" \
 	ga="g add" \
+	gas="ga \$(gst -s | awk '{print \$NF}' | fzf --multi --reverse --info=inline --preview='git diff --color {}' --header 'git add files, use shift+Tab to multiselect')" \
 	gr="g remote" \
 	grm="g rm" \
 	gcmsg="g commit -m" \
@@ -130,7 +131,7 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	appsync="rsync -avxP" \
 	mirsync="rsync -avxP --delete" \
 	shck="shellcheck" \
-	viewdoc="fzf | pandoc -f docx -t pdf | zathura -" \
+	viewdoc="fzf --sync | pandoc -f docx -t pdf | zathura -" \
 	vd="vidir" \
 	pwi="sudo powertop" \
 	nv="nvidia-smi" \
