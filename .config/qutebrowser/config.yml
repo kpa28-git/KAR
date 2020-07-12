@@ -45,7 +45,7 @@ url.searchengines: {
     # General
     'DEFAULT': 'https://swisscows.com/web?query={}',
     'sw': 'https://swisscows.com/web?query={}',
-    'ddg': 'https://duckduckgo.com/?q={}',
+    'dg': 'https://duckduckgo.com/?q={}',
     'wolf': 'https://www.wolframalpha.com/input/?i={}',
     'wiki': 'https://en.wikipedia.org/?search={}',
     'dict': 'https://www.merriam-webster.com/dictionary/{}',
@@ -63,7 +63,7 @@ url.searchengines: {
     'or': 'https://openreview.net/search?term={}&content=all&group=all&source=all',
 
     # Forums
-    'sex': 'https://stackexchange.com/search?q={}',
+    'se': 'https://stackexchange.com/search?q={}',
 
     # Repos
     'ghub': 'https://github.com/search?q={}',
@@ -131,6 +131,7 @@ custom.keybinds: {
     '<Alt-l>': 'tab-next',
     '<Alt-j>': 'back',
     '<Alt-k>': 'forward',
+    'ge': 'scroll-to-perc',
     'd': 'tab-close'
 }
 

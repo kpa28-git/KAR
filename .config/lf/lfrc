@@ -21,12 +21,14 @@ map t
 map c
 map x
 map -
+map ge
 
 # Mappings
 map <enter> $$SHELL
 map o open $f
 map u clear
 map w unselect
+map ge bottom
 map dr dragon
 map tdd :trash-put
 map tls :trash-list

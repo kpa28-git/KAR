@@ -9,7 +9,7 @@
 # 0th row: F1 F2 F6
 # 1st row: W  E  P
 # 2nd row: A  D
-# 3rd row: Z  x C
+# 3rd row: Z  x  v  C
 # Insert Scroll_Lock XF86Launch1
 
 
@@ -85,8 +85,8 @@ super + t
 	$TERMINAL -e tremc
 
 # Vimwiki
-super + v
-	$TERMINAL -e $EDITOR -c 'VimwikiIndex'
+# super + v
+# 	$TERMINAL -e $EDITOR -c 'VimwikiIndex'
 
 # Intercheck (polls every second until the internet is back and then says the IP address)
 super + F11
@@ -96,12 +96,13 @@ super + F11
 super + F12
 	$TERMINAL -e sudo -A nmtui
 
-# # dropdown xonsh shell (aka calculator)
+# dropdown julia REPL (aka calculator)
 # super + c
-# 	tdrop --wm='bspwm' -s xonsh
-# # dropdown terminal
-# super + e
-# 	tdrop -s $TERMINAL
+# 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a St -o state=floating' julia
+
+# Dropdown terminal
+super + e
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a St -o state=floating' st
 
 
 # ********** Window Manager (BSPWM) **********

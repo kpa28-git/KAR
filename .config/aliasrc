@@ -60,6 +60,7 @@ alias g="git" \
 	gr="g remote" \
 	grm="g rm" \
 	gcmsg="g commit -m" \
+	gcsmg="g commit -m" \
 	gua="gr | xargs -L1 git push --all" \
 	glp="gl && gp";
 
