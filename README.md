@@ -20,7 +20,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * music: mpd+ncmpcpp
 * video: mpv
 * hotkeys: sxhkd
-* browser: qutebrowser || next
+* browser: qutebrowser || nyxt
 * base16 theme: gruvbox
 * other: redshift-minimal
 
@@ -81,18 +81,14 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 
 ## TODO
 * continue adding to kakrc
-* Next browser config
+* nyxt browser config
 	* Play around with and learn next
 	* Start building a config file `~/.config/next/init.lisp`
-* Custom st build
-	* scrollback, alpha patch, working dpi setting, dedicated config file, remove <a-l> binding
-* clean up home directory (move dotfiles elsewhere?)
+* clean up home directory (move dotfiles?)
 * Set global theming from my directory of base16 files
 	* Choose a theme from a rofi prompt and set base16 for:
 		* Xresources (needs fixing)
 		* qutebrowser
-* lf
-	* fix vidir problem with spaces in filenames, escape spaces
 * cleanup and remove unused luke scripts
 * xdg-open within the current terminal window
 * multiplex between fzf and rofi
