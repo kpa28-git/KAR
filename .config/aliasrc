@@ -46,10 +46,12 @@ alias lptl="sudo lsof -i -P -n | grep LISTEN";
 # git
 alias g="git" \
 	gd="g diff --color" \
-	gc="g clone" \
-	gds="gd --staged" \
+	gds="gd \$(gst -s | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color {}' --header 'git diff file')" \
+	gdc="gd --cached" \
+	gdcs="gd --cached \$(gst -s | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color --cached {}' --header 'git diff cached (staged) file changes')" \
 	gdh="gd HEAD" \
-	gdl="g clone" \
+	gdhs="gd HEAD \$(gst -s | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color HEAD {}' --header 'git diff changes compared to HEAD')" \
+	gc="g clone" \
 	gls="g log" \
 	gst="g status" \
 	gss="gst -sb" \
