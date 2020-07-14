@@ -144,7 +144,6 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 alias cl="ycl && ccl"; # Clear all caches
 
 
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Alias neovim as vim if present.
 moveto() {
 	FILEPATH=$([ -d "$1" ] && echo "$1" || dirname "$1");
 	cd "$FILEPATH" || return;
@@ -157,6 +156,7 @@ tunder() {
 	for i in *' '*; do   mv "$i" `echo $i | sed -e 's/ /_/g'`; done
 }
 
+#command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Alias neovim as vim if present.
 #vf() {
 #	fzf | xargs -r -I % $EDITOR % ;
 #}
