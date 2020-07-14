@@ -45,21 +45,22 @@ alias lptl="sudo lsof -i -P -n | grep LISTEN";
 
 # git
 alias g="git" \
+	gst="g status" \
+	gsb="gst -sb" \
+	gss="gst -s" \
 	gd="g diff --color" \
-	gds="gd \$(gst -s | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color {}' --header 'git diff file')" \
+	gds="gd \$(gss | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color {}' --header 'git diff file')" \
 	gdc="gd --cached" \
-	gdcs="gd --cached \$(gst -s | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color --cached {}' --header 'git diff cached (staged) file changes')" \
+	gdcs="gd --cached \$(gss | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color --cached {}' --header 'git diff cached (staged) file changes')" \
 	gdh="gd HEAD" \
-	gdhs="gd HEAD \$(gst -s | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color HEAD {}' --header 'git diff changes compared to HEAD')" \
+	gdhs="gd HEAD \$(gss | awk '{print \$NF}' | fzf --reverse --info=inline --preview='git diff --color HEAD {}' --header 'git diff changes compared to HEAD')" \
 	gc="g clone" \
 	gls="g log" \
-	gst="g status" \
-	gss="gst -sb" \
 	gl="g pull" \
 	gp="g push" \
 	gulp="g submodule foreach git pull origin master" \
 	ga="g add" \
-	gas="ga \$(gst -s | awk '{print \$NF}' | fzf --multi --reverse --info=inline --preview='git diff --color {}' --header 'git add files, use shift+Tab to multiselect')" \
+	gas="ga \$(gss | awk '{print \$NF}' | fzf --multi --reverse --info=inline --preview='git diff --color {}' --header 'git add files, use shift+Tab to multiselect')" \
 	gr="g remote" \
 	grm="g rm" \
 	gcsmg="g commit -m" \
