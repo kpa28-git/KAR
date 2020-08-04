@@ -9,12 +9,12 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * `/bin/sh`: dash
 * window manager: bspwm
 * compositor: picom
-* terminal: st || alacritty (backup)
+* terminal: st (xst fork) || alacritty (backup)
 * terminal (monospace) font: Hack Nerd Font Mono
 * bar: polybar
 * bar icon: hack nerd font
 * text editor: kakoune
-* file manager: lf+pistol
+* file manager: lf+pistol+dragon
 * notifications: dunst
 * launcher: rofi
 * music: mpd+ncmpcpp
@@ -81,16 +81,16 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 
 ## TODO
 * continue adding to kakrc
+* browser: function to remove or prevent duplicate tabs (+notify user)
 * nyxt browser config
-	* Play around with and learn next
-	* Start building a config file `~/.config/next/init.lisp`
+	* Play around with and learn nyxt
+	* Start building a config file `~/.config/nyxt/init.lisp`
 * clean up home directory (move dotfiles?)
 * Set global theming from my directory of base16 files
 	* Choose a theme from a rofi prompt and set base16 for:
 		* Xresources (needs fixing)
 		* qutebrowser
 * cleanup and remove unused luke scripts
-* xdg-open within the current terminal window
 * multiplex between fzf and rofi
 * search aliases should work with `~/.scripts/termtools/samedir` (cd back and forth? can't use pushd/popd because those aren't POSIX). move to directory and 'cd -' at the end
 

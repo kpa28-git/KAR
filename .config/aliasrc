@@ -11,7 +11,7 @@ alias l="exa -lah --color=auto --group-directories-first" \
 alias f="\$FILE" \
 	e="\$EDITOR" \
 	v="\$EDITOR" \
-	c="clear" \
+	c="/bin/clear" \
 	i="htop -t" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
@@ -81,6 +81,7 @@ alias y="yay" \
 	yrm="y -Rsn" \
 	yls="y -Ql" \
 	ycl="y -Yc && paccache -r" \
+	yrmlck="sudo rm '/var/lib/pacman/db.lck'" \
 	pacls="pacman -Qett --color=always" \
 	pacwhen="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort" \
 	pacmirrup="sudo reflector --country 'United States' --latest 200 --age 24 --sort rate --save /etc/pacman.d/mirrorlist && rm -f /etc/pacman.d/mirrorlist.pacnew" \
@@ -142,6 +143,11 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	nvw="watch2 nv" \
 	nvi="nvtop" \
 	jup="jupyter notebook --ip=127.0.0.1 --port=8888";
+
+# api
+alias coins="curl -s rate.sx/?q" \
+	ethprice="curl -s rate.sx/eth@1w?q" \
+	btcprice="curl -s rate.sx/btc@1w?q";
 
 # combo aliases
 alias cl="ycl && ccl"; # Clear all caches

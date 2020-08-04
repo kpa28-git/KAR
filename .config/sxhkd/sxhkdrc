@@ -3,7 +3,7 @@
 #    / ___/ |/_/ __ \/ //_/ __  /
 #   (__  )>  </ / / / ,< / /_/ /
 #  /____/_/|_/_/ /_/_/|_|\__,_/
-# sexy hotkey daemon runtime config.
+# simple X hotkey daemon runtime config.
 #
 # Unbound hotkeys:
 # 0th row: F1 F2 F6
@@ -88,7 +88,7 @@ super + t
 # super + v
 # 	$TERMINAL -e $EDITOR -c 'VimwikiIndex'
 
-# Intercheck (polls every second until the internet is back and then says the IP address)
+# Intercheck - polls every second until the internet is up
 super + F11
 	"$HOME/.local/bin/nettools/intercheck"
 
@@ -141,6 +141,10 @@ super + shift + {0-9}
 # Rotate the tree from the current nodes parent
 super + shift + {u,d}
 	bspc node @parent -C {forward, backward}
+
+# Toogle focus between floating and tiled
+super + space
+	notify-send 'implement float/tile focus toggle'
 
 # Toggle floating on and off
 super + shift + o

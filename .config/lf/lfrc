@@ -29,7 +29,9 @@ map o open $f
 map u clear
 map w unselect
 map ge bottom
-map dr dragon
+map da drag-all
+map ds drag-sep
+map dl drag-dl
 map tdd :trash-put
 map tls :trash-list
 map tre :trash-restore
@@ -44,8 +46,10 @@ map - :img-preview
 set hidden on
 set color256 on
 
-# Dragon File Uploader
-cmd dragon %dragon-drag-and-drop -a $fx
+# Dragon File Uploader - opens an upload drag box for selected files
+cmd drag-all %dragon-drag-and-drop -a -x $fx
+cmd drag-sep %dragon-drag-and-drop $fx
+cmd drag-dl %drag-dl
 
 # Open File
 cmd open &{{
