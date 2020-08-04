@@ -22,6 +22,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * hotkeys: sxhkd
 * browser: qutebrowser || nyxt
 * base16 theme: gruvbox
+* dropdown calculator: julia REPL
 * other: redshift-minimal
 
 ## Installation
