@@ -40,7 +40,7 @@ Plug 'scrooloose/syntastic'			" Syntax checking plugin for Vim (requires python-
 " ********** External Integration **********
 Plug 'xuhdev/vim-latex-live-preview'		" LaTeX live pdf viewing
 Plug 'jreybert/vimagit'				" Git integration plugin
-Plug 'vimwiki/vimwiki'				" Vimwiki notetaking plugin
+"Plug 'vimwiki/vimwiki'				" Vimwiki notetaking plugin
 "Plug 'bentglasstube/vim-bspwm'			" Allows vim to forward messages to bspwm
 "Plug 'klen/python-mode'			" Python mode (docs, refactor, lints...)
 
