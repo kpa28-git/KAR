@@ -2,12 +2,14 @@ Config Files for programs.
 
 Programs with significant configuration:
 * bspwm (wm)
-* dunst (notifications)
 * i3 (wm)
+* alacritty (backup terminal emulator)
+* dunst (notifications)
 * lf (fm)
-* nvim (editor)
+* kak (kakoune - editor)
+* nvim (neovim - editor)
 * polybar (status bar)
 * qutebrowser (web browser)
 * rofi (menu/launcher)
 * sxhkd (hotkey daemon)
-
+* zathura (pdf reader)

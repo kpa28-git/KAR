@@ -28,7 +28,6 @@
 !/rofi/**
 !/sxhkd/**
 !/tmux/**
-!/xonsh/**
 !/zathura/**
 !aliasrc
 !mimeapps.list
