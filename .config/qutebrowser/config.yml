@@ -79,6 +79,7 @@ url.searchengines: {
     # Health / Wellness
     'ex': 'https://examine.com/search/?q={}',
     'slab': 'https://labdoor.com/review?q={}',
+    'snp': 'https://www.snpedia.com/index.php?title=+Special%3ASearch&search={}&go=Go',
 
     # Linux
     'man': 'https://www.die.net/search/?q={}&sa=Search',

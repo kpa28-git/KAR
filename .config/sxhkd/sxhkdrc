@@ -68,7 +68,7 @@ super + m
 super + a
 	$TERMINAL -e pulsemixer
 
-# Htop
+# htop
 super + i
 	$TERMINAL -e htop
 
@@ -304,5 +304,6 @@ super + F4
 
 # Restart/rescan wifi/eth networks
 super + F5
-	sudo -A systemctl restart NetworkManager
+	sudo -A systemctl restart NetworkManager && \
+		notify-send 'NetworkManager' 'restarted'
 

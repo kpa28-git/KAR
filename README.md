@@ -81,7 +81,10 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * youtube-dl+rofi integration with `:rytd`
 
 ## TODO
+* terminal email
+* tmux
 * continue adding to kakrc
+	* kakwiki
 * browser: function to remove or prevent duplicate tabs (+notify user)
 * nyxt browser config
 	* Play around with and learn nyxt

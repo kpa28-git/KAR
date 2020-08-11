@@ -38,6 +38,7 @@ alias f="\$FILE" \
 alias sstart="sudo systemctl start" \
 	senable="sudo systemctl enable" \
 	sstop="sudo systemctl stop" \
+	srestart="sudo systemctl restart" \
 	sstatus="systemctl status";
 
 # networking
