@@ -20,7 +20,7 @@ super + F1
 
 
 # ********** Programs **********
-# Terminal at $HOME ($TERMINAL env variable is the symlink /usr/bin/terminal)
+# Terminal at $HOME ($TERMINAL is /usr/bin/terminal)
 super + Return
 	$TERMINAL
 
