@@ -147,8 +147,8 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 
 # api
 alias coins="curl -s rate.sx/?q" \
-	ethprice="curl -s rate.sx/eth@1w?q" \
-	btcprice="curl -s rate.sx/btc@1w?q";
+	ethprice="curl -s rate.sx/eth@2w?q" \
+	btcprice="curl -s rate.sx/btc@2w?q";
 
 # combo aliases
 alias cl="ycl && ccl"; # Clear all caches
