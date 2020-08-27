@@ -10,13 +10,14 @@
 # Add `~/.local/bin/` and all subdirectories to $PATH
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
-export TERMINAL="/usr/bin/terminal"
-export OPENER="xdg-open"
-export EDITOR="kak"
-export PAGER="less"
-export BROWSER="qutebrowser"
-export READER="zathura"
-export FILE="lf"
+export TERMINFO='/usr/lib/terminfo'
+export TERMINAL='/usr/bin/terminal'
+export OPENER='xdg-open'
+export EDITOR='kak'
+export PAGER='less'
+export BROWSER='qutebrowser'
+export READER='zathura'
+export FILE='lf'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
