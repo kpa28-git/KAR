@@ -381,7 +381,7 @@ label = %{T5}%{T-} %output%
 [module/airinfo]
 type = custom/script
 exec = $HOME/.local/bin/polybar/airinfo.sh
-interval = 600
+interval = 300
 label = %{T-}%{T-} %output%
 
 

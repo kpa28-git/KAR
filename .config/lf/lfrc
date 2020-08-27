@@ -126,7 +126,7 @@ cmd trash-empty %trash-empty
 
 # Fuzzy Navigation
 cmd search-dir ${{
-	res="$(~/.local/bin/uitools/lspaths | fzf --reverse --info=inline --preview='pistol {}' --header='Search Directory')"
+	res="$(fd -HI --ignore-file \"\$HOME\"/.config/fd/ignore_file | fzf --reverse --info=inline --preview='pistol {}' --header='Search Directory')"
 	if [ -f "$res" ]; then
 		cmd="select"
 	elif [ -d "$res" ]; then

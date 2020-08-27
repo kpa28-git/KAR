@@ -86,6 +86,8 @@ url.searchengines: {
 
     # Arch Linux
     'arch': 'https://wiki.archlinux.org/?search={}',
+    'yq': 'https://www.archlinux.org/packages/?q={}',
+    'yg': 'https://www.archlinux.org/packages/?q={}',
     'pac': 'https://www.archlinux.org/packages/?q={}',
     'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
 
