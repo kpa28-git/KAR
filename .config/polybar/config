@@ -65,7 +65,7 @@ fixed-center = true
 line-size = 3
 modules-left = airinfo corona weather moonphase
 modules-center = bspwm
-modules-right = nordvpn updates-pacman-yay network wlan date powermenu
+modules-right = nordvpn network wlan date powermenu
 tray-position = right
 tray-padding = 1
 
@@ -78,7 +78,7 @@ line-color = ${colors.linecolor}
 [bar/bottom]
 inherit = bar/main
 bottom=true
-modules-left = battery backlight volume
+modules-left = battery backlight volume updates-pacman-yay
 modules-center = mpd
 modules-right = spxprice rutprice ethprice temperature tempgpu tempcpu memory cpu
 
