@@ -65,7 +65,7 @@ fixed-center = true
 line-size = 3
 modules-left = airinfo corona weather moonphase
 modules-center = bspwm
-modules-right = nordvpn network wlan date powermenu
+modules-right = nordvpn updates-pacman-yay network wlan date powermenu
 tray-position = right
 tray-padding = 1
 
@@ -279,6 +279,8 @@ click-left = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%m
 [module/network]
 type = internal/network
 interface = wlo1
+;label-connected-minlen = 30
+;label-connected-alignment = center
 label-connected =  %downspeed% |  %upspeed%
 
 
@@ -383,6 +385,13 @@ type = custom/script
 exec = $HOME/.local/bin/polybar/airinfo.sh
 interval = 300
 label = %{T-}%{T-} %output%
+
+
+[module/updates-pacman-yay]
+type = custom/script
+exec = $HOME/.local/bin/polybar/updates-pacman-yay.sh
+interval = 14400
+label = %output%
 
 
 [module/corona]
