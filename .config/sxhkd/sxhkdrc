@@ -6,7 +6,7 @@
 # simple X hotkey daemon runtime config.
 #
 # Unbound hotkeys:
-# 0th row: F1 F2 F6
+# 0th row: F2 F6
 # 1st row: W  E  P
 # 2nd row: A  D
 # 3rd row: Z  x  v  C
@@ -21,11 +21,11 @@ super + F1
 
 # ********** Programs **********
 # Terminal at $HOME ($TERMINAL is /usr/bin/terminal)
-super + Return
+super + shift + Return
 	$TERMINAL
 
-# Terminal at the same directory as focused window
-super + shift + Return
+# Terminal at focused window directory or $HOME
+super + Return
 	"$HOME/.local/bin/termtools/samedir"
 
 # Rofi run mode

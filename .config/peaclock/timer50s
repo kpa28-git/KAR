@@ -1,0 +1,42 @@
+# peaclock config
+# file: 'timer50s'
+# start a 50 second timer
+
+mode timer
+view digital
+toggle active-bg
+timer 00h:00m:50s
+timer-exec 'notify-say \'timer complete\' \'50 seconds\''
+set seconds on
+set date on
+date-padding 1
+date '%a %b %d'
+set hour-24 on
+set auto-size on
+set auto-ratio on
+
+style active-fg clear
+style active-bg reverse
+style inactive-fg clear
+style inactive-bg clear
+style colon-fg clear
+style colon-bg clear
+style date clear
+style text clear
+style background clear
+style prompt clear
+style success green
+style error red
+
+fill-colon ''
+fill-active ''
+fill-inactive ''
+rate-input 50
+rate-status 5000
+rate-refresh 1000
+block 2 1
+padding 0 0
+margin 0 0
+ratio 2 1
+
+timer start

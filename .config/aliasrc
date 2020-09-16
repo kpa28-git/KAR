@@ -111,6 +111,14 @@ alias tdd="trash-put" \
 	trm="trash-rm \"\$(trash-list | fzf --reverse --info=inline --header='Delete File' | awk '{print \$NF}')\"" \
 	tem="trash-empty";
 
+# peaclock
+alias stopwatch="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/stopwatch\"" \
+	t50="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer50s\"" \
+	t5="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer05m\"" \
+	t20="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer20m\"" \
+	t25="peaclock --config-dir=\"$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer25m\"" \
+	t1="peaclock --config-dir=\"$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer01h\"";
+
 # search aliases
 alias lspaths="fd -HI --ignore-file \"\$HOME\"/.config/fd/ignore_file" \
 	s="lspaths | fzf --reverse --info=inline --preview='pistol {}'" \

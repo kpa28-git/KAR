@@ -80,7 +80,8 @@ inherit = bar/main
 bottom=true
 modules-left = battery backlight volume updates-pacman-yay
 modules-center = mpd
-modules-right = spxprice rutprice ethprice temperature tempgpu tempcpu memory cpu
+;modules-right = temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
+modules-right = spxprice rutprice ethprice temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
 
 [bar/secondary]
 inherit = bar/main
@@ -267,13 +268,15 @@ label-disconnected = %{A1:$TERMINAL -e nmtui:}%{T5}睊%{T-}%{A}
 
 [module/cpu]
 type = internal/cpu
-label =  %percentage%%
+interval = 1
+label = %{A1:$TERMINAL -e htop:}%percentage%%%{A}
 
 
 [module/memory]
 type = internal/memory
-label =  %gb_used%
-click-left = notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
+interval = 10
+label = %{A1:$TERMINAL -e htop:}%gb_used%%{A}
+;label = %{A1:notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)":}%gb_used%%{A}
 
 
 [module/network]
@@ -288,7 +291,8 @@ label-connected =  %downspeed% |  %upspeed%
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-label =%{T5}﨎%{T-} %temperature-c%
+interval = 5
+label = %{T5}%{T-}  %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 click-left = $TERMINAL -e watch sensors
@@ -315,28 +319,44 @@ menu-0-2-exec = sudo -A shutdown -h now
 ;----------------;
 ; Custom Modules ;
 ;----------------;
-[module/nordvpn]
-type = custom/script
-click-left = $HOME/.local/bin/nettools/nord-toggle
-exec = $HOME/.local/bin/polybar/nordvpn.sh
-interval = 10
-label = %{T5}%output%%{T-}
-
-
 [module/tempcpu]
 type = custom/script
 click-left = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
 exec = $HOME/.local/bin/polybar/temp-cpu.sh
-interval = 10
-label = %output%
+interval = 5
+label = %{T5}%{T-}  %output%
 
 
 [module/tempgpu]
 type = custom/script
 click-left = $TERMINAL -e nvtop
 exec = $HOME/.local/bin/polybar/temp-gpu.sh
-interval = 30
+interval = 5
+label = %{T5}%{T-}  %output%
+
+
+[module/memgpu]
+type = custom/script
+click-left = $TERMINAL -e nvtop
+exec = $HOME/.local/bin/polybar/mem-gpu.sh
+interval = 10
 label = %output%
+
+
+[module/pctutilgpu]
+type = custom/script
+click-left = $TERMINAL -e nvtop
+exec = $HOME/.local/bin/polybar/pctutil-gpu.sh
+interval = 1
+label = %output%%
+
+
+[module/nordvpn]
+type = custom/script
+click-left = $HOME/.local/bin/nettools/nord-toggle
+exec = $HOME/.local/bin/polybar/nordvpn.sh
+interval = 10
+label = %{T5}%output%%{T-}
 
 
 ;[module/bluetooth]
@@ -353,7 +373,6 @@ label = %output%
 ;exec = $HOME/.local/bin/polybar/torrent.sh
 ;interval = 30
 ;label = %
-
 
 
 [module/ethprice]
@@ -382,7 +401,7 @@ label = %{T5}%{T-} %output%
 
 [module/airinfo]
 type = custom/script
-exec = $HOME/.local/bin/polybar/airinfo.sh
+exec = $HOME/.local/bin/apitools/airinfo
 interval = 300
 label = %{T-}%{T-} %output%
 
