@@ -1,0 +1,18 @@
+//                              _/_/  _/
+//     _/  _/_/    _/_/      _/
+//    _/_/      _/    _/  _/_/_/_/  _/
+//   _/        _/    _/    _/      _/
+//  _/          _/_/      _/      _/
+// rofi config file.
+
+configuration {
+	modi: "window,run,ssh,drun";
+	lines: 3;
+	font: "hack 16";
+	location: 2;
+	yoffset: 270;
+	xoffset: 0;
+	show-icons: true;
+	dpi: 192;
+	theme: "/usr/share/rofi/themes/paper-float.rasi";
+}

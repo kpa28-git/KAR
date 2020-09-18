@@ -9,7 +9,7 @@
 # 0th row: F2 F6
 # 1st row: W  E  P
 # 2nd row: A  D
-# 3rd row: Z  x  v  C
+# 3rd row: Z  v  C
 # Insert Scroll_Lock XF86Launch1
 
 
@@ -96,13 +96,25 @@ super + F11
 super + F12
 	$TERMINAL -e sudo -A nmtui
 
-# dropdown julia REPL (aka calculator)
+# Dropdown julia REPL (aka calculator)
 super + c
 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'julia' -f '-n julia -e julia' xst
 
 # Dropdown terminal
 super + e
 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'xst' xst
+
+# Dropdown peaclock custom rofi selector script
+super + p
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'rpeaclock' -f '-n rpeaclock -e $HOME/.local/bin/uitools/rpeaclock' xst
+
+# Dropdown peaclock work timer (25 min)
+super + bracketleft
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'peaclock_timer25m' -f '-n peaclock_timer25m -e peaclock --config-dir=$XDG_CONFIG_HOME/peaclock --config=$XDG_CONFIG_HOME/peaclock/timer25m' xst
+
+# Dropdown peaclock break timer (5 min)
+super + bracketright
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'peaclock_timer05m' -f '-n peaclock_timer05m -e peaclock --config-dir=$XDG_CONFIG_HOME/peaclock --config=$XDG_CONFIG_HOME/peaclock/timer05m' xst
 
 
 # ********** Window Manager (BSPWM) **********
@@ -143,7 +155,7 @@ super + shift + {u,d}
 	bspc node @parent -C {forward, backward}
 
 # Toogle focus between floating and tiled
-super + space
+super + x
 	notify-send 'implement float/tile focus toggle'
 
 # Toggle floating on and off
@@ -204,8 +216,8 @@ super + shift + m
 XF86AudioMute
 	lmc mute
 
-# Toggle pause/play audio
-super + {_,shift +} p
+# Toggle pause/play audio (TODO add general pause logic for other programs)
+super + {_,shift +} space
 	lmc {toggle,pause}
 
 # Toggle pause/play audio
@@ -249,7 +261,7 @@ XF86AudioLowerVolume
 	lmc down 10
 
 # Seek foward in song
-super + {_,shift +} bracketright
+super + shift + bracketright
 	lmc forward {10,120}
 
 # Seek foward in song
@@ -257,7 +269,7 @@ XF86AudioForward
 	lmc forward 10
 
 # Seek backward in song
-super + {_,shift +} bracketleft
+super + shift + bracketleft
 	lmc back {10,120}
 
 # Seek backward in song

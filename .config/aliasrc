@@ -111,14 +111,6 @@ alias tdd="trash-put" \
 	trm="trash-rm \"\$(trash-list | fzf --reverse --info=inline --header='Delete File' | awk '{print \$NF}')\"" \
 	tem="trash-empty";
 
-# peaclock
-alias stopwatch="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/stopwatch\"" \
-	t50="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer50s\"" \
-	t5="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer05m\"" \
-	t20="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer20m\"" \
-	t25="peaclock --config-dir=\"$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer25m\"" \
-	t1="peaclock --config-dir=\"$XDG_CONFIG_HOME/peaclock\" --config=\"\$XDG_CONFIG_HOME/peaclock/timer01h\"";
-
 # search aliases
 alias lspaths="fd -HI --ignore-file \"\$HOME\"/.config/fd/ignore_file" \
 	s="lspaths | fzf --reverse --info=inline --preview='pistol {}'" \
@@ -145,6 +137,7 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	appsync="rsync -avxP" \
 	mirsync="rsync -avxP --delete" \
 	shck="shellcheck" \
+	tmr="peaclock --config-dir=\"\$XDG_CONFIG_HOME/peaclock\" --config=\"\$(fd '[^\.gitignore]' --regex -t 'f' -d 1 \"$XDG_CONFIG_HOME/peaclock\" | fzf --select-1)\"" \
 	viewdoc="fzf --sync | pandoc -f docx -t pdf | zathura -" \
 	vd="vidir" \
 	pwi="sudo powertop" \
@@ -155,8 +148,13 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 
 # api
 alias coins="curl -s rate.sx/?q" \
-	ethprice="curl -s rate.sx/eth@2w?q" \
-	btcprice="curl -s rate.sx/btc@2w?q";
+	eth1="curl -s rate.sx/eth@1w?q" \
+	eth2="curl -s rate.sx/eth@2w?q" \
+	eth4="curl -s rate.sx/eth@4w?q" \
+	eth8="curl -s rate.sx/eth@8w?q" \
+	eth24="curl -s rate.sx/eth@24w?q" \
+	eth52="curl -s rate.sx/eth@52w?q" \
+	btc2w="curl -s rate.sx/btc@2w?q";
 
 # combo aliases
 alias cl="ycl && ccl"; # Clear all caches
