@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # replace utils with rust alternatives
-alias l="exa -lah --color=auto --group-directories-first" \
+alias l="exa -lah --git --color=auto --group-directories-first" \
 	ls="exa -h --color=auto --group-directories-first" \
 	grep="rg" \
 	cat="bat --theme=zenburn" \
@@ -30,6 +30,7 @@ alias f="\$FILE" \
 	xorgfocusinfo="xprop -id \`xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print \$NF}'\`" \
 	today="date '+%Y-%m-%d'" \
 	myip="curl -q ifconfig.co" \
+	myports="sudo netstat -tulpn" \
 	watch2="watch -n 2 " \
 	lamp="ps -u \`whoami\`" \
 	kamp="kap -u \`whoami\`";
