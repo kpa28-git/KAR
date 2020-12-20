@@ -12,6 +12,7 @@
 !/fontconfig/**
 !/htop/**
 !/i3/**
+!/kak/**
 !/lf/**
 !/ncmpcpp/**
 !/neofetch/**

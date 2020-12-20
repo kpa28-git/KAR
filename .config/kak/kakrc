@@ -1,0 +1,112 @@
+#     __        __
+#    / /_____ _/ /_____  __ _____  ___
+#   /  '_/ _ `/  '_/ _ \/ // / _ \/ -_)
+#  /_/\_\\_,_/_/\_\\___/\_,_/_//_/\__/
+# Kakoune text editor runtime config.
+
+# Highlight Settings
+# ──────────────────
+colorscheme gruvbox
+add-highlighter global/ number-lines -relative -hlcursor
+add-highlighter global/ show-matching
+add-highlighter global/ show-whitespaces -spc ' ' -tab '>' -tabpad '-'
+add-highlighter global/ wrap
+
+# highlight keywords
+add-highlighter global/ regex \b(TODO|AUDIT|FIXME|XXX|NOTE)\b 0:+rb
+
+
+# Global Indent Settings
+# ──────────────────────
+set-option global tabstop 8
+set-option global indentwidth 0
+
+
+# Highlight the word under the cursor
+# declare-option -hidden regex curword
+# set-face global CurWord default,rgba:80808040
+
+# hook global NormalIdle .* %{
+# 	eval -draft %{ try %{
+# 		exec <space><a-i>w <a-k>\A\w+\z<ret>
+# 		set-option buffer curword "\b\Q%val{selection}\E\b"
+# 	} catch %{
+# 		set-option buffer curword ''
+# 	} }
+# }
+# add-highlighter global/ dynregex '%opt{curword}' 0:CurWord
+
+# TODO - automatically cd to parent directory of opened file, cd back to origin on close
+
+# Keybindings
+# ───────────
+# global:
+map global normal '#' ':comment-line<ret>' -docstring 'toggle line comment'
+map global normal '<a-#>' ':comment-block<ret>' -docstring 'toggle block comment'
+map global normal D '<a-l>d' -docstring 'delete to end of line'
+map global normal Y '<a-l>y' -docstring 'yank to end of line'
+
+# user (prefixed by ','):
+map global user y '<a-|>xsel --input --clipboard<ret>' -docstring 'Yank to clipboard only'
+map global user P '!xsel --output --clipboard<ret>' -docstring 'Paste from clipboard before'
+map global user p '<a-!>xsel --output --clipboard<ret>' -docstring 'Paste from clipboard after'
+
+
+# Normal Yank, Delete, or Change commands overwrite the system clipboard
+# ──────────────────────────────────────────────────────────────────────
+hook global NormalKey y|d|c %{ nop %sh{
+	printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+}}
+
+
+# Enable <tab>/<s-tab> for insert completion selection
+# ──────────────────────────────────────────────────────
+hook global InsertCompletionShow .* %{ map window insert <tab> <c-n>; map window insert <s-tab> <c-p> }
+hook global InsertCompletionHide .* %{ unmap window insert <tab> <c-n>; unmap window insert <s-tab> <c-p> }
+
+
+# Functions
+# ─────────
+def lint-engage -docstring 'Enable linting' %{
+	lint-enable
+	map global user -docstring "next error" l ': lint-next-error<ret>'
+	map global user -docstring "previous error" L ': lint-previous-error<ret>'
+}
+
+def lint-on-write -docstring 'Activate linting on buffer write' %{
+	lint-engage
+	hook buffer BufWritePost .* lint
+}
+
+def clean-trailing-whitespace -docstring 'Remove trailing whitespace' %{
+	try %{ exec -draft '%s\h+$<ret>d' }
+}
+
+
+# Filetype Hooks
+# ──────────────
+hook global WinSetOption filetype=sh %{
+	set buffer lintcmd 'shellcheck --norc -x -f gcc'
+	lint-on-write
+}
+
+hook global WinSetOption filetype=markdown %{
+	set buffer formatcmd 'prettier --parser markdown'
+	def render -docstring 'render current buffer' %{
+		exec ":terminal textplainview %val{buffile} | ${PAGER}<ret>"
+	}
+}
+
+hook global WinSetOption filetype=(c|cpp) %{
+	clang-enable-autocomplete
+	clang-enable-diagnostics
+	alias window lint clang-parse
+	alias window lint-next-error clang-diagnostics-next
+}
+
+hook global WinSetOption filetype=python %{
+	jedi-enable-autocomplete
+	lint-enable
+	# set-option global lintcmd 'flake8'
+}
+

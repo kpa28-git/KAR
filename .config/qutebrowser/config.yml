@@ -78,6 +78,7 @@ url.searchengines: {
 
     # Health / Wellness
     'ex': 'https://examine.com/search/?q={}',
+    'sh': 'https://selfhacked.com/?s={}',
     'slab': 'https://labdoor.com/review?q={}',
     'snp': 'https://www.snpedia.com/index.php?title=+Special%3ASearch&search={}&go=Go',
 
@@ -104,8 +105,9 @@ url.searchengines: {
     'pd': 'https://pandas.pydata.org/pandas-docs/stable/search.html?q={}',
     'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}',
     'skl': 'https://scikit-learn.org/stable/search.html?q={}',
-    'tch': 'https://pytorch.org/docs/stable/search.html?q={}',
-    'pyt': 'https://discuss.pytorch.org/search?q={}',
+    'pt': 'https://pytorch.org/docs/stable/search.html?q={}',
+    'ptd': 'https://discuss.pytorch.org/search?q={}',
+    'pl': 'https://pytorch-lightning.readthedocs.io/en/latest/search.html?q={}',
     'pyro': 'http://docs.pyro.ai/en/stable/search.html?q={}',
 
     # Julia

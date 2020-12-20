@@ -1,7 +1,7 @@
 #!/bin/sh
 # Qutebrowser userscript wrapper for youtube-dl.
 
-DEST_OPTIONS="$HOME/Downloads|$HOME/Music";
+DEST_OPTIONS="$HOME/Videos|$HOME/Music|$HOME/Downloads";
 DEST_DIR=$(echo "$DEST_OPTIONS" | rofi -dmenu -sep '|' -lines 5 -i -p 'destination');
 
 youtube-dl --add-metadata -i -o "$DEST_DIR/%(upload_date)s-%(title)s.%(ext)s" "$QUTE_URL" && notify-send "qb-rytd" "video downloaded to $DEST_DIR";
