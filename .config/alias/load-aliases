@@ -1,0 +1,11 @@
+#!/bin/sh
+# load posix shell aliases
+
+[ -f "$ALIASDIR/posix.sh" ] && . "$ALIASDIR/posix.sh"
+if posix_str_isin "arch" "$KERNEL_RELEASE" ; then
+	[ -f "$ALIASDIR/arch.sh" ] && . "$ALIASDIR/arch.sh"
+	[ -f "$ALIASDIR/systemd.sh" ] && . "$ALIASDIR/systemd.sh"
+fi;
+[ -f "$ALIASDIR/programs.sh" ] && . "$ALIASDIR/programs.sh"
+[ -f "$ALIASDIR/custom.sh" ] && . "$ALIASDIR/custom.sh"
+

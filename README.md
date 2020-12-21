@@ -5,7 +5,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 
 ## Details
 * All of [my scripts](https://github.com/kevindirect/scripts) aside from a couple are POSIX compliant for speed and portability
-* login shell: bash
+* login shell: zsh
 * `/bin/sh`: dash
 * window manager: bspwm
 * compositor: picom
@@ -65,7 +65,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 
 ### Hotkeys that make sense
 * All hotkeys can be modified from `~/.config/sxhkd/sxhkdrc`
-* Show the sxhkd keybinds with mod+F1 or in the terminal with `keybinds`
+* Show the sxhkd keybinds with `mod+<F1>` or in the terminal with `keybinds`
 
 ### Qutebrowser
 ![qutebrowser+buku+rofi integration](.local/share/rice/rice-qb.gif)
@@ -95,7 +95,10 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 		* Xresources (needs fixing)
 		* qutebrowser
 * cleanup and remove unused luke scripts
-* multiplex between fzf and rofi
+* multiplex between fzf and rofi (check if on tty or not)
+* `sw`: search watch
+* `sl`: search listen
+* mod+v(iew): view media, rofi selector for (sr, sw, sl)
 * search aliases should work with `~/.scripts/termtools/samedir` (cd back and forth? can't use pushd/popd because those aren't POSIX). move to directory and 'cd -' at the end
 
 ## Big Thanks To

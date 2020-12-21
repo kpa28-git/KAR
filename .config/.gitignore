@@ -6,6 +6,8 @@
 
 # Whitelist:
 !/alacritty/**
+!/alias/**
+!/bash/**
 !/bspwm/**
 !/dunst/**
 !/cargo/**
@@ -25,13 +27,12 @@
 !/polybar/**
 !/pylint/**
 !/qutebrowser/**
-!/readline/**
 !/redshift/**
 !/rofi/**
 !/sxhkd/**
 !/tmux/**
 !/zathura/**
-!aliasrc
+!/zsh/**
 !mimeapps.list
 !README.md
 !.gitignore
