@@ -25,6 +25,7 @@ alias f="\$FILE" \
 	lap="ps -u" \
 	kap="killall" \
 	mimetype="file --mime-type" \
+	xo="xdg-open" \
 	xdgtype="xdg-mime query filetype" \
 	xdgdefault="xdg-mime query default" \
 	xorgfocusinfo="xprop -id \`xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print \$NF}'\`" \
