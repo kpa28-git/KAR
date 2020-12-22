@@ -15,7 +15,7 @@ rr = "run --release"
 
 [cargo-new]
 name = "kevindirect"
-email = "15056154+kevindirect@users.noreply.github.com"
+email = "git@kevindirect.com"
 vcs = "git"
 
 [build]
