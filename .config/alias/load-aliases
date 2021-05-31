@@ -5,6 +5,8 @@
 if posix_str_isin "arch" "$(uname -r)"; then
 	[ -f "$ALIASDIR/arch.sh" ] && . "$ALIASDIR/arch.sh"
 	[ -f "$ALIASDIR/systemd.sh" ] && . "$ALIASDIR/systemd.sh"
+elif posix_str_isin "FreeBSD" "$(uname -v)"; then
+	[ -f "$ALIASDIR/freebsd.sh" ] && . "$ALIASDIR/freebsd.sh"
 elif posix_str_isin "postmarketos" "$(uname -v)"; then
 	[ -f "$ALIASDIR/alpine.sh" ] && . "$ALIASDIR/alpine.sh"
 fi;
