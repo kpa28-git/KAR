@@ -78,15 +78,14 @@ line-color = ${colors.linecolor}
 [bar/bottom]
 inherit = bar/main
 bottom=true
-modules-left = battery backlight volume updates-pacman-yay
+modules-left = battery backlight volume updates-pacman-yay btcprice ethprice adaprice
 modules-center = mpd
 ;modules-right = temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
-modules-right = spxprice rutprice ethprice temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
+modules-right = spxprice rutprice temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
 
 [bar/secondary]
 inherit = bar/main
-monitor = ${env:MONITOR:}
-; Second bar to use on second monitor
+monitor = ${env:MONITOR}
 
 
 ;Misc
@@ -375,19 +374,35 @@ label = %{T5}%output%%{T-}
 ;label = %
 
 
+[module/btcprice]
+type = custom/script
+click-left = $TERMINAL -e "$(curl -s rate.sx/btc@1w | less -S)"
+exec = $HOME/.local/bin/polybar/cprice.sh -s 'BTC'
+interval = 600
+label = %{T-}%{T-} %output%
+
+
 [module/ethprice]
 type = custom/script
 click-left = $TERMINAL -e "$(curl -s rate.sx/eth@1w | less -S)"
 exec = $HOME/.local/bin/polybar/cprice.sh -s 'ETH'
-interval = 300
+interval = 600
 label = %{T-}%{T-} %output%
+
+
+[module/adaprice]
+type = custom/script
+click-left = $TERMINAL -e "$(curl -s rate.sx/ada@1w | less -S)"
+exec = $HOME/.local/bin/polybar/cprice.sh -s 'ADA' -f 3
+interval = 600
+label = %{T-}%{T-} %output%
 
 
 [module/spxprice]
 type = custom/script
 click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s 'SPY'
 exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s 'SPY'
-interval = 300
+interval = 480
 label = %{T-}%{T-} %output%
 
 
@@ -395,7 +410,7 @@ label = %{T-}%{T-} %output%
 type = custom/script
 click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s 'IWM'
 exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s 'IWM'
-interval = 300
+interval = 480
 label = %{T5}%{T-} %output%
 
 

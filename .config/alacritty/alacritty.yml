@@ -313,11 +313,11 @@ colors:
 
 # SHELL:
 Default:
-  - (macOS) /bin/bash --login
+  - (macOS) /bin/zsh --login
   - (Linux/BSD) user login shell
   - (Windows) powershell
 shell:
-  program: /bin/bash
+  program: /bin/zsh
   args:
     - --login
 

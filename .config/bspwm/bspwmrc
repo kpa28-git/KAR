@@ -8,20 +8,15 @@
 # binary space partitioning window manager runtime config.
 
 # Set monitor workspaces (called desktops in bspwm)
-HDMI_ACTIVE=$(xrandr | grep ' connected' | grep 'HDMI-0' | awk '{print $1}' | xargs);
-DP_ACTIVE=$(xrandr | grep ' connected' | grep 'DP-0' | awk '{print $1}' | xargs);
-GPU_MODE=$(optimus-manager --print-mode | awk '{print $NF}' | xargs);
+ACTIVE="$(xrandr --listactivemonitors | awk 'NR>1{print $NF}')";
+PRIMARY="$(printf '%s' "$ACTIVE" | sed -n '1p')";
+SECONDARY="$(printf '%s' "$ACTIVE" | sed -n '2p' | xargs)";
 
-if [ "$GPU_MODE" = 'nvidia' ] ; then
-	if [ -n "$DP_ACTIVE" ] ; then
-		bspc monitor DP-0    -d 1 2 3 4 5 6 7 8 9 0;
-	elif [ -n "$HDMI_ACTIVE" ] ; then
-		bspc monitor HDMI-0  -d 1 2 3 4 5 6 7 8 9 0;
-	else
-		bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0;
-	fi;
+if [ -n "$SECONDARY" ] ; then
+	bspc monitor "$PRIMARY" -d 1 2 3 4 5 6 7 8 9;
+	bspc monitor "$SECONDARY" -d 0;
 else
-	bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0;
+	bspc monitor "$PRIMARY" -d 1 2 3 4 5 6 7 8 9 0;
 fi;
 
 

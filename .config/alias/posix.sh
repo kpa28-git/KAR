@@ -37,7 +37,8 @@ alias f="\$FILE" \
 	kamp="kap -u \`whoami\`";
 
 # networking
-alias lptl="sudo lsof -i -P -n | grep LISTEN" \
+alias arpall="sudo arp-scan -l" \
+	lptl="sudo lsof -i -P -n | grep LISTEN" \
 	myip="curl -q ifconfig.co";
 
 # basic posix utils

@@ -33,6 +33,8 @@ def qb_config():
 					base16 = yaml.safe_load(base16_file)
 			qb_config_base16_load({k:'#'+v for k,v in base16.items()})
 
+		config.load_autoconfig(False)
+
 def read_xresources(prefix):
 	"""
 	Get ~/.Xresources file properties.

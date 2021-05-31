@@ -48,8 +48,13 @@ alias g="git" \
 	gua="gr | xargs -L1 git push --all" \
 	glp="gl && gp";
 
+alias gpglspub="gpg --list-keys" \
+	gpglssec="gpg --list-secret-keys --keyid-format LONG" \
+	gpggen="gpg --full-generate-key" \
+	gpgimp="gpg --import";
+
 alias cg="conda list | grep" \
-	cq="conda info" \
+	cq="conda search --info" \
 	cls="conda list" \
 	car="conda activate" \
 	cdr="conda deactivate" \
@@ -64,12 +69,13 @@ alias tdd="trash-put" \
 	trm="trash-rm \"\$(trash-list | fzf --reverse --info=inline --header='Delete File' | awk '{print \$NF}')\"" \
 	tem="trash-empty";
 
-alias coins="curl -s rate.sx/?q" \
-	eth1="curl -s rate.sx/eth@1w?q" \
-	eth2="curl -s rate.sx/eth@2w?q" \
-	eth4="curl -s rate.sx/eth@4w?q" \
-	eth8="curl -s rate.sx/eth@8w?q" \
-	eth24="curl -s rate.sx/eth@24w?q" \
-	eth52="curl -s rate.sx/eth@52w?q" \
-	btc2="curl -s rate.sx/btc@2w?q";
+alias coins="curl -s rate.sx" \
+	eth1="curl -s rate.sx/eth@1w" \
+	eth2="curl -s rate.sx/eth@2w" \
+	eth4="curl -s rate.sx/eth@4w" \
+	eth8="curl -s rate.sx/eth@8w" \
+	eth24="curl -s rate.sx/eth@24w" \
+	eth52="curl -s rate.sx/eth@52w" \
+	btc2="curl -s rate.sx/btc@2w" \
+	ada2="curl -s rate.sx/ada@2w";
 

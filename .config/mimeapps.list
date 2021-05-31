@@ -11,6 +11,7 @@ text/x-script.python=text.desktop;
 text/x-shellscript=text.desktop;
 text/x-tex=text.desktop;
 inode/x-empty=text.desktop;
+text/csv=spreadsheet.desktop;
 
 application/json=text.desktop;
 application/pdf=pdf.desktop;

@@ -7,16 +7,16 @@
 #
 # Unbound hotkeys:
 # 0th row: F2 F6
-# 1st row: W  E  P
-# 2nd row: A  D
-# 3rd row: Z  v  C
+# 1st row: W  E  u P
+# 2nd row: A S dD
+# 3rd row: Z  C
 # Insert Scroll_Lock XF86Launch1
 
 
 # ********** help **********
 # Show sxhkd keybindings
 super + F1
-	$TERMINAL -e sh -c "$HOME/.local/bin/uitools/keybinds | less"
+	$TERMINAL -e sh -c "$HOME/.local/bin/uitools/keybinds | bat"
 
 
 # ********** Programs **********
@@ -60,6 +60,10 @@ super + g
 super + n
 	$TERMINAL -e newsboat
 
+# View/Play media
+super + v
+	"$HOME/.local/bin/uitools/rviewmedia"
+
 # Music (ncmpcpp)
 super + m
 	$TERMINAL -e ncmpcpp
@@ -84,10 +88,6 @@ super + F8
 super + t
 	$TERMINAL -e tremc
 
-# Vimwiki
-# super + v
-# 	$TERMINAL -e $EDITOR -c 'VimwikiIndex'
-
 # Intercheck - polls every second until the internet is up
 super + F11
 	"$HOME/.local/bin/nettools/intercheck"
@@ -108,13 +108,17 @@ super + e
 super + p
 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'rpeaclock' xst -n rpeaclock -e $HOME/.local/bin/uitools/rpeaclock
 
-# Dropdown peaclock work timer (25 min)
-super + bracketleft
-	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'peaclock_timer25m' xst -n peaclock_timer25m -e peaclock --config-dir=$XDG_CONFIG_HOME/peaclock --config=$XDG_CONFIG_HOME/peaclock/timer25m
+# # Dropdown peaclock work timer (25 min)
+# super + bracketleft
+# 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'peaclock_timer25m' xst -n peaclock_timer25m -e peaclock --config-dir=$XDG_CONFIG_HOME/peaclock --config=$XDG_CONFIG_HOME/peaclock/timer25m
 
-# Dropdown peaclock break timer (5 min)
-super + bracketright
-	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'peaclock_timer05m' xst -n peaclock_timer05m -e peaclock --config-dir=$XDG_CONFIG_HOME/peaclock --config=$XDG_CONFIG_HOME/peaclock/timer05m
+# # Dropdown peaclock break timer (5 min)
+# super + bracketright
+# 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'peaclock_timer05m' xst -n peaclock_timer05m -e peaclock --config-dir=$XDG_CONFIG_HOME/peaclock --config=$XDG_CONFIG_HOME/peaclock/timer05m
+
+# Passmenu
+super + grave
+	passmenu
 
 
 # ********** Window Manager (BSPWM) **********
@@ -135,7 +139,7 @@ super + {0-9}
 	bspc desktop -f {0-9}
 
 # Cycle through desktops
-super + {u,d}
+super + {bracketleft,bracketright}
 	bspc desktop -f {prev, next}
 
 # Swap window with direction
@@ -290,16 +294,16 @@ XF86MonBrightnessUp
 super + shift + v
 	show-clipboard
 
-# Choose emoji
-super + grave
-	runicode
+# # Choose emoji
+# super + grave
+# 	runicode
 
 # Take screenshot
 Print
 	maim pic-full-$("$HOME/Pictures/"date '+%y%m%d-%H%M-%S').png
 
 # Pick screenshot type
-shift + Print
+super + Print
 	maimpick
 
 # Record audio or video

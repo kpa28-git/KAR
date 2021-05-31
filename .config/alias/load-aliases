@@ -2,9 +2,11 @@
 # load posix shell aliases
 
 [ -f "$ALIASDIR/posix.sh" ] && . "$ALIASDIR/posix.sh"
-if posix_str_isin "arch" "$KERNEL_RELEASE" ; then
+if posix_str_isin "arch" "$(uname -r)"; then
 	[ -f "$ALIASDIR/arch.sh" ] && . "$ALIASDIR/arch.sh"
 	[ -f "$ALIASDIR/systemd.sh" ] && . "$ALIASDIR/systemd.sh"
+elif posix_str_isin "postmarketos" "$(uname -v)"; then
+	[ -f "$ALIASDIR/alpine.sh" ] && . "$ALIASDIR/alpine.sh"
 fi;
 [ -f "$ALIASDIR/programs.sh" ] && . "$ALIASDIR/programs.sh"
 [ -f "$ALIASDIR/custom.sh" ] && . "$ALIASDIR/custom.sh"

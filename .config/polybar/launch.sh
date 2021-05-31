@@ -6,50 +6,20 @@
 #   / .___/\____/_/\__, /_.___/\__,_/_/
 #  /_/            /____/
 # Polybar launch script.
-# Modified from WillemMe: https://github.com/WillemMe/dotFiles
 
-# Terminate already running bar instances
-killall -q polybar
+if [ -z "$(pgrep -x polybar)" ]; then
+	ACTIVE="$(polybar -m | cut -d':' -f1)";
+	PRIMARY="$(printf '%s' "$ACTIVE" | sed -n '1p')";
+	SECONDARY="$(printf '%s' "$ACTIVE" | sed -n '2p')";
+	MONITOR=$PRIMARY polybar --reload main &
+	MONITOR=$PRIMARY polybar --reload bottom &
+	# MONITOR=$SECONDARY polybar --reload secondary &
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-DP_ACTIVE=$(xrandr | grep ' connected' | grep 'DP-0' | awk '{print $1}' | xargs);
-HDMI_ACTIVE=$(xrandr | grep ' connected' | grep 'HDMI-0' | awk '{print $1}' | xargs);
-GPU_MODE=$(optimus-manager --print-mode | awk '{print $NF}' | xargs);
-
-if [ "$GPU_MODE" = 'nvidia' ] && [ -n "$DP_ACTIVE" ] || [ -n "$HDMI_ACTIVE" ] ; then
-	if [ -n "$DP_ACTIVE" ] ; then monitors="$DP_ACTIVE";
-	elif [ -n "$HDMI_ACTIVE" ] ; then monitors="$HDMI_ACTIVE";
-	fi;
+	# Multi monitor bar mirroring: https://github.com/polybar/polybar/issues/763
+	# for m in $(polybar --list-monitors | cut -d":" -f1); do
+	# 	MONITOR=$m polybar --reload main &
+	# 	MONITOR=$m polybar --reload bottom &
+	# done
 else
-	monitors=$(xrandr --query | grep "^eDP" | grep " connected" | cut -d" " -f1);
-fi;
-
-# Multi monitor bar mirroring: https://github.com/polybar/polybar/issues/763
-for m in $(polybar --list-monitors | cut -d":" -f1); do
-	MONITOR=$m polybar --reload main &
-	MONITOR=$m polybar --reload bottom &
-done
-
-# Multi-monitor handling
-#if type "xrandr"; then
-#	#Get monitors
-#	monitors=$(xrandr --query | grep " connected" | cut -d" " -f1)
-#
-#	#If only 1 montor set it as default
-#	if [ ${#monitors[@]} == "0" ]; then
-#		MONITOR="${monitors[0]}" polybar main &
-#		MONITOR="${monitors[0]}" polybar bottom &
-#	else #with more screen set the "bigger" as main
-#		for m in $monitors; do
-#			if [ $m == "eDP-1" ]; then
-#				MONITOR=$m polybar secondary &
-#			else
-#				MONITOR=$m polybar main &
-#				MONITOR=$m polybar bottom &
-#			fi
-#		done
-#	fi
-#fi
-
+	polybar-msg cmd restart
+fi

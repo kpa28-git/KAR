@@ -36,24 +36,33 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * Free API Keys from [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), and [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([Instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md)).
 * The programs these dotfiles rice.
 
-## Features
+## Feature Overview
+* Intuitive low friction shell - well organized crossplatform aliases and quick navigation tools
+* Mneumonic hotkeys to do common things in graphical sessions
+* Minimalist HUD-like statusbar, displaying things like local air quality (WAQI) and ethereum prices
+* Browser configured for intuitive use and low friction
 
-### Search Based Navigation
-* All navigation is based on the alias `s` defined in `aliasrc`.
+### Shell
+* Crossplatform shell aliases at `$XDG_CONFIG_HOME/alias`.
 * `s` (search): fzf filter paths returned by `lspaths` (the latter lists paths from the current directory and it respects the `ignore_file` at `$XDG_CONFIG_HOME/fd/ignore_file`.).
 * `se` (search edit): open in $EDITOR
 * `sd` (search directory): cd to the containing directory (or to it if it's a directory)
 * `so` (search open): open with $OPENER
 * `sg <str>` (search grep): grep `<str>` within the chosen file (uses `rg`)
 * `sr` (search reading): fuzzy search the `$READING` directory and open the file with `$READER` program. I added this over so to limit the search space and stay organized with my current reading.
-
-### History
 * `hs` (history search): search the history with fzf (you can immediately run the searched command with `$(hs)`)
 * `hi` (history input): search the history with fzf and input the chosen command into the shell input
+### Hotkeys that make sense
+* View media: `<mod>+v(iew)`
+* File manager: `<mod>+f(ile)`
+* Go to web bookmark: `<mod>+g(o)`
+* Search the web: `<mod>+s(earch)`
+* Dropdown Julia REPL: `<mod>+c(alculator)`
+* Show the sxhkd keybinds with `mod+<F1>` or in the terminal with `keybinds`
+* All hotkeys can be modified from `~/.config/sxhkd/sxhkdrc`
 
 ### Polybar
 ![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
-* A minimalist high information HUD-like statusbar
 * World Air Quality info in top left
 	* my geoloc script (`~/.local/bin/apitools/geoloc`) lets it work through a vpn (manual location setting)
 * Weather
@@ -62,10 +71,6 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * S&P500 and Russell 2000 asset prices (via alphavantage)
 * Moonphase
 * See `~/.config/polybar/config`
-
-### Hotkeys that make sense
-* All hotkeys can be modified from `~/.config/sxhkd/sxhkdrc`
-* Show the sxhkd keybinds with `mod+<F1>` or in the terminal with `keybinds`
 
 ### Qutebrowser
 ![qutebrowser+buku+rofi integration](.local/share/rice/rice-qb.gif)
@@ -96,9 +101,6 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 		* qutebrowser
 * cleanup and remove unused luke scripts
 * multiplex between fzf and rofi (check if on tty or not)
-* `sw`: search watch
-* `sl`: search listen
-* mod+v(iew): view media, rofi selector for (sr, sw, sl)
 * search aliases should work with `~/.scripts/termtools/samedir` (cd back and forth? can't use pushd/popd because those aren't POSIX). move to directory and 'cd -' at the end
 
 ## Big Thanks To

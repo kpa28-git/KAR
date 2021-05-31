@@ -6,7 +6,17 @@
 
 # Highlight Settings
 # ──────────────────
-colorscheme gruvbox
+
+# Use a dark theme from 7pm to 7am, otherwise use a light theme
+evaluate-commands %sh{
+	now_hour="$(date +%H)"
+	if [ "$now_hour" -ge 19 ] || [ "$now_hour" -lt 7 ] ; then
+		echo "colorscheme gruvbox";
+	else
+		echo "colorscheme github";
+	fi
+}
+
 add-highlighter global/ number-lines -relative -hlcursor
 add-highlighter global/ show-matching
 add-highlighter global/ show-whitespaces -spc ' ' -tab '>' -tabpad '-'

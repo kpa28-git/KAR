@@ -21,24 +21,29 @@ export READER='zathura'
 export FILE='lf'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"
+export MAIL="$HOME/Documents/mail"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
 export SUDO_ASKPASS="$HOME/.local/bin/uitools/raskpass"
-export KERNEL_RELEASE="$(uname -r)"
 #export REFER="$HOME/.referbib"
 #export PIX="$HOME/.pix/"
 
-# Clean up home
-export LESSHISTFILE="-"
+# XDG standard directories
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_SRC_HOME="$HOME/.local/src"
+
+# Clean up home
+export LESSHISTFILE="-"
 export BDOTDIR="$XDG_CONFIG_HOME/bash"
 export INPUTRC="$BDOTDIR/inputrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ALIASDIR="$XDG_CONFIG_HOME/alias"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export GOPATH="$XDG_SRC_HOME/go"
 export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
 export GRIPHOME="$XDG_CONFIG_HOME/grip"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
 # Set less/man colors
 export LESS=-R
