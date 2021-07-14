@@ -2,6 +2,8 @@
 inode/directory=file-manager.desktop;
 x-scheme-handler/magnet=torrent.desktop;
 x-scheme-handler/mailto=mail.desktop;
+x-scheme-handler/http=web-browser.desktop;
+x-scheme-handler/https=web-browser.desktop;
 
 text/plain=text.desktop;
 text/html=text.desktop;
@@ -10,6 +12,7 @@ text/x-python=text.desktop;
 text/x-script.python=text.desktop;
 text/x-shellscript=text.desktop;
 text/x-tex=text.desktop;
+text/x-makefile=text.desktop;
 inode/x-empty=text.desktop;
 text/csv=spreadsheet.desktop;
 
