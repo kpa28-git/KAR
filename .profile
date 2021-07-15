@@ -37,6 +37,7 @@ export LESSHISTFILE="-"
 export BDOTDIR="$XDG_CONFIG_HOME/bash"
 export INPUTRC="$BDOTDIR/inputrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export PSQLRC="$XDG_CONFIG_HOME/postgres/psqlrc"
 export ALIASDIR="$XDG_CONFIG_HOME/alias"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export GOPATH="$XDG_SRC_HOME/go"
@@ -57,11 +58,11 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
 # run the {bash, zsh} shell runtime config
 # echo "$0" | grep "bash$" >/dev/null && [ -f "$BDOTDIR/.bashrc" ] && source "$BDOTDIR/.bashrc"
-# echo "$0" | grep "zsh$" >/dev/null && [ -f "$ZDOTDIR/zshrc" ] && source "$ZDOTDIR/zshrc"
+# echo "$0" | grep "zsh$" >/dev/null && [ -f "$ZDOTDIR/.zshrc" ] && source "$ZDOTDIR/.zshrc"
 
-# Start graphical server if bspwm not already running.
+# Start graphical server if bspwm not already running
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
 
-# Switch escape and caps if tty:
+# Switch escape <-> caps for tty
 sudo -n loadkeys "$HOME/.local/bin/ttymaps.kmap" 2>/dev/null
 

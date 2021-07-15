@@ -120,3 +120,22 @@ hook global WinSetOption filetype=python %{
 	# set-option global lintcmd 'flake8'
 }
 
+# Plugin Manager
+# ──────────────
+evaluate-commands %sh{
+	plugins="$kak_config/plugins"
+	mkdir -p "$plugins"
+	[ ! -e "$plugins/plug.kak" ] && \
+		git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+	printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+}
+plug "andreyorst/plug.kak" noload
+
+# Plugins
+# ───────
+# (reload kakoune and run "plug-install" if using for the first time)
+ 
+# kakoune-wiki
+plug "TeddyDD/kakoune-wiki"
+wiki-setup %sh{ echo $HOME/Documents/notes/}
+

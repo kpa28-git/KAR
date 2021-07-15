@@ -7,5 +7,6 @@
 #
 # symlink $HOME/.julia/config/startup.jl to this file to have it load on startup
 
-#using IJulia
+using Pkg
+using Neptune
 

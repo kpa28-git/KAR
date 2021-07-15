@@ -93,6 +93,12 @@ url.searchengines: {
     'pac': 'https://www.archlinux.org/packages/?q={}',
     'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
 
+    # General package search
+    'pkg': 'https://pkgs.org/search/?q={}',
+
+    # Freebsd
+    'ports': 'https://www.freebsd.org/cgi/ports.cgi?query={}&stype=name&sektion=all',
+
     # Alpine Linux
     'apk': 'https://pkgs.alpinelinux.org/packages?name={}&branch=edge&arch=armhf',
 
