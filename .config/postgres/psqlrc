@@ -5,13 +5,13 @@
 --  /_/         /_/
 -- postgres psql runtime config file
 
+-- generic sql
+\set lsschema 	'\\i ~/.local/bin/sqltools/lsschema.sql';
+
 -- postgres specific
 \set ldb 	'\\i ~/.local/bin/sqlpgtools/ldb.psql';
 \set lsdb 	'\\i ~/.local/bin/sqlpgtools/lsdb.psql';
 \set lsconfig 	'\\i ~/.local/bin/sqlpgtools/lsconfig.psql';
 \set lstable 	'\\i ~/.local/bin/sqlpgtools/lstable.psql';
 \set uptime 	'\\i ~/.local/bin/sqlpgtools/uptime.psql';
-
--- generic sql
-\set lsschema 	'\\i ~/.local/bin/sqltools/lsschema.sql';
 
