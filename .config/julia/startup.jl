@@ -8,5 +8,10 @@
 # symlink $HOME/.julia/config/startup.jl to this file to have it load on startup
 
 using Pkg
-using Neptune
+# Pkg.status()
+# Pkg.add("package")
+# Pkg.update()
+# Pkg.rm("package")
+
+using Neptune # start server with Neptune.run()
 

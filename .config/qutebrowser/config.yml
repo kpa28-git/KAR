@@ -86,6 +86,9 @@ url.searchengines: {
     # Linux
     'man': 'https://www.die.net/search/?q={}&sa=Search',
 
+    # General package search
+    'pkg': 'https://pkgs.org/search/?q={}',
+
     # Arch Linux
     'arch': 'https://wiki.archlinux.org/?search={}',
     'yq': 'https://www.archlinux.org/packages/?q={}',
@@ -93,29 +96,19 @@ url.searchengines: {
     'pac': 'https://www.archlinux.org/packages/?q={}',
     'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
 
-    # General package search
-    'pkg': 'https://pkgs.org/search/?q={}',
-
     # Freebsd
     'ports': 'https://www.freebsd.org/cgi/ports.cgi?query={}&stype=name&sektion=all',
 
     # Alpine Linux
     'apk': 'https://pkgs.alpinelinux.org/packages?name={}&branch=edge&arch=armhf',
 
-    # Void Linux
-    'void': 'https://wiki.voidlinux.org/?search={}',
+    # # Void Linux
+    # 'void': 'https://wiki.voidlinux.org/?search={}',
 
     # Python
     'py3': 'https://docs.python.org/3/search.html?q={}',
     'conda': 'https://anaconda.org/search?q={}',
     'pip': 'https://pypi.org/search/?q={}',
-    'pd': 'https://pandas.pydata.org/pandas-docs/stable/search.html?q={}',
-    'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}',
-    'skl': 'https://scikit-learn.org/stable/search.html?q={}',
-    'pt': 'https://pytorch.org/docs/stable/search.html?q={}',
-    'ptd': 'https://discuss.pytorch.org/search?q={}',
-    'pl': 'https://pytorch-lightning.readthedocs.io/en/latest/search.html?q={}',
-    'pyro': 'http://docs.pyro.ai/en/stable/search.html?q={}',
 
     # Julia
     'jstd': 'https://docs.julialang.org/en/v1/search/?q={}',
@@ -123,11 +116,21 @@ url.searchengines: {
     'jpkg': 'https://juliapackages.com/packages?search={}',
     'jhub': 'https://juliahub.com/ui/Packages?q={}',
 
-    # Rust
-    'rust': 'https://doc.rust-lang.org/reference/index.html?search={}',
-    'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
-    'rstd': 'https://doc.rust-lang.org/std/?search={}',
-    'cargo': 'https://crates.io/search?q={}'
+    # # Rust
+    # 'rust': 'https://doc.rust-lang.org/reference/index.html?search={}',
+    # 'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
+    # 'rstd': 'https://doc.rust-lang.org/std/?search={}',
+    # 'cargo': 'https://crates.io/search?q={}'
+
+    # Misc package docs
+    'pg': 'https://www.postgresql.org/search/?u=%2Fdocs%2F12%2F&q={}',
+    'pt': 'https://pytorch.org/docs/stable/search.html?q={}',
+    'ptd': 'https://discuss.pytorch.org/search?q={}',
+    'pl': 'https://pytorch-lightning.readthedocs.io/en/latest/search.html?q={}',
+    'pd': 'https://pandas.pydata.org/pandas-docs/stable/search.html?q={}',
+    'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}'
+    # 'skl': 'https://scikit-learn.org/stable/search.html?q={}',
+    # 'pyro': 'http://docs.pyro.ai/en/stable/search.html?q={}',
 }
 
 ## WINDOW
