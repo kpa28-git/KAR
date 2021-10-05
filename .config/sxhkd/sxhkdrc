@@ -20,11 +20,11 @@ super + F1
 
 
 # ********** Programs **********
-# Terminal at $HOME ($TERMINAL is /usr/bin/terminal)
+# Terminal at $HOME
 super + shift + Return
 	$TERMINAL
 
-# Terminal at focused window directory or $HOME
+# Terminal at focused window directory
 super + Return
 	"$HOME/.local/bin/termtools/samedir"
 

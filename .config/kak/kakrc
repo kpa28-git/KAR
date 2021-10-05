@@ -9,8 +9,9 @@
 
 # Use a dark theme from 7pm to 7am, otherwise use a light theme
 evaluate-commands %sh{
-	now_hour="$(date +%H)"
-	if [ "$now_hour" -ge 19 ] || [ "$now_hour" -lt 7 ] ; then
+	now_hour="$(date +%H%M)"
+	if [ "$now_hour" -ge 1830 ] || [ "$now_hour" -lt 630 ] ; then
+		# dark theme from 06:30 PM to 06:30 AM
 		echo "colorscheme gruvbox";
 	else
 		echo "colorscheme github";
@@ -133,9 +134,11 @@ plug "andreyorst/plug.kak" noload
 
 # Plugins
 # ───────
-# (reload kakoune and run "plug-install" if using for the first time)
- 
+# restart kakoune and run "plug-install" if a new plugin was added to plug.kak
+
 # kakoune-wiki
 plug "TeddyDD/kakoune-wiki"
 wiki-setup %sh{ echo $HOME/Documents/notes/}
 
+# skyspell (requires enchant spellchecker)
+plug "https://git.sr.ht/~dmerej/skyspell"
