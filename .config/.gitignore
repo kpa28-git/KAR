@@ -12,6 +12,7 @@
 !/dunst/**
 !/cargo/**
 !/fontconfig/**
+!/git/**
 !/htop/**
 !/i3/**
 !/julia/**

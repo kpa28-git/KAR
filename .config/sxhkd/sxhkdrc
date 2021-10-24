@@ -7,7 +7,7 @@
 #
 # Unbound hotkeys:
 # 0th row: F2 F6
-# 1st row: W  E  u P
+# 1st row: W  E  P
 # 2nd row: A S dD
 # 3rd row: Z  C
 # Insert Scroll_Lock XF86Launch1
@@ -56,7 +56,11 @@ super + s
 super + g
 	"$HOME"/.local/bin/uitools/qb-open -b
 
-# newsboat rss reader
+# Email client
+super + e
+	$EMAIL_CLIENT
+
+# Newsboat rss reader
 super + n
 	$TERMINAL -e newsboat
 
@@ -101,7 +105,7 @@ super + c
 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'julia' xst -n julia -e julia
 
 # Dropdown terminal
-super + e
+super + u
 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'xst' xst
 
 # Dropdown peaclock custom rofi selector script

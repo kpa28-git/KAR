@@ -96,16 +96,21 @@ def clean-trailing-whitespace -docstring 'Remove trailing whitespace' %{
 
 # Filetype Hooks
 # ──────────────
-hook global WinSetOption filetype=sh %{
-	set buffer lintcmd 'shellcheck --norc -x -f gcc'
-	lint-on-write
-}
-
 hook global WinSetOption filetype=markdown %{
 	set buffer formatcmd 'prettier --parser markdown'
 	def render -docstring 'render current buffer' %{
 		exec ":terminal textplainview %val{buffile} | ${PAGER}<ret>"
 	}
+	spell
+}
+
+hook global WinSetOption filetype=latex %{
+	spell
+}
+
+hook global WinSetOption filetype=sh %{
+	set buffer lintcmd 'shellcheck --norc -x -f gcc'
+	lint-on-write
 }
 
 hook global WinSetOption filetype=(c|cpp) %{
@@ -140,5 +145,3 @@ plug "andreyorst/plug.kak" noload
 plug "TeddyDD/kakoune-wiki"
 wiki-setup %sh{ echo $HOME/Documents/notes/}
 
-# skyspell (requires enchant spellchecker)
-plug "https://git.sr.ht/~dmerej/skyspell"
