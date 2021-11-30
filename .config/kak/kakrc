@@ -12,9 +12,11 @@ evaluate-commands %sh{
 	now_hour="$(date +%H%M)"
 	if [ "$now_hour" -ge 1830 ] || [ "$now_hour" -lt 630 ] ; then
 		# dark theme from 06:30 PM to 06:30 AM
-		echo "colorscheme gruvbox";
+		# echo "colorscheme tomorrow-night";
+		echo "colorscheme gruvbox-dark";
 	else
 		echo "colorscheme github";
+		# echo "colorscheme gruvbox-light";
 	fi
 }
 

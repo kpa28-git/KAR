@@ -7,12 +7,14 @@
 
 configuration {
 	modi: "window,run,ssh,drun";
-	lines: 5;
+	//lines: 5;
 	font: "hack 16";
 	location: 2;
 	yoffset: 270;
 	xoffset: 0;
 	show-icons: true;
 	dpi: 192;
-	theme: "/usr/share/rofi/themes/paper-float.rasi";
 }
+
+@theme "/usr/share/rofi/themes/paper-float.rasi"
+

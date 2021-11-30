@@ -56,6 +56,10 @@ super + s
 super + g
 	"$HOME"/.local/bin/uitools/qb-open -b
 
+# Todo / Tasks / Calendar client
+super + t
+	$TODO
+
 # Email client
 super + e
 	$EMAIL_CLIENT
@@ -76,7 +80,11 @@ super + m
 super + a
 	$TERMINAL -e pulsemixer
 
-# htop
+# Transmission client (downloads)
+super + d
+	$TERMINAL -e tremc
+
+# htop (information)
 super + i
 	$TERMINAL -e htop
 
@@ -87,10 +95,6 @@ super + F7
 # Toggle transmission daemon
 super + F8
 	"$HOME/.local/bin/uitools/td-toggle"
-
-# Transmission frontend tui
-super + t
-	$TERMINAL -e tremc
 
 # Intercheck - polls every second until the internet is up
 super + F11

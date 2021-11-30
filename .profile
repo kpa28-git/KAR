@@ -7,6 +7,12 @@
 #  /_/
 # Posix login shell profile config file.
 
+# Display connection settings:
+export DISPLAYS="$(xrandr | grep ' connected' | awk '{print $1}')";
+export DISPLAY_DP="$(printf '%s' "$DISPLAYS" | grep '^DP.*' | head -1)";
+export DISPLAY_HDMI="$(printf '%s' "$DISPLAYS" | grep '^HDMI.*' | head -1)";
+export DISPLAY_EDP="$(printf '%s' "$DISPLAYS" | grep '^eDP.*' | head -1)";
+
 # Add `~/.local/bin/` and all subdirectories to $PATH
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
@@ -15,10 +21,11 @@ export TERMINFO='/usr/lib/terminfo'
 export TERMINAL='/usr/bin/terminal'
 export OPENER='xdg-open'
 export EDITOR='kak'
-export PAGER='less'
+export PAGER='bat'
 export BROWSER='qutebrowser'
 export READER='zathura'
 export FILE='lf'
+export TODO='superproductivity'
 export EMAIL_CLIENT='tutanota-desktop'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"

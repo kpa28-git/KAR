@@ -97,13 +97,8 @@ cmd chmod ${{
 
 cmd bulkrename ${{ vidir; }}
 
-# Put File in Trash (trash-cli)
-cmd trash-put ${{
-	for file in "$fx"
-	do
-		trash-put "$file"
-	done
-}}
+# Put File(s) in Trash (trash-cli)
+cmd trash-put %trash-put $fx
 
 # Show Trashed Files (trash-cli)
 cmd trash-list ${{

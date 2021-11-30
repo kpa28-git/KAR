@@ -21,7 +21,8 @@ alias mpv="mpv --input-ipc-server=/tmp/mpvsoc\$(date +%s)" \
 	nv="nvidia-smi" \
 	nvw="watch2 nv" \
 	nvi="nvtop" \
-	jup="jupyter notebook --ip=127.0.0.1 --port=8888";
+	jup="jupyter notebook --ip=127.0.0.1 --port=8888" \
+	nep="julia -e \"using Neptune; Neptune.run()\"";
 
 alias g="git" \
 	gst="g status" \
@@ -70,12 +71,12 @@ alias tdd="trash-put" \
 	tem="trash-empty";
 
 alias coins="curl -s rate.sx" \
-	eth1="curl -s rate.sx/eth@1w" \
-	eth2="curl -s rate.sx/eth@2w" \
-	eth4="curl -s rate.sx/eth@4w" \
-	eth8="curl -s rate.sx/eth@8w" \
-	eth24="curl -s rate.sx/eth@24w" \
-	eth52="curl -s rate.sx/eth@52w" \
+	ada1="curl -s rate.sx/ada@1w" \
+	ada2="curl -s rate.sx/ada@2w" \
+	ada4="curl -s rate.sx/ada@4w" \
+	ada8="curl -s rate.sx/ada@8w" \
+	ada24="curl -s rate.sx/ada@24w" \
+	ada52="curl -s rate.sx/ada@52w" \
 	btc2="curl -s rate.sx/btc@2w" \
-	ada2="curl -s rate.sx/ada@2w";
+	eth2="curl -s rate.sx/eth@2w";
 
