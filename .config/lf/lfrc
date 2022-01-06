@@ -42,9 +42,9 @@ map r $printf "%s\n" "$fx" | vidir -
 map x push $ext<space>
 map - :img-preview
 
-# Switches
-set hidden on
-set color256 on
+# # Switches
+# set hidden on
+# set color256 on
 
 # Dragon File Uploader - opens an upload drag box for selected files
 cmd drag-all %dragon-drag-and-drop -a -x $fx

@@ -6,12 +6,10 @@
 
 # Highlight Settings
 # ──────────────────
-
-# Use a dark theme from 7pm to 7am, otherwise use a light theme
+# Use a dark theme from 5pm to 5am, otherwise use a light theme
 evaluate-commands %sh{
 	now_hour="$(date +%H%M)"
-	if [ "$now_hour" -ge 1830 ] || [ "$now_hour" -lt 630 ] ; then
-		# dark theme from 06:30 PM to 06:30 AM
+	if [ "$now_hour" -ge 1700 ] || [ "$now_hour" -lt 500 ] ; then
 		# echo "colorscheme tomorrow-night";
 		echo "colorscheme gruvbox-dark";
 	else
@@ -33,7 +31,6 @@ add-highlighter global/ regex \b(TODO|AUDIT|FIXME|XXX|NOTE)\b 0:+rb
 # ──────────────────────
 set-option global tabstop 8
 set-option global indentwidth 0
-
 
 # Highlight the word under the cursor
 # declare-option -hidden regex curword
@@ -63,7 +60,8 @@ map global normal Y '<a-l>y' -docstring 'yank to end of line'
 map global user y '<a-|>xsel --input --clipboard<ret>' -docstring 'Yank to clipboard only'
 map global user P '!xsel --output --clipboard<ret>' -docstring 'Paste from clipboard before'
 map global user p '<a-!>xsel --output --clipboard<ret>' -docstring 'Paste from clipboard after'
-
+map global user l ':colorscheme github<ret>' -docstring 'change to light colorscheme'
+map global user d ':colorscheme gruvbox-dark<ret>' -docstring 'change to dark colorscheme'
 
 # Normal Yank, Delete, or Change commands overwrite the system clipboard
 # ──────────────────────────────────────────────────────────────────────

@@ -308,7 +308,7 @@ label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 menu-0-0 = logout
-menu-0-0-exec = $HOME/.local/bin/gfxtools/logoutldm
+menu-0-0-exec = $XDG_SCRIPT_HOME/gfxtools/logoutldm
 menu-0-1 = reboot
 menu-0-1-exec = sudo -A reboot
 menu-0-2 = shutdown
@@ -321,7 +321,7 @@ menu-0-2-exec = sudo -A shutdown -h now
 [module/tempcpu]
 type = custom/script
 click-left = notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
-exec = $HOME/.local/bin/polybar/temp-cpu.sh
+exec = $XDG_SCRIPT_HOME/polybar/temp-cpu.sh
 interval = 5
 label = %{T5}%{T-}  %output%
 
@@ -329,7 +329,7 @@ label = %{T5}%{T-}  %output%
 [module/tempgpu]
 type = custom/script
 click-left = $TERMINAL -e nvtop
-exec = $HOME/.local/bin/polybar/temp-gpu.sh
+exec = $XDG_SCRIPT_HOME/polybar/temp-gpu.sh
 interval = 5
 label = %{T5}%{T-}  %output%
 
@@ -337,7 +337,7 @@ label = %{T5}%{T-}  %output%
 [module/memgpu]
 type = custom/script
 click-left = $TERMINAL -e nvtop
-exec = $HOME/.local/bin/polybar/mem-gpu.sh
+exec = $XDG_SCRIPT_HOME/polybar/mem-gpu.sh
 interval = 10
 label = %output%
 
@@ -345,23 +345,23 @@ label = %output%
 [module/pctutilgpu]
 type = custom/script
 click-left = $TERMINAL -e nvtop
-exec = $HOME/.local/bin/polybar/pctutil-gpu.sh
+exec = $XDG_SCRIPT_HOME/polybar/pctutil-gpu.sh
 interval = 1
 label = %output%%
 
 
 [module/nordvpn]
 type = custom/script
-click-left = $HOME/.local/bin/nettools/nord-toggle
-exec = $HOME/.local/bin/polybar/nordvpn.sh
+click-left = $XDG_SCRIPT_HOME/nettools/nord-toggle
+exec = $XDG_SCRIPT_HOME/polybar/nordvpn.sh
 interval = 10
 label = %{T5}%output%%{T-}
 
 
 ;[module/bluetooth]
 ;type = custom/script
-;click-left = $HOME/.local/bin/polybar/bluetooth-toggle.sh
-;exec = $HOME/.local/bin/polybar/bluetooth.sh
+;click-left = $XDG_SCRIPT_HOME/polybar/bluetooth-toggle.sh
+;exec = $XDG_SCRIPT_HOME/polybar/bluetooth.sh
 ;interval = 30
 ;label = %{T5}%output%%{T5}
 
@@ -369,7 +369,7 @@ label = %{T5}%output%%{T-}
 ;[module/torrent]
 ;type = custom/script
 ;click-left = $TERMINAL -e transmission-remote-cli
-;exec = $HOME/.local/bin/polybar/torrent.sh
+;exec = $XDG_SCRIPT_HOME/polybar/torrent.sh
 ;interval = 30
 ;label = %
 
@@ -377,7 +377,7 @@ label = %{T5}%output%%{T-}
 [module/btcprice]
 type = custom/script
 click-left = $TERMINAL -e "$(curl -s rate.sx/btc@1w | less -S)"
-exec = $HOME/.local/bin/polybar/cprice.sh -s 'BTC'
+exec = $XDG_SCRIPT_HOME/polybar/cprice.sh -s 'BTC'
 interval = 600
 label = %{T-}%{T-} %output%
 
@@ -385,7 +385,7 @@ label = %{T-}%{T-} %output%
 [module/ethprice]
 type = custom/script
 click-left = $TERMINAL -e "$(curl -s rate.sx/eth@1w | less -S)"
-exec = $HOME/.local/bin/polybar/cprice.sh -s 'ETH'
+exec = $XDG_SCRIPT_HOME/polybar/cprice.sh -s 'ETH'
 interval = 600
 label = %{T-}%{T-} %output%
 
@@ -393,53 +393,53 @@ label = %{T-}%{T-} %output%
 [module/adaprice]
 type = custom/script
 click-left = $TERMINAL -e "$(curl -s rate.sx/ada@1w | less -S)"
-exec = $HOME/.local/bin/polybar/cprice.sh -s 'ADA' -f 3
+exec = $XDG_SCRIPT_HOME/polybar/cprice.sh -s 'ADA' -f 3
 interval = 600
 label = %{T-}%{T-} %output%
 
 
 [module/spxprice]
 type = custom/script
-click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s 'SPY'
-exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s 'SPY'
+click-left = $XDG_SCRIPT_HOME/polybar/sprice.sh -a -f 5 -s 'SPY'
+exec = $XDG_SCRIPT_HOME/polybar/sprice.sh -f 5 -s 'SPY'
 interval = 480
 label = %{T-}%{T-} %output%
 
 
 [module/rutprice]
 type = custom/script
-click-left = $HOME/.local/bin/polybar/sprice.sh -a -f 5 -s 'IWM'
-exec = $HOME/.local/bin/polybar/sprice.sh -f 5 -s 'IWM'
+click-left = $XDG_SCRIPT_HOME/polybar/sprice.sh -a -f 5 -s 'IWM'
+exec = $XDG_SCRIPT_HOME/polybar/sprice.sh -f 5 -s 'IWM'
 interval = 480
 label = %{T5}%{T-} %output%
 
 
 [module/airinfo]
 type = custom/script
-exec = $HOME/.local/bin/apitools/airinfo
+exec = $XDG_SCRIPT_HOME/apitools/airinfo
 interval = 300
 label = %{T-}%{T-} %output%
 
 
 [module/updates-pacman-yay]
 type = custom/script
-exec = $HOME/.local/bin/polybar/updates-pacman-yay.sh
+exec = $XDG_SCRIPT_HOME/polybar/updates-pacman-yay.sh
 interval = 14400
 label = %output%
 
 
 [module/corona]
 type = custom/script
-click-left = $TERMINAL -e less -S "$HOME/.local/share/coronareport"
-exec = $HOME/.local/bin/polybar/corona.sh 'California'
+click-left = $TERMINAL -e less -S "$XDG_DATA_HOME/coronareport"
+exec = $XDG_SCRIPT_HOME/polybar/corona.sh 'California'
 interval = 14400
 label = %{T-}ﯭ%{T-} %output%
 
 
 [module/weather]
 type = custom/script
-click-left = $TERMINAL -e less -S "$HOME/.local/share/weatherreport"
-exec = $HOME/.local/bin/polybar/weather.sh
+click-left = $TERMINAL -e less -S "$XDG_DATA_HOME/weatherreport"
+exec = $XDG_SCRIPT_HOME/polybar/weather.sh
 interval = 14400
 #label = %{T5}%output%%{T5}
 label = %output%
@@ -447,8 +447,8 @@ label = %output%
 
 [module/moonphase]
 type = custom/script
-click-left = $TERMINAL -e less -S "$HOME/.local/share/moonphase"
-exec = $HOME/.local/bin/polybar/moonphase.sh
+click-left = $TERMINAL -e less -S "$XDG_DATA_HOME/moonphase"
+exec = $XDG_SCRIPT_HOME/polybar/moonphase.sh
 interval = 43200
 label = %{T5}%output% %{T-}
 

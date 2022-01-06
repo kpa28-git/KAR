@@ -16,7 +16,7 @@
 # ********** help **********
 # Show sxhkd keybindings
 super + F1
-	$TERMINAL -e sh -c "$HOME/.local/bin/uitools/keybinds | bat"
+	$TERMINAL -e sh -c "$XDG_SCRIPT_HOME/uitools/keybinds | bat"
 
 
 # ********** Programs **********
@@ -26,7 +26,7 @@ super + shift + Return
 
 # Terminal at focused window directory
 super + Return
-	"$HOME/.local/bin/termtools/samedir"
+	"$XDG_SCRIPT_HOME/termtools/samedir"
 
 # Rofi run mode
 super + r
@@ -50,11 +50,11 @@ super + b
 
 # Web search
 super + s
-	"$HOME"/.local/bin/uitools/qb-open -s
+	"$XDG_SCRIPT_HOME/uitools/qb-open -s"
 
 # Go to web bookmark
 super + g
-	"$HOME"/.local/bin/uitools/qb-open -b
+	"$XDG_SCRIPT_HOME/uitools/qb-open -b"
 
 # Todo / Tasks / Calendar client
 super + t
@@ -70,7 +70,7 @@ super + n
 
 # View/Play media
 super + v
-	"$HOME/.local/bin/uitools/rviewmedia"
+	"$XDG_SCRIPT_HOME/uitools/rviewmedia"
 
 # Music (ncmpcpp)
 super + m
@@ -90,15 +90,15 @@ super + i
 
 # Toggle nord
 super + F7
-	"$HOME/.local/bin/nettools/nord-toggle"
+	"$XDG_SCRIPT_HOME/nettools/nord-toggle"
 
 # Toggle transmission daemon
 super + F8
-	"$HOME/.local/bin/uitools/td-toggle"
+	"$XDG_SCRIPT_HOME/uitools/td-toggle"
 
 # Intercheck - polls every second until the internet is up
 super + F11
-	"$HOME/.local/bin/nettools/intercheck"
+	"$XDG_SCRIPT_HOME/nettools/intercheck"
 
 # Network Manager interface
 super + F12
@@ -114,7 +114,7 @@ super + u
 
 # Dropdown peaclock custom rofi selector script
 super + p
-	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'rpeaclock' xst -n rpeaclock -e $HOME/.local/bin/uitools/rpeaclock
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'rpeaclock' xst -n rpeaclock -e $XDG_SCRIPT_HOME/uitools/rpeaclock
 
 # # Dropdown peaclock work timer (25 min)
 # super + bracketleft
@@ -180,7 +180,7 @@ super + shift + o
 
 # Toggle fullscreen on and off
 super + shift + f
-	"$HOME/.local/bin/uitools/bspwmfullscreen"
+	"$XDG_SCRIPT_HOME/uitools/bspwmfullscreen"
 
 # Expand a window by moving one of its side outward
 #ctrl + alt + {h,j,k,l}
@@ -206,7 +206,7 @@ super + shift + x
 
 # Switch graphics (nvidia<->hybrid)
 super + shift + n
-	prompt 'switch graphics?' "$HOME"/.local/bin/gfxtools/gfxswitch
+	prompt 'switch graphics?' "$XDG_SCRIPT_HOME/gfxtools/gfxswitch"
 
 # Change display
 super + F3

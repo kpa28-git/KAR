@@ -13,9 +13,15 @@ export DISPLAY_DP="$(printf '%s' "$DISPLAYS" | grep '^DP.*' | head -1)";
 export DISPLAY_HDMI="$(printf '%s' "$DISPLAYS" | grep '^HDMI.*' | head -1)";
 export DISPLAY_EDP="$(printf '%s' "$DISPLAYS" | grep '^eDP.*' | head -1)";
 
-# Add `~/.local/bin/` and all subdirectories to $PATH
+# XDG standard directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_SCRIPT_HOME="$HOME/.local/bin"
+export XDG_SRC_HOME="$HOME/.local/src"
+
+# Add `$XDG_SCRIPT_HOME` and all subdirectories to $PATH
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$JAVA_HOME:$PATH:$HOME/.julia/conda/3/bin"
 export TERMINFO='/usr/lib/terminfo'
 export TERMINAL='/usr/bin/terminal'
@@ -31,14 +37,9 @@ export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"
 # export MAIL="$HOME/Documents/mail"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
-export SUDO_ASKPASS="$HOME/.local/bin/uitools/raskpass"
+export SUDO_ASKPASS="$XDG_SCRIPT_HOME/uitools/raskpass"
 #export REFER="$HOME/.referbib"
 #export PIX="$HOME/.pix/"
-
-# XDG standard directories
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_SRC_HOME="$HOME/.local/src"
 
 # Clean up home
 export LESSHISTFILE="-"
@@ -46,7 +47,7 @@ export BDOTDIR="$XDG_CONFIG_HOME/bash"
 export INPUTRC="$BDOTDIR/inputrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export PSQLRC="$XDG_CONFIG_HOME/postgres/psqlrc"
-export ALIASDIR="$XDG_CONFIG_HOME/alias"
+export ALIASDIR="$XDG_SCRIPT_HOME/aliases"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export GOPATH="$XDG_SRC_HOME/go"
 export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
@@ -72,5 +73,5 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
 
 # Switch escape <-> caps for tty
-sudo -n loadkeys "$HOME/.local/bin/ttymaps.kmap" 2>/dev/null
+sudo -n loadkeys "$XDG_SCRIPT_HOME/ttymaps.kmap" 2>/dev/null
 

@@ -21,7 +21,7 @@ fi;
 
 
 # Autostart
-pidof "$HOME/.local/bin/uitools/bspswallow" || "$HOME/.local/bin/uitools/bspswallow" &
+pidof "$XDG_SCRIPT_HOME/uitools/bspswallow" || "$XDG_SCRIPT_HOME/uitools/bspswallow" &
 
 
 # Global Settings

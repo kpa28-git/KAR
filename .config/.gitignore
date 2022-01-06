@@ -6,7 +6,6 @@
 
 # Whitelist:
 !/alacritty/**
-!/alias/**
 !/bash/**
 !/bspwm/**
 !/dunst/**

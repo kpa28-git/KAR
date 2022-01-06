@@ -46,6 +46,7 @@ url.searchengines: {
     'DEFAULT': 'https://swisscows.com/web?query={}',
     'sw': 'https://swisscows.com/web?query={}',
     'dg': 'https://duckduckgo.com/?q={}',
+    'ydx': 'https://yandex.com/search/?text={}',
     'wolf': 'https://www.wolframalpha.com/input/?i={}',
     'wiki': 'https://en.wikipedia.org/?search={}',
     'dict': 'https://www.merriam-webster.com/dictionary/{}',
@@ -143,8 +144,10 @@ zoom.default: '150%'
 ## KEYBINDS
 custom.keybinds: {
     'D': 'tab-close -o',
-    'H': 'tab-prev',
-    'L': 'tab-next',
+    'h': 'tab-prev',
+    'l': 'tab-next',
+    'H': 'scroll left',
+    'L': 'scroll right',
     'J': 'back',
     'K': 'forward',
     '<Alt-h>': 'tab-prev',

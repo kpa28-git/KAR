@@ -4,7 +4,7 @@
 #	* -a: launch rbuku add prompt to add current or hint selected url as bookmark
 #	* -s: launch rbuku search prompt and open selected bookmark in new tab
 #	* -r: launch rbuku removal prompt
-RBUKU="$HOME/.local/bin/uitools/rbuku";
+RBUKU="$XDG_SCRIPT_HOME/uitools/rbuku";
 
 while getopts "asr" arg; do
 	case $arg in
