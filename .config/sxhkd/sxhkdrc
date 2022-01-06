@@ -50,11 +50,11 @@ super + b
 
 # Web search
 super + s
-	"$XDG_SCRIPT_HOME/uitools/qb-open -s"
+	"$XDG_SCRIPT_HOME/uitools/qb-open" -s
 
 # Go to web bookmark
 super + g
-	"$XDG_SCRIPT_HOME/uitools/qb-open -b"
+	"$XDG_SCRIPT_HOME/uitools/qb-open" -b
 
 # Todo / Tasks / Calendar client
 super + t
