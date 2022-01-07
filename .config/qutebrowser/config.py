@@ -178,7 +178,7 @@ def qb_config_base16_load(colors):
 	c.colors.prompts.selected.bg = colors['base0A']
 
 	# Foreground color of the statusbar.
-	c.colors.statusbar.normal.fg = colors['base0B']
+	c.colors.statusbar.normal.fg = colors['base0A']
 
 	# Background color of the statusbar.
 	c.colors.statusbar.normal.bg = colors['base00']
@@ -187,13 +187,13 @@ def qb_config_base16_load(colors):
 	c.colors.statusbar.insert.fg = colors['base00']
 
 	# Background color of the statusbar in insert mode.
-	c.colors.statusbar.insert.bg = colors['base0D']
+	c.colors.statusbar.insert.bg = colors['base0A']
 
 	# Foreground color of the statusbar in passthrough mode.
 	c.colors.statusbar.passthrough.fg = colors['base00']
 
 	# Background color of the statusbar in passthrough mode.
-	c.colors.statusbar.passthrough.bg = colors['base0C']
+	c.colors.statusbar.passthrough.bg = colors['base0A']
 
 	# Foreground color of the statusbar in private browsing mode.
 	c.colors.statusbar.private.fg = colors['base00']
@@ -243,7 +243,7 @@ def qb_config_base16_load(colors):
 
 	# Foreground color of the URL in the statusbar on successful load
 	# (https).
-	c.colors.statusbar.url.success.https.fg = colors['base0B']
+	c.colors.statusbar.url.success.https.fg = colors['base09']
 
 	# Foreground color of the URL in the statusbar when there's a warning.
 	c.colors.statusbar.url.warn.fg = colors['base0E']

@@ -13,7 +13,7 @@ export DISPLAY_DP="$(printf '%s' "$DISPLAYS" | grep '^DP.*' | head -1)";
 export DISPLAY_HDMI="$(printf '%s' "$DISPLAYS" | grep '^HDMI.*' | head -1)";
 export DISPLAY_EDP="$(printf '%s' "$DISPLAYS" | grep '^eDP.*' | head -1)";
 
-# XDG standard directories
+# XDG standard directories:
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_SCRIPT_HOME="$HOME/.local/bin"
@@ -35,9 +35,9 @@ export TODO='superproductivity'
 export EMAIL_CLIENT='tutanota-desktop'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"
+export SUDO_ASKPASS="$XDG_SCRIPT_HOME/uitools/raskpass"
 # export MAIL="$HOME/Documents/mail"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
-export SUDO_ASKPASS="$XDG_SCRIPT_HOME/uitools/raskpass"
 #export REFER="$HOME/.referbib"
 #export PIX="$HOME/.pix/"
 
