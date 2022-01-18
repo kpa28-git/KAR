@@ -56,9 +56,9 @@ super + s
 super + g
 	"$XDG_SCRIPT_HOME/uitools/qb-open" -b
 
-# Todo / Tasks / Calendar client
+# Task / Calendar client
 super + t
-	$TODO
+	$TASK_CLIENT
 
 # Email client
 super + e
