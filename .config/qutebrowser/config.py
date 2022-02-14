@@ -1,5 +1,6 @@
 import yaml
 import subprocess
+from datetime import datetime, time
 
 
 def qb_config():
@@ -32,6 +33,14 @@ def qb_config():
 				with open(chosen) as base16_file:
 					base16 = yaml.safe_load(base16_file)
 			qb_config_base16_load({k:'#'+v for k,v in base16.items()})
+
+		## DAY / NIGHT THEME
+		now = datetime.now().time()
+		DAY, NIGHT = time(7), time(17)
+		if (now < DAY or now > NIGHT):
+			c.colors.webpage.preferred_color_scheme = "dark"
+		else:
+			c.colors.webpage.preferred_color_scheme = "light"
 
 		config.load_autoconfig(False)
 

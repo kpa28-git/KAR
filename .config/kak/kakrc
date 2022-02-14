@@ -6,10 +6,10 @@
 
 # Highlight Settings
 # ──────────────────
-# Use a dark theme from 5pm to 5am, otherwise use a light theme
+# Use a dark theme from 5pm to 7am, otherwise use a light theme
 evaluate-commands %sh{
 	now_hour="$(date +%H%M)"
-	if [ "$now_hour" -ge 1700 ] || [ "$now_hour" -lt 700 ] ; then
+	if [ "$now_hour" -lt 700 ] || [ "$now_hour" -gt 1700 ] ; then
 		# echo "colorscheme tomorrow-night";
 		echo "colorscheme gruvbox-dark";
 	else
