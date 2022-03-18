@@ -60,6 +60,7 @@ url.searchengines: {
     'yt': 'https://www.youtube.com/results?search_query={}',
 
     # Academia
+    'sc': 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q={}',
     'ar': 'https://arxiv.org/search/?query={}&searchtype=all&source=header',
     'or': 'https://openreview.net/search?term={}&content=all&group=all&source=all',
 
@@ -122,6 +123,9 @@ url.searchengines: {
     # 'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
     # 'rstd': 'https://doc.rust-lang.org/std/?search={}',
     # 'cargo': 'https://crates.io/search?q={}'
+
+    # Cardano
+    'pool': 'https://pool.pm/{}',
 
     # Misc package docs
     'pg': 'https://www.postgresql.org/search/?u=%2Fdocs%2F12%2F&q={}',

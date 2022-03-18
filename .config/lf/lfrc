@@ -45,6 +45,7 @@ map - :img-preview
 # # Switches
 # set hidden on
 # set color256 on
+set icons on
 
 # Dragon File Uploader - opens an upload drag box for selected files
 cmd drag-all %dragon-drag-and-drop -a -x $fx

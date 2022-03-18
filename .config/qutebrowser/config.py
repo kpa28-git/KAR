@@ -38,9 +38,9 @@ def qb_config():
 		now = datetime.now().time()
 		DAY, NIGHT = time(7), time(17)
 		if (now < DAY or now > NIGHT):
-			c.colors.webpage.preferred_color_scheme = "dark"
+			c.colors.webpage.preferred_color_scheme = 'dark'
 		else:
-			c.colors.webpage.preferred_color_scheme = "light"
+			c.colors.webpage.preferred_color_scheme = 'light'
 
 		config.load_autoconfig(False)
 
