@@ -6,12 +6,12 @@
 
 # Highlight Settings
 # ──────────────────
-# Use a dark theme from 5pm to 7am, otherwise use a light theme
+# Use a dark theme from $TIMENIGHT to $TIMEDAY (24hr format env vars), otherwise use a light theme
 evaluate-commands %sh{
 	timenow="$(date +%H%M)"
 	timeday="$(date -d $TIMEDAY +%H%M)"
 	timenight="$(date -d $TIMENIGHT +%H%M)"
-	if [ "$timenow" -lt "$timeday" ] || [ "$timenow" -gt "$timenight" ] ; then
+	if [ "$timenow" -gt "$timenight" ] || [ "$timenow" -lt "$timeday" ] ; then
 		# echo "colorscheme tomorrow-timenight";
 		echo "colorscheme gruvbox-dark";
 	else

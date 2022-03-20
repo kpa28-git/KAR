@@ -39,7 +39,7 @@ def qb_config():
 		timenow = datetime.now().time()
 		timeday = datetime.strptime(os.getenv("TIMEDAY"), "%H:%M").time()
 		timenight = datetime.strptime(os.getenv("TIMENIGHT"), "%H:%M").time()
-		if (timenow < timeday or timenow > timenight):
+		if (timenow > timenight or timenow < timeday):
 			c.colors.webpage.preferred_color_scheme = 'dark'
 		else:
 			c.colors.webpage.preferred_color_scheme = 'light'
