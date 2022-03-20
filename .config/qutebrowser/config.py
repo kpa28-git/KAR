@@ -1,3 +1,4 @@
+import os
 import yaml
 import subprocess
 from datetime import datetime, time
@@ -35,9 +36,10 @@ def qb_config():
 			qb_config_base16_load({k:'#'+v for k,v in base16.items()})
 
 		## DAY / NIGHT THEME
-		now = datetime.now().time()
-		DAY, NIGHT = time(7), time(17)
-		if (now < DAY or now > NIGHT):
+		timenow = datetime.now().time()
+		timeday = datetime.strptime(os.getenv("TIMEDAY"), "%H:%M").time()
+		timenight = datetime.strptime(os.getenv("TIMENIGHT"), "%H:%M").time()
+		if (timenow < timeday or timenow > timenight):
 			c.colors.webpage.preferred_color_scheme = 'dark'
 		else:
 			c.colors.webpage.preferred_color_scheme = 'light'

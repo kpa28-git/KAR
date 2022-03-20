@@ -8,9 +8,11 @@
 # ──────────────────
 # Use a dark theme from 5pm to 7am, otherwise use a light theme
 evaluate-commands %sh{
-	now_hour="$(date +%H%M)"
-	if [ "$now_hour" -lt 700 ] || [ "$now_hour" -gt 1700 ] ; then
-		# echo "colorscheme tomorrow-night";
+	timenow="$(date +%H%M)"
+	timeday="$(date -d $TIMEDAY +%H%M)"
+	timenight="$(date -d $TIMENIGHT +%H%M)"
+	if [ "$timenow" -lt "$timeday" ] || [ "$timenow" -gt "$timenight" ] ; then
+		# echo "colorscheme tomorrow-timenight";
 		echo "colorscheme gruvbox-dark";
 	else
 		echo "colorscheme github";

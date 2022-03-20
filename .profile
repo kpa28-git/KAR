@@ -55,6 +55,10 @@ export GRIPHOME="$XDG_CONFIG_HOME/grip"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
+# Global day/night times for theming
+export TIMEDAY="07:00"
+export TIMENIGHT="18:00"
+
 # Set less/man colors
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"; a="${a%_}"
@@ -69,7 +73,7 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 export LF_ICONS="di=:fi=:tw=:ow=ﱮ:ln=:or=ﰸ:ex=:\
 *.txt=:*.md=:*.csv=:*.log=📙:*.1=:*.nfo=:*.info=:\
 *.jl=:*.py=:*.c=:*.cpp=:*.jar=:*.java=:\
-*.html=爵:*.xml=:*.css=:*.tex=:*.bib=拾:*.ipynb=:\
+*.json=ﬥ:*.toml=煉:*.html=爵:*.xml=:*.css=:*.tex=:*.bib=拾:*.ipynb=:\
 *.out=:*.so=:*.gpg=:\
 *.db=:*.arrow=:*.parquet=:*.feather=:\
 *.part=:*.torrent=🔽:\
