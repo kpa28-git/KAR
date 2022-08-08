@@ -78,10 +78,11 @@ line-color = ${colors.linecolor}
 [bar/bottom]
 inherit = bar/main
 bottom=true
-modules-left = battery backlight volume updates-pacman-yay btcprice ethprice adaprice
+modules-left = battery backlight volume updates-pacman-yay spxprice btcprice
+;modules-left = battery backlight volume updates-pacman-yay btcprice ethprice adaprice
 modules-center = mpd
-;modules-right = temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
-modules-right = spxprice rutprice temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
+modules-right = temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
+;modules-right = spxprice rutprice temperature tempgpu memgpu pctutilgpu tempcpu memory cpu
 
 [bar/secondary]
 inherit = bar/main

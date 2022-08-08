@@ -31,7 +31,7 @@ add-highlighter global/ regex \b(TODO|AUDIT|FIXME|XXX|NOTE)\b 0:+rb
 
 # Global Indent Settings
 # ──────────────────────
-set-option global tabstop 8
+set-option global tabstop 4
 set-option global indentwidth 0
 
 # Highlight the word under the cursor

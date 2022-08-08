@@ -7,7 +7,7 @@ set shell sh
 # lf file manager config
 
 # pistol file previews
-set previewer pistol
+set previewer ~/.local/src/go/bin/pistol
 
 # Unmappings
 map d

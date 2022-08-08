@@ -50,6 +50,7 @@ url.searchengines: {
     'wolf': 'https://www.wolframalpha.com/input/?i={}',
     'wiki': 'https://en.wikipedia.org/?search={}',
     'dict': 'https://www.merriam-webster.com/dictionary/{}',
+    'thes': 'https://www.merriam-webster.com/thesaurus/{}',
 
     # Finance
     'sa': 'https://seekingalpha.com/search/?q={}',

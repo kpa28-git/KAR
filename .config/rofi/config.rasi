@@ -5,16 +5,17 @@
 //  _/          _/_/      _/      _/
 // rofi config file.
 
-configuration {
+@theme "/usr/share/rofi/themes/paper-float.rasi"
+
+window {
 	modi: "window,run,ssh,drun";
 	//lines: 5;
-	font: "hack 16";
+	font: "hack 24";
 	location: 2;
-	yoffset: 270;
-	xoffset: 0;
+	y-offset: -45%;
+	x-offset: 0;
 	show-icons: true;
 	dpi: 192;
 }
 
-@theme "/usr/share/rofi/themes/paper-float.rasi"
 

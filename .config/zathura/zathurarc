@@ -46,7 +46,7 @@ map <S-Right> scroll right
 
 
 ## View Modifications
-map R rotate
+map r rotate
 map i recolor
 map 0 zoom default
 map 2 toggle_page_mode
@@ -67,5 +67,5 @@ map [index] 2 toggle_page_mode
 
 
 ## Misc
-map r reload
+map R reload
 map p print
