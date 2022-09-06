@@ -9,6 +9,10 @@ aliases: {
     # default aliases:
     "w": "session-save", "q": "close", "qa": "quit", "wq": "quit --save", "wqa": "quit --save",
 
+    # theme:
+    "day": "set colors.webpage.preferred_color_scheme light",
+    "night": "set colors.webpage.preferred_color_scheme dark",
+
     # rbuku aliases:
     "b": "spawn --userscript qb-rbuku -s",
     "ba": "spawn --userscript qb-rbuku -a",

@@ -24,27 +24,30 @@ def qb_config():
 		for key, action in yaml_data['custom.keybinds'].items():
 			config.bind(key, action)
 
-		## BASE16
-		chosen = yaml_data['custom.base16.file']
-		if (chosen):
-			if ('.Xresources' in chosen):
-				xpfx = '*.'
-				base16 = dict(filter(lambda i: 'color' in i[0], read_xresources(xpfx).items()))
-			else:
-				with open(chosen) as base16_file:
-					base16 = yaml.safe_load(base16_file)
-			qb_config_base16_load({k:'#'+v for k,v in base16.items()})
-
-		## DAY / NIGHT THEME
-		timenow = datetime.now().time()
-		timeday = datetime.strptime(os.getenv("TIMEDAY"), "%H:%M").time()
-		timenight = datetime.strptime(os.getenv("TIMENIGHT"), "%H:%M").time()
-		if (timenow > timenight or timenow < timeday):
-			c.colors.webpage.preferred_color_scheme = 'dark'
-		else:
-			c.colors.webpage.preferred_color_scheme = 'light'
+		## THEMES
+		set_theme_base16(yaml_data['custom.base16.file'])
+		set_theme_daynight()
 
 		config.load_autoconfig(False)
+
+def set_theme_base16(chosen):
+	if (chosen):
+		if ('.Xresources' in chosen):
+			xpfx = '*.'
+			base16 = dict(filter(lambda i: 'color' in i[0], read_xresources(xpfx).items()))
+		else:
+			with open(chosen) as base16_file:
+				base16 = yaml.safe_load(base16_file)
+		qb_config_base16_load({k:'#'+v for k,v in base16.items()})
+
+def set_theme_daynight():
+	timenow = datetime.now().time()
+	timeday = datetime.strptime(os.getenv("TIMEDAY"), "%H:%M").time()
+	timenight = datetime.strptime(os.getenv("TIMENIGHT"), "%H:%M").time()
+	if (timenow > timenight or timenow < timeday):
+		c.colors.webpage.preferred_color_scheme = 'dark'
+	else:
+		c.colors.webpage.preferred_color_scheme = 'light'
 
 def read_xresources(prefix):
 	"""
