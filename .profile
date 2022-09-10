@@ -19,10 +19,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_SCRIPT_HOME="$HOME/.local/bin"
 export XDG_SRC_HOME="$HOME/.local/src"
 
-# Add `$XDG_SCRIPT_HOME` and all subdirectories to $PATH
-BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
-export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$JAVA_HOME:$PATH:$HOME/.julia/conda/3/bin"
+# Default programs/settings:
 export TERMINFO='/usr/lib/terminfo'
 export TERMINAL='/usr/bin/terminal'
 export OPENER='xdg-open'
@@ -41,7 +38,7 @@ export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu
 #export REFER="$HOME/.referbib"
 #export PIX="$HOME/.pix/"
 
-# Clean up home
+# Clean up home:
 export LESSHISTFILE="-"
 export BDOTDIR="$XDG_CONFIG_HOME/bash"
 export INPUTRC="$BDOTDIR/inputrc"
@@ -55,11 +52,16 @@ export GRIPHOME="$XDG_CONFIG_HOME/grip"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
-# Global day/night times for theming
+# Add `$XDG_SCRIPT_HOME/*`, java, go, julia to $PATH:
+BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
+export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin"
+
+# Global day/night times for theming:
 export TIMEDAY="07:00"
 export TIMENIGHT="18:00"
 
-# Set less/man colors
+# Set less/man colors:
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"; a="${a%_}"
 export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"; a="${a%_}"
@@ -72,7 +74,7 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 # This is the list for lf icons:
 export LF_ICONS="di=:fi=:tw=:ow=ﱮ:ln=:or=ﰸ:ex=:\
 *.txt=:*.md=:*.csv=:*.log=📙:*.1=:*.nfo=:*.info=:\
-*.jl=:*.py=:*.c=:*.cpp=:*.jar=:*.java=:\
+*.sh=:*.jl=:*.py=:*.c=:*.cpp=:*.jar=:*.java=:\
 *.json=ﬥ:*.toml=煉:*.html=爵:*.xml=:*.css=:*.tex=:*.bib=拾:*.ipynb=:\
 *.out=:*.so=:*.gpg=:\
 *.db=:*.arrow=:*.parquet=:*.feather=:\
