@@ -1,12 +1,12 @@
 # peaclock config
-# file: 'timer20m'
-# start a 20 minute timer
+# file: 'timer45m'
+# start a 45 minute timer
 
 mode timer
 view digital
 toggle active-bg
-timer 00h:20m:00s
-timer-exec 'notify-say \'timer complete\' \'20 minutes\''
+timer 00h:45m:00s
+timer-exec 'notify-say \'timer complete\' \'45 minutes\''
 set seconds on
 set date on
 date-padding 1

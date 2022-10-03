@@ -1,7 +1,5 @@
 Config Files for programs.
 
-Cross platform shell aliases in `alias` directory.
-
 Programs with significant configuration:
 * bspwm (wm)
 * i3 (wm)
