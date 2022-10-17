@@ -1,0 +1,20 @@
+//                              _/_/  _/
+//     _/  _/_/    _/_/      _/
+//    _/_/      _/    _/  _/_/_/_/  _/
+//   _/        _/    _/    _/      _/
+//  _/          _/_/      _/      _/
+// rofi config file.
+
+configuration {
+	modi: "window,run,ssh,drun";
+	show-icons: true;
+	dpi: 272;
+}
+
+@theme "/usr/share/rofi/themes/arthur.rasi" // alt: docu.rasi
+
+window {
+	y-offset: -5%;
+	x-offset: 0;
+}
+

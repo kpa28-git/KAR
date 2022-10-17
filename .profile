@@ -58,8 +58,8 @@ export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr
 export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin"
 
 # Global day/night times for theming:
-export TIMEDAY="07:00"
 export TIMENIGHT="18:00"
+export TIMEDAY=$TIMENIGHT
 
 # Set less/man colors:
 export LESS=-R

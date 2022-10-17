@@ -9,7 +9,7 @@ def qb_config():
 	Top level config function.
 	Set options from config.yml, find defaults in defaults.py (:config-write-py -d defaults.py to refresh).
 
-	Base16 schemes are loaded from .Xresources or a base16 yaml file via the 'custom.base16.file' option,
+	Base16 schemes are loaded from .Xresources or a base16 yaml file via the 'custom.base16.{color_scheme}.file' option,
 	uses the default qutebrowser color scheme if this option is null or empty.
 	"""
 	with (config.configdir / 'config.yml').open() as f:
@@ -20,15 +20,19 @@ def qb_config():
 			config.set(k, v)
 
 		# CUSTOM
-		## KEYBINDS
 		for key, action in yaml_data['custom.keybinds'].items():
 			config.bind(key, action)
-
-		## THEMES
-		set_theme_base16(yaml_data['custom.base16.file'])
-		set_theme_daynight()
-
+		color_scheme = get_color_scheme_daynight()
+		set_theme_base16(yaml_data[f'custom.base16.{color_scheme}.file'])
+		c.colors.webpage.preferred_color_scheme = color_scheme
+		c.colors.webpage.darkmode.enabled = color_scheme == 'dark'
 		config.load_autoconfig(False)
+
+def get_color_scheme_daynight():
+	timenow = datetime.now().time()
+	timeday = datetime.strptime(os.getenv("TIMEDAY"), "%H:%M").time()
+	timenight = datetime.strptime(os.getenv("TIMENIGHT"), "%H:%M").time()
+	return 'dark' if (timenow >= timenight or timenow < timeday) else 'light'
 
 def set_theme_base16(chosen):
 	if (chosen):
@@ -39,15 +43,6 @@ def set_theme_base16(chosen):
 			with open(chosen) as base16_file:
 				base16 = yaml.safe_load(base16_file)
 		qb_config_base16_load({k:'#'+v for k,v in base16.items()})
-
-def set_theme_daynight():
-	timenow = datetime.now().time()
-	timeday = datetime.strptime(os.getenv("TIMEDAY"), "%H:%M").time()
-	timenight = datetime.strptime(os.getenv("TIMENIGHT"), "%H:%M").time()
-	if (timenow > timenight or timenow < timeday):
-		c.colors.webpage.preferred_color_scheme = 'dark'
-	else:
-		c.colors.webpage.preferred_color_scheme = 'light'
 
 def read_xresources(prefix):
 	"""
@@ -299,7 +294,7 @@ def qb_config_base16_load(colors):
 	c.colors.tabs.selected.even.bg = colors['base05']
 
 	# Background color for webpages if unset (or empty to use the theme's color).
-	# c.colors.webpage.bg = colors['base00']
+	c.colors.webpage.bg = colors['base00']
 
 
 qb_config()

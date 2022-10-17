@@ -9,6 +9,8 @@ set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 1
 set selection-clipboard clipboard
+set recolor 1
+set recolor-keephue 1
 
 # KEYBINDS
 ## Document Navigation

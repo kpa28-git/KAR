@@ -11,12 +11,12 @@ evaluate-commands %sh{
 	timenow="$(date +%H%M)"
 	timeday="$(date -d $TIMEDAY +%H%M)"
 	timenight="$(date -d $TIMENIGHT +%H%M)"
-	if [ "$timenow" -gt "$timenight" ] || [ "$timenow" -lt "$timeday" ] ; then
+	if [ "$timenow" -ge "$timenight" ] || [ "$timenow" -lt "$timeday" ] ; then
 		# echo "colorscheme tomorrow-timenight";
 		echo "colorscheme gruvbox-dark";
 	else
-		echo "colorscheme github";
-		# echo "colorscheme gruvbox-light";
+		# echo "colorscheme github";
+		echo "colorscheme gruvbox-light";
 	fi
 }
 
@@ -139,11 +139,18 @@ evaluate-commands %sh{
 }
 plug "andreyorst/plug.kak" noload
 
-# Plugins
-# ───────
-# restart kakoune and run "plug-install" if a new plugin was added to plug.kak
+# Plugins List
+# ────────────
+# restart kakoune and run "plug-install" if a new plugin was added to this list
 
-# kakoune-wiki
 plug "TeddyDD/kakoune-wiki"
 wiki-setup %sh{ echo $HOME/Documents/notes/}
+
+plug "doppioandante/kakoune-julia-mode"
+require-module julia-mode
+hook global WinSetOption filetype=julia %{
+	set buffer indentwidth 0
+	julia-mode-start
+	julia-mode-enable-autocomplete
+}
 

@@ -168,4 +168,5 @@ custom.keybinds: {
 }
 
 ## Base16 Scheme - can be .Xresources or a base16 yaml file
-custom.base16.file: '/home/kev/.local/share/themes/base16/base16-gruvbox-scheme/gruvbox-dark-soft.yaml'
+custom.base16.dark.file: '/home/kev/.local/share/themes/base16/base16-gruvbox-scheme/gruvbox-dark-hard.yaml'
+custom.base16.light.file: '/home/kev/.local/share/themes/base16/base16-gruvbox-scheme/gruvbox-light-medium.yaml'
