@@ -12,6 +12,8 @@ def qb_config():
 	Base16 schemes are loaded from .Xresources or a base16 yaml file via the 'custom.base16.{color_scheme}.file' option,
 	uses the default qutebrowser color scheme if this option is null or empty.
 	"""
+	config.load_autoconfig(False)
+
 	with (config.configdir / 'config.yml').open() as f:
 		yaml_data = yaml.safe_load(f)
 
@@ -25,8 +27,7 @@ def qb_config():
 		color_scheme = get_color_scheme_daynight()
 		set_theme_base16(yaml_data[f'custom.base16.{color_scheme}.file'])
 		c.colors.webpage.preferred_color_scheme = color_scheme
-		c.colors.webpage.darkmode.enabled = color_scheme == 'dark'
-		config.load_autoconfig(False)
+		c.colors.webpage.darkmode.enabled = color_scheme == 'dark' # needed for some old websites
 
 def get_color_scheme_daynight():
 	timenow = datetime.now().time()
