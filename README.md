@@ -30,7 +30,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 ## Dependencies
 * The latest version of [my scripts](https://github.com/kevindirect/scripts) as a git submodule dependency (built-in).
 * The latest version of [my themes repo](https://github.com/kevindirect/themes) as a git submodule dependency (built-in).
-* Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([Instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md)).
+* Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md)).
 
 ## Overview
 * Low friction shell - well organized crossplatform aliases and quick navigation tools
@@ -38,7 +38,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * Minimalist HUD-like statusbar
 * Browser configured for intuitive use and low friction
 * Most of [my scripts](https://github.com/kevindirect/scripts) are POSIX compliant for speed and portability
-* Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (Why I set dark mode to always on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
+* Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (why I set dark mode to be always on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
 
 ### Shell (see `~/.{z}profile`, `~/.local/bin/aliases`)
 * `<mod>+<enter>` opens a terminal at directory of focused window
@@ -57,7 +57,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 
 ### Hotkeys that make sense (see `~/.config/sxhkd/sxhkdrc`)
 * Show the sxhkd keybinds with `mod+<F1>` or in the terminal with `keybinds`
-* Some mnemonics: `<mod>+v(iew media)`, `<mod>+f(ile manager)`, `<mod>+g(o to bookmark)`, `<mod>+s(earch the web)`, `<mod>+c(alculator)`
+* Some mnemonics: `<mod>+v(iew media)`, `<mod>+f(ile manager)`, `<mod>+g(o to bookmark)`, `<mod>+s(earch the web)`, `<mod>+e(mail client)`, `<mod>+c(alculator)`
 
 ### Polybar (see `~/.config/polybar/config`)
 ![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
@@ -65,7 +65,6 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * my geoloc script (`~/.local/bin/apitools/geoloc`) lets them through a vpn (manual location setting)
 
 ### Qutebrowser (see `~/.config/qutebrowser/config.{yml,py}`)
-![qutebrowser+buku+rofi integration](.local/share/rice/rice-qb.gif)
 * qutebrowser+[buku](https://github.com/jarun/Buku)+rofi integration to manage bookmarks, these can be launched from inside or outside of the browser (userscripts: `~/.config/qutebrowser/userscripts`)
 * More sensible tab movement (h/l move through tabs, J/K move through tab history)
 * Set base16 theming easily (set `custom.base16.{light,dark}.file` in `config.yml`)
