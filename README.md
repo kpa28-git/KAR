@@ -3,7 +3,27 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
 
-## Programs
+## Installation
+
+### Dependencies
+* The latest version of [my scripts](https://github.com/kevindirect/scripts) as a git submodule dependency (built-in)
+* The latest version of [my themes repo](https://github.com/kevindirect/themes) as a git submodule dependency (built-in)
+* Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md))
+
+### Steps
+1. Make sure you have all required programs installed
+2. Clone this repo: `git clone git@github.com:kevindirect/KAR.git`
+3. Populate submodules: `git submodule update --init --recursive`
+
+## Overview
+* Low friction shell - well organized crossplatform aliases and quick navigation tools
+* Mnemonic hotkeys to do common things in graphical sessions
+* Minimalist HUD-like statusbar
+* Browser configured for intuitive use and low friction
+* Most of [my scripts](https://github.com/kevindirect/scripts) are POSIX compliant for speed and portability
+* Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (why I always keep dark mode on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
+
+### Programs
 * login shell: zsh
 * `/bin/sh`: dash
 * text editor: kakoune
@@ -21,24 +41,6 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * base16 theme: gruvbox
 * dropdown calculator: julia REPL
 * other: redshift-minimal
-
-## Installation
-1. Make sure you have all required programs installed
-2. Clone this repo: `git clone git@github.com:kevindirect/KAR.git`
-3. Populate submodules: `git submodule update --init --recursive`
-
-## Dependencies
-* The latest version of [my scripts](https://github.com/kevindirect/scripts) as a git submodule dependency (built-in).
-* The latest version of [my themes repo](https://github.com/kevindirect/themes) as a git submodule dependency (built-in).
-* Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md)).
-
-## Overview
-* Low friction shell - well organized crossplatform aliases and quick navigation tools
-* Mnemonic hotkeys to do common things in graphical sessions
-* Minimalist HUD-like statusbar
-* Browser configured for intuitive use and low friction
-* Most of [my scripts](https://github.com/kevindirect/scripts) are POSIX compliant for speed and portability
-* Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (why I always keep dark mode on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
 
 ### Shell (see `~/.{z}profile`, `~/.local/bin/aliases`)
 * `<mod>+<enter>` opens a terminal at directory of focused window
