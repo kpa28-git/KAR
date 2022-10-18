@@ -3,24 +3,21 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
 
-## Details
-* All of [my scripts](https://github.com/kevindirect/scripts) aside from a couple are POSIX compliant for speed and portability
+## Programs
 * login shell: zsh
 * `/bin/sh`: dash
+* text editor: kakoune
 * window manager: bspwm
 * compositor: picom
 * terminal: st (xst fork) || alacritty (backup)
-* terminal (monospace) font: Hack Nerd Font Mono
-* bar: polybar
-* bar icon: hack nerd font
-* text editor: kakoune
+* status bar: polybar
 * file manager: lf+pistol+dragon
 * notifications: dunst
 * launcher: rofi
 * music: mpd+ncmpcpp
 * video: mpv
 * hotkeys: sxhkd
-* browser: qutebrowser || nyxt
+* browser: qutebrowser
 * base16 theme: gruvbox
 * dropdown calculator: julia REPL
 * other: redshift-minimal
@@ -33,75 +30,52 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 ## Dependencies
 * The latest version of [my scripts](https://github.com/kevindirect/scripts) as a git submodule dependency (built-in).
 * The latest version of [my themes repo](https://github.com/kevindirect/themes) as a git submodule dependency (built-in).
-* Free API Keys from [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), and [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([Instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md)).
-* The programs these dotfiles rice.
+* Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([Instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md)).
 
-## Feature Overview
-* Intuitive low friction shell - well organized crossplatform aliases and quick navigation tools
-* Mneumonic hotkeys to do common things in graphical sessions
-* Minimalist HUD-like statusbar, displaying things like local air quality (WAQI) and ethereum prices
+## Overview
+* Low friction shell - well organized crossplatform aliases and quick navigation tools
+* Mnemonic hotkeys to do common things in graphical sessions
+* Minimalist HUD-like statusbar
 * Browser configured for intuitive use and low friction
+* Most of [my scripts](https://github.com/kevindirect/scripts) are POSIX compliant for speed and portability
+* Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (Why I set dark mode to always on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
 
-### Shell
-* Crossplatform shell aliases at `$XDG_CONFIG_HOME/alias`.
-* `s` (search): fzf filter paths returned by `lspaths` (the latter lists paths from the current directory and it respects the `ignore_file` at `$XDG_CONFIG_HOME/fd/ignore_file`.).
-* `se` (search edit): open in $EDITOR
-* `sd` (search directory): cd to the containing directory (or to it if it's a directory)
-* `so` (search open): open with $OPENER
+### Shell (see `~/.{z}profile`, `~/.local/bin/aliases`)
+* `<mod>+<enter>` opens a terminal at directory of focused window
+* `<mod>+<shift>+<enter>` opens a terminal at the home directory
+
+#### Directory Search Aliases (respects `~/.config/fd/ignore_file`)
+* `se` (search edit): open file in `$EDITOR`
+* `sd` (search directory): cd to the containing directory
+* `so` (search open): open file with `$OPENER`
 * `sg <str>` (search grep): grep `<str>` within the chosen file (uses `rg`)
-* `sr` (search reading): fuzzy search the `$READING` directory and open the file with `$READER` program. I added this over so to limit the search space and stay organized with my current reading.
+* `sr` (search reading): fuzzy search the `$READING` directory and open the file with `$READER` program (also: `srb` and `srp` to search book and paper lists to read from)
+
+#### History Search Aliases
 * `hs` (history search): search the history with fzf (you can immediately run the searched command with `$(hs)`)
 * `hi` (history input): search the history with fzf and input the chosen command into the shell input
-### Hotkeys that make sense
-* View media: `<mod>+v(iew)`
-* File manager: `<mod>+f(ile)`
-* Go to web bookmark: `<mod>+g(o)`
-* Search the web: `<mod>+s(earch)`
-* Dropdown Julia REPL: `<mod>+c(alculator)`
+
+### Hotkeys that make sense (see `~/.config/sxhkd/sxhkdrc`)
 * Show the sxhkd keybinds with `mod+<F1>` or in the terminal with `keybinds`
-* All hotkeys can be modified from `~/.config/sxhkd/sxhkdrc`
+* Some mnemonics: `<mod>+v(iew media)`, `<mod>+f(ile manager)`, `<mod>+g(o to bookmark)`, `<mod>+s(earch the web)`, `<mod>+c(alculator)`
 
-### Polybar
+### Polybar (see `~/.config/polybar/config`)
 ![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
-* World Air Quality info in top left
-	* my geoloc script (`~/.local/bin/apitools/geoloc`) lets it work through a vpn (manual location setting)
-* Weather
-	* my geoloc script (`~/.local/bin/apitools/geoloc`) lets it work through a vpn (manual location setting)
-* Ethereum price (can be easily changed to any crypto tracked by coinmarketcap)
-* S&P500 and Russell 2000 asset prices (via alphavantage)
-* Moonphase
-* See `~/.config/polybar/config`
+* World Air Quality Info, crypto price (coinmarketcap), equity price (Alphavantage), moonphase
+* my geoloc script (`~/.local/bin/apitools/geoloc`) lets them through a vpn (manual location setting)
 
-### Qutebrowser
+### Qutebrowser (see `~/.config/qutebrowser/config.{yml,py}`)
 ![qutebrowser+buku+rofi integration](.local/share/rice/rice-qb.gif)
-* Text file configuration at: `~/.config/qutebrowser/config.yml`
-* qutebrowser+[buku](https://github.com/jarun/Buku)+rofi integration to manage bookmarks
-	* qb-rbuku userscript wraps around my rbuku script (`~/.local/bin/uitools/rbuku`) to enable in-browser launching
-	* mod+g(o) -> open a rofi prompt to go to a bookmark
-* A lot of search engine additions
-	* mod+s(earch) -> open up rofi search engine prompt
-* Go to buku bookmark or launch a searcher from
-* More sensible tab movement (H/L move through tabs, J/K move through tab history)
-* Set base16 theming easily (set `custom.base16.file` in `config.yml`)
-* youtube-dl+rofi integration with `:rytd`
+* qutebrowser+[buku](https://github.com/jarun/Buku)+rofi integration to manage bookmarks, these can be launched from inside or outside of the browser (userscripts: `~/.config/qutebrowser/userscripts`)
+* More sensible tab movement (h/l move through tabs, J/K move through tab history)
+* Set base16 theming easily (set `custom.base16.{light,dark}.file` in `config.yml`)
 
 ## TODO
-* terminal email
 * tmux
-* continue adding to kakrc
-	* kakwiki
-* browser: function to remove or prevent duplicate tabs (+notify user)
-* nyxt browser config
-	* Play around with and learn nyxt
-	* Start building a config file `~/.config/nyxt/init.lisp`
 * clean up home directory (move dotfiles?)
-* Set global theming from my directory of base16 files
-	* Choose a theme from a rofi prompt and set base16 for:
-		* Xresources (needs fixing)
-		* qutebrowser
 * cleanup and remove unused luke scripts
 * multiplex between fzf and rofi (check if on tty or not)
-* search aliases should work with `~/.scripts/termtools/samedir` (cd back and forth? can't use pushd/popd because those aren't POSIX). move to directory and 'cd -' at the end
+* search aliases should work with `~/.scripts/termtools/samedir`
 
 ## Big Thanks To
 * [Luke Smith](https://github.com/LukeSmithxyz) for some of the scripts
