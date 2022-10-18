@@ -26,10 +26,8 @@ def qb_config():
 			config.bind(key, action)
 		color_scheme = get_color_scheme_daynight()
 		set_theme_base16(yaml_data[f'custom.base16.{color_scheme}.file'])
-		# Automatically asking for color scheme interferes with builtin dark mode,
-		# it's better to manually ask for dark mode from websites instead of using this:
-		# c.colors.webpage.preferred_color_scheme = color_scheme 
-		c.colors.webpage.darkmode.enabled = color_scheme == 'dark' # built in color scheme, needed for some old websites that don't offer a dark theme
+		c.colors.webpage.preferred_color_scheme = color_scheme 
+		c.colors.webpage.darkmode.enabled = color_scheme == 'dark' # fallback for websites that don't offer a dark theme
 
 def get_color_scheme_daynight():
 	timenow = datetime.now().time()
