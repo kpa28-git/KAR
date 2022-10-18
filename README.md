@@ -38,7 +38,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * Minimalist HUD-like statusbar
 * Browser configured for intuitive use and low friction
 * Most of [my scripts](https://github.com/kevindirect/scripts) are POSIX compliant for speed and portability
-* Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (why I set dark mode to be always on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
+* Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (why I always keep dark mode on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
 
 ### Shell (see `~/.{z}profile`, `~/.local/bin/aliases`)
 * `<mod>+<enter>` opens a terminal at directory of focused window
