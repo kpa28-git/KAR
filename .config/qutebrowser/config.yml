@@ -152,7 +152,8 @@ zoom.default: '150%'
 # CUSTOM
 ## KEYBINDS
 custom.keybinds: {
-    'D': 'tab-close -o',
+    'D': 'none',
+    'X': 'tab-close -o',
     'h': 'tab-prev',
     'l': 'tab-next',
     'H': 'scroll left',
@@ -164,7 +165,8 @@ custom.keybinds: {
     '<Alt-j>': 'back',
     '<Alt-k>': 'forward',
     'ge': 'scroll-to-perc',
-    'd': 'tab-close'
+    'd': 'none',
+    'x': 'tab-close'
 }
 
 ## Base16 Scheme - can be .Xresources or a base16 yaml file
