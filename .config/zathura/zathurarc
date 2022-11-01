@@ -14,41 +14,34 @@ set recolor-keephue 1
 set font "monospace normal 16"
 
 # KEYBINDS
-## Document Navigation
-map j navigate next
-map <Down> navigate next
+## Navigation
+map l navigate next
+map <Right> navigate next
+map <S-Right> navigate next
 
-map k navigate previous
-map <Up> navigate previous
+map h navigate previous
+map <Left> navigate previous
+map <S-Left> navigate previous
 
-map h navigate page-top
-map <Left> navigate page-top
-
-map l navigate page-bottom
-map <Right> navigate page-bottom
-
-
-## Page Scrolling
-map u scroll full-up
-map d scroll full-down
-
-map U scroll half-up
-map D scroll half-down
-
-map J scroll down
+## Scrolling
+map j scroll down
 map <S-Down> scroll down
+map d scroll half-down
+map D scroll full-down
+map <Down> scroll full-down
 
-map K scroll up
+map k scroll up
 map <S-Up> scroll up
+map u scroll half-up
+map U scroll full-up
+map <Up> scroll full-up
 
 map H scroll left
-map <S-Left> scroll left
-
 map L scroll right
-map <S-Right> scroll right
-
 
 ## View Modifications
+map J zoom in
+map K zoom out
 map r rotate
 map i recolor
 map 0 zoom default
