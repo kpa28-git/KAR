@@ -23,6 +23,10 @@ st.termname: xst-256color
 st.opacity: 0.80
 st.disable_alpha_correction: 0
 
+!! sxiv
+Sxiv.background: #000000
+Sxiv.foreground: #00C0FF
+
 !! Base16
 *.scheme: "Gruvbox dark, hard"
 *.author: "Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)"
