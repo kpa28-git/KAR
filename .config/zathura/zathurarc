@@ -11,6 +11,7 @@ set page-padding 1
 set selection-clipboard clipboard
 set recolor 1
 set recolor-keephue 1
+set font "monospace normal 16"
 
 # KEYBINDS
 ## Document Navigation

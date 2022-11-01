@@ -13,6 +13,7 @@
 !/cargo/**
 !/fontconfig/**
 !/git/**
+!/gtk-3.0/**
 !/htop/**
 !/i3/**
 !/julia/**

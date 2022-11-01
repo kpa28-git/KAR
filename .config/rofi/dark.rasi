@@ -8,7 +8,7 @@
 configuration {
 	modi: "window,run,ssh,drun";
 	show-icons: true;
-	dpi: 272;
+	dpi: 360; // can't change font size directly
 }
 
 @theme "/usr/share/rofi/themes/arthur.rasi" // alt: docu.rasi

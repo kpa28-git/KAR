@@ -147,7 +147,14 @@ url.searchengines: {
 window.hide_decoration: True
 
 ## ZOOM
-zoom.default: '150%'
+# 250% puts most text at about .24 inch in height
+# Based on tan(.6°) * distance with 24 inch reading distance
+zoom.default: '250%'
+
+## FONTS
+# fonts.default_size: '10px'
+# fonts.web.size.default: 16
+# fonts.web.size.default_fixed: 13
 
 # CUSTOM
 ## KEYBINDS
