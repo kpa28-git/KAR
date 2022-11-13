@@ -65,7 +65,7 @@ fixed-center = true
 line-size = 3
 modules-left = airinfo corona weather moonphase
 modules-center = bspwm
-modules-right = nordvpn network wlan date powermenu
+modules-right = network wlan date powermenu
 tray-position = right
 tray-padding = 1
 

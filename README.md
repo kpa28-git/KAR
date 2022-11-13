@@ -3,6 +3,25 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
 
+## Programs
+* login shell: [zsh](https://zsh.org)
+* `/bin/sh`: [dash](https://www.man7.org/linux/man-pages/man1/dash.1.html)
+* text editor: [kakoune](https://kakoune.org)
+* window manager: [bspwm](https://github.com/baskerville/bspwm)
+* compositor: [picom](https://github.com/yshui/picom)
+* terminal: [xst](https://github.com/gnotclub/xst) - an [st](https://st.suckless.org) fork || [alacritty](https://alacritty.org) (backup)
+* status bar: [polybar](https://polybar.github.io)
+* file manager: [lf](https://pkg.go.dev/github.com/gokcehan/lf) && [pistol](https://github.com/doronbehar/pistol) && [dragon](https://github.com/mwh/dragon)
+* notifications: [dunst](https://dunst-project.org)
+* launcher: [rofi](https://github.com/davatorium/rofi)
+* music: [mpd](https://www.musicpd.org) && [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)
+* video: [mpv](https://mpv.io)
+* hotkeys: [sxhkd](https://github.com/baskerville/sxhkd)
+* browser: [qutebrowser](https://qutebrowser.org/)
+* base16 theme: [gruvbox](https://github.com/dawikur/base16-gruvbox-scheme)
+* dropdown calculator: [julia](https://julialang.org) REPL
+* other: [redshift](http://jonls.dk/redshift)-minimal
+
 ## Installation
 
 ### Dependencies
@@ -22,25 +41,6 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * Browser configured for intuitive use and low friction
 * Most of [my scripts](https://github.com/kevindirect/scripts) are POSIX compliant for speed and portability
 * Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (why I always keep dark mode on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
-
-### Programs
-* login shell: zsh
-* `/bin/sh`: dash
-* text editor: kakoune
-* window manager: bspwm
-* compositor: picom
-* terminal: st (xst fork) || alacritty (backup)
-* status bar: polybar
-* file manager: lf+pistol+dragon
-* notifications: dunst
-* launcher: rofi
-* music: mpd+ncmpcpp
-* video: mpv
-* hotkeys: sxhkd
-* browser: qutebrowser
-* base16 theme: gruvbox
-* dropdown calculator: julia REPL
-* other: redshift-minimal
 
 ### Shell (see `~/.{z}profile`, `~/.local/bin/aliases`)
 * `<mod>+<enter>` opens a terminal at directory of focused window
