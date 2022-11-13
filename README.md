@@ -9,7 +9,7 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * text editor: [kakoune](https://kakoune.org)
 * window manager: [bspwm](https://github.com/baskerville/bspwm)
 * compositor: [picom](https://github.com/yshui/picom)
-* terminal: [xst](https://github.com/gnotclub/xst) - an [st](https://st.suckless.org) fork || [alacritty](https://alacritty.org) (backup)
+* terminal: [xst](https://github.com/gnotclub/xst) (a [st](https://st.suckless.org) fork) || [alacritty](https://alacritty.org) (backup)
 * status bar: [polybar](https://polybar.github.io)
 * file manager: [lf](https://pkg.go.dev/github.com/gokcehan/lf) && [pistol](https://github.com/doronbehar/pistol) && [dragon](https://github.com/mwh/dragon)
 * notifications: [dunst](https://dunst-project.org)
