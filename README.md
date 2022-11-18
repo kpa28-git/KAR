@@ -3,7 +3,7 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
 
-## Programs (see `~/.config` for the full list - includes configuration for old/unused programs)
+## Programs (see `~/.config` for the full list)
 * login shell: [zsh](https://zsh.org)
 * `/bin/sh`: [dash](https://www.man7.org/linux/man-pages/man1/dash.1.html)
 * text editor: [helix](https://helix-editor.com)
