@@ -1,12 +1,12 @@
 # Kevin's Arch Rice (KAR)
-My arch linux / bspwm / polybar / rofi / st / kakoune rice.
+My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville/bspwm) / [polybar](https://polybar.github.io) / [rofi](https://github.com/davatorium/rofi) / [xst](https://github.com/gnotclub/xst) / [helix](https://helix-editor.com) rice.
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
 
-## Programs
+## Programs (see `~/.config` for the full list - includes configuration for old/unused programs)
 * login shell: [zsh](https://zsh.org)
 * `/bin/sh`: [dash](https://www.man7.org/linux/man-pages/man1/dash.1.html)
-* text editor: [kakoune](https://kakoune.org)
+* text editor: [helix](https://helix-editor.com)
 * window manager: [bspwm](https://github.com/baskerville/bspwm)
 * compositor: [picom](https://github.com/yshui/picom)
 * terminal: [xst](https://github.com/gnotclub/xst) (a [st](https://st.suckless.org) fork) || [alacritty](https://alacritty.org) (backup)
@@ -67,12 +67,14 @@ My arch linux / bspwm / polybar / rofi / st / kakoune rice.
 * my geoloc script (`~/.local/bin/apitools/geoloc`) lets them through a vpn (manual location setting)
 
 ### Qutebrowser (see `~/.config/qutebrowser/config.{yml,py}`)
-* qutebrowser+[buku](https://github.com/jarun/Buku)+rofi integration to manage bookmarks, these can be launched from inside or outside of the browser (userscripts: `~/.config/qutebrowser/userscripts`)
+* [qutebrowser](https://qutebrowser.org/)+[buku](https://github.com/jarun/Buku)+[rofi](https://github.com/davatorium/rofi) integration to manage/select bookmarks, these can be launched from inside or outside of the browser (userscripts: `~/.config/qutebrowser/userscripts`)
 * More sensible tab movement (h/l move through tabs, J/K move through tab history)
 * Set base16 theming easily (set `custom.base16.{light,dark}.file` in `config.yml`)
 
 ## TODO
+* check out [luakit](https://github.com/luakit/luakit)
 * tmux
+* bspwm additions
 * clean up home directory (move dotfiles?)
 * cleanup and remove unused luke scripts
 * multiplex between fzf and rofi (check if on tty or not)

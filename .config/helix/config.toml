@@ -1,0 +1,39 @@
+#     __       ___
+#    / /  ___ / (_)_ __
+#   / _ \/ -_) / /\ \ /
+#  /_//_/\__/_/_//_\_\
+# Helix text editor runtime config.
+
+theme = "gruvbox" # gruvbox, pop-dark, onedark
+
+#[keys.normal]
+#"#" = "toggle-comments" # TODO figure out how to map pound sign
+
+[editor]
+line-number = "relative"
+true-color = true
+color-modes = true
+
+[editor.statusline]
+left = ["spacer", "mode", "selections", "position"]
+center = ["spinner", "diagnostics"]
+right = ["position-percentage", "file-name", "file-encoding", "file-type", "spacer"]
+
+#[editor.indent-guides]
+#render = true
+#character = "╎"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.whitespace.render]
+tab = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+nbsp = "⍽"
+tab = ">"
+tabpad = "-"
+newline = "¬"

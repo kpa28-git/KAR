@@ -9,11 +9,12 @@
 !/bash/**
 !/bat/**
 !/bspwm/**
-!/dunst/**
 !/cargo/**
+!/dunst/**
 !/fontconfig/**
 !/git/**
 !/gtk-3.0/**
+!/helix/**
 !/htop/**
 !/i3/**
 !/julia/**

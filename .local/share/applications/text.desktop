@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=kakoune
+Name=helix
 GenericName=Text Editor
-Exec=/usr/bin/terminal -e kak %u
+Exec=/usr/bin/terminal -e helix %u
