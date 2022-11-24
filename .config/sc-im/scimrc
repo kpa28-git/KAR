@@ -1,0 +1,26 @@
+#                      _
+#     __________      (_)___ ___
+#    / ___/ ___/____ / / __ `__ \
+#   (__  ) /__ /___// / / / / / /
+#  /____/\___/     /_/_/ /_/ /_/
+# sc-im runtime config file.
+
+# go to last cell (kakoune/helix style)
+nnoremap "ge" "G"
+
+# go to first / last row ↕
+nnoremap "gk" "^"
+nnoremap "gj" "#"
+
+# go to first / last column ↔
+nnoremap "gh" "0"
+nnoremap "gl" "$"
+
+# go to top / center / bottom row on screen
+nnoremap "gt" "H"
+nnoremap "gc" "M"
+nnoremap "gb" "L"
+
+# go to last occupied cell
+nnoremap "g." "gl"
+

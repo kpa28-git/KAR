@@ -34,6 +34,7 @@
 !/qutebrowser/**
 !/redshift/**
 !/rofi/**
+!/sc-im/**
 !/sxhkd/**
 !/tmux/**
 !/yay/**
