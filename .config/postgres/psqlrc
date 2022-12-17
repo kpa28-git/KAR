@@ -9,15 +9,16 @@
 \set XDG_SCRIPT_HOME `echo "$XDG_SCRIPT_HOME"`
 
 -- generic sql
-\set sqltools :XDG_SCRIPT_HOME'/sqltools'
-\set lsschema 		'\\i :sqltools/lsschema.sql';
+\set sqltools        :XDG_SCRIPT_HOME'/sqltools'
+\set lsschema        '\\i :sqltools/lsschema.sql';
 
 -- postgres specific
-\set sqlpgtools :XDG_SCRIPT_HOME'/sqlpgtools'
-\set ldb 		'\\i :sqlpgtools/ldb.psql';
-\set lsdb 		'\\i :sqlpgtools/lsdb.psql';
-\set lsconfig 		'\\i :sqlpgtools/lsconfig.psql';
-\set lstable 		'\\i :sqlpgtools/lstable.psql';
-\set lstablesize 	'\\i :sqlpgtools/lstablesize.psql';
-\set uptime 		'\\i :sqlpgtools/uptime.psql';
+\set sqlpgtools      :XDG_SCRIPT_HOME'/sqlpgtools'
+\set ldb             '\\i :sqlpgtools/ldb.psql';
+\set lsconfig        '\\i :sqlpgtools/lsconfig.psql';
+\set lsdb            '\\i :sqlpgtools/lsdb.psql';
+\set lspart          '\\i :sqlpgtools/lspart.psql';
+\set lstable         '\\i :sqlpgtools/lstable.psql';
+\set lstablesize     '\\i :sqlpgtools/lstablesize.psql';
+\set uptime          '\\i :sqlpgtools/uptime.psql';
 
