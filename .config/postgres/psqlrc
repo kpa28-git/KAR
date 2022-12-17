@@ -7,13 +7,13 @@
 
 -- env variables
 \set XDG_SCRIPT_HOME `echo "$XDG_SCRIPT_HOME"`
-
--- generic sql
 \set sqltools        :XDG_SCRIPT_HOME'/sqltools'
+\set sqlpgtools      :XDG_SCRIPT_HOME'/sqlpgtools'
+
+-- generic sql scripts
 \set lsschema        '\\i :sqltools/lsschema.sql';
 
--- postgres specific
-\set sqlpgtools      :XDG_SCRIPT_HOME'/sqlpgtools'
+-- postgres specific scripts
 \set ldb             '\\i :sqlpgtools/ldb.psql';
 \set lsconfig        '\\i :sqlpgtools/lsconfig.psql';
 \set lsdb            '\\i :sqlpgtools/lsdb.psql';
