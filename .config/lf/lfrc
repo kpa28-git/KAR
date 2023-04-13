@@ -98,27 +98,24 @@ cmd chmod ${{
 
 cmd bulkrename ${{ vidir; }}
 
-# Put File(s) in Trash (trash-cli)
-cmd trash-put %trash-put $fx
+# trashy: put file(s) in trash
+cmd trash-put %trash put $fx
 
-# Show Trashed Files (trash-cli)
-cmd trash-list ${{
-	trash-list | $PAGER
-}}
+# trashy: show trashed file(s)
+cmd trash-list %trash list
 
-# Restore Trashed Files (trash-cli)
+# trashy: restore trashed file(s)
 cmd trash-restore ${{
-	trash-restore
+	trash list | fzf --reverse --header='Restore File(s)' --multi | awk '{\$1=\$1;print}' | rev | cut -d ' ' -f1 | rev | xargs trash restore --match=exact --force
 }}
 
-# Delete Chosen Trashed File Permanently (trash-cli)
+# trashy: delete trashed file(s)
 cmd trash-rm ${{
-	TO_REMOVE=$(trash-list | fzf --reverse --info=inline --header='Delete File' | awk '{print $NF}')
-	trash-rm "$TO_REMOVE"
+	trash list | fzf --reverse --header='Delete File(s)' --multi | awk '{\$1=\$1;print}' | rev | cut -d ' ' -f1 | rev | xargs trash empty --match=exact --force
 }}
 
-# Delete all Trashed Files Permanently (trash-cli)
-cmd trash-empty %trash-empty
+# trashy: delete all trashed file(s)
+cmd trash-empty %trash empty --all
 
 # Fuzzy Navigation
 cmd search-dir ${{
