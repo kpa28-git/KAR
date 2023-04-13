@@ -19,7 +19,7 @@ email = "git@kevindirect.com"
 vcs = "git"
 
 [build]
-rustc-wrapper = "sccache"
+# rustc-wrapper = "sccache"
 
 [target.x86_64-unknown-linux-gnu]
 rustflags = ["-Ctarget-cpu=native"]

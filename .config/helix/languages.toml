@@ -1,0 +1,9 @@
+#     __       ___
+#    / /  ___ / (_)_ __
+#   / _ \/ -_) / /\ \ /
+#  /_//_/\__/_/_//_\_\
+# Helix text editor language overrides.
+
+[[language]]
+name = "julia"
+indent = { tab-width = 4, unit = "\t" }

@@ -79,6 +79,7 @@ url.searchengines: {
     # Commerce
     'ebay': 'https://www.ebay.com/sch/?_nkw={}',
     'az': 'https://www.amazon.com/s?k={}',
+    'iherb': 'https://www.iherb.com/search?kw={}',
 
     # Web
     'nc': 'https://www.namecheap.com/domains/registration/results.aspx?domain={}',
@@ -147,9 +148,9 @@ url.searchengines: {
 window.hide_decoration: True
 
 ## ZOOM
-# 250% puts most text at about .24 inch in height
-# Based on tan(.6°) * distance with 24 inch reading distance
-zoom.default: '250%'
+# 250% puts most text at about .24" height
+# Based on tan(.6°) * distance where distance = 24"
+zoom.default: '175%'
 
 ## FONTS
 # fonts.default_size: '10px'
