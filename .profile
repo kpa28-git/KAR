@@ -78,7 +78,7 @@ export LF_ICONS="di=:fi=:tw=:ow=:ln=:or=:ex=󱐌:\
 *.json=:*.toml=:*.html=:*.xml=󰗀:*.css=:*.js=:*.tex=:*.bib=:*.ipynb=󰠮:\
 *.out=:*.so=:*.gpg=:\
 *.db=:*.arrow=:*.feather=:*.parquet=:\
-*.part=󰋮:*.torrent=:\
+*.part=󰋮:*.torrent=:\
 *.zip=:*.rar=:*.7z=:*.tar.gz=:\
 *.pdf=:*.djvu=:*.epub=:\
 *.doc=󱎒:*.docx=󱎒:*.xlsx=󱎏:*.pptx=󱎐:\
