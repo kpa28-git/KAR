@@ -72,9 +72,12 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 * Set base16 theming easily (set `custom.base16.{light,dark}.file` in `config.yml`)
 
 ## TODO
+* lightdm -> lemurs
+* lf -> joshuto
+* more tmux config (or tab-rs)
+* bspwm additions (or switch to leftwm or skywm)
+* swhkd
 * check out [luakit](https://github.com/luakit/luakit)
-* tmux
-* bspwm additions
 * clean up home directory (move dotfiles?)
 * cleanup and remove unused luke scripts
 * multiplex between fzf and rofi (check if on tty or not)

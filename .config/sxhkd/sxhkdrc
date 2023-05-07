@@ -82,7 +82,7 @@ super + a
 
 # Transmission client (downloads)
 super + d
-	$TERMINAL -e tremc
+	$TERMINAL -e transg-tui
 
 # htop (information)
 super + i

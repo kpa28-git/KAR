@@ -72,20 +72,20 @@ export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
 # This is the list for lf icons:
-export LF_ICONS="di=:fi=:tw=:ow=ﱮ:ln=:or=ﰸ:ex=:\
-*.txt=:*.md=:*.csv=:*.log=📙:*.1=:*.nfo=:*.info=:\
-*.sh=:*.jl=:*.py=:*.c=:*.cpp=:*.jar=:*.java=:\
-*.json=ﬥ:*.toml=煉:*.html=爵:*.xml=:*.css=:*.tex=:*.bib=拾:*.ipynb=:\
-*.out=:*.so=:*.gpg=:\
-*.db=:*.arrow=:*.parquet=:*.feather=:\
-*.part=:*.torrent=🔽:\
+export LF_ICONS="di=:fi=:tw=:ow=:ln=:or=:ex=󱐌:\
+*.txt=:*.md=:*.csv=:*.log=:*.1=:*.nfo=:*.info=:\
+*.sh=:*.c=󰙱:*.cpp=󰙲:*.jl=:*.rs=󱘗:*.py=:*.jar=:*.java=:\
+*.json=:*.toml=:*.html=:*.xml=󰗀:*.css=:*.js=:*.tex=:*.bib=:*.ipynb=󰠮:\
+*.out=:*.so=:*.gpg=:\
+*.db=:*.arrow=:*.feather=:*.parquet=:\
+*.part=󰋮:*.torrent=:\
 *.zip=:*.rar=:*.7z=:*.tar.gz=:\
-*.pdf=:*.djvu=:*.epub=:\
-*.doc=:*.docx=:*.xlsx=:*.pptx=:\
-*.gif=:*.png=:*.webp=:*.ico=:*.jpg=:*.jpe=:*.jpeg=:*.svg=ﰟ:\
-*.mp3=:*.opus=:*.ogg=:*.m4a=:*.flac=🎼:*.wav=🎼:\
-*.mkv=:*.mp4=:*.webm=:*.mpeg=:*.avi=:*.mov=:*.mpg=:*.wmv=:*.m4b=:*.flv=:\
-*.iso=:*.img=:\
+*.pdf=:*.djvu=:*.epub=:\
+*.doc=󱎒:*.docx=󱎒:*.xlsx=󱎏:*.pptx=󱎐:\
+*.gif=󰤚:*.png=󰣌:*.webp=󰣌:*.ico=󰣌:*.jpg=:*.jpe=:*.jpeg=:*.svg=:\
+*.mp3=:*.opus=:*.ogg=:*.m4a=:*.flac=🎼:*.wav=🎼:\
+*.mkv=:*.mp4=:*.webm=:*.mpeg=:*.avi=:*.mov=:*.mpg=:*.wmv=:*.m4b=:*.flv=:\
+*.iso=󰋊:*.img=󰋊:\
 "
 
 # run the {bash, zsh} shell runtime config
