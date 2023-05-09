@@ -43,9 +43,9 @@ map x push $ext<space>
 map - :img-preview
 
 # # Switches
-# set hidden on
-# set color256 on
-set icons on
+# set hidden true
+# set color256 true
+set icons true
 
 # Dragon File Uploader - opens an upload drag box for selected files
 cmd drag-all %dragon-drag-and-drop -a -x $fx
@@ -72,7 +72,7 @@ cmd mkdir ${{
 cmd mkfile ${{
 	printf "File Name: "
 	read ans
-	$EDITOR $ans
+	$VISUAL $ans
 }}
 
 cmd symlink ${{
