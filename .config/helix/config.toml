@@ -23,6 +23,13 @@ right = ["position-percentage", "file-name", "file-encoding", "file-type", "spac
 #render = true
 #character = "╎"
 
+[editor.soft-wrap]
+enable = true
+# max-wrap = 20
+# max-indent-retain = 40
+# wrap-indicator = "↪"
+# wrap-at-text-width = false
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"

@@ -28,6 +28,7 @@ application/csv=spreadsheet.desktop;
 image/*=img.desktop;
 image/jpeg=img.desktop;
 image/png=img.desktop;
+image/webp=img.desktop;
 image/svg=web-browser.desktop;
 image/svg+xml=web-browser.desktop;
 image/gif=gif.desktop;
