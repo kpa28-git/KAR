@@ -8,7 +8,7 @@
 # Unbound hotkeys:
 # 0th row: F2 F6
 # 1st row: W  E  P
-# 2nd row: A S dD
+# 2nd row: A S D
 # 3rd row: Z  C
 # Insert Scroll_Lock XF86Launch1
 
@@ -43,6 +43,10 @@ super + z
 # File manager ($FILE env variable)
 super + f
 	$TERMINAL -e $FILE
+
+# Joshtuo File manager (experimental)
+super + shift + z
+	$TERMINAL -e joshuto
 
 # Web browser ($BROWSER env variable)
 super + b
@@ -327,7 +331,7 @@ super + F4
 	prompt 'Hibernate computer?' 'sudo systemctl suspend'
 
 # Restart/rescan wifi/eth networks
-super + F5
+super + F6
 	sudo -A systemctl restart NetworkManager && \
 		notify-send 'NetworkManager' 'restarted'
 
