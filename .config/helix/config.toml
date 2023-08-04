@@ -4,7 +4,7 @@
 #  /_//_/\__/_/_//_\_\
 # Helix text editor runtime config.
 
-theme = "noctis_bordo" # gruvbox, gruvbox_dark_hard, pop-dark, everforest_dark, onedark, autumn, bogster, noctis_bordo, rasmus, tokyonight_storm
+theme = "pop-dark" # gruvbox, gruvbox_dark_hard, pop-dark, everforest_dark, onedark, autumn, bogster, noctis_bordo, rasmus, tokyonight_storm
 
 #[keys.normal]
 #"#" = "toggle-comments" # TODO figure out how to map pound sign

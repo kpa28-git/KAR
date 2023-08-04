@@ -52,10 +52,11 @@ bspc config window_gap 8
 
 
 # Rules
-bspc rule -r  "*"	# Clear all rules
-bspc rule -a Qutebrowser state=tiled
+bspc rule -r  "*" state=tiled sticky=off follow=off
+bspc rule -a Qutebrowser focus=on state=tiled sticky=off follow=off
+bspc rule -a Zathura state=tiled follow=off sticky=off
+bspc rule -a RuneLite state=floating
 # bspc rule -a Nyxt state=tiled
-bspc rule -a Zathura state=tiled
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
 #bspc rule -a mplayer2 state=floating

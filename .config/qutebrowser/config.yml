@@ -48,6 +48,7 @@ tabs.title.format_pinned: '[{index}]'
 url.searchengines: {
     # General
     'DEFAULT': 'https://swisscows.com/web?query={}',
+    'ss': 'https://www.startpage.com/sp/search?query={}',
     'sw': 'https://swisscows.com/web?query={}',
     'dg': 'https://duckduckgo.com/?q={}',
     'ydx': 'https://yandex.com/search/?text={}',
