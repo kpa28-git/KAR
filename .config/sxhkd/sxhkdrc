@@ -44,9 +44,9 @@ super + z
 super + f
 	$TERMINAL -e $FILE
 
-# Joshtuo File manager (experimental)
-super + shift + z
-	$TERMINAL -e joshuto
+# 
+# super + shift + z
+# 	$TERMINAL -e 
 
 # Web browser ($BROWSER env variable)
 super + b
@@ -208,9 +208,9 @@ super + shift + BackSpace
 super + shift + x
 	prompt 'Shutdown computer?' 'sudo -A shutdown -h now'
 
-# Switch graphics (nvidia<->hybrid)
+# Switch startup graphics mode (nvidia<->hybrid)
 super + shift + n
-	prompt 'switch graphics?' "$XDG_SCRIPT_HOME/gfxtools/gfxswitch"
+	prompt 'Switch startup graphics mode?' "$XDG_SCRIPT_HOME/gfxtools/gfxstartswitch"
 
 # Change display
 super + F3

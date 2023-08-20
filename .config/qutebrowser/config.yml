@@ -151,7 +151,7 @@ window.hide_decoration: True
 ## ZOOM
 # 250% puts most text at about .24" height
 # Based on tan(.6°) * distance where distance = 24"
-zoom.default: '175%'
+zoom.default: '85%'
 
 ## FONTS
 # fonts.default_size: '10px'

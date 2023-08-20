@@ -11,6 +11,7 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 * compositor: [picom](https://github.com/yshui/picom)
 * terminal: [xst](https://github.com/gnotclub/xst) (a [st](https://st.suckless.org) fork) || [alacritty](https://alacritty.org) (backup)
 * status bar: [polybar](https://polybar.github.io)
+* file manager: [joshuto](https://github.com/kamiyaa/joshuto)
 * file manager: [lf](https://pkg.go.dev/github.com/gokcehan/lf) && [pistol](https://github.com/doronbehar/pistol) && [dragon](https://github.com/mwh/dragon)
 * notifications: [dunst](https://dunst-project.org)
 * launcher: [rofi](https://github.com/davatorium/rofi)
@@ -73,9 +74,7 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 
 ## TODO
 * nushell
-* lf -> joshuto
 * bspwm -> leftwm?
-* lightdm -> lemurs (wait until v1.0)
 * more tmux config (or tab-rs)
 * swhkd
 * check out [luakit](https://github.com/luakit/luakit)

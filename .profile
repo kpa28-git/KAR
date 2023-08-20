@@ -28,7 +28,7 @@ export EDITOR=$VISUAL
 export PAGER='bat'
 export BROWSER='qutebrowser'
 export READER='zathura'
-export FILE='lf'
+export FILE='joshuto'
 export TASK_CLIENT='superproductivity'
 export EMAIL_CLIENT='tutanota-desktop'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
@@ -94,7 +94,7 @@ export LF_ICONS="di=:fi=:tw=:ow=:ln=:or=:ex=󱐌:\
 # echo "$0" | grep "zsh$" >/dev/null && [ -f "$ZDOTDIR/.zshrc" ] && source "$ZDOTDIR/.zshrc"
 
 # Start graphical server if bspwm not already running
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
+# [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
 
 # Switch escape <-> caps for tty
 sudo -n loadkeys "$XDG_SCRIPT_HOME/ttymaps.kmap" 2>/dev/null
