@@ -67,7 +67,7 @@ keymap = [
 
 	# Yank (Copy) / Paste
 	{ keys = ["y"],               command = "copy_files" },
-	{ keys = ["p"],               command = "paste_files --overwrite=true" },
+	{ keys = ["p"],               command = "paste_files --overwrite=false" },
 	# { keys = ["y","n"],           command = "copy_filename" },
 	# { keys = ["y","."],           command = "copy_filename_without_extension" },
 	# { keys = ["y","p"],           command = "copy_filepath" },
