@@ -56,11 +56,11 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 # Add `$XDG_SCRIPT_HOME/*`, java, go, julia to $PATH:
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
 export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin"
+export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin:$XDG_SRC_HOME/webapp/bin"
 
 # Global day/night times for theming:
 export TIMENIGHT="18:00"
-export TIMEDAY=$TIMENIGHT
+export TIMEDAY="10:00"
 
 # Set less/man colors:
 export LESS=-R

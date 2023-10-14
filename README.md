@@ -26,13 +26,13 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 ## Installation
 
 ### Dependencies
-* The latest version of [my scripts](https://github.com/kevindirect/scripts) as a git submodule dependency (built-in)
-* The latest version of [my themes repo](https://github.com/kevindirect/themes) as a git submodule dependency (built-in)
-* Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([instructions](https://github.com/kevindirect/scripts/blob/master/polybar/README.md))
+* The latest version of [my scripts](https://github.com/kpa28-git/scripts) as a git submodule dependency (built-in)
+* The latest version of [my themes repo](https://github.com/kpa28-git/themes) as a git submodule dependency (built-in)
+* Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([instructions](https://github.com/kpa28-git/scripts/blob/master/polybar/README.md))
 
 ### Steps
 1. Make sure you have all required programs installed
-2. Clone this repo: `git clone git@github.com:kevindirect/KAR.git`
+2. Clone this repo: `git clone git@github.com:kpa28-git/KAR.git`
 3. Populate submodules: `git submodule update --init --recursive`
 
 ## Overview
@@ -40,7 +40,7 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 * Mnemonic hotkeys to do common things in graphical sessions
 * Minimalist HUD-like statusbar
 * Browser configured for intuitive use and low friction
-* Most of [my scripts](https://github.com/kevindirect/scripts) are POSIX compliant for speed and portability
+* Most of [my scripts](https://github.com/kpa28-git/scripts) are POSIX compliant for speed and portability
 * Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (why I always keep dark mode on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
 
 ### Shell (see `~/.{z}profile`, `~/.local/bin/aliases`)
