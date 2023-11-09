@@ -89,6 +89,7 @@ keymap = [
 	{ keys = ["r"],               command = "shell vidir %s" },
 	{ keys = ["c","d"],           command = ":cd " },
 	{ keys = ["m","k"],           command = ":mkdir " },
+	{ keys = ["d"],               command = "shell dragon-drop --all %s" },
 
 	# Hidden and Help
 	{ keys = ["R"],               command = "reload_dirlist" },
