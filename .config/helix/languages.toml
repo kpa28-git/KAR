@@ -11,3 +11,8 @@ indent = { tab-width = 4, unit = "\t" }
 [[language]]
 name = "latex"
 indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "nu"
+indent = { tab-width = 2, unit = "\t" }
+

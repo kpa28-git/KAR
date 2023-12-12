@@ -45,104 +45,93 @@ tabs.title.format: '[{index}] {current_title}'
 tabs.title.format_pinned: '[{index}]'
 
 ## URL
+url.start_pages: ['https://www.qwant.com']
+url.default_page: 'https://www.qwant.com'
+
 url.searchengines: {
-    # General
-    'DEFAULT': 'https://swisscows.com/web?query={}',
-    'ss': 'https://www.startpage.com/sp/search?query={}',
-    'sw': 'https://swisscows.com/web?query={}',
-    'dg': 'https://duckduckgo.com/?q={}',
-    'ydx': 'https://yandex.com/search/?text={}',
-    'wolf': 'https://www.wolframalpha.com/input/?i={}',
-    'wiki': 'https://en.wikipedia.org/?search={}',
-    'dict': 'https://www.merriam-webster.com/dictionary/{}',
-    'thes': 'https://www.merriam-webster.com/thesaurus/{}',
-
-    # Finance
-    'sa': 'https://seekingalpha.com/search/?q={}',
-    'yf': 'https://search.yahoo.com/search?p={}',
-    'yfp': 'https://finance.yahoo.com/quote/{}',
-
-    # Media
+    # general search
+    'DEFAULT': 'https://www.qwant.com/?q={}&t=web',
+    'q': 'https://www.qwant.com/?q={}&t=web',
+    # 'ss': 'https://www.startpage.com/sp/search?query={}',
     'yt': 'https://www.youtube.com/results?search_query={}',
+    # 'ydx': 'https://yandex.com/search/?text={}',
+    # 'sw': 'https://swisscows.com/web?query={}',
+    # 'dg': 'https://duckduckgo.com/?q={}',
 
-    # Academia
+    # academic
     'sc': 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q={}',
     'ar': 'https://arxiv.org/search/?query={}&searchtype=all&source=header',
     'or': 'https://openreview.net/search?term={}&content=all&group=all&source=all',
 
-    # Forums
-    'se': 'https://stackexchange.com/search?q={}',
+    # authoritative
+    'wolf': 'https://www.wolframalpha.com/input/?i={}',
+    'wiki': 'https://en.wikipedia.org/?search={}',
+    'dict': 'https://www.merriam-webster.com/dictionary/{}',
+    'thes': 'https://www.wordhippo.com/what-is/another-word-for/{}.html',
 
-    # Repos
+    # code
+    'se': 'https://stackexchange.com/search?q={}',
     'ghub': 'https://github.com/search?q={}',
     'glab': 'https://gitlab.com/search?search={}',
 
-    # Commerce
+    # fin
+    'sa': 'https://seekingalpha.com/search/?q={}',
+    'yf': 'https://search.yahoo.com/search?p={}',
+    'yfp': 'https://finance.yahoo.com/quote/{}',
+
+    # products
     'ebay': 'https://www.ebay.com/sch/?_nkw={}',
     'az': 'https://www.amazon.com/s?k={}',
     'iherb': 'https://www.iherb.com/search?kw={}',
+    'book': 'https://www.abebooks.com/servlet/SearchResults?kn={}',
 
-    # Web
+    # domain name
     'nc': 'https://www.namecheap.com/domains/registration/results.aspx?domain={}',
 
-    # Health / Wellness
+    # health / wellness
     'me': 'https://men-elite.com/?s={}',
     'ex': 'https://examine.com/search/?q={}',
     'sh': 'https://selfhacked.com/?s={}',
     'slab': 'https://labdoor.com/review?q={}',
     'snp': 'https://www.snpedia.com/index.php?title=+Special%3ASearch&search={}&go=Go',
 
-    # Linux
-    'man': 'https://www.die.net/search/?q={}&sa=Search',
-
-    # General package search
-    'pkg': 'https://pkgs.org/search/?q={}',
-
-    # Arch Linux
+    # linux / bsd
     'arch': 'https://wiki.archlinux.org/?search={}',
     'yq': 'https://www.archlinux.org/packages/?q={}',
     'yg': 'https://www.archlinux.org/packages/?q={}',
     'pac': 'https://www.archlinux.org/packages/?q={}',
     'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
-
-    # Freebsd
-    'ports': 'https://www.freebsd.org/cgi/ports.cgi?query={}&stype=name&sektion=all',
-
-    # Alpine Linux
-    'apk': 'https://pkgs.alpinelinux.org/packages?name={}&branch=edge&arch=armhf',
-
-    # # Void Linux
+    'man': 'https://www.die.net/search/?q={}&sa=Search',
+    'pkg': 'https://pkgs.org/search/?q={}',
+    # 'ports': 'https://www.freebsd.org/cgi/ports.cgi?query={}&stype=name&sektion=all',
+    # 'apk': 'https://pkgs.alpinelinux.org/packages?name={}&branch=edge&arch=armhf',
     # 'void': 'https://wiki.voidlinux.org/?search={}',
 
-    # Python
-    'py3': 'https://docs.python.org/3/search.html?q={}',
-    'conda': 'https://anaconda.org/search?q={}',
-    'pip': 'https://pypi.org/search/?q={}',
-
-    # Julia
-    'jstd': 'https://docs.julialang.org/en/v1/search/?q={}',
-    'jobs': 'https://juliaobserver.com/packages/{}',
+    # langs
+    'djul': 'https://docs.julialang.org/en/v1/search/?q={}',
     'jpkg': 'https://juliapackages.com/packages?search={}',
     'jhub': 'https://juliahub.com/ui/Packages?q={}',
-
-    # # Rust
     # 'rust': 'https://doc.rust-lang.org/reference/index.html?search={}',
     # 'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
     # 'rstd': 'https://doc.rust-lang.org/std/?search={}',
     # 'cargo': 'https://crates.io/search?q={}'
+    # 'py3': 'https://docs.python.org/3/search.html?q={}',
+    # 'conda': 'https://anaconda.org/search?q={}',
+    # 'pip': 'https://pypi.org/search/?q={}',
 
-    # Cardano
-    'pool': 'https://pool.pm/{}',
-
-    # Misc package docs
-    'pg': 'https://www.postgresql.org/search/?u=%2Fdocs%2F12%2F&q={}',
-    'pt': 'https://pytorch.org/docs/stable/search.html?q={}',
-    'ptd': 'https://discuss.pytorch.org/search?q={}',
-    'pl': 'https://pytorch-lightning.readthedocs.io/en/latest/search.html?q={}',
-    'pd': 'https://pandas.pydata.org/pandas-docs/stable/search.html?q={}',
-    'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}'
+    # package docs
+    'ch': 'https://clickhouse.com/docs/search?q={}',
+    # 'pg': 'https://www.postgresql.org/search/?u=%2Fdocs%2F12%2F&q={}',
+    # 'pt': 'https://pytorch.org/docs/stable/search.html?q={}',
+    # 'ptd': 'https://discuss.pytorch.org/search?q={}',
+    # 'pl': 'https://pytorch-lightning.readthedocs.io/en/latest/search.html?q={}',
+    # 'pd': 'https://pandas.pydata.org/pandas-docs/stable/search.html?q={}',
+    # 'np': 'https://docs.scipy.org/doc/numpy/search.html?q={}'
     # 'skl': 'https://scikit-learn.org/stable/search.html?q={}',
     # 'pyro': 'http://docs.pyro.ai/en/stable/search.html?q={}',
+
+    # misc
+    # 'pool': 'https://pool.pm/{}',
 }
 
 ## WINDOW
