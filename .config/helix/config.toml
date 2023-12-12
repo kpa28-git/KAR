@@ -20,10 +20,10 @@ X = ["extend_line_up", "extend_to_line_bounds"]
 line-number = "relative"
 true-color = true
 color-modes = true
-rulers = [120]
+rulers = [100]
 
 [editor.statusline]
-left = ["spacer", "mode", "selections", "position", "position-percentage"]
+left = ["spacer", "mode", "selections", "total-line-numbers", "spacer", "position-percentage"]
 center = ["version-control", "file-name", "file-modification-indicator"]
 right = ["spinner", "diagnostics", "read-only-indicator", "file-encoding", "file-type", "spacer"]
 
