@@ -13,7 +13,8 @@ if [ -z "$(pgrep -x polybar)" ]; then
 	SECONDARY="$(printf '%s' "$ACTIVE" | sed -n '2p')";
 	MONITOR=$PRIMARY polybar --reload main &
 	MONITOR=$PRIMARY polybar --reload bottom &
-	# MONITOR=$SECONDARY polybar --reload secondary &
+	# MONITOR=$PRIMARY polybar --reload main  2>$HOME/polybar.main.log &
+	# MONITOR=$PRIMARY polybar --reload bottom 2>$HOME/polybar.bottom.log &
 
 	# Multi monitor bar mirroring: https://github.com/polybar/polybar/issues/763
 	# for m in $(polybar --list-monitors | cut -d":" -f1); do

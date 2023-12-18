@@ -12,8 +12,9 @@ setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
-# prompt:
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# input prompt theming (use fast-theme for input syntax highlighting theme):
+PS1="%B%{$fg[magenta]%}[%{$fg[blue]%}%n%{$fg[cyan]%}@%{$fg[green]%}%M %{$fg[yellow]%}%~%{$fg[magenta]%}]%{$reset_color%}$%b "
+# PS1="%B%{$fg[yellow]%}[%{$fg[green]%}%n%{$fg[cyan]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[yellow]%}]%{$reset_color%}$%b "
 
 # history settings:
 HISTSIZE=10000000
@@ -76,6 +77,7 @@ bindkey '^e' edit-command-line
 # load aliases, plugins, syntax highlighting:
 source "$ALIASDIR/load-aliases"
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+# list themes: fast-theme -l, set theme: fast-theme {theme-name}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

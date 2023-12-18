@@ -6,4 +6,4 @@
 
 --style=default
 --color=always
---theme=gruvbox-dark # `bat --list-themes` all available themes
+--theme=zenburn # `bat --list-themes` all available themes

@@ -7,7 +7,7 @@
 
 !! Global and Terminal Font Settings
 !! (Set Monospace font alias in $XDG_CONFIG_HOME/fontconfig/fonts.conf)
-*.font: Monospace:pixelsize=28:dpi:192:antialias:true:autohint:false:hinting:true; 28
+*.font: Monospace:pixelsize=32:dpi:192:antialias:true:autohint:false:hinting:true; 32
 Xft.antialias: true
 Xft.autohint:  false
 Xft.hinting:   true
@@ -27,27 +27,7 @@ st.disable_alpha_correction: 0
 Sxiv.background: #000000
 Sxiv.foreground: #00C0FF
 
-!! Base16
-*.scheme: "Gruvbox dark, hard"
-*.author: "Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)"
-*.base00: 1d2021
-*.base01: cc241d
-*.base02: 98971a
-*.base03: d79921
-*.base04: 458588
-*.base05: b16286
-*.base06: 689d6a
-*.base07: a89984
-*.base08: 928374
-*.base09: fb4934
-*.base0A: b8bb26
-*.base0B: fabd2f
-*.base0C: 83a598
-*.base0D: d3869b
-*.base0E: 8ec07c
-*.base0F: ebdbb2
-
-!! Base16 (st)
+!! Base16 (st) - gruvbox dark
 *.color0: #1d2021
 *.color1: #cc241d
 *.color2: #98971a

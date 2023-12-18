@@ -108,25 +108,17 @@ super + F11
 super + F12
 	$TERMINAL -e sudo -A nmtui
 
-# Dropdown julia REPL (aka calculator)
-super + c
-	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'julia' xst -n julia -e julia
-
 # Dropdown terminal
 super + u
-	tdrop -ma -x '15%' -y '15%' -w '75%' -h '75%' -p 'bspc rule -a xst-256color -o state=floating' -n 'xst' xst
+	tdrop -ma -x '15%' -y '15%' -w '75%' -h '75%' -p 'bspc rule -a xst-256color -o state=floating' -n 0 alacritty
+
+# Dropdown julia REPL (aka calculator)
+super + c
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 1 alacritty -e julia
 
 # Dropdown peaclock custom rofi selector script
 super + p
-	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'rpeaclock' xst -n rpeaclock -e $XDG_SCRIPT_HOME/uitools/rpeaclock
-
-# # Dropdown peaclock work timer (25 min)
-# super + bracketleft
-# 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'peaclock_timer25m' xst -n peaclock_timer25m -e peaclock --config-dir=$XDG_CONFIG_HOME/peaclock --config=$XDG_CONFIG_HOME/peaclock/timer25m
-
-# # Dropdown peaclock break timer (5 min)
-# super + bracketright
-# 	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 'peaclock_timer05m' xst -n peaclock_timer05m -e peaclock --config-dir=$XDG_CONFIG_HOME/peaclock --config=$XDG_CONFIG_HOME/peaclock/timer05m
+	tdrop -ma -x '25%' -y '25%' -w '50%' -h '50%' -p 'bspc rule -a xst-256color -o state=floating' -n 2 alacritty -e $XDG_SCRIPT_HOME/uitools/rpeacloc
 
 # Passmenu
 super + grave

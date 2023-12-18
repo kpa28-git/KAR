@@ -1,0 +1,189 @@
+#      _    _        _    ____ ____  ___ _____ _______   __
+#     / \  | |      / \  / ___|  _ \|_ _|_   _|_   _\ \ / /
+#    / _ \ | |     / _ \| |   | |_) || |  | |   | |  \ V /
+#   / ___ \| |___ / ___ \ |___|  _ < | |  | |   | |   | |
+#  /_/   \_\_____/_/   \_\____|_| \_\___| |_|   |_|   |_|
+# Config file for Alacritty, the GPU enhanced terminal emulator.
+
+
+import = ["/usr/share/alacritty/themes/everforest_dark.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+normal.family = "monospace"
+normal.style = "Regular"
+italic.family = "monospace"
+italic.style = "Italic"
+bold.family = "monospace"
+bold.style = "Bold"
+bold_italic.family = "monospace"
+bold_italic.style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 1
+y = 1
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "Up"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "Down"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ClearHistory"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Hide"
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Minimize"
+key = "M"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+multiplier = 5
+
+[shell]
+args = ["--login"]
+program = "/bin/zsh"
+
+[window]
+opacity = 0.85
+decorations = "full"
+dynamic_padding = false
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 2
+y = 2
+
+[window.position]
+x = 0
+y = 0
