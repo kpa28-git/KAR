@@ -6,7 +6,9 @@
 #  /_/|_/_/_/ /_/_/\__/
 # Xorg runtime config file.
 
-displayset &            # Set the display/background
+displayset
+setbg
+
 exec "$XDG_CONFIG_HOME/polybar/launch.sh" &
 picom --config "$XDG_CONFIG_HOME/picom/picom.conf" &         # picom for transparency and to reduce tearing
 dunst &                 # dunst for notifications

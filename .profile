@@ -7,12 +7,6 @@
 #  /_/
 # Posix login shell profile config file.
 
-# Display connection settings:
-export DISPLAYS="$(xrandr | grep ' connected' | awk '{print $1}')";
-export DISPLAY_DP="$(printf '%s' "$DISPLAYS" | grep '^DP.*' | head -1)";
-export DISPLAY_HDMI="$(printf '%s' "$DISPLAYS" | grep '^HDMI.*' | head -1)";
-export DISPLAY_EDP="$(printf '%s' "$DISPLAYS" | grep '^eDP.*' | head -1)";
-
 # XDG standard directories:
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
