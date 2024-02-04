@@ -6,6 +6,7 @@
 #  /_/|_/_/_/ /_/_/\__/
 # Xorg runtime config file.
 
+[ -f "$HOME/.Xresources" ] && xrdb -merge "$HOME/.Xresources" # for some reason lemurs doesnt load Xresources properly (issue #153)
 displayset
 setbg
 
@@ -17,5 +18,3 @@ unclutter &             # Remove mouse when idle
 redshift -l "$("$XDG_SCRIPT_HOME/apitools/geoloc" | tr ',' ':')" &
 setxkbmap -option caps:super -option altwin:menu_win && \    # Map caps to mod, menu button to win, details: /usr/share/X11/xkb/rules/evdev.lst
 	killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'      # Mod by itself is now escape, TODO: do the same for right window button
-
-[ -f "$HOME/.Xresources" ] && xrdb -merge "$HOME/.Xresources" # for some reason lemurs doesnt load Xresources properly (issue #153)
