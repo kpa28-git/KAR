@@ -24,7 +24,7 @@ export PAGER='bat'
 export BROWSER='qutebrowser'
 export READER='zathura'
 export FILE='joshuto'
-export TASK_CLIENT='superproductivity'
+export TASK_CLIENT='planify'
 export EMAIL_CLIENT='tutanota-desktop'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"
@@ -34,6 +34,8 @@ export SUDO_ASKPASS="$XDG_SCRIPT_HOME/uitools/raskpass"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
 #export REFER="$HOME/.referbib"
 #export PIX="$HOME/.pix/"
+export GDK_SCALE=2
+export JULIA_CUDA_SOFT_MEMORY_LIMIT="80%"
 
 # Clean up home:
 export LESSHISTFILE="-"
