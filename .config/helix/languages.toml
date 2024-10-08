@@ -8,6 +8,15 @@
 name = "julia"
 indent = { tab-width = 4, unit = "\t" }
 
+[language-server.julia]
+command = "julia"
+timeout = 60
+# args = [ "--project=@LanguageServer", "--startup-file=no", "--history-file=no", "--quiet", "-e", "using LanguageServer; runserver()" ]
+
+[[language]]
+name = "rust"
+indent = { tab-width = 4, unit = "\t" }
+
 [[language]]
 name = "latex"
 indent = { tab-width = 4, unit = "\t" }

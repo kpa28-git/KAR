@@ -88,9 +88,9 @@ super + a
 super + d
 	$TERMINAL -e transg-tui
 
-# htop (information)
+# btop (system monitor)
 super + i
-	$TERMINAL -e htop
+	$TERMINAL -e btop
 
 # Toggle nord
 super + F7

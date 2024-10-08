@@ -4,7 +4,8 @@
 #  /_//_/\__/_/_//_\_\
 # Helix text editor runtime config.
 
-theme = "everforest_dark" # gruvbox, gruvbox_dark_hard, pop-dark, everforest_dark, onedark, autumn, bogster, noctis_bordo, rasmus, tokyonight_storm
+theme = "pop-dark" # pop-dark, everforest_dark, bogster, onedark, autumn, gruvbox, gruvbox_dark_hard, noctis_bordo, rasmus, tokyonight_storm
+# theme = "flatwhite" # flatwhite, everforest_light, bogster_light
 
 [keys.normal]
 "#" = "toggle_comments"

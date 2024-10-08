@@ -107,14 +107,21 @@ url.searchengines: {
     # 'apk': 'https://pkgs.alpinelinux.org/packages?name={}&branch=edge&arch=armhf',
     # 'void': 'https://wiki.voidlinux.org/?search={}',
 
-    # langs
-    'djul': 'https://docs.julialang.org/en/v1/search/?q={}',
+    # langs - julia
+    'jdoc': 'https://docs.julialang.org/en/v1/search/?q={}',
+    'jstd': 'https://docs.julialang.org/en/v1/search/?q={}',
+    'jdis': 'https://discourse.julialang.org/search?q={}',
     'jpkg': 'https://juliapackages.com/packages?search={}',
-    'jhub': 'https://juliahub.com/ui/Packages?q={}',
-    # 'rust': 'https://doc.rust-lang.org/reference/index.html?search={}',
+    # 'jhub': 'https://juliahub.com/ui/Packages?q={}',
+
+    # langs - rust
+    'rdoc': 'https://doc.rust-lang.org/reference/index.html?search={}',
+    'rstd': 'https://doc.rust-lang.org/std/?search={}',
     # 'rbook': 'https://doc.rust-lang.org/book/title-page.html?search={}',
-    # 'rstd': 'https://doc.rust-lang.org/std/?search={}',
-    # 'cargo': 'https://crates.io/search?q={}'
+    'rbook': 'https://rust-book.cs.brown.edu/?search={}',
+    'rpkg': 'https://crates.io/search?q={}',
+
+    # langs - python
     # 'py3': 'https://docs.python.org/3/search.html?q={}',
     # 'conda': 'https://anaconda.org/search?q={}',
     # 'pip': 'https://pypi.org/search/?q={}',
@@ -140,11 +147,11 @@ window.hide_decoration: True
 ## ZOOM
 # 250% puts most text at about .24" height
 # Based on tan(.6°) * distance where distance = 24"
-zoom.default: '85%'
+zoom.default: '150%'
 
 ## FONTS
-# fonts.default_size: '10px'
-# fonts.web.size.default: 16
+fonts.default_size: '30px'
+fonts.web.size.default: 28
 # fonts.web.size.default_fixed: 13
 
 # CUSTOM

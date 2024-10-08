@@ -9,7 +9,7 @@ set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 1
 set selection-clipboard clipboard
-set recolor 1
+set recolor 0
 set recolor-keephue 1
 set font "monospace normal 16"
 

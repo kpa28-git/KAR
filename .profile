@@ -23,7 +23,7 @@ export DIFFPROG=$VISUAL
 export PAGER='bat'
 export BROWSER='qutebrowser'
 export READER='zathura'
-export FILE='joshuto'
+export FILE='yazi'
 export TASK_CLIENT='planify'
 export EMAIL_CLIENT='tutanota-desktop'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
@@ -45,7 +45,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export PSQLRC="$XDG_CONFIG_HOME/postgres/psqlrc"
 export ALIASDIR="$XDG_SCRIPT_HOME/aliases"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
-export GOPATH="$XDG_SRC_HOME/go"
+# export GOPATH="$XDG_SRC_HOME/go"
 export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
 export GRIPHOME="$XDG_CONFIG_HOME/grip"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
@@ -57,7 +57,7 @@ export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr
 export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin:$XDG_SRC_HOME/webapp/bin"
 
 # Global day/night times for theming:
-export TIMENIGHT="17:00"
+export TIMENIGHT="19:00"
 export TIMEDAY="08:00"
 
 # Set less/man colors:
