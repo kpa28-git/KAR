@@ -12,7 +12,7 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 * terminal: [alacritty](https://alacritty.org) || [xst](https://github.com/gnotclub/xst) (a [st](https://st.suckless.org) fork)
 * status bar: [polybar](https://polybar.github.io)
 * file manager: [yazi](https://github.com/sxyazi/yazi)
-* notifications: [dunst](https://dunst-project.org)
+* notifications: [wired-notify](https://github.com/Toqozz/wired-notify)
 * launcher: [rofi](https://github.com/davatorium/rofi)
 <!-- * music: [mpd](https://www.musicpd.org) && [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp) -->
 * video: [mpv](https://mpv.io)

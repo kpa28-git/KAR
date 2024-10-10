@@ -11,7 +11,7 @@ displayset
 
 exec "$XDG_CONFIG_HOME/polybar/launch.sh" &
 picom --config "$XDG_CONFIG_HOME/picom/picom.conf" &         # picom for transparency and to reduce tearing
-dunst &                 # dunst for notifications
+wired &                 # notification daemon
 xset r rate 300 50 &    # Increase xrate, speeds up key input
 xbanish &               # Remove mouse cursor on keypress
 redshift -l "$("$XDG_SCRIPT_HOME/apitools/geoloc" | tr ',' ':')" &
