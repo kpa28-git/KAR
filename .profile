@@ -21,7 +21,7 @@ export VISUAL='helix'
 export EDITOR=$VISUAL
 export DIFFPROG=$VISUAL
 export PAGER='bat'
-export BROWSER='qutebrowser'
+export BROWSER='firefox'
 export READER='zathura'
 export FILE='yazi'
 export TASK_CLIENT='planify'
@@ -34,7 +34,7 @@ export SUDO_ASKPASS="$XDG_SCRIPT_HOME/uitools/raskpass"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
 #export REFER="$HOME/.referbib"
 #export PIX="$HOME/.pix/"
-export GDK_SCALE=2
+# export GDK_SCALE=2
 export JULIA_CUDA_SOFT_MEMORY_LIMIT="80%"
 
 # Clean up home:
@@ -57,8 +57,11 @@ export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr
 export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin:$XDG_SRC_HOME/webapp/bin"
 
 # Global day/night times for theming:
-export TIMENIGHT="19:00"
+export TIMENIGHT="18:00"
 export TIMEDAY="08:00"
+export DARKMAN_LAT="$(sed 1q $XDG_CONFIG_HOME/loc/default.txt)"
+export DARKMAN_LNG="$(sed -n '2{p;q}' $XDG_CONFIG_HOME/loc/default.txt)"
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:$XDG_DATA_HOME"
 
 # Set less/man colors:
 export LESS=-R
@@ -71,23 +74,6 @@ export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
 export EZA_COLORS="sn=35:sb=35:uu=34:uR=31:da=36:di=33:ln=36:lp=3;36:ex=32:fi=37:*.pdf=34:*.png=34:README.md=37"
-
-# # This is the list for lf icons:
-# export LF_ICONS="di=:fi=:tw=:ow=:ln=:or=:ex=󱐌:\
-# *.txt=:*.md=:*.csv=:*.log=:*.1=:*.nfo=:*.info=:\
-# *.sh=:*.c=󰙱:*.cpp=󰙲:*.jl=:*.rs=󱘗:*.py=:*.jar=:*.java=:\
-# *.json=:*.toml=:*.html=:*.xml=󰗀:*.css=:*.js=:*.tex=:*.bib=:*.ipynb=󰠮:\
-# *.out=:*.so=:*.gpg=:\
-# *.db=:*.arrow=:*.feather=:*.parquet=:\
-# *.part=󰋮:*.torrent=:\
-# *.zip=:*.rar=:*.7z=:*.tar.gz=:\
-# *.pdf=:*.djvu=:*.epub=:\
-# *.doc=󱎒:*.docx=󱎒:*.xlsx=󱎏:*.pptx=󱎐:\
-# *.gif=󰤚:*.png=󰣌:*.webp=󰣌:*.ico=󰣌:*.jpg=:*.jpe=:*.jpeg=:*.svg=:\
-# *.mp3=:*.opus=:*.ogg=:*.m4a=:*.flac=🎼:*.wav=🎼:\
-# *.mkv=:*.mp4=:*.webm=:*.mpeg=:*.avi=:*.mov=:*.mpg=:*.wmv=:*.m4b=:*.flv=:\
-# *.iso=󰋊:*.img=󰋊:\
-# "
 
 # run the {bash, zsh} shell runtime config
 # echo "$0" | grep "bash$" >/dev/null && [ -f "$BDOTDIR/.bashrc" ] && source "$BDOTDIR/.bashrc"

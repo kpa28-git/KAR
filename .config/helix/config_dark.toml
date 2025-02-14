@@ -1,0 +1,64 @@
+#     __       ___
+#    / /  ___ / (_)_ __
+#   / _ \/ -_) / /\ \ /
+#  /_//_/\__/_/_//_\_\
+# Helix text editor runtime config.
+
+theme = "pop-dark" # pop-dark, everforest_dark, bogster, onedark, autumn, gruvbox, gruvbox_dark_hard, noctis_bordo, rasmus, tokyonight_storm
+
+[keys.normal]
+"#" = "toggle_comments"
+A-x = "extend_to_line_bounds"
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+[keys.select]
+"#" = "toggle_comments"
+A-x = "extend_to_line_bounds"
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+[editor]
+line-number = "relative"
+true-color = true
+color-modes = true
+rulers = [100]
+
+[editor.statusline]
+left = ["spacer", "mode", "selections", "total-line-numbers", "spacer", "position-percentage"]
+center = ["version-control", "file-name", "file-modification-indicator"]
+right = ["spinner", "diagnostics", "read-only-indicator", "file-encoding", "file-type", "spacer"]
+
+#[editor.indent-guides]
+#render = true
+#character = "╎"
+
+[editor.soft-wrap]
+enable = true
+# max-wrap = 20
+# max-indent-retain = 40
+# wrap-indicator = "↪"
+# wrap-at-text-width = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.whitespace.render]
+tab = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+nbsp = "⍽"
+tab = ">"
+tabpad = "-"
+newline = "¬"
+
+[editor.lsp]
+enable = true
+display-messages = true
+auto-signature-help = true
+display-inlay-hints = false
+display-signature-help-docs = true
+snippets = true
+goto-reference-include-declaration = true
+

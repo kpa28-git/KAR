@@ -95,3 +95,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 conda deactivate;
 
+eval "$(zoxide init zsh)"

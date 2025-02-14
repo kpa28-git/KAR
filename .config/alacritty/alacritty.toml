@@ -6,7 +6,7 @@
 # Config file for Alacritty, the GPU enhanced terminal emulator.
 
 
-import = ["/usr/share/alacritty/themes/everforest_dark.toml"]
+general.import = ["/usr/share/alacritty/themes/everforest_dark.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -161,7 +161,7 @@ hide_when_typing = true
 history = 10000
 multiplier = 5
 
-[shell]
+[terminal.shell]
 args = ["--login"]
 program = "/bin/zsh"
 

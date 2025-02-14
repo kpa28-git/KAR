@@ -2,4 +2,4 @@
 Type=Application
 Name=mpv
 GenericName=Audio Player
-Exec=/usr/bin/mpv %U
+Exec=/usr/bin/cmus %U

@@ -78,7 +78,7 @@ super + v
 
 # Music (ncmpcpp)
 super + m
-	$TERMINAL -e ncmpcpp
+	$TERMINAL -e cmus
 
 # Audio (pulsemixer)
 super + a
