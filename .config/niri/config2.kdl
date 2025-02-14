@@ -6,6 +6,18 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
 
 // find monitors by running `niri msg outputs`
+output "eDP-1" { // built-in laptop monitor
+    // mode "1920x1080@120.030"
+    scale 2
+    transform "normal"
+    position x=1280 y=0
+}
+
+output "DP-3" {
+    // mode "3840x2160@120.030"
+    scale 1.6
+    transform "normal"
+}
 
 input {
     focus-follows-mouse

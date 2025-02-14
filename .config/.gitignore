@@ -23,6 +23,7 @@
 !/kak/**
 !/lemurs/**
 !/lf/**
+!/mako/**
 !/ncmpcpp/**
 !/neofetch/**
 !/newsboat/**
@@ -41,6 +42,7 @@
 !/rofi/**
 !/sc-im/**
 !/sxhkd/**
+!/systemd/**
 !/tessen/**
 !/tofi/**
 !/tmux/**

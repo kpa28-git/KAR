@@ -24,12 +24,13 @@ export PAGER='bat'
 export BROWSER='firefox'
 export READER='zathura'
 export FILE='yazi'
+export CALCULATOR='julia'
 export TASK_CLIENT='planify'
 export EMAIL_CLIENT='tutanota-desktop'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
-export SUDO_ASKPASS="$XDG_SCRIPT_HOME/uitools/raskpass"
+# export SUDO_ASKPASS="$XDG_SCRIPT_HOME/uitools/raskpass"
 # export MAIL="$HOME/Documents/mail"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
 #export REFER="$HOME/.referbib"
@@ -56,9 +57,7 @@ BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>.
 export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin:$XDG_SRC_HOME/webapp/bin"
 
-# Global day/night times for theming:
-export TIMENIGHT="18:00"
-export TIMEDAY="08:00"
+# day/night theming with darkman
 export DARKMAN_LAT="$(sed 1q $XDG_CONFIG_HOME/loc/default.txt)"
 export DARKMAN_LNG="$(sed -n '2{p;q}' $XDG_CONFIG_HOME/loc/default.txt)"
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:$XDG_DATA_HOME"
@@ -84,4 +83,8 @@ export EZA_COLORS="sn=35:sb=35:uu=34:uR=31:da=36:di=33:ln=36:lp=3;36:ex=32:fi=37
 
 # Switch escape <-> caps for tty
 sudo -n loadkeys "$XDG_SCRIPT_HOME/ttymaps.kmap" 2>/dev/null
+
+# load user defaults into systemd env
+systemctl --user import-environment TERMINAL VISUAL EDITOR BROWSER FILE CALCULATOR TASK_CLIENT EMAIL_CLIENT
+dbus-update-activation-environment --systemd TERMINAL VISUAL EDITOR BROWSER FILE CALCULATOR TASK_CLIENT EMAIL_CLIENT
 

@@ -1,0 +1,6 @@
+#!/bin/sh
+# defines and starts the niri environment
+# enables laptop monitor (eDP-1) only
+
+export NIRI_CONFIG="$XDG_CONFIG_HOME/niri/config1.kdl"
+exec niri-session

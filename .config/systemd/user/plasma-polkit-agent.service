@@ -1,0 +1,12 @@
+[Unit]
+Description=KDE PolicyKit Authentication Agent
+PartOf=graphical-session.target
+After=graphical-session.target
+	
+[Service]
+BusName=org.kde.polkit-kde-authentication-agent-1
+ExecStart=/usr/lib/polkit-kde-authentication-agent-1
+ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
+Slice=background.slice
+TimeoutStopSec=5sec
+Restart=on-failure

@@ -1,0 +1,6 @@
+#!/bin/sh
+# defines and starts the niri environment
+# enables external monitor (DP-3) only
+
+export NIRI_CONFIG="$XDG_CONFIG_HOME/niri/config1e.kdl"
+exec niri-session

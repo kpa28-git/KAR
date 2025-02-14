@@ -1,6 +1,6 @@
 #!/bin/sh
 # defines and starts the niri environment
+# automatically detects, configures, and enables all monitors
 
-export XDG_CURRENT_DESKTOP=niri
-
-exec niri
+export NIRI_CONFIG="$XDG_CONFIG_HOME/niri/config.kdl"
+exec niri-session
