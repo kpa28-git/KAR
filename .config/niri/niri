@@ -2,5 +2,6 @@
 # defines and starts the niri environment
 # automatically detects, configures, and enables all monitors
 
+. "$XDG_CONFIG_HOME/niri/preamble.sh"
 export NIRI_CONFIG="$XDG_CONFIG_HOME/niri/config.kdl"
 exec niri-session

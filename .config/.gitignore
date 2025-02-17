@@ -9,6 +9,7 @@
 !/bash/**
 !/bat/**
 !/bspwm/**
+!/btop/**
 !/cargo/**
 !/darkman/**
 !/dunst/**
@@ -49,6 +50,7 @@
 !/wired/**
 !/xdg-desktop-portal/**
 !/yay/**
+!/yambar/**
 !/yazi/**
 !/zathura/**
 !/zsh/**

@@ -4,7 +4,7 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
-ExecStart=/usr/bin/swaybg -m center -i "%h/.config/wall"
-Slice=background.slice
+ExecStart=/usr/bin/yambar
+Slice=graphical.slice
+RestartSec=3
 Restart=on-failure

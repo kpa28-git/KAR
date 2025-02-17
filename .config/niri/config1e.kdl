@@ -230,7 +230,7 @@ binds {
     Mod+F { spawn "sh" "-c" "alacritty -e $FILE"; } // F(ile manager)
     Mod+I { spawn "sh" "-c" "alacritty -e btop"; } // I(nfo)
     Mod+T { spawn "sh" "-c" "$TASK_CLIENT"; } // T(ask)
-    Mod+E { spawn "sh" "-c" "alacritty -e $EMAIL_CLIENT"; } // E(mail)
+    Mod+E { spawn "sh" "-c" "$EMAIL_CLIENT"; } // E(mail)
     Mod+M { spawn "sh" "-c" "alacritty -e cmus"; } // M(usic)
     Mod+Grave { spawn "tessen"; }
     Mod+F12 { spawn "sh" "-c" "alacritty -e nmtui"; }

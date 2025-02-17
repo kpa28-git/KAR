@@ -2,5 +2,6 @@
 # defines and starts the niri environment
 # enables laptop monitor (eDP-1) only
 
+. "$XDG_CONFIG_HOME/niri/preamble.sh"
 export NIRI_CONFIG="$XDG_CONFIG_HOME/niri/config1.kdl"
 exec niri-session

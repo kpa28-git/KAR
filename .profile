@@ -15,7 +15,7 @@ export XDG_SRC_HOME="$HOME/.local/src"
 
 # Default programs/settings:
 export TERMINFO='/usr/lib/terminfo'
-export TERMINAL='/usr/bin/terminal'
+export TERMINAL='alacritty'
 export OPENER='xdg-open'
 export VISUAL='helix'
 export EDITOR=$VISUAL
@@ -85,6 +85,6 @@ export EZA_COLORS="sn=35:sb=35:uu=34:uR=31:da=36:di=33:ln=36:lp=3;36:ex=32:fi=37
 sudo -n loadkeys "$XDG_SCRIPT_HOME/ttymaps.kmap" 2>/dev/null
 
 # load user defaults into systemd env
-systemctl --user import-environment TERMINAL VISUAL EDITOR BROWSER FILE CALCULATOR TASK_CLIENT EMAIL_CLIENT
-dbus-update-activation-environment --systemd TERMINAL VISUAL EDITOR BROWSER FILE CALCULATOR TASK_CLIENT EMAIL_CLIENT
+systemctl --user import-environment TERMINAL VISUAL EDITOR BROWSER FILE CALCULATOR TASK_CLIENT EMAIL_CLIENT DARKMAN_LAT DARKMAN_LNG
+dbus-update-activation-environment --systemd TERMINAL VISUAL EDITOR BROWSER FILE CALCULATOR TASK_CLIENT EMAIL_CLIENT DARKMAN_LAT DARKMAN_LNG
 

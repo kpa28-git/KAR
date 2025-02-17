@@ -5,6 +5,6 @@ Requisite=graphical-session.target
 
 [Service]
 ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
-ExecStart=/usr/bin/swaybg -m center -i "%h/.config/wall"
+ExecStart=/usr/bin/wlsunset -l "$DARKMAN_LAT" -L "$DARKMAN_LNG"
 Slice=background.slice
 Restart=on-failure

@@ -1,0 +1,112 @@
+#                     __
+#    __ _____ ___ _  / /  ___ _____
+#   / // / _ `/  ' \/ _ \/ _ `/ __/
+#   \_, /\_,_/_/_/_/_.__/\_,_/_/
+#  /___/
+# yambar config
+
+# fonts
+ftext: &ftext Iosevka Light Extended Oblique:pixelsize=36
+fnumb: &fnumb Hack Nerd Font Mono:pixelsize=36
+# ficon: &ficon Iosevka Light Extended Oblique:pixelsize=36
+
+# std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
+
+bar:
+  height: 32
+  location: bottom
+  spacing: 5
+  margin: 7
+
+  font: Iosevka Light Extended Oblique:size=36 # default font
+
+  foreground: f0dcc5ff # dec6aaff
+  background: 00000000
+
+  border:
+    width: 0
+    color: f0dcc5ff
+    margin: 0
+    bottom-margin: 10
+
+  right:
+    - cpu:
+        poll-interval: 2000
+        content:
+          map:
+            conditions:
+              id < 0:
+                - string: {text: " ", font: *fnumb}
+                - string: {text: "{cpu}%"}
+    # - mem:
+    #       poll-interval: 500
+    #       content:
+    #        - string: {text: " ", font: *fnumb}
+
+  center:
+    - clock:
+        time-format: "%H:%M %Z"
+        date-format: "%F %a"
+        content:
+          - string: {text: "{date}", right-margin: 10}
+          - string: {text: "{time}"}
+    # - label:
+    #     content:
+    #       string:
+    #         on-click: wlogout
+    #         text: 
+    #         font: *ftext
+    #         foreground: a7c080ff
+    # - removables:
+    #     anchors:
+    #       drive: &drive { text: , font: *ftext}
+    #       optical: &optical {text: , font: *ftext}
+    #     spacing: 5
+    #     content:
+    #       map:
+    #         conditions:
+    #           ~mounted:
+    #             map:
+    #               on-click: udisksctl mount -b {device}
+    #               conditions:
+    #                 ~optical: [{string: *drive}, {string: {text: "{label}"}}]
+    #                 optical: [{string: *optical}, {string: {text: "{label}"}}]
+    #           mounted:
+    #             map:
+    #               on-click: udisksctl unmount -b {device}
+    #               conditions:
+    #                 ~optical:
+    #                   - string: {<<: *drive, deco: *std_underline}
+    #                   - string: {text: "{label}"}
+    #                 optical:
+    #                   - string: {<<: *optical, deco: *std_underline}
+    #                   - string: {text: "{label}"}
+    #                  - string: {text: "{percent_used}%"}
+
+  left:
+    - pulse:
+        content:
+          map:
+            conditions:
+              ~online: {string: {text: , font: *ftext, foreground: ff0000ff}}
+              online:
+                map:
+                  # on-click: source_muted
+                  conditions:
+                    source_muted: {string: {text: , font: *ftext, foreground: ffffff66}}
+                    ~source_muted:
+                      map:
+                        conditions:
+                         sink_muted: {string: {text: 󰝟 ,font: *ftext, foreground: ffffff00}}
+                         ~sink_muted:
+                           - ramp:
+                              tag: sink_percent
+                              items:
+                               - string: {text: , font: *ftext}
+                               - string: {text: , font: *ftext}
+                               - string: {text: , font: *ftext}
+                           - string: {text: " {sink_percent}%"}
+    # - backlight:
+    #     name: intel_backlight
+    #     content: [ string: {text: , font: *ftext}, string: {text: "{percent}%"}]
+
