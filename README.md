@@ -1,4 +1,6 @@
-# Kevin's Arch Rice (KAR)
+# Kevin's Arch Rice (KAR) x11 branch
+**Note (2025-02-17): I switched to wayland - this branch will not be updated in the future.**
+
 My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville/bspwm) / [polybar](https://polybar.github.io) / [rofi](https://github.com/davatorium/rofi) / [xst](https://github.com/gnotclub/xst) / [helix](https://helix-editor.com) rice.
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
