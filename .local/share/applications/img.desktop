@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=sxiv
+Name=swayimg
 GenericName=Image Viewer
-Exec=/usr/bin/sxiv -a %u
+Exec=/usr/bin/swayimg %u

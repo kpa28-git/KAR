@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=mpv
+Name=termusic
 GenericName=Audio Player
-Exec=/usr/bin/cmus %U
+Exec=/usr/bin/termusic %U
