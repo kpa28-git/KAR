@@ -1,9 +1,9 @@
-font="monospace 48"
+font=monospace-obl 28
 sort=-time
 layer=overlay
 background-color=#2e3440
-width=300
-height=110
+width=400
+height=200
 border-size=2
 border-color=#88c0d0
 border-radius=5
@@ -11,7 +11,6 @@ icons=0
 max-icon-size=64
 default-timeout=5000
 ignore-timeout=1
-font=monospace 14
 
 [urgency=low]
 border-color=#cccccc

@@ -213,14 +213,19 @@ binds {
     // Mod+Shift+Period { spawn "sh" "-c" "niri msg action spawn -- alacritty && niri msg action consume-or-expel-window-left"; }
     Mod+R { spawn "tofi-drun"; } // (R)unner
     Mod+B { spawn "firefox"; } // B(rowser)
-    Mod+A { spawn "sh" "-c" "alacritty -e pulsemixer"; } // A(udio)
-    Mod+F { spawn "sh" "-c" "alacritty -e $FILE"; } // F(ile manager)
-    Mod+I { spawn "sh" "-c" "alacritty -e btop"; } // I(nfo)
+    Mod+A { spawn "sh" "-c" "$TERMINAL -e pulsemixer"; } // A(udio)
+    Mod+F { spawn "sh" "-c" "$TERMINAL -e $FILE"; } // F(ile manager)
+    Mod+I { spawn "sh" "-c" "$TERMINAL -e btop"; } // I(nfo)
     Mod+T { spawn "sh" "-c" "$TASK_CLIENT"; } // T(ask)
     Mod+E { spawn "sh" "-c" "$EMAIL_CLIENT"; } // E(mail)
-    Mod+M { spawn "sh" "-c" "alacritty -e cmus"; } // M(usic)
+    Mod+M { spawn "sh" "-c" "$TERMINAL -e $MUSIC_CLIENT"; } // M(usic)
+    Mod+C { spawn "sh" "-c" "$TERMINAL -e $CALCULATOR"; } // C(alculator)
     Mod+Grave { spawn "tessen"; }
-    Mod+F12 { spawn "sh" "-c" "alacritty -e nmtui"; }
+    Mod+F12 { spawn "sh" "-c" "$TERMINAL -e nmtui"; }
+
+    // Disk Mounting / Unmounting
+    Mod+F9 { spawn "sh" "-c" "$TERMINAL -e tluksopen && tmount"; }
+    Mod+F10 { spawn "sh" "-c" "$TERMINAL -e tumount && tluksclose"; }
 
     // Audio Controls (Pipewire / WirePlumber)
     Mod+Equal allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
@@ -390,7 +395,7 @@ binds {
     // Mod+Ctrl+R { reset-window-height; }
     Mod+w { maximize-column; }         // (W)iden
     Mod+Shift+f { fullscreen-window; } // (F)ullscreen
-    Mod+C { center-column; }
+    Mod+Shift+C { center-column; }
 
     // Finer width/height adjustments.
     // Mod+Minus { set-column-width "-10%"; }

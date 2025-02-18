@@ -1,5 +1,7 @@
 # Kevin's Arch Rice (KAR)
-My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville/bspwm) / [polybar](https://polybar.github.io) / [rofi](https://github.com/davatorium/rofi) / [xst](https://github.com/gnotclub/xst) / [helix](https://helix-editor.com) rice.
+My [arch linux](https://archlinux.org/) / [niri](https://github.com/YaLTeR/niri) / [yambar](https://codeberg.org/dnkl/yambar) / [tofi](https://github.com/philj56/tofi) / [alacritty](https://github.com/alacritty/alacritty) / [yazi](https://github.com/sxyazi/yazi) / [helix](https://helix-editor.com) rice.
+
+Note (2025-02-17): Only recently swtiched to wayland / niri, so these configs may change a lot
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
 
@@ -7,27 +9,26 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 * login shell: [zsh](https://zsh.org)
 * `/bin/sh`: [dash](https://www.man7.org/linux/man-pages/man1/dash.1.html)
 * text editor: [helix](https://helix-editor.com)
-* window manager: [bspwm](https://github.com/baskerville/bspwm)
-* compositor: [picom](https://github.com/yshui/picom)
-* terminal: [alacritty](https://alacritty.org) || [xst](https://github.com/gnotclub/xst) (a [st](https://st.suckless.org) fork)
-* status bar: [polybar](https://polybar.github.io)
+* wayland compositor: [niri](https://github.com/YaLTeR/niri)
+* terminal: [alacritty](https://github.com/alacritty/alacritty)
+* status bar: [yambar](https://codeberg.org/dnkl/yambar)
+* notifications: [mako](https://github.com/emersion/mako)
 * file manager: [yazi](https://github.com/sxyazi/yazi)
-* notifications: [wired-notify](https://github.com/Toqozz/wired-notify)
-* launcher: [rofi](https://github.com/davatorium/rofi)
-<!-- * music: [mpd](https://www.musicpd.org) && [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp) -->
-* video: [mpv](https://mpv.io)
-* hotkeys: [sxhkd](https://github.com/baskerville/sxhkd)
-* browser: [qutebrowser](https://qutebrowser.org/)
-* base16 theme: [gruvbox](https://github.com/dawikur/base16-gruvbox-scheme)
-* dropdown calculator: [julia](https://julialang.org) REPL
-* other: [redshift](http://jonls.dk/redshift)-minimal
+* launcher: [tofi](https://github.com/philj56/tofi)
+* muxer: [zellij](https://github.com/zellij-org/zellij)
+* resource monitor: [btop](https://github.com/aristocratos/btop)
+* video player: [mpv](https://mpv.io)
+* audio player: [termusic](https://github.com/tramhao/termusic)
+* browser: firefox + [tridactyl](https://github.com/tridactyl/tridactyl)
+* calculator: [julia](https://julialang.org) REPL
+* monospace font: [Iosevka Term SS17](https://github.com/be5invis/Iosevka)
+* day/night theming: [darkman](https://gitlab.com/WhyNotHugo/darkman), [wl-sunset](https://github.com/kennylevinsen/wlsunset)
 
 ## Installation
 
 ### Dependencies
 * The latest version of [my scripts](https://github.com/kpa28-git/scripts) as a git submodule dependency (built-in)
-* The latest version of [my themes repo](https://github.com/kpa28-git/themes) as a git submodule dependency (built-in)
-* Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([instructions](https://github.com/kpa28-git/scripts/blob/master/polybar/README.md))
+<!-- * Free API Keys: [Coinmarketcap](https://coinmarketcap.com/api), [Alphavantage](https://www.alphavantage.co/support/#api-key), [World Air Quality Index](http://aqicn.org/data-platform/token/#/) ([instructions](https://github.com/kpa28-git/scripts/blob/master/polybar/README.md)) -->
 
 ### Steps
 1. Make sure you have all required programs installed
@@ -40,11 +41,13 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 * Minimalist HUD-like statusbar
 * Browser configured for intuitive use and low friction
 * Most of [my scripts](https://github.com/kpa28-git/scripts) are POSIX compliant for speed and portability
-* Global light/dark theme based on env variables `$TIMEDAY`/`$TIMENIGHT` (why I always keep dark mode on: [R](https://www.nature.com/articles/s41598-018-28904-x/), [R](https://iovs.arvojournals.org/article.aspx?articleid=2774698), [R](https://tvst.arvojournals.org/article.aspx?articleid=2778758))
+* Global light/dark theme with darkman
 
-### Shell (see `~/.{z}profile`, `~/.local/bin/aliases`)
-* `<mod>+<enter>` opens a terminal at directory of focused window
-* `<mod>+<shift>+<enter>` opens a terminal at the home directory
+### Hotkeys (see `~/.config/niri/config.kdl`)
+* Show important keybinds with `mod+<F1>`
+* `<mod>+<enter>` opens a terminal
+* Some mnemonics: `<mod>+f(ile manager)`, `<mod>+e(mail client)`, `<mod>+c(alculator)`
+* Hotkeys involving moving windows usually use `shift`
 
 #### Directory Search Aliases (respects `~/.config/fd/ignore_file`)
 * `se` (search edit): open file in `$EDITOR`
@@ -53,36 +56,6 @@ My [arch linux](https://archlinux.org/) / [bspwm](https://github.com/baskerville
 * `sg <str>` (search grep): grep `<str>` within the chosen file (uses `rg`)
 * `sr` (search reading): fuzzy search the `$READING` directory and open the file with `$READER` program (also: `srb` and `srp` to search book and paper lists to read from)
 
-#### History Search Aliases
-* `hs` (history search): search the history with fzf (you can immediately run the searched command with `$(hs)`)
-* `hi` (history input): search the history with fzf and input the chosen command into the shell input
-
-### Hotkeys that make sense (see `~/.config/sxhkd/sxhkdrc`)
-* Show the sxhkd keybinds with `mod+<F1>` or in the terminal with `keybinds`
-* Some mnemonics: `<mod>+v(iew media)`, `<mod>+f(ile manager)`, `<mod>+g(o to bookmark)`, `<mod>+s(earch the web)`, `<mod>+e(mail client)`, `<mod>+c(alculator)`
-
-### Polybar (see `~/.config/polybar/config`)
-![alt text](.local/share/rice/rice-screen-top-left.png?raw=true "top left: air, weather, ethereum")
-* World Air Quality Info, crypto price (coinmarketcap), equity price (Alphavantage), moonphase
-* my geoloc script (`~/.local/bin/apitools/geoloc`) lets them through a vpn (manual location setting)
-
-### Qutebrowser (see `~/.config/qutebrowser/config.{yml,py}`)
-* [qutebrowser](https://qutebrowser.org/)+[buku](https://github.com/jarun/Buku)+[rofi](https://github.com/davatorium/rofi) integration to manage/select bookmarks, these can be launched from inside or outside of the browser (userscripts: `~/.config/qutebrowser/userscripts`)
-* More sensible tab movement (h/l move through tabs, J/K move through tab history)
-* Set base16 theming easily (set `custom.base16.{light,dark}.file` in `config.yml`)
-
 ## TODO
 * nushell
-* bspwm -> leftwm?
-* more tmux config (or tab-rs)
-* swhkd
-* check out [luakit](https://github.com/luakit/luakit)
-* clean up home directory (move dotfiles?)
-* cleanup and remove unused luke scripts
-* multiplex between fzf and rofi (check if on tty or not)
-* search aliases should work with `~/.scripts/termtools/samedir`
-
-## Big Thanks To
-* [Luke Smith](https://github.com/LukeSmithxyz) for some of the scripts
-* [WillMe](https://github.com/WillemMe) for the basis of the polybar layout
 

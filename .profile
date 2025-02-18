@@ -27,16 +27,14 @@ export FILE='yazi'
 export CALCULATOR='julia'
 export TASK_CLIENT='planify'
 export EMAIL_CLIENT='tutanota-desktop'
+export MUSIC_CLIENT='termusic'
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
-# export SUDO_ASKPASS="$XDG_SCRIPT_HOME/uitools/raskpass"
-# export MAIL="$HOME/Documents/mail"
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
-#export REFER="$HOME/.referbib"
-#export PIX="$HOME/.pix/"
-# export GDK_SCALE=2
 export JULIA_CUDA_SOFT_MEMORY_LIMIT="80%"
+export EZA_COLORS="sn=35:sb=35:uu=34:uR=31:da=36:di=33:ln=36:lp=3;36:ex=32:fi=37:*.pdf=34:*.png=34:README.md=37"
+export MANROFFOPT='-c' # (bat issue #2593): fixes manpage syntax highlighting
 
 # Clean up home:
 export LESSHISTFILE="-"
@@ -45,7 +43,6 @@ export INPUTRC="$BDOTDIR/inputrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export PSQLRC="$XDG_CONFIG_HOME/postgres/psqlrc"
 export ALIASDIR="$XDG_SCRIPT_HOME/aliases"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 # export GOPATH="$XDG_SRC_HOME/go"
 export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
 export GRIPHOME="$XDG_CONFIG_HOME/grip"
@@ -61,25 +58,6 @@ export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin:$XDG_SRC_HOME
 export DARKMAN_LAT="$(sed 1q $XDG_CONFIG_HOME/loc/default.txt)"
 export DARKMAN_LNG="$(sed -n '2{p;q}' $XDG_CONFIG_HOME/loc/default.txt)"
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:$XDG_DATA_HOME"
-
-# Set less/man colors:
-export LESS=-R
-export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"; a="${a%_}"
-export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"; a="${a%_}"
-export LESS_TERMCAP_me="$(printf '%b' '[0m')"; a="${a%_}"
-export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"; a="${a%_}"
-export LESS_TERMCAP_se="$(printf '%b' '[0m')"; a="${a%_}"
-export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
-export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
-
-export EZA_COLORS="sn=35:sb=35:uu=34:uR=31:da=36:di=33:ln=36:lp=3;36:ex=32:fi=37:*.pdf=34:*.png=34:README.md=37"
-
-# run the {bash, zsh} shell runtime config
-# echo "$0" | grep "bash$" >/dev/null && [ -f "$BDOTDIR/.bashrc" ] && source "$BDOTDIR/.bashrc"
-# echo "$0" | grep "zsh$" >/dev/null && [ -f "$ZDOTDIR/.zshrc" ] && source "$ZDOTDIR/.zshrc"
-
-# Start graphical server if bspwm not already running
-# [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
 
 # Switch escape <-> caps for tty
 sudo -n loadkeys "$XDG_SCRIPT_HOME/ttymaps.kmap" 2>/dev/null

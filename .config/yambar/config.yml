@@ -6,8 +6,8 @@
 # yambar config
 
 # fonts
-ftext: &ftext Iosevka Light Extended Oblique:pixelsize=36
-fnumb: &fnumb Hack Nerd Font Mono:pixelsize=36
+ftext: &ftext Iosevka Term SS17 Lt Ex Obl:pixelsize=36
+# fnumb: &fnumb Hack Nerd Font Mono:pixelsize=36
 # ficon: &ficon Iosevka Light Extended Oblique:pixelsize=36
 
 # std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
@@ -18,7 +18,7 @@ bar:
   spacing: 5
   margin: 7
 
-  font: Iosevka Light Extended Oblique:size=36 # default font
+  font: Iosevka Term SS17 Lt Ex Obl:size=36 # default font
 
   foreground: f0dcc5ff # dec6aaff
   background: 00000000
@@ -36,7 +36,7 @@ bar:
           map:
             conditions:
               id < 0:
-                - string: {text: " ", font: *fnumb}
+                - string: {text: " ", font: *ftext}
                 - string: {text: "{cpu}%"}
     # - mem:
     #       poll-interval: 500
