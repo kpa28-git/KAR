@@ -4,22 +4,12 @@
 # Whitelist:
 !/.config/
 !/.local/
-!.vim
 !.bash_logout
 !.bash_profile
 !.bashrc
-!.dmrc
 !.gitconfig
 !.gitignore
 !.gitmodules
 !.profile
-!.tmux.conf
-!.vimrc
-!.Xdefaults
-!.xinitrc
-!.xprofile
-!.Xresources
-!.xsession
-!.zprofile
 !LICENSE
 !README.md

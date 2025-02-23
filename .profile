@@ -40,7 +40,6 @@ export MANROFFOPT='-c' # (bat issue #2593): fixes manpage syntax highlighting
 export LESSHISTFILE="-"
 export BDOTDIR="$XDG_CONFIG_HOME/bash"
 export INPUTRC="$BDOTDIR/inputrc"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export PSQLRC="$XDG_CONFIG_HOME/postgres/psqlrc"
 export ALIASDIR="$XDG_SCRIPT_HOME/aliases"
 # export GOPATH="$XDG_SRC_HOME/go"

@@ -29,7 +29,7 @@ PS1_DRSN='\[$(tput setaf 7)\]'
 export PS1="${PS1_BOLD}${PS1_BRKT}[${PS1_USER}\u${PS1_ATSN}@${PS1_HOST}\h ${PS1_PATH}\W${PS1_BRKT}] ${PS1_DRSN}\\$ ${PS1_RESET}"
 
 # load aliases, plugins, syntax highlighting
-source "$ALIASDIR/load-aliases"
+source "$ALIASDIR/load-aliases.sh"
 source '/usr/share/doc/pkgfile/command-not-found.bash'
 
 # >>> conda initialize >>>

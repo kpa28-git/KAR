@@ -1,0 +1,13 @@
+#      _    _        _    ____ ____  ___ _____ _______   __
+#     / \  | |      / \  / ___|  _ \|_ _|_   _|_   _\ \ / /
+#    / _ \ | |     / _ \| |   | |_) || |  | |   | |  \ V /
+#   / ___ \| |___ / ___ \ |___|  _ < | |  | |   | |   | |
+#  /_/   \_\_____/_/   \_\____|_| \_\___| |_|   |_|   |_|
+# Config file for Alacritty (light mode), the GPU enhanced terminal emulator.
+
+general.import = [
+  "~/.config/alacritty/config_basic.toml",
+  "~/.config/alacritty/config_keybinds.toml",
+  "/usr/share/alacritty/themes/ayu_light.toml"
+]
+

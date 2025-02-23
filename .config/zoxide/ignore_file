@@ -1,0 +1,7 @@
+*/.cache/*
+*/.git*/*
+*/.wine*
+*/miniconda*
+*/.cargo/*
+*/.rustup/*
+*/.local/share/Trash/*

@@ -1,12 +1,13 @@
 # Kevin's Arch Rice (KAR)
-My [arch linux](https://archlinux.org/) / [niri](https://github.com/YaLTeR/niri) / [yambar](https://codeberg.org/dnkl/yambar) / [tofi](https://github.com/philj56/tofi) / [alacritty](https://github.com/alacritty/alacritty) / [yazi](https://github.com/sxyazi/yazi) / [helix](https://helix-editor.com) rice.
+My [arch linux](https://archlinux.org/) / [niri](https://github.com/YaLTeR/niri) / [yambar](https://codeberg.org/dnkl/yambar) / [tofi](https://github.com/philj56/tofi) / [alacritty](https://github.com/alacritty/alacritty) / [yazi](https://github.com/sxyazi/yazi) / [helix](https://helix-editor.com) / [nushell](https://www.nushell.sh/) rice.
 
 Note (2025-02-17): Only recently swtiched to wayland / niri, so these configs may change a lot
 
 ![alt text](.local/share/rice/rice-screen.png?raw=true)
 
 ## Programs (see `~/.config` for the full list)
-* login shell: [zsh](https://zsh.org)
+* default shell: [nushell](https://www.nushell.sh/)
+* login shell: [bash](https://www.gnu.org/software/bash/manual/bash.html)
 * `/bin/sh`: [dash](https://www.man7.org/linux/man-pages/man1/dash.1.html)
 * text editor: [helix](https://helix-editor.com)
 * wayland compositor: [niri](https://github.com/YaLTeR/niri)
@@ -55,7 +56,4 @@ Note (2025-02-17): Only recently swtiched to wayland / niri, so these configs ma
 * `so` (search open): open file with `$OPENER`
 * `sg <str>` (search grep): grep `<str>` within the chosen file (uses `rg`)
 * `sr` (search reading): fuzzy search the `$READING` directory and open the file with `$READER` program (also: `srb` and `srp` to search book and paper lists to read from)
-
-## TODO
-* nushell
 

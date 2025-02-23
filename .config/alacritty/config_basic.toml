@@ -1,0 +1,61 @@
+#      _    _        _    ____ ____  ___ _____ _______   __
+#     / \  | |      / \  / ___|  _ \|_ _|_   _|_   _\ \ / /
+#    / _ \ | |     / _ \| |   | |_) || |  | |   | |  \ V /
+#   / ___ \| |___ / ___ \ |___|  _ < | |  | |   | |   | |
+#  /_/   \_\_____/_/   \_\____|_| \_\___| |_|   |_|   |_|
+# Basic config file for Alacritty, the GPU enhanced terminal emulator.
+
+[env]
+TERM = "xterm-256color"
+
+[terminal.shell]
+program = "nu"
+
+[font]
+size = 16.0
+normal.family = "monospace"
+normal.style = "Regular"
+italic.family = "monospace"
+italic.style = "Italic"
+bold.family = "monospace"
+bold.style = "Bold"
+bold_italic.family = "monospace"
+bold_italic.style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 1
+y = 1
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+multiplier = 5
+
+[window]
+opacity = 0.85
+decorations = "full"
+dynamic_padding = false
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 2
+y = 2
+
+[window.position]
+x = 0
+y = 0

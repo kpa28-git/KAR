@@ -1,0 +1,131 @@
+#      _    _        _    ____ ____  ___ _____ _______   __
+#     / \  | |      / \  / ___|  _ \|_ _|_   _|_   _\ \ / /
+#    / _ \ | |     / _ \| |   | |_) || |  | |   | |  \ V /
+#   / ___ \| |___ / ___ \ |___|  _ < | |  | |   | |   | |
+#  /_/   \_\_____/_/   \_\____|_| \_\___| |_|   |_|   |_|
+# Keybind Config file for Alacritty, the GPU enhanced terminal emulator.
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "Up"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "Down"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ClearHistory"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Hide"
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Minimize"
+key = "M"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Alt"
+

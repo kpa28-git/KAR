@@ -1,7 +1,0 @@
-#!/bin/sh
-# defines the bspwm environment for lemurs
-
-[ "$(gfxmode)" = 'nvidia' ] && polybar-msg cmd restart # polybar misses bspwm socket on nvidia mode
-
-sxhkd &
-exec bspwm -c "$XDG_CONFIG_HOME/bspwm/bspwmrc"

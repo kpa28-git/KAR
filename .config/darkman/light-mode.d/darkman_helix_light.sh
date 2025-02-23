@@ -1,0 +1,1 @@
+/home/kev/.config/helix/darkman_helix_light.sh
