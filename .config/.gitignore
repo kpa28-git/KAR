@@ -13,6 +13,7 @@
 !/darkman/**
 !/fd/**
 !/fontconfig/**
+!/foot/**
 !/git/**
 !/gtk-3.0/**
 !/helix/**
@@ -30,6 +31,7 @@
 !/pylint/**
 !/qutebrowser/**
 !/sc-im/**
+!/swaylock/**
 !/systemd/**
 !/tessen/**
 !/tofi/**

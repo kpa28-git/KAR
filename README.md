@@ -1,5 +1,5 @@
 # Kevin's Arch Rice (KAR)
-My [arch linux](https://archlinux.org/) / [niri](https://github.com/YaLTeR/niri) / [yambar](https://codeberg.org/dnkl/yambar) / [tofi](https://github.com/philj56/tofi) / [alacritty](https://github.com/alacritty/alacritty) / [yazi](https://github.com/sxyazi/yazi) / [helix](https://helix-editor.com) / [nushell](https://www.nushell.sh/) rice.
+My [arch linux](https://archlinux.org/) / [niri](https://github.com/YaLTeR/niri) / [yambar](https://codeberg.org/dnkl/yambar) / [tofi](https://github.com/philj56/tofi) / [foot](https://codeberg.org/dnkl/foot/) / [yazi](https://github.com/sxyazi/yazi) / [helix](https://helix-editor.com) / [nushell](https://www.nushell.sh/) rice.
 
 Note (2025-02-17): Only recently swtiched to wayland / niri, so these configs may change a lot
 
@@ -11,7 +11,7 @@ Note (2025-02-17): Only recently swtiched to wayland / niri, so these configs ma
 * `/bin/sh`: [dash](https://www.man7.org/linux/man-pages/man1/dash.1.html)
 * text editor: [helix](https://helix-editor.com)
 * wayland compositor: [niri](https://github.com/YaLTeR/niri)
-* terminal: [alacritty](https://github.com/alacritty/alacritty)
+* terminal: [foot](https://codeberg.org/dnkl/foot/)
 * status bar: [yambar](https://codeberg.org/dnkl/yambar)
 * notifications: [mako](https://github.com/emersion/mako)
 * file manager: [yazi](https://github.com/sxyazi/yazi)
@@ -20,7 +20,7 @@ Note (2025-02-17): Only recently swtiched to wayland / niri, so these configs ma
 * resource monitor: [btop](https://github.com/aristocratos/btop)
 * video player: [mpv](https://mpv.io)
 * audio player: [termusic](https://github.com/tramhao/termusic)
-* browser: firefox + [tridactyl](https://github.com/tridactyl/tridactyl)
+* browser: librewolf + [tridactyl](https://github.com/tridactyl/tridactyl)
 * calculator: [julia](https://julialang.org) REPL
 * monospace font: [Iosevka Term SS17](https://github.com/be5invis/Iosevka)
 * day/night theming: [darkman](https://gitlab.com/WhyNotHugo/darkman), [wl-sunset](https://github.com/kennylevinsen/wlsunset)
@@ -45,9 +45,10 @@ Note (2025-02-17): Only recently swtiched to wayland / niri, so these configs ma
 * Global light/dark theme with darkman
 
 ### Hotkeys (see `~/.config/niri/config.kdl`)
-* Show important keybinds with `mod+<F1>`
-* `<mod>+<enter>` opens a terminal
-* Some mnemonics: `<mod>+f(ile manager)`, `<mod>+e(mail client)`, `<mod>+c(alculator)`
+* Show important niri keybinds with `<super>+<F1>`
+* `<super>+<enter>` opens a terminal at the directory of the currently focused terminal (this was set in foot and not in niri)
+* `<super>+<shift>+<enter>` opens a terminal at home
+* Some mnemonics: `<super>+f(ile manager)`, `<super>+e(mail client)`, `<super>+c(alculator)`, `<super>+b(rowser)`, 
 * Hotkeys involving moving windows usually use `shift`
 
 #### Directory Search Aliases (respects `~/.config/fd/ignore_file`)

@@ -11,7 +11,7 @@ output "eDP-1" { // built-in laptop monitor
 }
 
 output "DP-3" {
-    // mode "3840x2160@120.030"
+    // mode "3840x2160@60"
     scale 1.6
     transform "normal"
 }
@@ -171,10 +171,7 @@ animations {
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
@@ -211,17 +208,17 @@ binds {
     Mod+Z { power-off-monitors; }
     Super+Shift+Z { spawn "sh" "-c" "tprompty 'Shutdown?' 'sudo -A shutdown -h now'"; }
     Super+Shift+Backspace { spawn "sh" "-c" "tprompty 'Reboot?' 'sudo -A reboot'"; }
-
-    // Mod+Shift+X { quit; }
     // Ctrl+Alt+Delete { quit; }
 
+    // Terminal
+    Mod+Shift+Return { spawn "sh" "-c" "$TERMINAL"; }
+    // Mod+Shift+Return { spawn "sh" "-c" "niri msg action spawn -- $TERMINAL && niri msg action consume-or-expel-window-left"; }
+    // Mod+Shift+Comma { spawn "sh" "-c" "niri msg action spawn -- $TERMINAL && niri msg action consume-or-expel-window-left"; }
+    // Mod+Shift+Period { spawn "sh" "-c" "niri msg action spawn -- $TERMINAL && niri msg action consume-or-expel-window-left"; }
+
     // Programs
-    Mod+Return { spawn "sh" "-c" "$TERMINAL"; }
-    Mod+Shift+Return { spawn "sh" "-c" "niri msg action spawn -- $TERMINAL && niri msg action consume-or-expel-window-left"; }
-    // Mod+Shift+Comma { spawn "sh" "-c" "niri msg action spawn -- alacritty && niri msg action consume-or-expel-window-left"; }
-    // Mod+Shift+Period { spawn "sh" "-c" "niri msg action spawn -- alacritty && niri msg action consume-or-expel-window-left"; }
-    Mod+R { spawn "tofi-drun"; } // (R)unner
-    Mod+B { spawn "firefox"; } // B(rowser)
+    Mod+R { spawn "tofi-drun"; } // R(unner)
+    Mod+B { spawn "librewolf"; } // B(rowser)
     Mod+A { spawn "sh" "-c" "$TERMINAL -e pulsemixer"; } // A(udio)
     Mod+F { spawn "sh" "-c" "$TERMINAL -e $FILE"; } // F(ile manager)
     Mod+I { spawn "sh" "-c" "$TERMINAL -e btop"; } // I(nfo)
@@ -249,46 +246,57 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    // Focus
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
-    Mod+Right { focus-column-right; }
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    // Focusing/Moving windows left/right
+    Mod+Left        { focus-column-left; }
+    Mod+Right       { focus-column-right; }
+    Mod+H           { focus-column-left; }
+    Mod+L           { focus-column-right; }
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+L     { move-column-right; }
 
-    Mod+Shift+Left  { consume-or-expel-window-left; }
-    Mod+Shift+Down  { move-window-down; }
-    Mod+Shift+Up    { move-window-up; }
-    Mod+Shift+Right { consume-or-expel-window-right; }
-    Mod+Shift+H     { consume-or-expel-window-left; }
-    Mod+Shift+J     { move-window-down; }
-    Mod+Shift+K     { move-window-up; }
-    Mod+Shift+L     { consume-or-expel-window-right; }
+    // Focusing/Moving window/workspace up/down
+    Mod+Down            { focus-window-or-workspace-down; }
+    Mod+Up              { focus-window-or-workspace-up; }
+    Mod+J               { focus-window-or-workspace-down; }
+    Mod+K               { focus-window-or-workspace-up; }
+    Mod+Shift+Down      { move-window-down-or-to-workspace-down; }
+    Mod+Shift+Up        { move-window-up-or-to-workspace-up; }
+    Mod+Shift+J         { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K         { move-window-up-or-to-workspace-up; }
 
-    // Alternative commands that move across workspaces when reaching
-    // the first or last window in a column.
-    // Mod+J     { focus-window-or-workspace-down; }
-    // Mod+K     { focus-window-or-workspace-up; }
-    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+    // Focusing/Moving column workspace up/down
+    Mod+Page_Down       { focus-workspace-down; }
+    Mod+Page_Up         { focus-workspace-up; }
+    Mod+Shift+Page_Down { move-column-to-workspace-down; }
+    Mod+Shift+Page_Up   { move-column-to-workspace-up; }
 
-    Mod+Home { focus-column-first; }
-    Mod+End  { focus-column-last; }
+    // Focusing/Moving windows up/down
+    Mod+X              { focus-window-down; }
+    Mod+S              { focus-window-up; }
+    Mod+Shift+X        { move-window-down; }
+    Mod+Shift+S        { move-window-up; }
+
+    // Focusing/Moving beginning/end of workspace
+    Mod+Home       { focus-column-first; }
+    Mod+End        { focus-column-last; }
     Mod+Shift+Home { move-column-to-first; }
     Mod+Shift+End  { move-column-to-last; }
 
-    Mod+Ctrl+Left  { focus-monitor-left; }
-    Mod+Ctrl+Down  { focus-monitor-down; }
-    Mod+Ctrl+Up    { focus-monitor-up; }
-    Mod+Ctrl+Right { focus-monitor-right; }
-    Mod+Ctrl+H     { focus-monitor-left; }
-    Mod+Ctrl+J     { focus-monitor-down; }
-    Mod+Ctrl+K     { focus-monitor-up; }
-    Mod+Ctrl+L     { focus-monitor-right; }
+    // Moving workspaces up/down
+    Mod+Ctrl+Page_Down  { move-workspace-down; }
+    Mod+Ctrl+Page_Up    { move-workspace-up; }
 
+    // Focusing/Moving columns between monitors
+    Mod+Ctrl+Left        { focus-monitor-left; }
+    Mod+Ctrl+Down        { focus-monitor-down; }
+    Mod+Ctrl+Up          { focus-monitor-up; }
+    Mod+Ctrl+Right       { focus-monitor-right; }
+    Mod+Ctrl+H           { focus-monitor-left; }
+    Mod+Ctrl+J           { focus-monitor-down; }
+    Mod+Ctrl+K           { focus-monitor-up; }
+    Mod+Ctrl+L           { focus-monitor-right; }
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
     Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
@@ -298,32 +306,9 @@ binds {
     Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
-    // Alternatively, there are commands to move just a single window:
+    // Alternatively, there are:
     // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
-    // ...
-
-    // And you can also move a whole workspace to another monitor:
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
-    // ...
-
-    Mod+S               { focus-workspace-up; }
-    Mod+X               { focus-workspace-down; }
-    Mod+Page_Up         { focus-workspace-up; }
-    Mod+Page_Down       { focus-workspace-down; }
-
-    Mod+Shift+S         { move-column-to-workspace-up; }
-    Mod+Shift+X         { move-column-to-workspace-down; }
-    Mod+Shift+Page_Up   { move-column-to-workspace-up; }
-    Mod+Shift+Page_Down { move-column-to-workspace-down; }
-
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
-    // ...
-
-    Mod+Ctrl+S         { move-workspace-up; }
-    Mod+Ctrl+X         { move-workspace-down; }
-    Mod+Ctrl+Page_Up   { move-workspace-up; }
-    Mod+Ctrl+Page_Down { move-workspace-down; }
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
@@ -392,8 +377,8 @@ binds {
 
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
-    Mod+BracketLeft  { move-column-left; }
-    Mod+BracketRight { move-column-right; }
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-window-into-column; }
@@ -402,6 +387,8 @@ binds {
     // Mod+R { switch-preset-column-width; }
     // Mod+Shift+R { switch-preset-window-height; }
     // Mod+Ctrl+R { reset-window-height; }
+
+    // widening, fullscreen, centering, etc
     Mod+w { maximize-column; }         // (W)iden
     Mod+Shift+f { fullscreen-window; } // (F)ullscreen
     Mod+Shift+C { center-column; }

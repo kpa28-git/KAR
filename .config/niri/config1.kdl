@@ -170,12 +170,8 @@ animations {
     // slowdown 1.0 // values below 1 speed animations up
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
@@ -216,13 +212,15 @@ binds {
     // Mod+Shift+X { quit; }
     // Ctrl+Alt+Delete { quit; }
 
+    // Terminal
+    Mod+Shift+Return { spawn "sh" "-c" "$TERMINAL"; }
+    // Mod+Shift+Return { spawn "sh" "-c" "niri msg action spawn -- $TERMINAL && niri msg action consume-or-expel-window-left"; }
+    // Mod+Shift+Comma { spawn "sh" "-c" "niri msg action spawn -- $TERMINAL && niri msg action consume-or-expel-window-left"; }
+    // Mod+Shift+Period { spawn "sh" "-c" "niri msg action spawn -- $TERMINAL && niri msg action consume-or-expel-window-left"; }
+
     // Programs
-    Mod+Return { spawn "sh" "-c" "$TERMINAL"; }
-    Mod+Shift+Return { spawn "sh" "-c" "niri msg action spawn -- $TERMINAL && niri msg action consume-or-expel-window-left"; }
-    // Mod+Shift+Comma { spawn "sh" "-c" "niri msg action spawn -- alacritty && niri msg action consume-or-expel-window-left"; }
-    // Mod+Shift+Period { spawn "sh" "-c" "niri msg action spawn -- alacritty && niri msg action consume-or-expel-window-left"; }
     Mod+R { spawn "tofi-drun"; } // (R)unner
-    Mod+B { spawn "firefox"; } // B(rowser)
+    Mod+B { spawn "librewolf"; } // B(rowser)
     Mod+A { spawn "sh" "-c" "$TERMINAL -e pulsemixer"; } // A(udio)
     Mod+F { spawn "sh" "-c" "$TERMINAL -e $FILE"; } // F(ile manager)
     Mod+I { spawn "sh" "-c" "$TERMINAL -e btop"; } // I(nfo)

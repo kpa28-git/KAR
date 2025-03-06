@@ -15,13 +15,13 @@ export XDG_SRC_HOME="$HOME/.local/src"
 
 # Default programs/settings:
 export TERMINFO='/usr/lib/terminfo'
-export TERMINAL='alacritty'
+export TERMINAL='foot'
 export OPENER='xdg-open'
 export VISUAL='helix'
 export EDITOR=$VISUAL
 export DIFFPROG=$VISUAL
 export PAGER='bat'
-export BROWSER='firefox'
+export BROWSER='librewolf'
 export READER='zathura'
 export FILE='yazi'
 export CALCULATOR='julia'
