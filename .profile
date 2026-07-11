@@ -32,9 +32,10 @@ export BIB="$HOME/Documents/LaTeX/uni.bib"
 export READING="$HOME/Documents/reading"
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
 export RUST_TOOLCHAIN="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
-export JULIA_CUDA_SOFT_MEMORY_LIMIT="80%"
+export JULIA_CUDA_SOFT_MEMORY_LIMIT="85%"
 export EZA_COLORS="sn=35:sb=35:uu=34:uR=31:da=36:di=33:ln=36:lp=3;36:ex=32:fi=37:*.pdf=34:*.png=34:README.md=37"
 export MANROFFOPT='-c' # (bat issue #2593): fixes manpage syntax highlighting
+export DO_NOT_TRACK=1
 
 # Clean up home:
 export LESSHISTFILE="-"
@@ -47,11 +48,12 @@ export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
 export GRIPHOME="$XDG_CONFIG_HOME/grip"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+export GHCUP_USE_XDG_DIRS=1
 
 # Add `$XDG_SCRIPT_HOME/*`, java, go, julia to $PATH:
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
 export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/conda/3/bin:$XDG_SRC_HOME/webapp/bin"
+export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/bin:$HOME/.julia/conda/3/bin:$XDG_SRC_HOME/webapp/bin"
 
 # day/night theming with darkman
 export DARKMAN_LAT="$(sed 1q $XDG_CONFIG_HOME/loc/default.txt)"

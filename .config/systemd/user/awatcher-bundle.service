@@ -1,0 +1,16 @@
+[Unit]
+Description=Activity Watcher (http://127.0.0.1:5600)
+After=graphical-session.target
+
+[Service]
+Type=simple
+TimeoutStartSec=120
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/awatcher-bundle --no-tray
+Restart=always
+RestartSec=5
+RestartSteps=2
+RestartMaxDelaySec=15
+
+[Install]
+WantedBy=graphical-session.target

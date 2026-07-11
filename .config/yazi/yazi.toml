@@ -5,7 +5,7 @@
 #  /___/
 # yazi runtime config
 
-[manager]
+[mgr]
 sort_dir_first = true
 linemode = "size"
 show_symlink = true

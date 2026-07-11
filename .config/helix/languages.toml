@@ -7,10 +7,14 @@
 [[language]]
 name = "julia"
 indent = { tab-width = 4, unit = "\t" }
+language-servers = [ "jetls" ]
 
-[language-server.julia]
-command = "julia"
-timeout = 60
+[language-server]
+jetls = { command = "jetls", args = ["serve"] }
+
+# [language-server.julia]
+# command = "julia"
+# timeout = 60
 # args = [ "--project=@LanguageServer", "--startup-file=no", "--history-file=no", "--quiet", "-e", "using LanguageServer; runserver()" ]
 
 [[language]]

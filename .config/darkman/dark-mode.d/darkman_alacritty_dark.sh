@@ -1,1 +1,0 @@
-/home/kev/.config/alacritty/darkman_alacritty_dark.sh

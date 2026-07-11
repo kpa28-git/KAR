@@ -5,7 +5,7 @@
 #  /___/
 # yazi keymap overrides
 
-[manager]
+[mgr]
 prepend_keymap = [
 	# Misc Integration
 	{ on = ["<A-a>"],      run = "shell --block dragon-drop --all $@" },

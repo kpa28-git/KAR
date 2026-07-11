@@ -109,4 +109,9 @@ bar:
     # - backlight:
     #     name: intel_backlight
     #     content: [ string: {text: , font: *ftext}, string: {text: "{percent}%"}]
+    - battery:
+        name: BAT0
+        poll-interval: 30000
+        content:
+          string: {text: "󰁹 {capacity}% {estimate}"}
 

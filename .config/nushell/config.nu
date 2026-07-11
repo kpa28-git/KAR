@@ -11,8 +11,8 @@ source "~/.config/zoxide/.zoxide.nu"
 
 if (is-installed theme.sh) {
 	let theme = match (open ~/.cache/darkman/mode.txt) {
-		"light" => "atelier-estuary-light"
-		_ => "eighties"
+		"light" => "atelier-dune-light"
+		_ => "chalkboard"
 	}
 	theme.sh $theme
 }

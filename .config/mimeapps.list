@@ -26,8 +26,9 @@ image/*=img.desktop;
 image/jpeg=img.desktop;
 image/png=img.desktop;
 image/webp=img.desktop;
-image/svg=web-browser.desktop;
-image/svg+xml=web-browser.desktop;
+image/heic=img.desktop;
+image/svg=img.desktop;
+image/svg+xml=img.desktop;
 image/gif=gif.desktop;
 audio/*=audio.desktop;
 audio/mp3=audio.desktop;
@@ -43,6 +44,8 @@ application/x-extension-shtml=web-browser.desktop
 application/xhtml+xml=web-browser.desktop
 application/x-extension-xhtml=web-browser.desktop
 application/x-extension-xht=web-browser.desktop
+x-scheme-handler/tuta=tutanota-desktop.desktop
+x-scheme-handler/discord=vesktop.desktop
 
 [Added Associations]
 x-scheme-handler/http=web-browser.desktop;
