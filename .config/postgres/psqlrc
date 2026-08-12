@@ -6,9 +6,9 @@
 -- postgres psql runtime config file
 
 -- env variables
-\set XDG_SCRIPT_HOME `echo "$XDG_SCRIPT_HOME"`
-\set sqltools        :XDG_SCRIPT_HOME'/sqltools'
-\set sqlpgtools      :XDG_SCRIPT_HOME'/sqlpgtools'
+\set XDG_BIN_HOME `echo "$XDG_BIN_HOME"`
+\set sqltools        :XDG_BIN_HOME'/sqltools'
+\set sqlpgtools      :XDG_BIN_HOME'/sqlpgtools'
 
 -- generic sql scripts
 \set lsschema        '\\i :sqltools/lsschema.sql';

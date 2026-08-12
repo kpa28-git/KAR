@@ -7,11 +7,11 @@
 #  /_/
 # Posix login shell profile config file.
 
-# XDG standard directories:
+# XDG standard directories (https://gist.github.com/roalcantara/107ba66dfa3b9d023ac9329e639bc58c)
+# TODO may be able to use ~/.config/environment.d/ instead for this...
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_SCRIPT_HOME="$HOME/.local/bin"
-export XDG_SRC_HOME="$HOME/.local/src"
+export XDG_BIN_HOME="$HOME/.local/bin"
 
 # Default programs/settings:
 export TERMINFO='/usr/lib/terminfo'
@@ -21,7 +21,7 @@ export VISUAL='helix'
 export EDITOR=$VISUAL
 export DIFFPROG=$VISUAL
 export PAGER='bat'
-export BROWSER='librewolf'
+export BROWSER='librewolf-hellfire'
 export READER='zathura'
 export FILE='yazi'
 export CALCULATOR='julia'
@@ -36,32 +36,34 @@ export JULIA_CUDA_SOFT_MEMORY_LIMIT="85%"
 export EZA_COLORS="sn=35:sb=35:uu=34:uR=31:da=36:di=33:ln=36:lp=3;36:ex=32:fi=37:*.pdf=34:*.png=34:README.md=37"
 export MANROFFOPT='-c' # (bat issue #2593): fixes manpage syntax highlighting
 export DO_NOT_TRACK=1
+export LOCAL_SRC_HOME="$HOME/.local/src"
 
 # Clean up home:
 export LESSHISTFILE="-"
 export BDOTDIR="$XDG_CONFIG_HOME/bash"
 export INPUTRC="$BDOTDIR/inputrc"
 export PSQLRC="$XDG_CONFIG_HOME/postgres/psqlrc"
-export ALIASDIR="$XDG_SCRIPT_HOME/aliases"
-# export GOPATH="$XDG_SRC_HOME/go"
+export ALIASDIR="$XDG_BIN_HOME/aliases"
+# export GOPATH="$LOCAL_SRC_HOME/go"
 export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
 export GRIPHOME="$XDG_CONFIG_HOME/grip"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export GHCUP_USE_XDG_DIRS=1
 
-# Add `$XDG_SCRIPT_HOME/*`, java, go, julia to $PATH:
+# Add `$XDG_BIN_HOME/*`, java, go, julia to $PATH:
 BLACKLIST='/.git' 	# Add more items to blacklist with <item1>\|<item2>\|<item3>...
-export PATH="$PATH:$(du "$XDG_SCRIPT_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/bin:$HOME/.julia/conda/3/bin:$XDG_SRC_HOME/webapp/bin"
+export PATH="$PATH:$(du "$XDG_BIN_HOME" | cut -f2 | grep -v "$BLACKLIST" | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$JAVA_HOME:$PATH:$GOPATH/bin:$HOME/.julia/bin:$HOME/.julia/conda/3/bin:$LOCAL_SRC_HOME/webapp/bin"
 
 # day/night theming with darkman
 export DARKMAN_LAT="$(sed 1q $XDG_CONFIG_HOME/loc/default.txt)"
 export DARKMAN_LNG="$(sed -n '2{p;q}' $XDG_CONFIG_HOME/loc/default.txt)"
-export XDG_DATA_DIRS="$XDG_DATA_DIRS:$XDG_DATA_HOME"
+
+# export XDG_DATA_DIRS="$XDG_DATA_DIRS:$XDG_DATA_HOME" # does not seem to be needed and screws up default needed to start portal service (dbus broker issue)
 
 # Switch escape <-> caps for tty
-sudo -n loadkeys "$XDG_SCRIPT_HOME/ttymaps.kmap" 2>/dev/null
+sudo -n loadkeys "$XDG_BIN_HOME/ttymaps.kmap" 2>/dev/null
 
 # load user defaults into systemd env
 systemctl --user import-environment TERMINAL VISUAL EDITOR BROWSER FILE CALCULATOR TASK_CLIENT EMAIL_CLIENT MUSIC_CLIENT DARKMAN_LAT DARKMAN_LNG

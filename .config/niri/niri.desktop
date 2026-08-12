@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=niri [auto]
+Comment=A scrollable-tiling Wayland compositor
+Exec=env NIRI_CONFIG=$HOME/.config/niri/config.kdl niri-session
+Type=Application
+DesktopNames=niri
