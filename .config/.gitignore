@@ -11,6 +11,7 @@
 !/btop/**
 !/cargo/**
 !/darkman/**
+!/environment.d/**
 !/fd/**
 !/fontconfig/**
 !/foot/**

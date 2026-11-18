@@ -160,12 +160,6 @@ animations {
     // slowdown 1.0 // values below 1 speed animations up
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
 // window-rule {
 //     // match non-terminal window
 //     exclude app-id="Foot"
@@ -218,7 +212,7 @@ binds {
 
     // Programs
     Mod+R { spawn "tofi-drun"; } // R(unner)
-    Mod+B { spawn "librewolf-hellfire"; } // B(rowser)
+    Mod+B { spawn "sh" "-c" "$BROWSER"; } // B(rowser)
     Mod+A { spawn "sh" "-c" "$TERMINAL -e pulsemixer"; } // A(udio)
     Mod+F { spawn "sh" "-c" "$TERMINAL -e $FILE"; } // F(ile manager)
     Mod+I { spawn "sh" "-c" "$TERMINAL -e btop"; } // I(nfo)

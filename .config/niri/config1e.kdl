@@ -10,10 +10,13 @@ output "eDP-1" { // built-in laptop monitor
     off
 }
 
-output "DP-3" {
-    // mode "3840x2160@60"
-    scale 1.6
+output "DP-1" {
+    scale 1.5
     transform "normal"
+}
+
+output "DP-3" {
+    off
 }
 
 input {
@@ -169,12 +172,6 @@ animations {
     // slowdown 1.0 // values below 1 speed animations up
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -218,7 +215,7 @@ binds {
 
     // Programs
     Mod+R { spawn "tofi-drun"; } // R(unner)
-    Mod+B { spawn "librewolf-hellfire"; } // B(rowser)
+    Mod+B { spawn "sh" "-c" "$BROWSER"; } // B(rowser)
     Mod+A { spawn "sh" "-c" "$TERMINAL -e pulsemixer"; } // A(udio)
     Mod+F { spawn "sh" "-c" "$TERMINAL -e $FILE"; } // F(ile manager)
     Mod+I { spawn "sh" "-c" "$TERMINAL -e btop"; } // I(nfo)
